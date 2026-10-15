@@ -85,9 +85,10 @@ ul.dot li{display:flex;gap:10px}ul.dot li::before{content:"";flex:none;width:6px
 .ab .pf{width:min(240px,60vw)}
 footer{padding-block:28px 36px;border-top:1px solid var(--ln);color:var(--mu2);font-size:13px}
 footer .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+/* reveal (only when JS is on) */
+.js .rv:not(.in){opacity:0}
+.rv.in{animation:rvIn 1s cubic-bezier(.2,.8,.2,1) var(--dl,0s) backwards}
+@keyframes rvIn{from{opacity:0;transform:translateY(28px) scale(.985);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
 .kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:24px;overflow:hidden;margin-bottom:24px}
 @media(min-width:760px){.kpi{grid-template-columns:repeat(4,1fr)}}
 .kpi div{background:var(--bg);padding:20px 18px}
@@ -114,7 +115,86 @@ a.card.lk:hover{border-color:rgba(217,184,106,.55);transform:translateY(-3px)}
 .fx p{color:var(--mu)}
 .fk{display:grid;gap:1px;background:var(--ln);border-top:1px solid var(--ln)}
 @media(min-width:900px){.fk{border-top:0;border-left:1px solid var(--ln)}}
-.fk div{background:rgba(14,15,17,.6);padding:22px clamp(22px,3vw,34px);display:flex;flex-direction:column;justify-content:center}
+.fk>div{background:rgba(14,15,17,.6);padding:22px clamp(22px,3vw,34px);display:flex;flex-direction:column;justify-content:center}
 .fk b{display:block;font:700 clamp(46px,6vw,68px)/1 var(--fs)}
 .fk span{display:block;margin-top:6px;color:var(--mu);font-size:14px}
 @media(min-width:900px){.cards.c5{grid-template-columns:repeat(6,1fr)}.cards.c5>*{grid-column:span 2}.cards.c5>:nth-child(n+4){grid-column:span 3}}
+
+/* ===== effects ===== */
+body{animation:pgIn .55s ease both}
+@keyframes pgIn{from{opacity:0}}
+html.leaving body{opacity:0;transition:opacity .25s ease}
+html.intro-on{overflow:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+ background:radial-gradient(520px circle at var(--gx,75%) var(--gy,8%),rgba(217,170,95,.09),transparent 65%),
+ radial-gradient(40vw 40vw at 10% 110%,rgba(168,134,56,.08),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.05;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#prog{position:fixed;left:0;right:0;top:0;height:2px;z-index:95;transform:scaleX(0);transform-origin:0 50%;
+ background:linear-gradient(90deg,#8A6426,#F3DFA6,#C9A45C);box-shadow:0 0 12px rgba(243,223,166,.6)}
+/* intro */
+#intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#0E0F11;
+ clip-path:inset(0 0 0 0);transition:clip-path .85s cubic-bezier(.77,0,.18,1)}
+#intro.out{clip-path:inset(0 0 100% 0)}
+#intro .in-w{display:flex;flex-direction:column;align-items:center;gap:14px}
+#intro b{font:700 clamp(90px,18vw,170px)/.9 var(--fs);letter-spacing:.06em;
+ background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent;
+ animation:inB 1.1s cubic-bezier(.2,.8,.2,1) both}
+#intro i{display:block;height:1px;width:220px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);transform:scaleX(0);animation:inL .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
+#intro span{font:700 14px var(--fb);letter-spacing:.2em;color:var(--mu);animation:inS 1.2s .3s cubic-bezier(.2,.8,.2,1) both}
+#intro em{font:600 italic 20px var(--fs);color:var(--gold);opacity:0;animation:inE .8s .7s ease forwards}
+@keyframes inB{from{opacity:0;transform:translateY(30px) scale(.92);filter:blur(10px)}}
+@keyframes inL{to{transform:scaleX(1)}}
+@keyframes inS{from{opacity:0;letter-spacing:0}to{letter-spacing:.6em}}
+@keyframes inE{to{opacity:1}}
+/* gold shimmer */
+.gold{background-image:linear-gradient(110deg,transparent 38%,rgba(255,250,235,.75) 48%,transparent 58%),linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));
+ background-size:260% 100%,100% 100%;background-repeat:no-repeat;animation:shine 7s ease-in-out infinite}
+@keyframes shine{0%{background-position:160% 0,0 0}35%,100%{background-position:-70% 0,0 0}}
+/* spotlight + glowing border */
+.sp{position:relative}
+.sp::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
+ background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(243,223,166,.10),transparent 60%)}
+.sp::before{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;padding:1px;z-index:1;
+ background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(243,223,166,.85),transparent 60%);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.sp:hover::after,.sp:hover::before{opacity:1}
+.tile,.pj,.fx{transition:border-color .3s,transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.card{transition:border-color .3s,transform .35s,background .3s}
+.card:hover{border-color:rgba(217,184,106,.4);background:rgba(255,255,255,.05)}
+.tile em{transition:transform .3s}.tile:hover em{transform:translateX(6px)}
+.bt,.tabs a{transition:transform .25s cubic-bezier(.2,.8,.2,1),color .2s,background .2s}
+/* section headings */
+.sec>h2,.sec>.rv:is(h2){position:relative}
+.sec>h2::after{content:"";display:block;width:56px;height:2px;margin-top:12px;border-radius:2px;
+ background:linear-gradient(90deg,var(--gold2),transparent);transform:scaleX(0);transform-origin:0;transition:transform 1s .3s cubic-bezier(.2,.8,.2,1)}
+.sec>h2.in::after,html:not(.js) .sec>h2::after{transform:none}
+/* photo ring */
+.pf{position:relative}
+.pf::before{content:"";position:absolute;inset:-16px;border-radius:50%;border:1px dashed rgba(217,184,106,.35);animation:spin 50s linear infinite}
+.pf::after{content:"";position:absolute;inset:-22px;border-radius:50%;pointer-events:none;
+ background:radial-gradient(circle at 50% 6px,#F3DFA6 0 4px,transparent 5px);filter:drop-shadow(0 0 6px #F3DFA6);animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* timeline pulse, gallery zoom */
+.xp div::before{animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px var(--bg),0 0 0 5px rgba(217,184,106,0)}50%{box-shadow:0 0 0 4px var(--bg),0 0 0 9px rgba(217,184,106,.25)}}
+.gal figure,.sl figure{overflow:hidden}
+.gal img,.sl img{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img,.sl figure:hover img{transform:scale(1.05)}
+.sk span{transition:border-color .3s,color .3s,transform .3s}
+.sk span:hover{border-color:rgba(217,184,106,.55);color:var(--gold2);transform:translateY(-2px)}
+/* marquee */
+.mq{overflow:hidden;border-block:1px solid var(--ln);padding-block:16px;margin-bottom:clamp(30px,5vw,56px);
+ -webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq div{display:flex;gap:34px;width:max-content;animation:mq 38s linear infinite}
+.mq span{font:600 italic clamp(22px,3vw,30px) var(--fs);color:var(--mu);white-space:nowrap;display:flex;align-items:center;gap:34px}
+.mq span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* 60 -> 6 */
+.dots{display:grid;grid-template-columns:repeat(15,1fr);gap:5px;max-width:250px;margin:4px 0 16px}
+.dots i{aspect-ratio:1;border-radius:50%;background:#5c574d;transition:opacity .5s calc(var(--i)*14ms),transform .5s calc(var(--i)*14ms),background .5s,box-shadow .5s}
+.dots i.k{background:#8d7a52}
+.dots.go i:not(.k){opacity:.32;transform:scale(.6)}
+.dots.go i.k{background:var(--gold2);box-shadow:0 0 10px var(--gold);transform:scale(1.3);transition-delay:1s}
+.fk small{display:block;font:700 11px var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv:not(.in){opacity:1}}

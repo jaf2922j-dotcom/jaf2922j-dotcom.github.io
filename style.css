@@ -99,3 +99,11 @@ ul.dot li::before{position:absolute;left:0;top:0}
 .xp li b{display:inline;font:inherit;font-weight:800;color:var(--gold2);margin:0}
 .bt{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:40px;font-weight:800;font-size:14.5px;text-decoration:none;border:1px solid rgba(217,184,106,.45)}
 .bt.p{background:linear-gradient(180deg,#F3DFA6,#C9A45C);color:#1B1405;border-color:transparent}
+a.card.lk{text-decoration:none;display:block;transition:border-color .3s,transform .3s}
+a.card.lk:hover{border-color:rgba(217,184,106,.55);transform:translateY(-3px)}
+.card .st.on{background:rgba(94,227,180,.12);color:#7FE6C0}
+.card .mr{display:block;margin-top:10px;font-weight:800;font-size:14px;color:var(--gold2)}
+.sl{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+.sl figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--ln);background:#fff}
+.sl img{display:block;width:100%;height:auto}
+@media(max-width:420px){.sl{grid-template-columns:1fr}}

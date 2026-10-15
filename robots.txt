@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Disallow: /novera-pitch/

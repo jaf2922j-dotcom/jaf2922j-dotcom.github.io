@@ -7,7 +7,7 @@ var INTRO_SVG="<svg class=\"lgo\" viewBox=\"120 20 760 640\" role=\"img\" aria-l
   root.classList.add('js');
 
   /* cinematic intro, once per browser session */
-  var seen=false; try{seen=sessionStorage.getItem('jdIntro')==='1';sessionStorage.setItem('jdIntro','1');}catch(e){}
+  var seen=false; try{seen=sessionStorage.getItem('jdIntro')==='1'&&!/[?&]intro/.test(location.search);sessionStorage.setItem('jdIntro','1');}catch(e){}
   var INTRO_MS=5600, skipIntro=null;
   if(!seen && !reduce){
     var it=d.createElement('div'); it.id='intro';

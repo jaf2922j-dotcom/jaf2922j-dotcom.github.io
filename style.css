@@ -286,3 +286,12 @@ footer .wm{font-family:"Bodoni Moda","Cormorant Garamond",Georgia,serif;font-wei
 #intro .snd.on i:nth-child(2){animation-delay:.15s}#intro .snd.on i:nth-child(3){animation-delay:.3s}
 #intro .snd.muted i{animation:none;height:3px;opacity:.5}
 @keyframes ibar{0%,100%{height:4px}50%{height:13px}}
+
+/* video intro */
+#intro .vb,#intro .vm{position:absolute;display:block}
+#intro .vb{inset:-5%;width:110%;height:110%;object-fit:cover;filter:blur(38px) brightness(.45) saturate(1.1)}
+#intro .vm{left:50%;top:50%;height:100%;width:auto;max-width:100%;aspect-ratio:9/16;transform:translate(-50%,-50%);object-fit:cover;opacity:0;transition:opacity .9s ease;
+ -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+#intro.playing .vm{opacity:1}
+@media(max-aspect-ratio:9/16){#intro .vm{width:100%;height:auto}}
+@media(max-aspect-ratio:10/16){#intro .vm{-webkit-mask:none;mask:none;width:100%;height:100%}}

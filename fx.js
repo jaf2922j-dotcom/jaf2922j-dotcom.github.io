@@ -14,7 +14,7 @@
       +'<button class="snd" type="button"><i></i><i></i><i></i><span>Звук</span></button><button class="skip" type="button">Пропустить</button>';
     d.body.appendChild(it); root.classList.add('intro-on'); root.classList.remove('pre');
     var vm=it.querySelector('.vm'), vb=it.querySelector('.vb'), snd=it.querySelector('.snd'), skipB=it.querySelector('.skip'), done=false, soundOn=false;
-    [vm,vb].forEach(function(v){ v.innerHTML='<source src="intro.mp4?v=2" type="video/mp4"><source src="intro.webm?v=2" type="video/webm">'; v.load(); });
+    [vm,vb].forEach(function(v){ v.innerHTML='<source src="intro.mp4?v=3" type="video/mp4"><source src="intro.webm?v=3" type="video/webm">'; v.load(); });
     function sync(){ if(Math.abs(vb.currentTime-vm.currentTime)>0.15) try{ vb.currentTime=vm.currentTime; }catch(e){} }
     function go(){ var p=vm.play(); if(p&&p.catch) p.catch(function(){}); var q=vb.play(); if(q&&q.catch) q.catch(function(){});
       it.classList.add('playing'); skipB.classList.add('on'); snd.classList.add('show'); }

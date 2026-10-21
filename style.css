@@ -274,3 +274,15 @@ footer .w{position:relative}
 footer .wm{font-family:"Bodoni Moda","Cormorant Garamond",Georgia,serif;font-weight:500}
 
 #intro .gm .mono path{fill:#E2C27A}
+
+/* intro sound button */
+#intro .snd{position:absolute;left:max(22px,4vw);bottom:max(20px,4vh);z-index:3;display:inline-flex;align-items:center;gap:3px;background:rgba(0,0,0,.3);border:1px solid rgba(217,184,106,.45);color:var(--gold2);
+ font:700 11px var(--fb);letter-spacing:.24em;text-transform:uppercase;padding:10px 16px 10px 14px;border-radius:30px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .8s .4s}
+#intro .snd.show{opacity:1;pointer-events:auto;animation:ipulse 2.4s ease-in-out infinite}
+#intro .snd.on{animation:none}
+#intro .snd span{margin-left:8px}
+#intro .snd i{display:block;width:2px;height:6px;border-radius:2px;background:var(--gold2)}
+#intro .snd.on i{animation:ibar .9s ease-in-out infinite}
+#intro .snd.on i:nth-child(2){animation-delay:.15s}#intro .snd.on i:nth-child(3){animation-delay:.3s}
+#intro .snd.muted i{animation:none;height:3px;opacity:.5}
+@keyframes ibar{0%,100%{height:4px}50%{height:13px}}

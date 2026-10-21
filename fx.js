@@ -12,15 +12,11 @@ var JD_PATHS={"jd":["M450.4 82.5V88.9H417.4V273.9Q414.4 283.5 409.6 294.9Q404.8 
   if(!seen && !reduce){ (function(){
     var it=d.createElement('div'); it.id='intro';
     var cv=d.createElement('canvas'); cv.className='ic'; it.appendChild(cv);
-    var ui=d.createElement('div'); ui.className='gate';
-    var mono=d.querySelector('.lg .mono');
-    ui.innerHTML='<div class="gm"></div><i class="gl"></i><button class="enter" type="button"><span class="pl"></span>Войти</button><small>со звуком · 10 секунд</small><button class="mute" type="button">без звука</button>';
-    if(mono) ui.querySelector('.gm').appendChild(mono.cloneNode(true));
-    it.appendChild(ui);
+    var snd=d.createElement('button'); snd.className='snd'; snd.type='button'; snd.innerHTML='<i></i><i></i><i></i><span>Звук</span>'; it.appendChild(snd);
     var skipB=d.createElement('button'); skipB.className='skip'; skipB.type='button'; skipB.textContent='Пропустить'; it.appendChild(skipB);
     d.body.appendChild(it); root.classList.add('intro-on'); root.classList.remove('pre');
 
-    var au=null; try{ au=new Audio('intro.mp3?v=4'); au.preload='auto'; au.volume=.9; }catch(e){}
+    var au=null; try{ au=new Audio('intro.mp3?v=5'); au.preload='auto'; au.volume=.9; }catch(e){}
     var cx=cv.getContext('2d'), W=0,H=0,DPR=1, mobile=innerWidth<700;
     var startT=-1, now0=performance.now(), done=false, mx=0,my=0, smx=0,smy=0;
     function R(a,b){return a+Math.random()*(b-a);}
@@ -216,24 +212,24 @@ var JD_PATHS={"jd":["M450.4 82.5V88.9H417.4V273.9Q414.4 283.5 409.6 294.9Q404.8 
     addEventListener('pointermove',function(e){ mx=(e.clientX/W-.5)*2; my=(e.clientY/H-.5)*2; },{passive:true});
     addEventListener('deviceorientation',function(e){ if(e.gamma!=null){ mx=Math.max(-1,Math.min(1,e.gamma/30)); my=Math.max(-1,Math.min(1,(e.beta-45)/30)); } },{passive:true});
 
-    var tmr=null, autoT=null;
+    var tmr=null, soundOn=false;
     function fadeAudio(){ if(!au||au.paused) return; var v=au.volume, iv=setInterval(function(){ v-=.08; if(v<=0){ clearInterval(iv); au.pause(); } else au.volume=v; },60); }
-    function start(withSound){
-      if(startT>=0) return; clearTimeout(autoT);
-      if(withSound&&au){ try{ var pr=au.play(); if(pr&&pr.catch) pr.catch(function(){}); }catch(e){} }
-      startT=performance.now(); ui.classList.add('hide'); skipB.classList.add('on');
-      tmr=setTimeout(function(){ skipIntro(false); },INTRO_MS);
-    }
-    ui.querySelector('.enter').addEventListener('click',function(e){ e.stopPropagation(); start(true); });
-    ui.querySelector('.mute').addEventListener('click',function(e){ e.stopPropagation(); start(false); });
-    autoT=setTimeout(function(){ start(false); },9000);
-    skipIntro=function(fast){ if(done)return; done=true; clearTimeout(tmr); clearTimeout(autoT); if(fast) fadeAudio();
+    function playAt(){ if(!au||soundOn||done) return; var pos=startT<0?0:(performance.now()-startT)/1000; if(pos>10.6) return;
+      try{ au.currentTime=pos; }catch(e){}
+      try{ var pr=au.play(); if(pr&&pr.then) pr.then(function(){ soundOn=true; snd.classList.add('on'); },function(){}); else { soundOn=true; snd.classList.add('on'); } }catch(e){} }
+    function start(){ if(startT>=0) return; startT=performance.now(); skipB.classList.add('on'); snd.classList.add('show'); playAt();
+      tmr=setTimeout(function(){ skipIntro(false); },INTRO_MS); }
+    setTimeout(start,800);
+    skipIntro=function(fast){ if(done)return; done=true; clearTimeout(tmr); if(fast) fadeAudio();
       it.classList.add('out'); root.classList.remove('intro-on');
       d.querySelectorAll('.hd').forEach(function(e){ e.classList.add('in'); });
       setTimeout(function(){ it.remove(); },1300); };
-    it.addEventListener('click',function(){ if(startT<0) start(true); });
+    // any touch, click or key turns the sound on in sync with the picture
+    it.addEventListener('pointerdown',function(){ if(startT<0) start(); playAt(); });
+    snd.addEventListener('click',function(e){ e.stopPropagation(); if(soundOn){ au.muted=!au.muted; snd.classList.toggle('muted',au.muted); } else playAt(); });
+    skipB.addEventListener('pointerdown',function(e){ e.stopPropagation(); });
     skipB.addEventListener('click',function(e){ e.stopPropagation(); skipIntro(true); });
-    d.addEventListener('keydown',function(e){ if(e.key==='Escape') skipIntro(true); else if(startT<0&&(e.key==='Enter'||e.key===' ')) start(true); });
+    d.addEventListener('keydown',function(e){ if(e.key==='Escape') skipIntro(true); else playAt(); });
   })(); } else root.classList.remove('pre');
 
   /* scroll progress bar */

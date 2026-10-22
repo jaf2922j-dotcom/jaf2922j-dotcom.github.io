@@ -15,7 +15,7 @@ a{color:inherit}
 .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
 .w{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 /* header + tabs */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(14,15,17,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--ln)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(12,12,13,.94);border-bottom:1px solid var(--ln)}
 header.top .w{display:flex;align-items:center;gap:18px;min-height:64px}
 .lg{display:flex;align-items:baseline;gap:8px;text-decoration:none;flex:none}
 .lg b{font:700 24px/1 var(--fs);letter-spacing:.14em;color:var(--gold2)}
@@ -94,7 +94,7 @@ footer .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 /* reveal (only when JS is on) */
 .js .rv:not(.in){opacity:0}
 .rv.in{animation:rvIn 1s cubic-bezier(.2,.8,.2,1) var(--dl,0s) backwards}
-@keyframes rvIn{from{opacity:0;transform:translateY(28px) scale(.985);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes rvIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 .kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:24px;overflow:hidden;margin-bottom:24px}
 @media(min-width:760px){.kpi{grid-template-columns:repeat(4,1fr)}}
 .kpi div{background:var(--bg);padding:20px 18px}
@@ -132,10 +132,9 @@ body{animation:pgIn .55s ease both}
 html.leaving body{opacity:0;transition:opacity .25s ease}
 html.intro-on{overflow:hidden}
 body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.6;pointer-events:none;
- background:radial-gradient(520px circle at var(--gx,75%) var(--gy,8%),rgba(217,170,95,.09),transparent 65%),
+ background:radial-gradient(520px circle at 75% 8%,rgba(217,170,95,.07),transparent 65%),
  radial-gradient(40vw 40vw at 10% 110%,rgba(168,134,56,.08),transparent 70%)}
-body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.05;
- background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
 #prog{position:fixed;left:0;right:0;top:0;height:2px;z-index:95;transform:scaleX(0);transform-origin:0 50%;
  background:linear-gradient(90deg,#8A6426,#F3DFA6,#C9A45C);box-shadow:0 0 12px rgba(243,223,166,.6)}
 /* ===== living intro ===== */
@@ -169,7 +168,8 @@ html.pre body{background:#030303}
 .lg span{font:700 11px var(--fb);letter-spacing:.32em;color:var(--mu)}
 /* gold shimmer */
 .gold{background-image:linear-gradient(110deg,transparent 38%,rgba(255,250,235,.75) 48%,transparent 58%),linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));
- background-size:260% 100%,100% 100%;background-repeat:no-repeat;animation:shine 7s ease-in-out infinite}
+ background-size:260% 100%,100% 100%;background-repeat:no-repeat;background-position:160% 0,0 0}
+.hero h1.gold{animation:shine 7s ease-in-out infinite}
 @keyframes shine{0%{background-position:160% 0,0 0}35%,100%{background-position:-70% 0,0 0}}
 /* spotlight + glowing border */
 .sp{position:relative}
@@ -295,7 +295,7 @@ footer .wm{font-family:"Bodoni Moda","Cormorant Garamond",Georgia,serif;font-wei
 
 /* video intro */
 #intro .vb,#intro .vm{position:absolute;display:block}
-#intro .vb{inset:-5%;width:110%;height:110%;object-fit:cover;filter:blur(38px) brightness(.45) saturate(1.1)}
+#intro .vb{inset:0;background:#0a0908 url(img/intro-blur.jpg) center/cover no-repeat}
 #intro .vm{left:50%;top:50%;height:100%;width:auto;max-width:100%;aspect-ratio:9/16;transform:translate(-50%,-50%);object-fit:cover;opacity:0;transition:opacity .9s ease;
  -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 #intro.playing .vm{opacity:1}
@@ -345,3 +345,31 @@ html.leaving #gflash{opacity:1}
 html.leaving body{opacity:1}
 @media(prefers-reduced-motion:reduce){.leaf{display:none}}
 #trail{position:fixed;inset:0;z-index:290;pointer-events:none}
+
+/* twinkles: opacity/transform only */
+#twk{position:absolute;inset:0}
+#twk i{position:absolute;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:radial-gradient(circle,#FFF8E2 0,#F3D58F 35%,rgba(230,170,70,0) 70%);opacity:0;will-change:opacity,transform;animation:twk 4s ease-in-out infinite}
+#twk i.pk{width:14px;height:14px;margin:-7px 0 0 -7px;background:radial-gradient(circle,#FFFBEF 0,#F3D58F 22%,rgba(230,170,70,0) 60%)}
+#twk i.pk::before,#twk i.pk::after{content:"";position:absolute;left:50%;top:50%;width:22px;height:1px;margin:-.5px 0 0 -11px;background:linear-gradient(90deg,transparent,#FFF4D6,transparent)}
+#twk i.pk::after{transform:rotate(90deg)}
+@keyframes twk{0%,100%{opacity:0;transform:scale(.4)}45%,55%{opacity:1;transform:scale(1)}}
+#treebg{opacity:1;background:none}
+#treebg::before{content:"";position:absolute;inset:0;background:url(img/tree-bg.jpg) center/cover no-repeat;opacity:.42}
+@media(max-width:700px){#treebg::before{opacity:.32}}
+#treebg{-webkit-mask:radial-gradient(ellipse 50% 50% at 50% 45%,#000 45%,transparent 100%);mask:radial-gradient(ellipse 50% 50% at 50% 45%,#000 45%,transparent 100%)}
+
+/* ===== big screens: same design, scaled up (monitors, TVs) ===== */
+@media(min-width:1500px){main,header.top,.cta-b,footer{zoom:1.15}}
+@media(min-width:1800px){main,header.top,.cta-b,footer{zoom:1.3}}
+@media(min-width:2300px){main,header.top,.cta-b,footer{zoom:1.6}}
+@media(min-width:3200px){main,header.top,.cta-b,footer{zoom:2.2}}
+@media(min-width:1100px){#treebg{width:min(64vh,46vw);height:min(114vh,82vw)}}
+
+.paused,.paused *,.paused::before,.paused::after,.paused *::before,.paused *::after,html.hid *{animation-play-state:paused!important}
+.xp div::before{animation:none}
+
+/* baked fade: no live mask, own compositor layer */
+#treebg{-webkit-mask:none!important;mask:none!important;will-change:transform}
+#treebg::before{opacity:1!important;background-color:#050505}
+@media(max-width:700px){#treebg::before{background-image:url(img/tree-bg-m.jpg)}}
+body::before{will-change:transform}

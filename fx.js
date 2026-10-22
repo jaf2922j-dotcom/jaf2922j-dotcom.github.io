@@ -12,12 +12,13 @@ var TREE_PTS=[[0.3611,0.3305],[0.4861,0.1656],[0.8917,0.4023],[0.9514,0.2273],[0
   if(!seen && !reduce){ (function(){
     var it=d.createElement('div'); it.id='intro';
     it.innerHTML='<div class="vb" aria-hidden="true"></div><video class="vm" muted playsinline preload="auto" poster="img/intro-poster.jpg"></video>'
-      +'<button class="snd" type="button"><i></i><i></i><i></i><span>Звук</span></button><button class="skip" type="button">Пропустить</button>';
+      +'<button class="skip" type="button">Пропустить</button>';
     d.body.appendChild(it); root.classList.add('intro-on'); root.classList.remove('pre');
-    var vm=it.querySelector('.vm'), snd=it.querySelector('.snd'), skipB=it.querySelector('.skip'), done=false, soundOn=false;
+    var vm=it.querySelector('.vm'), skipB=it.querySelector('.skip'), done=false, soundOn=false;
     [vm].forEach(function(v){ v.innerHTML='<source src="intro.mp4?v=4" type="video/mp4"><source src="intro.webm?v=4" type="video/webm">'; v.load(); });
-    function go(){ var p=vm.play(); if(p&&p.catch) p.catch(function(){});
-      it.classList.add('playing'); skipB.classList.add('on'); snd.classList.add('show'); }
+    function go(){ vm.muted=false; vm.volume=1; var p=vm.play();
+      if(p&&p.then) p.then(function(){ soundOn=true; },function(){ vm.muted=true; var q=vm.play(); if(q&&q.catch) q.catch(function(){}); });
+      it.classList.add('playing'); skipB.classList.add('on'); }
     setTimeout(go,150);
     // safety: if the video cannot load, do not trap the visitor
     var guard=setTimeout(function(){ if(vm.readyState<2) skipIntro(true); },7000);
@@ -25,14 +26,14 @@ var TREE_PTS=[[0.3611,0.3305],[0.4861,0.1656],[0.8917,0.4023],[0.9514,0.2273],[0
     vm.addEventListener('ended',function(){ skipIntro(false); });
     var srcs=vm.querySelectorAll('source'); if(srcs.length) srcs[srcs.length-1].addEventListener('error',function(){ skipIntro(true); });
     function soundUp(){ if(soundOn||done) return; vm.muted=false; vm.volume=1; var p=vm.play();
-      if(p&&p.then) p.then(function(){ soundOn=true; snd.classList.add('on'); },function(){ vm.muted=true; }); else { soundOn=true; snd.classList.add('on'); } }
+      if(p&&p.then) p.then(function(){ soundOn=true; },function(){ vm.muted=true; }); else { soundOn=true; } }
     function fadeAudio(){ if(!soundOn) return; var v=vm.volume, iv=setInterval(function(){ v-=.1; if(v<=0){ clearInterval(iv); vm.muted=true; } else vm.volume=v; },50); }
     skipIntro=function(fast){ if(done) return; done=true; clearTimeout(guard); if(fast) fadeAudio();
       it.classList.add('out'); root.classList.remove('intro-on');
       d.querySelectorAll('.hd').forEach(function(e){ e.classList.add('in'); });
       setTimeout(function(){ try{ vm.pause(); }catch(e){} it.remove(); },1300); };
     it.addEventListener('pointerdown',function(){ soundUp(); });
-    snd.addEventListener('click',function(e){ e.stopPropagation(); if(soundOn){ vm.muted=!vm.muted; snd.classList.toggle('muted',vm.muted); } else soundUp(); });
+    ['touchstart','click','keydown'].forEach(function(ev){ d.addEventListener(ev,soundUp,{passive:true}); });
     skipB.addEventListener('pointerdown',function(e){ e.stopPropagation(); });
     skipB.addEventListener('click',function(e){ e.stopPropagation(); skipIntro(true); });
     d.addEventListener('keydown',function(e){ if(e.key==='Escape') skipIntro(true); else soundUp(); });

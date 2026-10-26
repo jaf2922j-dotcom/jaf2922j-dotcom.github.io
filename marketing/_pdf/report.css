@@ -1,0 +1,152 @@
+/* ===== Makro Marketing · PDF report layer =====
+   Injected by _pdf/build.js into the live page. Lays the page's own blocks onto A4 sheets.
+   Virtual sheet: 1000 × 1414 px, printed at scale .7937 → exactly A4.
+   Two themes: .t-screen (dark, for showing) and .t-print (white, low ink). */
+
+html.rep,html.rep body{height:auto!important;overflow:visible!important;background:var(--sheet)!important}
+html.rep body>*:not(#rep){display:none!important}
+html.rep *,html.rep *::before,html.rep *::after{scroll-behavior:auto!important}
+@page{size:210mm 297mm;margin:0}
+
+#rep{
+  --sheet:#04070f; --card:#0a1022; --card2:#0d1530; --ink:#eaf2ff; --mute:#8d9ac0; --line:#1a2448; --line2:#26336a;
+  --a1:#7b68ff; --a2:#7fd8e0; --a3:#6991c1; --ice:#c9f4ff; --warn:#ff8fb3; --ok:#7ff0c8;
+  --c1:#7b68ff; --c2:#5f8cff; --c3:#7fd8e0; --c4:#b9a3ff; --c5:#3d5fa8; --c6:#46607e;
+  --bar:linear-gradient(90deg,#7b68ff,#6fa6cf 55%,#8fe8ee); --bv1:#7b68ff; --bv2:#7fd8e0; --barv:linear-gradient(0deg,#4b3cc8,#6f86e6 45%,#8fe8ee);
+  --head:linear-gradient(90deg,#8f7dff,#86c5d7 60%,#9ff0f4);
+  width:1000px;margin:0;background:var(--sheet);color:var(--ink);font-family:var(--body);
+}
+#rep.t-print{
+  --sheet:#ffffff; --card:#ffffff; --card2:#f6f7fb; --ink:#141a33; --mute:#5d6685; --line:#dfe3ef; --line2:#c9cfe3;
+  --a1:#4c3fd1; --a2:#1e8f9c; --a3:#4a6fa8; --ice:#2f2a9a; --warn:#c2366b; --ok:#1e8a63;
+  --c1:#5a4fd8; --c2:#7f9fe6; --c3:#58b9c4; --c4:#b7a9ee; --c5:#c9d2ec; --c6:#e1e5f1;
+  --bar:#b9b2f2; --barv:#b9b2f2; --head:none; --bv1:#b4acef; --bv2:#a3dbe1;
+}
+
+/* ---- sheet ---- */
+.a4{position:relative;width:1000px;height:1413px;overflow:hidden;break-after:page;page-break-after:always;display:flex;flex-direction:column;background:var(--sheet)}
+.a4:last-child{break-after:auto;page-break-after:auto}
+.t-screen .a4::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 30% at 92% 0%,rgba(123,104,255,.16),transparent 70%),radial-gradient(50% 25% at 0% 100%,rgba(127,216,224,.08),transparent 70%)}
+.a4-top{position:relative;flex:none;height:64px;margin:0 56px;display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:12px;
+  font:600 10.5px/1 "JetBrains Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.a4-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,var(--a1),var(--a2) 40%,transparent)}
+.t-print .a4-top::after{background:var(--line2)}
+.a4-top b{color:var(--a2);font-weight:600}
+.a4-body{position:relative;flex:1;min-height:0;margin:22px 56px 0;overflow:hidden;display:flow-root}
+.a4-foot{position:relative;flex:none;height:54px;margin:0 56px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);
+  font:500 10px/1 "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.a4-foot .pn{font:600 12px/1 "Oswald",sans-serif;letter-spacing:.08em;color:var(--ink)}
+.a4-foot .pn i{font-style:normal;color:var(--mute)}
+
+/* the page's own blocks: neutralise screen-only behaviour */
+.a4-body.page{position:relative!important;inset:auto!important;z-index:auto!important;clip-path:none!important;visibility:visible!important;
+  background:transparent!important;overflow:hidden!important;transition:none!important;isolation:auto!important}
+.a4-body.page::before,.a4-body.page::after{display:none!important}
+.a4-body .sheetx{position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:0!important;border:0!important;overflow:visible!important;background:transparent!important;z-index:auto!important}
+.a4-body .pacts,.a4-body .back,.a4-body .pdfbtn,.a4-body [data-home],.a4-body .cvtabs,.a4-body .x,.a4-body .cp,.a4-body [data-opencv],.a4-body .ldc em,.a4-body .hleaf em{display:none!important}
+.a4-body .cta{display:none!important}
+.a4-body .ldc,.a4-body button{cursor:default}
+.a4-body .gcard,.a4-body .otd,.a4-body .dsec,.a4-body .issue,.a4-body .job,.a4-body .ldc,.a4-body .store,.a4-body .rzb,.a4-body tr{break-inside:avoid}
+#rep .reveal{opacity:1!important;transform:none!important}
+#rep *{animation-play-state:paused}
+
+/* section opener */
+.sec-h{margin:0 0 26px;padding:0 0 18px;position:relative}
+.sec-h .n{font:700 13px/1 "JetBrains Mono",monospace;letter-spacing:.3em;color:var(--a2);text-transform:uppercase}
+.sec-h h1{margin:14px 0 0;font:700 64px/.95 "Oswald",sans-serif;text-transform:uppercase;letter-spacing:.005em;color:var(--ink);width:fit-content;max-width:100%}
+.t-screen .sec-h h1{background:var(--head);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(111,140,255,.28))}
+.sec-h p{margin:14px 0 0;max-width:62ch;color:var(--mute);font-size:15px;line-height:1.55}
+.sec-h::after{content:"";position:absolute;left:0;bottom:0;width:420px;height:1px;background:linear-gradient(90deg,var(--a1),#d5ffff 45%,var(--a2) 70%,transparent);box-shadow:0 0 12px rgba(127,216,224,.5)}
+.t-print .sec-h::after{background:var(--a1);box-shadow:none;height:2px;width:120px}
+.sub-h{margin:6px 0 16px;display:flex;align-items:baseline;gap:14px}
+.sub-h b{font:700 30px/1 "Oswald",sans-serif;text-transform:uppercase;color:var(--ink)}
+.sub-h span{font:600 11px/1 "JetBrains Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--a2)}
+.gap{height:18px}
+
+/* ---- cover ---- */
+.a4.cover{padding:0}
+.rc-hero{position:relative;height:560px;overflow:hidden;flex:none}
+.rc-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.rc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,7,15,.0) 40%,var(--sheet) 98%)}
+.rc-hero .tag{position:absolute;left:56px;top:46px;z-index:2;font:600 11px/1 "JetBrains Mono",monospace;letter-spacing:.3em;text-transform:uppercase;color:#cfe9ff}
+.rc-hero .tag2{left:auto;right:56px}
+.t-print .rc-hero{height:420px}
+.t-print .rc-hero img{display:none}
+.t-print .rc-hero::after{display:none}
+.t-print .rc-hero .tag{color:var(--mute)}
+.rc-word{display:none}
+.t-print .rc-word{display:block;position:absolute;left:50px;right:50px;top:150px;text-align:center;font:700 168px/1 "Oswald",sans-serif;letter-spacing:.02em;color:transparent;-webkit-text-stroke:2px var(--a1)}
+.t-print .rc-word::after{content:"";display:block;margin:26px auto 0;width:520px;height:2px;background:linear-gradient(90deg,transparent,var(--a1),var(--a2),transparent)}
+.rc-main{flex:1;margin:0 56px;display:flex;flex-direction:column;min-height:0}
+.rc-kick{font:600 12px/1 "JetBrains Mono",monospace;letter-spacing:.32em;text-transform:uppercase;color:var(--a2)}
+.rc-title{margin:14px 0 0;font:700 76px/.92 "Oswald",sans-serif;text-transform:uppercase;color:var(--ink)}
+.t-screen .rc-title{background:var(--head);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
+.rc-lead{margin:18px 0 0;max-width:60ch;color:var(--mute);font-size:16px;line-height:1.55}
+.rc-kpi{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px;border:1px solid var(--line2);border-radius:20px;overflow:hidden}
+.rc-kpi div{padding:18px 20px;border-left:1px solid var(--line2)}
+.rc-kpi div:first-child{border-left:0}
+.rc-kpi b{display:block;font:600 40px/1 "Oswald",sans-serif;color:var(--ink)}
+.t-screen .rc-kpi b{background:var(--head);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
+.rc-kpi span{display:block;margin-top:8px;font-size:12.5px;line-height:1.35;color:var(--mute)}
+.toc{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+.toc div{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.toc i{font:600 11px/1 "JetBrains Mono",monospace;color:var(--a2);font-style:normal;width:22px}
+.toc span{flex:1;font-size:14.5px;font-weight:600;color:var(--ink)}
+.toc em{font:600 14px/1 "Oswald",sans-serif;font-style:normal;color:var(--mute)}
+.rc-foot{margin-top:auto;padding:22px 0 30px;display:flex;justify-content:space-between;font:600 10.5px/1 "JetBrains Mono",monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+
+/* ---- own dashboard ---- */
+.db{display:grid;gap:14px}
+.db-row{display:grid;gap:14px}
+.db-c{border:1px solid var(--line2);border-radius:18px;padding:18px 20px;background:var(--card);position:relative;min-width:0}
+.t-screen .db-c{background:linear-gradient(180deg,var(--card2),var(--card));box-shadow:0 0 0 1px rgba(123,104,255,.08) inset}
+.t-print .db-c{border-color:var(--line2)}
+.db-l{font:600 10.5px/1.3 "JetBrains Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--a2);margin-bottom:10px}
+.db-hero{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}
+.db-big{font:700 92px/.9 "Oswald",sans-serif;color:var(--ink);letter-spacing:-.005em}
+.t-screen .db-big{background:var(--head);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content;filter:drop-shadow(0 0 24px rgba(111,140,255,.35))}
+.db-big small{font-size:.38em;letter-spacing:.02em}
+.db-sub{margin-top:8px;color:var(--mute);font-size:13.5px;line-height:1.45}
+.db-sub b{color:var(--ink)}
+.db-k{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.db-k div{border:1px solid var(--line2);border-radius:14px;padding:12px 14px}
+.db-k b{display:block;font:600 34px/1 "Oswald",sans-serif;color:var(--ink)}
+.db-k b small{font-size:.5em;color:var(--mute);margin-left:3px}
+.db-k span{display:block;margin-top:6px;font-size:11.5px;line-height:1.3;color:var(--mute)}
+.db svg{display:block;width:100%;height:auto;overflow:visible}
+.db svg text{font-family:"Manrope",sans-serif}
+.db .ax{fill:var(--mute);font-size:11px}
+.db .vl{fill:var(--ink);font:600 12px "Oswald",sans-serif}
+.db .grid{stroke:var(--line);stroke-width:1}
+.db .pill{display:inline-block;padding:3px 9px;border-radius:99px;font:600 10.5px/1.3 "JetBrains Mono",monospace;letter-spacing:.06em;border:1px solid var(--line2);color:var(--ink)}
+.lg{display:grid;gap:7px;font-size:12.5px;color:var(--ink)}
+.lg div{display:grid;grid-template-columns:12px 1fr auto;gap:8px;align-items:center}
+.lg i{width:12px;height:12px;border-radius:3px}
+.lg b{font:600 13px "Oswald",sans-serif}
+.lg em{font-style:normal;color:var(--mute);font-size:11px;margin-left:4px}
+.note{margin:10px 0 0;font-size:11.5px;color:var(--mute);line-height:1.45}
+.take{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.take div{border-left:3px solid var(--a1);padding:6px 0 6px 14px}
+.take b{display:block;font:700 16px/1.15 "Oswald",sans-serif;text-transform:uppercase;letter-spacing:.01em;color:var(--ink)}
+.take span{display:block;margin-top:5px;font-size:12.5px;line-height:1.45;color:var(--mute)}
+.chk{display:grid;gap:10px}
+.chk div{display:grid;grid-template-columns:26px 1fr 150px;gap:14px;align-items:start;border:1px solid var(--line2);border-radius:14px;padding:14px 16px;background:var(--card)}
+.chk .bx{width:22px;height:22px;border:2px solid var(--a1);border-radius:6px;margin-top:2px}
+.chk b{display:block;font-size:14.5px;line-height:1.35;color:var(--ink)}
+.chk span{display:block;margin-top:5px;font-size:12.5px;line-height:1.45;color:var(--mute)}
+.chk .sg{border-top:1px solid var(--line2);margin-top:30px;padding-top:5px;font:600 9.5px/1 "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);text-align:center}
+
+/* ---- low-ink print: everything not ours is converted by JS; these cover pseudo-elements ---- */
+.t-print *,.t-print *::before,.t-print *::after{box-shadow:none!important;text-shadow:none!important}
+.t-print .a4-body :not(.db):not(.db *)::before,.t-print .a4-body :not(.db):not(.db *)::after{filter:none!important}
+.t-print .hleaf::before,.t-print .gcard::before{display:none!important}
+.t-print .comp i::after,.t-print .ldc .bar3 i::after{background:var(--bar)!important}
+.t-print .job::before{background:var(--a1)!important}
+.t-print img{filter:none!important}
+
+/* gradient text: a drop-shadow keeps Skia from stroking the clip box; top padding keeps Ё/Й dots inside the clip */
+.t-screen .rc-title,.t-screen .rc-kpi b,.t-screen .sec-h h1,.t-screen .db-big{filter:drop-shadow(0 0 18px rgba(111,140,255,.3))!important;padding-top:.1em;margin-top:-.1em}
+.t-screen .rc-title{margin-top:4px}
+.chk{gap:8px}.chk div{padding:10px 16px;grid-template-columns:24px 1fr 140px}.chk .sg{margin-top:22px}
+.db svg[viewBox="0 0 180 104"]{max-width:190px!important}

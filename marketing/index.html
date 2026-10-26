@@ -1300,7 +1300,7 @@ const ini=n=>n.split(" ").map(s=>s[0]).join("").slice(0,2);
 const ME="img/jd-2026-avatar.webp";
 const IMG={"p08": "img/2fdb548abcd2.webp", "p12": "img/fa0aa2fe0758.webp", "p21": "img/ed29971e7ca9.webp", "p13": "img/46947c91b32c.webp", "p14": "img/b609e21c8534.webp", "p20": "img/eb940b27e529.webp", "p22": "img/56152716041f.webp", "p09": "img/3ffd35e450ea.webp", "p17": "img/0f7bdcf33c7b.webp", "p19": "img/4c99fe446e46.webp", "logo": "img/eaa06ff5f51d.webp", "p15": "img/09286a312ca4.webp", "p16": "img/adcb94683eb8.webp", "p23": "img/7c6f3110ca76.webp", "p10": "img/49c653f650a5.webp"};
 
-const PH={"usarova": "img/da7db55e9b4a.webp", "perdebayev": "img/ab-2026-avatar.webp", "kadirov": "img/7be66a8cc317.webp", "nurullin": "img/3b2fbdad888a.webp", "toxtamurodov": "img/ib-2026-avatar.webp", "ib": "img/ib-2026-avatar.webp", "musayev": "img/3867882670f8.webp", "qurbonov": "img/rk-2026-avatar.webp", "rk": "img/rk-2026-cv2.webp", "jd": "img/jd-2026-avatar.webp"};
+const PH={"usarova": "img/da7db55e9b4a.webp", "perdebayev": "img/ab-2026-avatar.webp", "kadirov": "img/fk-2026-avatar.webp", "nurullin": "img/3b2fbdad888a.webp", "toxtamurodov": "img/ib-2026-avatar.webp", "ib": "img/ib-2026-avatar.webp", "musayev": "img/3867882670f8.webp", "qurbonov": "img/rk-2026-avatar.webp", "rk": "img/rk-2026-cv2.webp", "jd": "img/jd-2026-avatar.webp"};
 const TEAM=[
  {id:"dehqonov",name:"Дехканов Жаъфархон Камол угли",lat:"Dexkanov Ja’farxon Kamol ugli",role:"Заместитель директора департамента",grp:"Управление маркетинга и рекламы",zoneNote:1,dept:"Управление маркетинга и рекламы",phone:"+998 97 743 29 22",since:"июня 2016",photo:"jd",
   zone:["Руководство департаментом: процессы, команда, контроль","Аналитика, отчётность и презентации для руководства","Отчётность для коммерческого департамента","Развитие B2B-направления","E-commerce","Встречи с поставщиками: продвижение и продажа рекламы","Открытия новых магазинов (отдельной open-группы нет)","SAP: выгрузки и отчёты"]},
@@ -1311,7 +1311,7 @@ const TEAM=[
  {id:"perdebayev",boss:"nurullin",name:"Пердебаев Абдувахоб Сейт улы",phone:"+998 70 028 72 72",mail:"abdiuakhab@gmail.com",lat:"Perdebayev Abdio‘axab Seyt uli",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",since:"04.08.2026",photo:"perdebayev"},
  {id:"qurbonov",boss:"nurullin",zone:["Наружная реклама и оформление магазинов","Приёмка работ подрядчиков","Выезды и обходы магазинов на своей машине"],name:"Курбонов Рамазон Мухтор угли",lat:"Qurbonov Ramazon Muxtor o‘g‘li",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",phone:"+998 94 635 70 72",since:"27.03.2026",photo:"qurbonov"},
 ];
-const CVPH={kadirov:"img/7be66a8cc317.webp",jd:"img/jd-2026-cv.webp",perdebayev:"img/ab-2026-cv.webp",ib:"img/ib-2026-cv.webp"};
+const CVPH={kadirov:"img/fk-2026-cv.webp",jd:"img/jd-2026-cv.webp",perdebayev:"img/ab-2026-cv.webp",ib:"img/ib-2026-cv.webp"};
 const photoOf=p=>p.photo==="me"?ME:PH[p.photo];
 
 const MONTHS=[
@@ -2334,7 +2334,7 @@ async function savePDF(btn,id){
  catch(e){console.error(e);btn.textContent="Не получилось, печать…";setTimeout(()=>window.print(),300)}
  finally{setTimeout(()=>{btn.disabled=false;btn.textContent=t},1200)}}
 // public site: open the prebuilt file right inside the tap (no async work first), so phones and in-app browsers (Telegram) open it too
-const PDFKEYS=new Set(["all","print","team","dash","income","done","issues",...Object.keys(CVNAMES).filter(k=>k!=="kadirov").map(k=>"cv-"+k)]);
+const PDFKEYS=new Set(["all","print","team","dash","income","done","issues",...Object.keys(CVNAMES).map(k=>"cv-"+k)]);
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pdf]");if(!b)return;const id=b.dataset.pdf||b.closest(".page").id.slice(2),k=id==="cv"?"cv-"+cvCur:id;
  if(!(window.claude&&window.claude.use)&&PDFKEYS.has(k)){const a=document.createElement("a");a.href=pdfUrl(k);a.download="Makro-Marketing-"+({all:"2026",print:"2026-print"}[k]||k)+".pdf";document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),4000);return}
  savePDF(b,id)});
@@ -2344,6 +2344,7 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-pdf]");if(
 /* ===== MARKETING intro theme: navy night, indigo → cyan chrome, condensed caps, light streaks =====
    Palette sampled from the intro video (img/mk-intro-blue.mp4): indigo #2c0f84 / #3a2c8c → steel #6991c1 → cyan #7fd8e0, highlight #d5ffff.
    Layered last on purpose: overrides the earlier black+gold theme without touching the media-kit deck (.deck stays in Makro brand colours). */
+@font-face{font-family:"JetBrains Mono";src:url(../fonts/jetbrainsmono-var.woff) format("woff");font-weight:100 800;font-style:normal;font-display:swap}
 @font-face{font-family:"Oswald";src:url(../fonts/oswald-var.woff) format("woff");font-weight:200 700;font-style:normal;font-display:swap}
 @font-face{font-family:"Manrope";src:url(../fonts/manrope-cyrillic-400-normal.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215}

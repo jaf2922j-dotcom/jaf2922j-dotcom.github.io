@@ -1222,7 +1222,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
     <div class="hbn" style="--d:.5s"><i>I</i><span><b>Команда</b><small>люди и зоны ответственности</small></span></div>
     <div class="hlv">
      <div class="hlf" style="--d:.7s"><button class="hleaf" data-go="team" type="button"><span class="n">01</span><h3>Структура и нагрузка</h3><span class="f hgold" data-k="team">7</span><p>Кто за что отвечает: у каждого своё дерево направлений</p><em>Открыть →</em></button></div>
-     <div class="hlf" style="--d:.8s"><button class="hleaf" data-go="cv" type="button"><span class="n">02</span><h3>Резюме</h3><span class="f hgold" data-k="cv">5</span><p>Команда в лицах, каждое резюме в PDF</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:.8s"><button class="hleaf" data-go="cv" type="button"><span class="n">02</span><h3>Резюме</h3><span class="f hgold" data-k="cv">6</span><p>Команда в лицах, каждое резюме в PDF</p><em>Открыть →</em></button></div>
     </div>
    </div>
    <div class="hbr">
@@ -1311,7 +1311,7 @@ const TEAM=[
  {id:"perdebayev",boss:"nurullin",name:"Пердебаев Абдувахоб Сейт улы",phone:"+998 70 028 72 72",mail:"abdiuakhab@gmail.com",lat:"Perdebayev Abdio‘axab Seyt uli",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",since:"04.08.2026",photo:"perdebayev"},
  {id:"qurbonov",boss:"nurullin",zone:["Наружная реклама и оформление магазинов","Приёмка работ подрядчиков","Выезды и обходы магазинов на своей машине"],name:"Курбонов Рамазон Мухтор угли",lat:"Qurbonov Ramazon Muxtor o‘g‘li",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",phone:"+998 94 635 70 72",since:"27.03.2026",photo:"qurbonov"},
 ];
-const CVPH={jd:"img/jd-2026-cv.webp",perdebayev:"img/ab-2026-cv.webp",ib:"img/ib-2026-cv.webp"};
+const CVPH={kadirov:"img/7be66a8cc317.webp",jd:"img/jd-2026-cv.webp",perdebayev:"img/ab-2026-cv.webp",ib:"img/ib-2026-cv.webp"};
 const photoOf=p=>p.photo==="me"?ME:PH[p.photo];
 
 const MONTHS=[
@@ -2106,6 +2106,49 @@ CVS.usarova=(function(){
  </div>`})();
 CVNAMES.usarova=["Наргиз Усарова","Маркетолог"];
 CVOF.usarova="usarova";
+CVS.kadirov=(function(){
+ const jobs=[["Fiverr","Фриланс, международные заказчики","Freelance Motion Designer",2022,2023,"2022 — 2023"],
+  ["IJF","Международная федерация дзюдо","Video Editor / Motion Designer",2023,2024,"2023 — 2024"],
+  ["The Agency","Рекламное агентство","Motion Designer / Graphic Designer",2024+3/12,2025+6/12,"Апр 2024 — июн 2025"],
+  ["Makro","Отдел рекламы и бренд-менеджмента","Моушн-дизайнер",2025+7/12,2026+10/12,"Авг 2025 — сейчас"]];
+ const A=2022,B=2027,x=v=>((v-A)/(B-A)*100).toFixed(2);
+ const gantt=`<div class="gantt"><div class="gax">${Array.from({length:B-A+1},(_,i)=>`<span style="left:${x(A+i)}%">${A+i}</span>`).join("")}</div>
+  ${jobs.map((j,i)=>`<div class="grow"><div class="gl"><b>${j[0]}</b><small>${j[2]}</small></div><div class="gt">${Array.from({length:B-A+1},(_,k)=>`<i style="left:${x(A+k)}%"></i>`).join("")}<span class="gb ${i===jobs.length-1?"now":""}" style="left:${x(j[3])}%;width:${(x(j[4])-x(j[3])).toFixed(2)}%"></span></div></div>`).join("")}</div>`;
+ const xp=[["Авг 2025 — сейчас","Моушн-дизайнер","Makro","DARVOZA SAVDO · Отдел рекламы и бренд-менеджмента",[]],
+  ["Апр 2024 — июн 2025","Motion Designer / Graphic Designer","The Agency","Клиенты: Parfum Gallery, Hayot Ijara, Synergy Pharm'Co, Yapon Do'kon, Ipaq",["Рекламные ролики и 2D/3D-продуктовая анимация","Анимация логотипов и графика для LED-экранов","Визуальный контент для брендов одежды, парфюмерии и соцсетей","Проекты от идеи до финального рендера"]],
+  ["2023 — 2024","Video Editor / Motion Designer","IJF","Международная федерация дзюдо",["Монтаж креативных видео для YouTube Shorts и Instagram Reels","Дизайн Stories для JudoTV","Проморолики и анимация логотипов IJF"]],
+  ["2022 — 2023","Freelance Motion Designer","Fiverr","Международные заказчики",["2D-анимация, explainer-видео и анимация интерфейсов","Рекламная графика, анимация логотипов и 3D-визуализация продуктов"]]];
+ const tools=[["Ae","After Effects","Моушн, 2D-анимация, логотипы"],["Pr","Premiere Pro","Монтаж, цветокоррекция"],["Ps","Photoshop","Графика, баннеры, SMM"],["Fg","Figma","Макеты, UI-анимация"],["Bl","Blender","3D и продуктовая анимация"]];
+ return `<div class="cv">
+  <div class="cvh"><div class="cvph"><img loading="lazy" decoding="async" src="${CVPH.kadirov}" alt="Фаррух Кадыров"></div>
+   <div><div class="eyebrow">Резюме · 2026</div><h3>Фаррух Кадыров</h3><div class="lat" style="color:var(--mute);font-size:12px;margin-top:6px">Kadirov Farrux Dilshod o‘g‘li</div><div class="t">Моушн-дизайнер · Графический дизайнер · Отдел рекламы и бренд-менеджмента · Makro с августа 2025</div>
+    <div class="cvc"><span><i>T</i>+998 33 900 30 10</span></div></div>
+   <div class="mono">FK</div></div>
+  <div class="ibk">
+   <div class="gcard"><div class="gnum">4</div><span>года в моушн-дизайне</span><em>с 2022 года</em></div>
+   <div class="gcard"><div class="gnum">1</div><span>год в графическом дизайне</span><em>The Agency</em></div>
+   <div class="gcard"><div class="gnum">2D · 3D</div><span>анимация</span><em>продукты, логотипы, Reels</em></div>
+   <div class="gcard"><div class="gnum">5</div><span>брендов-клиентов</span><em>в The Agency</em></div>
+  </div>
+  <div class="gcard"><div class="glab">Путь в моушн-дизайне · 2022 → 2026</div>${gantt}</div>
+  <div class="cvg2">
+   <div class="gcard"><div class="glab">Программы</div><div class="tools">${tools.map(([a,n,d])=>`<div><i>${a}</i><span><b>${n}</b><small>${d}</small></span></div>`).join("")}</div></div>
+   <div class="gcard"><div class="glab">Специализация</div><div class="resp resp2">${[["Продуктовая анимация","2D/3D-ролики для брендов"],["Анимация логотипов","Логотипы и графика для LED-экранов"],["Соцсети","Instagram Reels, YouTube Shorts, Stories"],["Графический дизайн","Баннеры, постеры, SMM-дизайн"]].map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join("")}</div></div>
+  </div>
+  <div class="gcard"><div class="glab">Опыт работы</div><div class="tl">${xp.map(j=>`<div class="job"><div class="d">${j[0]}</div><h4>${j[1]}</h4><p><b style="color:var(--gold2)">${j[2]}</b>${j[3]?" · "+j[3]:""}</p>${j[4].length?`<ul>${j[4].map(t=>`<li>${t}</li>`).join("")}</ul>`:""}</div>`).join("")}</div></div>
+  <div class="cvg2">
+   <div class="gcard"><div class="glab">Motion Design</div><div class="chips">${["2D/3D Animation","Shape Animation","Logo Animation","UI/UX Animation","Product Animation","Sound Design","Typography Animation","Video Editing","Color Grading"].map(x=>`<span>${x}</span>`).join("")}</div></div>
+   <div class="gcard"><div class="glab">Graphic Design</div><div class="chips">${["Рекламные баннеры","Постеры","SMM-дизайн","Типографика","Композиция","Работа с цветом","Фирменный стиль"].map(x=>`<span>${x}</span>`).join("")}</div></div>
+  </div>
+  <div class="cvg2">
+   <div class="gcard"><div class="glab">AI-инструменты</div><div class="chips">${["ChatGPT","Kling AI","Claude Code","Seedance"].map(x=>`<span>${x}</span>`).join("")}</div><p style="color:var(--mute);font-size:13px;margin:14px 0 0">Для поиска идей, референсов, визуальных экспериментов и ускорения работы.</p></div>
+   <div class="gcard"><div class="glab">Образование</div><ul class="blist"><li>PROWEB — курс Motion Design</li></ul></div>
+  </div>
+  <div class="gcard"><div class="glab">Личные качества</div><div class="chips">${["Ответственность","Соблюдение дедлайнов","Креативность","Нестандартное мышление","Внимание к деталям","Самостоятельность","Работа в команде"].map(x=>`<span>${x}</span>`).join("")}</div></div>
+  <div class="quote">«Коммерческая 2D/3D-анимация, рекламные ролики и визуальный контент для брендов. Люблю креативные задачи и нестандартные визуальные решения.»</div>
+ </div>`})();
+CVNAMES.kadirov=["Фаррух Кадыров","Моушн-дизайнер"];
+CVOF.kadirov="kadirov";
 
 
 
@@ -2291,7 +2334,7 @@ async function savePDF(btn,id){
  catch(e){console.error(e);btn.textContent="Не получилось, печать…";setTimeout(()=>window.print(),300)}
  finally{setTimeout(()=>{btn.disabled=false;btn.textContent=t},1200)}}
 // public site: open the prebuilt file right inside the tap (no async work first), so phones and in-app browsers (Telegram) open it too
-const PDFKEYS=new Set(["all","print","team","dash","income","done","issues",...Object.keys(CVNAMES).map(k=>"cv-"+k)]);
+const PDFKEYS=new Set(["all","print","team","dash","income","done","issues",...Object.keys(CVNAMES).filter(k=>k!=="kadirov").map(k=>"cv-"+k)]);
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pdf]");if(!b)return;const id=b.dataset.pdf||b.closest(".page").id.slice(2),k=id==="cv"?"cv-"+cvCur:id;
  if(!(window.claude&&window.claude.use)&&PDFKEYS.has(k)){const a=document.createElement("a");a.href=pdfUrl(k);a.download="Makro-Marketing-"+({all:"2026",print:"2026-print"}[k]||k)+".pdf";document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),4000);return}
  savePDF(b,id)});

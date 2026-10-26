@@ -1090,7 +1090,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 </div></section>
 
 <section class="page" id="p-income" aria-label="Доходность"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">Доходность · 6 месяцев</div><h2>Что продали и сколько</h2><p>Доход, который маркетинг принёс компании вместе с коммерческим департаментом, — и почему сейчас он снижается.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
+  <div class="phead reveal r1"><div><div class="eyebrow">Доходность · 2026</div><h2>Что продали и сколько</h2><p>Факт дохода от поставщиков за 2026 год: кто и за что платил, что продали вместе с коммерцией и почему сейчас доход снижается.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="income"></div>
 </div></section>
 
@@ -1159,11 +1159,13 @@ const OTD=[
 const UNIT={kadirov:"ads",usarova:"ads",toxtamurodov:"ads",nurullin:"ads",perdebayev:"konj",qurbonov:"konj"};
 const VAC=[
  {otd:"konj",head:1,role:"Начальник отдела",why:"Ведёт исследования рынка и цен конкурентов, ставит задачи маркетологам, отвечает за промо-календарь."},
+ {otd:"ads",role:"Арт-менеджер",why:"Отвечает за визуальный стандарт бренда: принимает макеты дизайнеров, оформление магазинов, POSM и рекламы."},
  {otd:"ads",role:"Копирайтер",why:"Тексты для акций, листовок, соцсетей и радио в зале на узбекском и русском."},
  {otd:"ads",role:"SMM-менеджер",why:"Instagram, Telegram и TikTok: контент-план, сообщество, работа с блогерами."},
  {otd:"ads",role:"Фото- и видеограф",why:"Съёмка акций, открытий магазинов, товаров и роликов для TV-экранов."},
- {otd:"konj",role:"Аналитик данных и CRM",why:"Карта лояльности, чеки и сегменты покупателей, отчёты по эффективности акций."},
- {otd:"konj",role:"Trade-маркетолог",why:"Совместные акции с поставщиками, продажа рекламы из медиакита, POS в залах."}];
+ {otd:"konj",role:"Аналитик маркетинга",why:"Считает эффект каждой акции и рекламы: продажи, чеки, трафик, доход от поставщиков. Сейчас эффект не измеряется системно."},
+ {otd:"konj",role:"CRM-менеджер",why:"Карта лояльности, мобильное приложение, сегменты покупателей и персональные предложения. Сейчас CRM ведёт маркетолог параллельно с другими задачами."},
+ {otd:"konj",role:"Trade-маркетолог",why:"Совместные акции с поставщиками, продажа рекламы из медиакита, ДМП и POS в залах."}];
 const petal=(p,c,q,size,cls="")=>`<span class="pet q${q} ${cls}" style="--pc:${c};--ps:${size}px">${p&&p.photo?`<img loading="lazy" decoding="async" src="${photoOf(p)}" alt="">`:p?`<b>${ini(p.name)}</b>`:`<i>+</i>`}</span>`;
 const short=p=>p.name.split(" ").slice(0,2).join(" ");
 function vacCard(v,o){const i=VAC.indexOf(v);return `<button class="vcard ${v.head?"vhead":""}" data-v="${i}" style="--c:${o.c}">${petal(null,o.c,o.q,v.head?78:52,"vac")}<span><em>${v.head?"Вакансия · руководитель":"Вакансия · рекомендуем"}</em><b>${v.role}</b></span></button>`}
@@ -1526,11 +1528,37 @@ function buildDash(){
   <div class="gcard"><div class="gnum">55</div><span>магазинов в сети</span><em>25 супермаркетов · 30 у дома</em></div>
   <div class="gcard"><div class="gnum">1,2 млн</div><span>покупателей в месяц</span><em>1 196 250 · 725 в день на магазин</em></div>
   <div class="gcard"><div class="gnum">${staff}</div><span>человек в департаменте</span><em>директор департамента — вакансия</em></div>
-  <div class="gcard"><div class="gnum">~1,8<small style="font-size:.5em"> млрд</small></div><span>сум рекламных договоров</span><em>Rozmetov · Pepsi · Bahroma</em></div>
+  <div class="gcard"><div class="gnum">3,95<small style="font-size:.5em"> млрд</small></div><span>сум дохода от поставщиков</span><em>факт 2026 · по 20 октября, без НДС</em></div>
   <div class="gcard"><div class="gnum">8</div><span>новых магазинов открыто</span><em>в концепции Makro yangi zamon</em></div>
   <div class="gcard"><div class="gnum">100+</div><span>промоакций за 6 месяцев</span><em>и 4 крупные промокампании</em></div>
   <div class="gcard"><div class="gnum">14+</div><span>магазинов обновлено</span><em>87 элементов навигации</em></div>
   <div class="gcard"><div class="gnum">27</div><span>слайдов в медиаките 2026</span><em>4 раздела, включая ДМП</em></div>
+ </div>
+ <div class="dgrid">
+  <div class="gcard"><div class="glab">Доход от поставщиков 2026 · млн сум без НДС</div><div class="mbars" style="height:160px"><div><b>321</b><i style="height:42px"></i><small>Я</small></div><div><b>177</b><i style="height:23px"></i><small>Ф</small></div><div><b>244</b><i style="height:32px"></i><small>М</small></div><div><b>840</b><i style="height:110px"></i><small>А</small></div><div><b>629</b><i style="height:82px"></i><small>М</small></div><div><b>517</b><i style="height:68px"></i><small>И</small></div><div><b>510</b><i style="height:67px"></i><small>И</small></div><div><b>189</b><i style="height:25px"></i><small>А</small></div><div><b>401</b><i style="height:52px"></i><small>С</small></div><div class="part"><b>119</b><i style="height:16px"></i><small>О</small></div></div>
+   <p style="color:var(--mute);font-size:12.5px;margin:12px 0 0"><b style="color:#f3dfa5">3,95 млрд</b> за 1 января — 20 октября от 33 партнёров. Рост сдерживает то, что часть топовых поставщиков пока не работает с сетью из-за задолженности; с её снятием доход может вернуться к уровню первого полугодия и выше.</p>
+   <button class="cta" data-goto="income">Доходность подробно →</button></div>
+  <div class="gcard"><div class="glab">Команда маркетинга</div>
+   <div class="tri3"><div><div class="gnum">~15</div><span>человек было раньше</span></div><div><div class="gnum">${staff}</div><span>работают сейчас</span></div><div><div class="gnum">${staff+VAC.length+1}</div><span>нужно по структуре</span></div></div>
+   <p style="color:var(--mute);font-size:12.5px;margin:14px 0 8px">Нет директора департамента и ${VAC.length} позиций. Одни и те же люди ведут дизайн, SMM, CRM и промо, поэтому эффект акций не измеряется отдельно.</p>
+   <div class="chips">${["Директор департамента",...VAC.map(v=>v.head?"Начальник отдела конъюнктуры":v.role)].map(x=>`<span>${x}</span>`).join("")}</div>
+   <button class="cta" data-goto="team">Структура и вакансии →</button></div>
+ </div>
+ <div class="glab" style="margin-top:34px">Как работает маркетинг Makro</div>
+ <div class="dkpi">
+  <div class="gcard"><div class="gnum">0 сум</div><span>бюджета компании на акции</span><em>все промо — за счёт поставщиков и партнёров</em></div>
+  <div class="gcard"><div class="gnum">100+</div><span>промоакций за 6 месяцев</span><em>и 4 крупные кампании с розыгрышами</em></div>
+  <div class="gcard"><div class="gnum">~560<small style="font-size:.5em"> млн</small></div><span>сум дохода на одного сотрудника</span><em>расчёт: 3,95 млрд ÷ ${staff} человек</em></div>
+  <div class="gcard"><div class="gnum">${Math.round(staff/(staff+VAC.length+1)*100)}%</div><span>команды укомплектовано</span><em>${staff} из ${staff+VAC.length+1} по целевой структуре</em></div>
+ </div>
+ <div class="gcard" style="margin-top:12px"><div class="glab">Модель «акции за счёт партнёров»</div>
+  <div class="chain2" style="margin-top:6px"><span>Договариваемся с поставщиком</span><i>→</i><span>Поставщик оплачивает призы, POSM и рекламу</span><i>→</i><span>Маркетинг готовит механику и дизайн</span><i>→</i><span>Публикуем в соцсетях, на экранах и в магазинах</span><i>→</i><span>Сеть получает трафик и доход</span></div>
+  <p style="color:var(--mute);font-size:12.5px;margin:14px 0 0">Так проведены розыгрыши путёвок в Египет и Вьетнам, Sardor Snack и «Призы за покупки», а также 100+ промоакций, без расходов компании.</p></div>
+ <div class="glab" style="margin-top:34px">Что поможет сделать ещё больше</div>
+ <div class="plan">
+  <div class="gcard"><h6>Техника для дизайнеров</h6><ul class="blist"><li>Закупка рабочих станций для дизайна обсуждалась, решение пока не принято</li><li>Сейчас один дизайнер работает на личном компьютере, второй на старом ноутбуке</li><li>С профильной техникой макеты и ролики будут готовы примерно вдвое быстрее</li></ul></div>
+  <div class="gcard"><h6>Команда</h6><ul class="blist"><li>Раньше в маркетинге было около 15 человек, сейчас ${staff}</li><li>Нужны аналитик маркетинга, CRM-менеджер, арт-менеджер, trade-маркетолог, SMM, копирайтер, фото/видео</li><li>Отдельный аналитик и CRM позволят считать эффект каждой акции</li></ul></div>
+  <div class="gcard"><h6>Бюджет на промо</h6><ul class="blist"><li>Небольшой квартальный бюджет на собственные акции сети</li><li>Свои кампании, а не только по графику поставщиков</li><li>Быстрый запуск сезонных акций и открытий магазинов</li></ul></div>
  </div>
  <div class="dgrid">
   <div class="gcard"><div class="glab">Рекламные продажи · договоры, млн сум</div>
@@ -1614,9 +1642,9 @@ function buildIssues(){
  <div class="stk">${SHOPTASKS.map(([c,n,t,k])=>`<div class="stc2"><div class="sh"><b>${c}</b><span>${n}</span><em class="tg-${k}">${STT[k]}</em></div><ul>${t.map(x=>`<li>${x}</li>`).join("")}</ul><div class="sst">Ожидает оплаты</div></div>`).join("")}</div>
  <div class="glab" style="margin-top:40px">Вопросы нового руководства · готовые ответы</div>
  <div class="qa">
-  <details open><summary>Что сделал маркетинг за последние 6 месяцев?</summary><div class="ans">Открыли <b>8 новых магазинов</b> в концепции Makro yangi zamon, провели ребрендинг, <b>100+ промоакций</b> и <b>4 крупные кампании</b> с розыгрышами. Обновили <b>14+ магазинов</b>, поставили <b>45 указателей и 42 флажка</b>, запустили свою печать POSM. Сделали медиакит и продали рекламы примерно на <b>1,8 млрд сум</b>.</div></details>
-  <details><summary>Сколько человек в департаменте и кто за что отвечает?</summary><div class="ans"><b>${staff} человек.</b> Заместитель директора Дехканов Ж. ведёт весь департамент. Отдел рекламы и бренд-менеджмента: начальник Нуруллин И., моушн-дизайнер, графический дизайнер, маркетолог. Отдел маркетинга и конъюнктуры: 2 маркетолога, начальника нет — отдел курирует Нуруллин И. Директор департамента — вакансия.</div></details>
-  <details><summary>Сколько маркетинг заработал для компании?</summary><div class="ans">Рекламные договоры вместе с коммерцией: <b>Rozmetov ~1 млрд</b>, <b>Pepsi 800 млн</b>, <b>Bahroma 10 млн в месяц</b> за LED (стандарт был 2,5 млн). Новый прайс дал <b>+10–20%</b> к доходу от рекламы. Промо и розыгрыши — за счёт поставщиков.</div></details>
+  <details open><summary>Что сделал маркетинг за последние 6 месяцев?</summary><div class="ans">Открыли <b>8 новых магазинов</b> в концепции Makro yangi zamon, провели ребрендинг, <b>100+ промоакций</b> и <b>4 крупные кампании</b> с розыгрышами. Обновили <b>14+ магазинов</b>, поставили <b>45 указателей и 42 флажка</b>, запустили свою печать POSM. Сделали медиакит. Доход от поставщиков за маркетинг и рекламу в 2026 году — <b>3,95 млрд сум</b> без НДС (факт SAP по 20 октября).</div></details>
+  <details><summary>Сколько человек в департаменте и кто за что отвечает?</summary><div class="ans"><b>${staff} человек.</b> Заместитель директора Дехканов Ж. ведёт весь департамент. Отдел рекламы и бренд-менеджмента: начальник Нуруллин И., моушн-дизайнер, графический дизайнер, маркетолог. Отдел маркетинга и конъюнктуры: 2 маркетолога, начальника нет — отдел курирует Нуруллин И. Директор департамента — вакансия. Раньше в маркетинге работало около 15 человек; по структуре нужно ${staff+VAC.length+1}: не хватает арт-менеджера, копирайтера, SMM, фото/видео, аналитика маркетинга, CRM-менеджера, trade-маркетолога и начальника отдела конъюнктуры.</div></details>
+  <details><summary>Сколько маркетинг заработал для компании?</summary><div class="ans">По факту SAP за 1 января — 20 октября 2026: <b>3,95 млрд сум</b> без НДС от 33 партнёров. Крупнейшие продажи вместе с коммерцией: <b>Rozmetov ~1 млрд</b>, <b>Pepsi 800 млн</b>, <b>Bahroma 10 млн в месяц</b> за LED (стандарт был 2,5 млн). Новый прайс дал <b>+10–20%</b> к доходу от рекламы. Промо и розыгрыши — за счёт поставщиков.</div></details>
   <details><summary>Какие главные проблемы сейчас?</summary><div class="ans"><b>Падает доход от рекламы:</b> из-за долгов компании поставщики перестали покупать рекламу, коммерческие менеджеры продают меньше. <b>Нет бюджета</b> на промо и розыгрыши. <b>В старых магазинах нет имиджа</b> — нужен ребрендинг ~40 магазинов. Плюс <b>нет директора департамента</b> и <b>не хватает людей</b>.</div></details>
   <details><summary>Почему не исправлены проблемы в магазинах?</summary><div class="ans">По <b>13 магазинам</b> задачи поставлены, <b>подрядчики есть</b>, <b>документы переданы закупщикам</b>. Работы стоят только потому, что <b>не выделены деньги</b>. Как только оплату согласуют, монтаж можно запускать сразу.</div></details>
   <details><summary>Почему упала доходность от рекламы?</summary><div class="ans">Цепочка такая: <b>долги перед поставщиками → поставщики не покупают рекламу → коммерция продаёт меньше → доход падает</b>. Медиакит и прайс готовы, проблема не в продукте. Нужны: график погашения долгов, маркетинговый бюджет в договорах поставщиков, KPI по рекламе для коммерческих менеджеров и выход на внешних рекламодателей.</div></details>
@@ -1673,8 +1701,22 @@ function buildCV(){
 /* ---------- income ---------- */
 function buildIncome(){
  document.getElementById("income").innerHTML=gdefs+`
+ <div class="glab">Факт 2026 · 1 января — 20 октября · выгрузка из SAP</div>
  <div class="dkpi">
-  <div class="gcard"><div class="gnum">~1,8<small style="font-size:.5em"> млрд</small></div><span>сум рекламных договоров</span><em>Rozmetov + Pepsi</em></div>
+  <div class="gcard"><div class="gnum">3,95<small style="font-size:.5em"> млрд</small></div><span>сум дохода от поставщиков</span><em>без НДС · с НДС 4,42 млрд</em></div>
+  <div class="gcard"><div class="gnum">33</div><span>партнёра платили за маркетинг</span><em>179 документов за год</em></div>
+  <div class="gcard"><div class="gnum">840<small style="font-size:.5em"> млн</small></div><span>лучший месяц — апрель</span><em>из них 758 млн — разовый договор THE RDB-GROUP</em></div>
+  <div class="gcard"><div class="gnum">−19%</div><span>средний месяц июль–сентябрь</span><em>367 млн против 455 млн в январе–июне</em></div>
+ </div>
+ <div class="gcard" style="margin-top:12px"><div class="glab">Доход по месяцам · млн сум без НДС</div><div class="mbars"><div><b>321</b><i style="height:57px"></i><small>Янв</small></div><div><b>177</b><i style="height:32px"></i><small>Фев</small></div><div><b>244</b><i style="height:44px"></i><small>Мар</small></div><div><b>840</b><i style="height:150px"></i><small>Апр</small></div><div><b>629</b><i style="height:112px"></i><small>Май</small></div><div><b>517</b><i style="height:92px"></i><small>Июн</small></div><div><b>510</b><i style="height:91px"></i><small>Июл</small></div><div><b>189</b><i style="height:34px"></i><small>Авг</small></div><div><b>401</b><i style="height:72px"></i><small>Сен</small></div><div class="part"><b>119</b><i style="height:21px"></i><small>Окт*</small></div></div><p style="color:var(--mute);font-size:12px;margin:10px 0 0">* Октябрь — данные по 20 октября.</p></div>
+ <div class="dgrid" style="margin-top:12px">
+  <div class="gcard"><div class="glab">Кто платил · млн сум</div><div class="hbar wide"><div><span>THE RDB-GROUP</span><i style="width:100%"></i><b>798</b></div><div><span>SUPPORT SAMARQAND</span><i style="width:92%"></i><b>732</b></div><div><span>International Beverages (Pepsi)</span><i style="width:56%"></i><b>444</b></div><div><span>NDT DISTRIBUTION</span><i style="width:54%"></i><b>429</b></div><div><span>Coca-Cola Uzbekistan</span><i style="width:43%"></i><b>342</b></div><div><span>IDS BORJOMI</span><i style="width:36%"></i><b>290</b></div><div><span>INTER FOOD PLUS</span><i style="width:28%"></i><b>222</b></div><div><span>BALTON TRADING (ASIA)</span><i style="width:17%"></i><b>134</b></div><div><span>Ещё 25 партнёров</span><i style="width:70%"></i><b>557</b></div></div></div>
+  <div class="gcard"><div class="glab">За что платили · млн сум</div><div class="hbar wide"><div><span>Доп. места продаж<small style="display:block;color:var(--mute);font-size:11px">стойки, паллеты, торцы, паразиты, FIFA-стенды</small></span><i style="width:100%"></i><b>1375 <small style="font-size:.6em;color:var(--mute)">35%</small></b></div><div><span>Маркетинговые услуги<small style="display:block;color:var(--mute);font-size:11px">включая разовый договор THE RDB-GROUP</small></span><i style="width:67%"></i><b>922 <small style="font-size:.6em;color:var(--mute)">23%</small></b></div><div><span>Холодильники и ХО<small style="display:block;color:var(--mute);font-size:11px">брендированное холодильное оборудование</small></span><i style="width:55%"></i><b>758 <small style="font-size:.6em;color:var(--mute)">19%</small></b></div><div><span>Транспорт и каталог Pepsi<small style="display:block;color:var(--mute);font-size:11px">реклама на грузовиках, каталог</small></span><i style="width:32%"></i><b>444 <small style="font-size:.6em;color:var(--mute)">11%</small></b></div><div><span>Прикассовая зона<small style="display:block;color:var(--mute);font-size:11px">размещение товаров у касс</small></span><i style="width:26%"></i><b>357 <small style="font-size:.6em;color:var(--mute)">9%</small></b></div><div><span>Соцсети, семплинг, прочее<small style="display:block;color:var(--mute);font-size:11px">посты, семплинг, воблеры</small></span><i style="width:7%"></i><b>90 <small style="font-size:.6em;color:var(--mute)">2%</small></b></div></div><p style="color:var(--mute);font-size:12px;margin:12px 0 0">Группировка по тексту документа в SAP.</p></div>
+ </div>
+ <div class="gcard" style="margin-top:12px;border-color:#5a4a2a"><div class="glab">Вывод</div><p style="margin:6px 0 0;line-height:1.55">Доход мог быть больше. Маркетинг сделал много акций, обновил медиакит и ввёл скидки на рекламные места, но большинство <b>топовых поставщиков не работали с нами из-за задолженности компании</b>. Когда работа с поставщиками наладится, доход от рекламы может расти дальше.</p></div>
+ <div class="glab" style="margin-top:34px">Ключевые продажи и цены</div>
+ <div class="dkpi">
+  <div class="gcard"><div class="gnum">~1,8<small style="font-size:.5em"> млрд</small></div><span>сум договоров Rozmetov + Pepsi</span><em>крупнейшие сделки с коммерцией</em></div>
   <div class="gcard"><div class="gnum">×4</div><span>цена LED-панели</span><em>10 млн/мес вместо 2,5 млн</em></div>
   <div class="gcard"><div class="gnum">+10–20%</div><span>доход от рекламы после нового прайса</span><em>новый медиакит 2026</em></div>
   <div class="gcard"><div class="gnum">0 сум</div><span>бюджета компании на 4 розыгрыша</span><em>всё за счёт поставщиков и партнёров</em></div>
@@ -1692,9 +1734,9 @@ function buildIncome(){
  </div>
 
  <div class="warn">
-  <div class="glab" style="color:#f0a48f">Но сейчас доходность падает · почему</div>
+  <div class="glab" style="color:#f0a48f">Где потенциал роста дохода</div>
   <div class="cause">
-   <div><i>1</i><b>Долги перед поставщиками</b><span>Компания задерживает оплаты поставщикам</span></div><em>→</em>
+   <div><i>1</i><b>Долги перед поставщиками</b><span>Топовые поставщики не работают с сетью из-за задолженности</span></div><em>→</em>
    <div><i>2</i><b>Поставщики перестали покупать рекламу</b><span>Не вкладываются в рекламу у сети, которая им должна</span></div><em>→</em>
    <div><i>3</i><b>Коммерческие менеджеры продают меньше</b><span>Не продают рекламу, как раньше</span></div><em>→</em>
    <div class="end"><i>4</i><b>Доход от рекламы снизился</b><span>Медиакит есть, а продаж меньше</span></div>
@@ -1879,10 +1921,10 @@ const cv=document.getElementById("sky"),cx=cv.getContext("2d");
 let W=0,H=0,DPR=1,stars=[],dust=[],tx=0,ty=0,mx=0,my=0,zoom=0,zoomTarget=0;
 const ARM=["#f3dfa5","#d8b46a","#fff4dc","#b8945a"];
 const MOB=innerWidth<700||matchMedia("(pointer:coarse)").matches;
-function W0Lim(){return MOB?1:2}
+function W0Lim(){return MOB?1:Math.max(1,Math.min(2,Math.sqrt(2600000/(innerWidth*innerHeight))))}
 function build(){
   DPR=Math.min(devicePixelRatio||1,W0Lim());W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cx.setTransform(DPR,0,0,DPR,0,0);
-  const R=Math.max(W,H)*.62,n=Math.round(Math.min(MOB?750:4200,W*H/(MOB?320:220)));stars=[];
+  const R=Math.max(W,H)*.62,n=Math.round(Math.min(MOB?750:3000,W*H/(MOB?320:300)));stars=[];
   for(let i=0;i<n;i++){const arm=i%4,t=Math.pow(Math.random(),1.25),r=70+t*R,spread=(Math.random()-.5)*(.22+t*.7);
     stars.push({r,a:arm*Math.PI/2+Math.log(r/60)*1.35+spread,arm,s:Math.random()*1.1+.25+(1-t)*.7,w:.00055*Math.pow(70/r,.55),tw:Math.random()*6})}
   dust=[];for(let i=0;i<(MOB?90:220);i++)dust.push({x:Math.random()*W,y:Math.random()*H,s:Math.random()*1.1+.2,o:Math.random()*.6+.2});
@@ -1919,6 +1961,8 @@ requestAnimationFrame(draw);
 const h=location.hash.slice(1);if(["dash","income","done","issues","team","kit","cv"].includes(h)){explode();go(h)}
 </script>
 <style>
+.hbar.wide>div{grid-template-columns:minmax(150px,210px) 1fr auto}@media (max-width:600px){.hbar.wide>div{grid-template-columns:118px 1fr auto;font-size:12px}.hbar.wide b{font-size:16px}}
+.mbars{display:flex;align-items:flex-end;gap:8px;height:200px;margin-top:14px}.mbars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;min-width:0}.mbars i{display:block;width:100%;max-width:46px;border-radius:6px 6px 2px 2px;background:var(--gg)}.mbars .part i{opacity:.45}.mbars b{font-size:12px;color:#f3dfa5;font-variant-numeric:tabular-nums}.mbars small{font-size:11px;color:var(--mute)}@media (max-width:600px){.mbars{gap:4px}.mbars b{font-size:9.5px}}
 .pacts{display:inline-flex;gap:8px;flex-wrap:wrap}
 .pdfbtn{background:#d8b46a1a}
 .pdfbtn[disabled]{opacity:.6;cursor:progress}

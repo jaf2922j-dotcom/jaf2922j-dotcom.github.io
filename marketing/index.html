@@ -1812,6 +1812,35 @@ CVS.perdebayev=(function(){
  </div>`})();
 CVNAMES.perdebayev=["Абдувахоб Пердебаев","Маркетолог"];
 CVOF.perdebayev="perdebayev";
+CVS.usarova=(function(){
+ const jobs=[["Makro","Хозяйственно-административный отдел","Офис-менеджер",2025+9.7/12,2026+2.75/12,"Окт 2025 — мар 2026",["Документооборот: подготовка, обработка и сопровождение документов","Организационные и административные вопросы, поддержка рабочих процессов"]],
+  ["Makro","Отдел маркетинга и конъюнктуры","Маркетолог",2026+2.75/12,2026+7/12,"Мар 2026 — авг 2026",["Подготовка и координация маркетинговых активностей и промоакций","Рекламные и информационные материалы, работа с коммерческим отделом"]],
+  ["Makro","Отдел рекламы и бренд-менеджмента","Маркетолог",2026+7/12,2026+10/12,"Авг 2026 — сейчас",["Фирменный стиль Makro, ТЗ для дизайнеров, производство POSM","Маркетинговая часть открытий новых супермаркетов","Контент-планы, тексты, Stories и Reels для Instagram, Telegram и Facebook; сценарии и съёмки","CRM, карта лояльности и мобильное приложение: обращения, связь с IT","SmartCast: контент на TV-экранах в магазинах, рекламодатели, медиакит","Промоакции с коммерческим отделом: скидки, 1+1, партнёрские кампании"]]];
+ const A=2025,B=2027,x=v=>((v-A)/(B-A)*100).toFixed(2);
+ const gantt=`<div class="gantt"><div class="gax">${Array.from({length:B-A+1},(_,i)=>`<span style="left:${x(A+i)}%">${A+i}</span>`).join("")}</div>
+  ${jobs.map((j,i)=>`<div class="grow"><div class="gl"><b>${j[2]}</b><small>${j[1]}</small></div><div class="gt">${Array.from({length:B-A+1},(_,k)=>`<i style="left:${x(A+k)}%"></i>`).join("")}<span class="gb ${i===jobs.length-1?"now":""}" style="left:${x(j[3])}%;width:${(x(j[4])-x(j[3])).toFixed(2)}%"></span></div></div>`).join("")}</div>`;
+ return `<div class="cv">
+  <div class="cvh"><div class="cvph"><img src="${PH.usarova}" alt="Наргиз Усарова"></div>
+   <div><div class="eyebrow">Резюме · 2026</div><h3>Наргиз Усарова</h3><div class="lat" style="color:var(--mute);font-size:12px;margin-top:6px">O‘sarova Nargiz Erkin qizi</div><div class="t">Маркетолог · Отдел рекламы и бренд-менеджмента · Makro с октября 2025</div>
+    <div class="cvc"><span><i>T</i>+998 99 443 03 04</span><span><i>M</i>nargizusarova03@gmail.com</span><span><i>Г</i>Ташкент</span></div></div>
+   <div class="mono">NU</div></div>
+  <div class="ibk">
+   <div class="gcard"><div class="gnum">7–8</div><span>промоакций в неделю</span><em>в пиковые недели, с коммерцией</em></div>
+   <div class="gcard"><div class="gnum">2</div><span>открытия супермаркетов</span><em>маркетинговое сопровождение</em></div>
+   <div class="gcard"><div class="gnum">2</div><span>праздника для покупателей</span><em>участие в организации</em></div>
+   <div class="gcard"><div class="gnum">3</div><span>роли в Makro за год</span><em>офис → конъюнктура → реклама</em></div>
+  </div>
+  <div class="gcard"><div class="glab">Путь в Makro · 2025 → 2026</div>${gantt}</div>
+  <div class="gcard"><div class="glab">Направления работы</div><div class="resp">${[["Бренд и POSM","Фирменный стиль, ТЗ дизайнерам, производство рекламных материалов"],["SMM и видео","Контент-планы, тексты, Stories, Reels, сценарии и съёмки"],["CRM и лояльность","Карта лояльности, приложение, обращения клиентов, связь с IT"],["SmartCast и реклама","TV-экраны в магазинах, рекламодатели, медиакит и КП"],["Промоакции","Скидки, 1+1, партнёрские кампании вместе с коммерцией"],["Открытия магазинов","Оформление, информирование, активности и розыгрыши"]].map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join("")}</div></div>
+  <div class="gcard"><div class="glab">Опыт работы · DARVOZA SAVDO (Makro)</div><div class="tl">${jobs.slice().reverse().map(j=>`<div class="job"><div class="d">${j[5]}</div><h4>${j[2]}</h4><p><b style="color:var(--gold2)">${j[0]}</b> · ${j[1]}</p><ul>${j[6].map(t=>`<li>${t}</li>`).join("")}</ul></div>`).join("")}</div></div>
+  <div class="cvg2">
+   <div class="gcard"><div class="glab">Образование</div><ul class="blist"><li>2024 · Ташкентский архитектурно-строительный университет — бакалавриат, архитектура</li></ul></div>
+   <div class="gcard"><div class="glab">Навыки и языки</div><div class="chips">${["Бренд-менеджмент","POSM","SMM","Копирайтинг","Сценарии и съёмки","CRM","Программа лояльности","Медиакит","ТЗ и отчётность"].map(x=>`<span>${x}</span>`).join("")}</div><p style="color:var(--mute);font-size:13px;margin:14px 0 0">Русский · Узбекский</p></div>
+  </div>
+ </div>`})();
+CVNAMES.usarova=["Наргиз Усарова","Маркетолог"];
+CVOF.usarova="usarova";
+
 
 
 renderCV("jd");
@@ -1894,7 +1923,7 @@ async function makePDF(id){
  const canvas=await html2canvas(el,{backgroundColor:bg,scale:2,useCORS:true,windowWidth:1180,
   ignoreElements:n=>n.classList&&(n.classList.contains("pacts")||n.classList.contains("cvtabs")),
   onclone:d=>{const p=d.getElementById("p-"+id);p.style.cssText+=";position:absolute;inset:auto;top:0;left:0;width:1180px;height:auto;overflow:visible;clip-path:none;visibility:visible";
-   const st=d.createElement("style");st.textContent="*{transition:none!important;animation:none!important}.page .reveal{opacity:1!important;transform:none!important}.phead h2,.gnum,.cvh h3,.mono{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#e9cf8f!important;-webkit-text-fill-color:#e9cf8f!important}";d.head.appendChild(st)}});
+   const st=d.createElement("style");st.textContent="*{transition:none!important;animation:none!important}.page .reveal{opacity:1!important;transform:none!important}.phead h2,.gnum,.cvh h3,.mono{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#e9cf8f!important;-webkit-text-fill-color:#e9cf8f!important}.gb.now{background:#e9cf8f!important}";d.head.appendChild(st)}});
  const {jsPDF}=window.jspdf,pdf=new jsPDF({unit:"mm",format:"a4",compress:true});
  const W=210,H=297,m=8,iw=W-2*m,pxPerMm=canvas.width/iw,sliceH=Math.floor((H-2*m)*pxPerMm);
  for(let y=0,i=0;y<canvas.height;y+=sliceH,i++){

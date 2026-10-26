@@ -2268,13 +2268,16 @@ async function makePDF(id){
  return {blob:pdf.output("blob"),filename:name+".pdf"};
 }
 // light, print-ready PDFs are prebuilt next to the page (pdf/*.pdf); the in-browser render is only a fallback
-async function prebuilt(key){try{const r=await fetch("pdf/"+({all:"makro-marketing-2026",print:"makro-marketing-2026-print"}[key]||key)+".pdf");if(r.ok){const b=await r.blob();if(b.size>1000&&!/html/.test(b.type))return b}}catch(_){}return null}
+const pdfUrl=key=>"pdf/"+({all:"makro-marketing-2026",print:"makro-marketing-2026-print"}[key]||key)+".pdf";
+async function prebuilt(key){try{const r=await fetch(pdfUrl(key));if(r.ok){const b=await r.blob();if(b.size>1000&&!/html/.test(b.type))return b}}catch(_){}return null}
 async function savePDF(btn,id){
  const t=btn.textContent;btn.disabled=true;btn.textContent="Готовлю PDF…";
  try{const pre=await prebuilt(id==="cv"?"cv-"+cvCur:id);
   const {blob,filename}=pre?{blob:pre,filename:(id==="cv"?"Резюме — "+CVNAMES[cvCur][0]:PDFNAMES[id])+".pdf"}:await makePDF(id);
   const dl=window.claude&&window.claude.use?await window.claude.use("downloads"):null;
   if(dl){try{await dl.save({filename,data:blob})}catch(e){if(e&&e.code!=="declined")throw e}}
+  // on the public site link the real file: in-app browsers (Telegram, Instagram) cannot open blob: links and show a 404
+  else if(pre){const a=document.createElement("a");const k=id==="cv"?"cv-"+cvCur:id;a.href=pdfUrl(k);a.download="Makro-Marketing-"+({all:"2026",print:"2026-print"}[k]||k)+".pdf"; /* latin name: some browsers drop non-latin download names */document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),4000)}
   else{const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000)}}
  catch(e){console.error(e);btn.textContent="Не получилось, печать…";setTimeout(()=>window.print(),300)}
  finally{setTimeout(()=>{btn.disabled=false;btn.textContent=t},1200)}}

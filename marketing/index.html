@@ -1082,6 +1082,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 <section class="page" id="p-team" aria-label="Департамент маркетинга"><div class="pin">
   <div class="phead reveal r1"><div><div class="eyebrow">01 · Команда</div><h2>Структура департамента</h2><p>Кто кому подчиняется, кто за что отвечает и кого не хватает команде.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← На главную</button></span></div>
   <div class="reveal r2"><div class="tree2" id="tree"></div></div>
+  <div class="reveal r2" id="teamx"></div>
   </div></section>
 
 <section class="page" id="p-dash" aria-label="Дашборд"><div class="pin">
@@ -1125,13 +1126,13 @@ const IMG={"p08": "img/2fdb548abcd2.webp", "p12": "img/fa0aa2fe0758.webp", "p21"
 const PH={"usarova": "img/da7db55e9b4a.webp", "perdebayev": "img/dd6d1c146f0f.webp", "kadirov": "img/7be66a8cc317.webp", "nurullin": "img/3b2fbdad888a.webp", "toxtamurodov": "img/b57d458a93f5.webp", "ib": "img/b57d458a93f5.webp", "musayev": "img/3867882670f8.webp", "qurbonov": "img/ff52b020c395.webp", "rk": "img/35b4f896bfe8.webp", "jd": "img/1cead07d715b.webp"};
 const TEAM=[
  {id:"dehqonov",name:"Дехканов Жаъфархон Камол угли",lat:"Dexkanov Ja’farxon Kamol ugli",role:"Заместитель директора департамента",grp:"Управление маркетинга и рекламы",zoneNote:1,dept:"Управление маркетинга и рекламы",phone:"+998 97 743 29 22",since:"июня 2016",photo:"jd",
-  zone:["Контроль и развитие команды маркетинга","Ведение крупных проектов департамента","Управление общими процессами между отделами"]},
- {id:"nurullin",boss:"dehqonov",name:"Нуруллин Ислом Хабибулла угли",lat:"Nurullin Islom Xabibulla o‘g‘li",role:"Начальник отдела рекламы и бренд-менеджмента",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 97 009 73 33",since:"14.08.2026",photo:"nurullin"},
+  zone:["Руководство департаментом: процессы, команда, контроль","Аналитика, отчётность и презентации для руководства","Отчётность для коммерческого департамента","Развитие B2B-направления","E-commerce","Встречи с поставщиками: продвижение и продажа рекламы","Открытия новых магазинов (отдельной open-группы нет)","SAP: выгрузки и отчёты"]},
+ {id:"nurullin",boss:"dehqonov",zone:["Отдел рекламы и бренд-менеджмента","Временно курирует отдел маркетинга и конъюнктуры"],name:"Нуруллин Ислом Хабибулла угли",lat:"Nurullin Islom Xabibulla o‘g‘li",role:"Начальник отдела рекламы и бренд-менеджмента",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 97 009 73 33",since:"14.08.2026",photo:"nurullin"},
  {id:"kadirov",boss:"nurullin",name:"Кадыров Фаррух Дилшод угли",lat:"Kadirov Farrux Dilshod o‘g‘li",role:"Моушн-дизайнер",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 33 900 30 10",since:"11.08.2025",photo:"kadirov"},
- {id:"usarova",boss:"nurullin",name:"Усарова Наргиз Эркин кизи",lat:"O‘sarova Nargiz Erkin qizi",role:"Маркетолог",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 99 443 03 04",since:"21.10.2025",photo:"usarova"},
+ {id:"usarova",boss:"nurullin",zone:["Бренд и POSM","SMM и видеоконтент","CRM, карта лояльности и приложение","SmartCast: экраны в магазинах","Промоакции с коммерцией","Открытия магазинов"],name:"Усарова Наргиз Эркин кизи",lat:"O‘sarova Nargiz Erkin qizi",role:"Маркетолог",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 99 443 03 04",since:"21.10.2025",photo:"usarova"},
  {id:"toxtamurodov",boss:"nurullin",name:"Тухтамуродов Иброхим Гайратулло угли",lat:"To‘xtamurodov Ibrohim G‘ayratullo o‘g‘li",role:"Графический дизайнер",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 93 587 19 75",since:"04.05.2026",photo:"toxtamurodov"},
  {id:"perdebayev",boss:"nurullin",name:"Пердебаев Абдувахоб Сейт улы",phone:"+998 70 028 72 72",mail:"abdiuakhab@gmail.com",lat:"Perdebayev Abdio‘axab Seyt uli",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",since:"04.08.2026",photo:"perdebayev"},
- {id:"qurbonov",boss:"nurullin",name:"Курбонов Рамазон Мухтор угли",lat:"Qurbonov Ramazon Muxtor o‘g‘li",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",phone:"+998 94 635 70 72",since:"27.03.2026",photo:"qurbonov"},
+ {id:"qurbonov",boss:"nurullin",zone:["Наружная реклама и оформление магазинов","Приёмка работ подрядчиков","Выезды и обходы магазинов на своей машине"],name:"Курбонов Рамазон Мухтор угли",lat:"Qurbonov Ramazon Muxtor o‘g‘li",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",phone:"+998 94 635 70 72",since:"27.03.2026",photo:"qurbonov"},
 ];
 const CVPH={jd:"img/f306ac23697e.webp",perdebayev:"img/710956e5e709.webp",ib:"img/897c7a98bf7a.webp"};
 const photoOf=p=>p.photo==="me"?ME:PH[p.photo];
@@ -1165,6 +1166,7 @@ const VAC=[
  {otd:"ads",role:"Фото- и видеограф",why:"Съёмка акций, открытий магазинов, товаров и роликов для TV-экранов."},
  {otd:"konj",role:"Аналитик маркетинга",why:"Считает эффект каждой акции и рекламы: продажи, чеки, трафик, доход от поставщиков. Сейчас эффект не измеряется системно."},
  {otd:"konj",role:"CRM-менеджер",why:"Карта лояльности, мобильное приложение, сегменты покупателей и персональные предложения. Сейчас CRM ведёт маркетолог параллельно с другими задачами."},
+ {otd:"konj",role:"Промо-менеджер",why:"Ведёт промоакции с категорийными менеджерами (бакалея и нон-фуд): механика, сроки, материалы. Раньше этим занимались 2 отдельных сотрудника."},
  {otd:"konj",role:"Trade-маркетолог",why:"Совместные акции с поставщиками, продажа рекламы из медиакита, ДМП и POS в залах."}];
 const petal=(p,c,q,size,cls="")=>`<span class="pet q${q} ${cls}" style="--pc:${c};--ps:${size}px">${p&&p.photo?`<img loading="lazy" decoding="async" src="${photoOf(p)}" alt="">`:p?`<b>${ini(p.name)}</b>`:`<i>+</i>`}</span>`;
 const short=p=>p.name.split(" ").slice(0,2).join(" ");
@@ -1210,6 +1212,52 @@ function vacancy(i){if(i==="dir"){open(`<div class="eyebrow">Департаме�
  const v=VAC[i],o=OTD.find(x=>x.id===v.otd);
  open(`<div class="eyebrow">${o.name}</div><div class="pcard">${petal(null,o.c,o.q,84,"vac")}<div><h2>${v.role}</h2><div class="prole" style="color:${o.c}">${v.head?"Вакансия · руководитель отдела":"Вакансия · рекомендуем"}</div></div></div>
  <h4>Зачем нужен</h4><p>${v.why}</p><h4>Подчиняется</h4><p>${v.head?TEAM.find(p=>p.id==="dehqonov").name+", заместитель директора департамента":(o.head?TEAM.find(p=>p.id===o.head).name+", начальник отдела":"Начальник отдела (вакансия)")}</p>`)}
+
+/* ---- team: было → сейчас, загрузка, подрядчики ---- */
+const BEFORE=[
+ ["Руководство департамента","Директор и 2 заместителя","3","1","Заместитель директора ведёт весь департамент"],
+ ["Дизайн и реклама","4 формата рекламы","4","2","Графический и моушн-дизайнер"],
+ ["Промоакции · бакалея и нон-фуд","Отдельно по категориям","2","0","Распределено на маркетологов"],
+ ["Сезонные акции, идеи, презентации","","1","0","Заместитель директора и маркетологи"],
+ ["Trade-маркетинг","","1","0","Заместитель директора вместе с коммерцией"],
+ ["CRM, SAP и отчётность","","1","0","Маркетолог и заместитель директора"],
+ ["Аналитика маркетинга","","1","0","Заместитель директора"],
+ ["Обходы и аудит магазинов","Служебная машина","2","1","1 сотрудник на своей машине"],
+ ["Плоттер и печать POSM","","1","0","Команда в общем потоке задач"],
+ ["Документооборот и конъюнктура","","1","0","Распределено на команду"],
+ ["Коммуникации и SMM","","1","0","Маркетолог"],
+ ["Маркетологи","","~2","3","Маркетологи двух отделов"]];
+const EXTRA=["Продажа рекламы и ДМП поставщикам вместе с категорийными менеджерами","Отчётность для коммерческого департамента","Развитие B2B","E-commerce","Открытия магазинов без отдельной open-группы"];
+function buildTeamX(){
+ const staff=TEAM.filter(p=>!p.team).length,need=staff+VAC.length+1;
+ const load=TEAM.filter(p=>p.zone).map(p=>[short(p),p.role,p.zone.length]).sort((a,b)=>b[2]-a[2]),lm=load[0][2];
+ document.getElementById("teamx").innerHTML=`
+ <div class="glab" style="margin-top:40px">Было → сейчас · те же 55 магазинов</div>
+ <div class="dkpi">
+  <div class="gcard"><div class="gnum">~20 → ${staff}</div><span>человек в маркетинге</span><em>раньше · сейчас</em></div>
+  <div class="gcard"><div class="gnum">2,8 → 7,9</div><span>магазина на одного сотрудника</span><em>расчёт: 55 ÷ 20 и 55 ÷ ${staff}</em></div>
+  <div class="gcard"><div class="gnum">4 → 2</div><span>дизайнера</span><em>на всю рекламу, POSM и соцсети</em></div>
+  <div class="gcard"><div class="gnum">3–4 → 1</div><span>подрядчик на ремонт и оформление</span><em>цены снизили на ~40%</em></div>
+ </div>
+ <div class="gcard" style="margin-top:12px;overflow-x:auto"><div class="glab">Функции маркетинга · раньше и сейчас</div>
+  <table class="bt"><thead><tr><th>Функция</th><th>Было</th><th>Сейчас</th><th>Кто ведёт сейчас</th></tr></thead><tbody>
+  ${BEFORE.map(([f,n,a,b,w])=>`<tr class="${b==="0"?"z":""}"><td><b>${f}</b>${n?`<small>${n}</small>`:""}</td><td data-l="Было">${a}</td><td data-l="Сейчас">${b==="0"?"нет отдельного":b}</td><td data-l="Ведёт">${w}</td></tr>`).join("")}
+  </tbody></table>
+  <p style="color:var(--mute);font-size:12.5px;margin:12px 0 0">Было — около 20 человек при 54–55 магазинах (по памяти руководителя, уточняется). ${BEFORE.filter(r=>r[3]==="0").length} функций сейчас ведутся без отдельного сотрудника.</p></div>
+ <div class="dgrid" style="margin-top:12px">
+  <div class="gcard"><div class="glab">Загрузка · направлений на человека</div><div class="hbar wide">${load.map(([n,r,k])=>`<div><span>${n}<small style="display:block;color:var(--mute);font-size:11px">${r}</small></span><i style="width:${Math.round(k/lm*100)}%"></i><b>${k}</b></div>`).join("")}</div>
+   <p style="color:var(--mute);font-size:12px;margin:12px 0 0">Нажмите на сотрудника в схеме выше, чтобы увидеть его направления.</p></div>
+  <div class="gcard"><div class="glab">Что маркетинг взял на себя дополнительно</div><ul class="blist">${EXTRA.map(x=>`<li>${x}</li>`).join("")}</ul>
+   <p style="color:var(--mute);font-size:12.5px;margin:12px 0 0">Раньше продажей рекламы занимались категорийные менеджеры, а маркетинг готовил дизайн. Сейчас у коммерции тоже меньше людей, поэтому маркетинг участвует в продажах сам.</p></div>
+ </div>
+ <div class="dgrid" style="margin-top:12px">
+  <div class="gcard"><div class="glab">Подрядчики · ремонт и ребрендинг</div><ul class="blist"><li>Нашли новых подрядчиков: стоимость работ снизилась примерно на <b>40%</b></li><li>Раньше задачи магазинов закрывали 3–4 подрядчика, сейчас работаем с одним</li><li>Оплата подрядчику идёт не всегда вовремя, поэтому часть работ ждёт очереди, а со временем дорожает</li><li>Многие магазины ещё в старом оформлении — ребрендинг продолжается по мере оплаты</li></ul></div>
+  <div class="gcard"><div class="glab">Целевая структура · ${need} человек</div>
+   <div class="tri3"><div><div class="gnum">${staff}</div><span>работают</span></div><div><div class="gnum">${VAC.length+1}</div><span>открытых позиций</span></div><div><div class="gnum">${Math.round(staff/need*100)}%</div><span>укомплектовано</span></div></div>
+   <p style="color:var(--mute);font-size:12.5px;margin:14px 0 0">Целевая структура компактнее прежней (${need} вместо ~20): часть функций объединена, добавлены роли для цифровых каналов.</p></div>
+ </div>`;
+}
+buildTeamX();
 document.getElementById("tree").addEventListener("click",e=>{const v=e.target.closest("[data-v]");if(v)vacancy(v.dataset.v==="dir"?"dir":+v.dataset.v)});
 
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1509,10 +1557,12 @@ const ISSUES=[
  {st:"need",p:"Продажи рекламы упали: из-за долгов компании поставщики перестали покупать рекламу, коммерческие менеджеры продают меньше.",s:"Медиакит и новый прайс готовы. Предлагаем: график погашения долгов, маркетинговый бюджет в договорах поставщиков, KPI по рекламе для коммерции, внешние рекламодатели.",r:"Нужно решение руководства по долгам и мотивации коммерции"},
  {st:"need",p:"Нет бюджета на промо и розыгрыши.",s:"Пока все крупные кампании проводим только за счёт поставщиков и партнёров — но поставщики сейчас вкладываются меньше.",r:"Нужен минимальный квартальный бюджет на промо"},
  {st:"need",p:"Ушёл директор департамента — позиция пустая.",s:"Департамент ведёт заместитель директора Дехканов Ж. Процессы, команда и проекты не остановились.",r:"Нужно решение руководства по директору"},
- {st:"need",p:"Мало людей: 7 человек на 55 магазинов, 8 открытий и 100+ акций за 6 месяцев. У отдела конъюнктуры нет начальника.",s:"Отдел конъюнктуры временно курирует Нуруллин И. Задачи распределены по приоритетам.",r:"Нужно согласовать вакансии"},
+ {st:"need",p:"Команда сократилась примерно с 20 до 7 человек на те же 55 магазинов: 8 открытий и 100+ акций за 6 месяцев. 8 функций (промо, trade, CRM, аналитика и др.) без отдельного сотрудника.",s:"Отдел конъюнктуры временно курирует Нуруллин И. Задачи распределены по приоритетам.",r:"Нужно согласовать вакансии"},
  {st:"ok",p:"Рекламные поверхности магазинов не продавались системно: не было замеров, форматов и единых цен.",s:"За 1 месяц сделали медиакит: выезды в магазины, замеры, форматы, цены. Передан коммерции для продаж.",r:"Договоры: Rozmetov ~1 млрд, Pepsi 800 млн сум"},
  {st:"ok",p:"Реклама продавалась ниже реальной ценности.",s:"Новый прайс на рекламные зоны. LED-панель продана Bahroma за 10 млн/мес при стандарте 2,5 млн, а в ролике показан и бренд Makro.",r:"Доход от рекламы +10–20%, LED ×4"},
  {st:"need",p:"В старых магазинах нет имиджа: старый и новый Makro в одной сети.",s:"Ребрендинг Makro yangi zamon: обновлено 14+ магазинов, установлено 45 указателей и 42 фасадных флажка.",r:"Осталось обновить ~40 магазинов — нужен бюджет и график"},
+ {st:"ok",p:"Цены подрядчиков на ремонт и оформление магазинов были завышены.",s:"Нашли новых подрядчиков и пересмотрели стоимость работ.",r:"Расходы на ремонт и ребрендинг ниже примерно на 40%"},
+ {st:"need",p:"Раньше задачи магазинов закрывали 3–4 подрядчика, сейчас работаем с одним, оплата идёт не всегда вовремя.",s:"Задачи приоритизированы, подрядчик работает по очереди оплат. Многие магазины пока в старом оформлении.",r:"Нужен график оплат подрядчику и ещё 1–2 подрядчика"},
  {st:"ok",p:"Печать POSM у подрядчиков — дольше и дороже, акции запаздывают.",s:"Запустили печать на своём плоттере: от дизайна до доставки по сети внутри компании.",r:"Сотни A1-постеров напечатано своими силами"},
  {st:"ok",p:"Акции плохо заметны в торговом зале.",s:"Разработали и внедрили скидочные указатели и ценники в едином стиле на витринах и полках.",r:"Покупатель быстрее находит акционные товары"},
  {st:"ok",p:"Промо и розыгрыши требуют бюджета.",s:"Промоакции и розыгрыши проводим за счёт поставщиков и брендов-партнёров.",r:"4 крупные кампании: Египет, Вьетнам, Sardor Snack, скретч-карты"},
@@ -1539,7 +1589,7 @@ function buildDash(){
    <p style="color:var(--mute);font-size:12.5px;margin:12px 0 0"><b style="color:#f3dfa5">3,95 млрд</b> за 1 января — 20 октября от 33 партнёров. Рост сдерживает то, что часть топовых поставщиков пока не работает с сетью из-за задолженности; с её снятием доход может вернуться к уровню первого полугодия и выше.</p>
    <button class="cta" data-goto="income">Доходность подробно →</button></div>
   <div class="gcard"><div class="glab">Команда маркетинга</div>
-   <div class="tri3"><div><div class="gnum">~15</div><span>человек было раньше</span></div><div><div class="gnum">${staff}</div><span>работают сейчас</span></div><div><div class="gnum">${staff+VAC.length+1}</div><span>нужно по структуре</span></div></div>
+   <div class="tri3"><div><div class="gnum">~20</div><span>человек было раньше</span></div><div><div class="gnum">${staff}</div><span>работают сейчас</span></div><div><div class="gnum">${staff+VAC.length+1}</div><span>нужно по структуре</span></div></div>
    <p style="color:var(--mute);font-size:12.5px;margin:14px 0 8px">Нет директора департамента и ${VAC.length} позиций. Одни и те же люди ведут дизайн, SMM, CRM и промо, поэтому эффект акций не измеряется отдельно.</p>
    <div class="chips">${["Директор департамента",...VAC.map(v=>v.head?"Начальник отдела конъюнктуры":v.role)].map(x=>`<span>${x}</span>`).join("")}</div>
    <button class="cta" data-goto="team">Структура и вакансии →</button></div>
@@ -1557,7 +1607,7 @@ function buildDash(){
  <div class="glab" style="margin-top:34px">Что поможет сделать ещё больше</div>
  <div class="plan">
   <div class="gcard"><h6>Техника для дизайнеров</h6><ul class="blist"><li>Закупка рабочих станций для дизайна обсуждалась, решение пока не принято</li><li>Сейчас один дизайнер работает на личном компьютере, второй на старом ноутбуке</li><li>С профильной техникой макеты и ролики будут готовы примерно вдвое быстрее</li></ul></div>
-  <div class="gcard"><h6>Команда</h6><ul class="blist"><li>Раньше в маркетинге было около 15 человек, сейчас ${staff}</li><li>Нужны аналитик маркетинга, CRM-менеджер, арт-менеджер, trade-маркетолог, SMM, копирайтер, фото/видео</li><li>Отдельный аналитик и CRM позволят считать эффект каждой акции</li></ul></div>
+  <div class="gcard"><h6>Команда</h6><ul class="blist"><li>Раньше в маркетинге было около 20 человек, сейчас ${staff}</li><li>Нужны аналитик маркетинга, CRM-менеджер, арт-менеджер, trade-маркетолог, SMM, копирайтер, фото/видео</li><li>Отдельный аналитик и CRM позволят считать эффект каждой акции</li></ul></div>
   <div class="gcard"><h6>Бюджет на промо</h6><ul class="blist"><li>Небольшой квартальный бюджет на собственные акции сети</li><li>Свои кампании, а не только по графику поставщиков</li><li>Быстрый запуск сезонных акций и открытий магазинов</li></ul></div>
  </div>
  <div class="dgrid">
@@ -1643,7 +1693,7 @@ function buildIssues(){
  <div class="glab" style="margin-top:40px">Вопросы нового руководства · готовые ответы</div>
  <div class="qa">
   <details open><summary>Что сделал маркетинг за последние 6 месяцев?</summary><div class="ans">Открыли <b>8 новых магазинов</b> в концепции Makro yangi zamon, провели ребрендинг, <b>100+ промоакций</b> и <b>4 крупные кампании</b> с розыгрышами. Обновили <b>14+ магазинов</b>, поставили <b>45 указателей и 42 флажка</b>, запустили свою печать POSM. Сделали медиакит. Доход от поставщиков за маркетинг и рекламу в 2026 году — <b>3,95 млрд сум</b> без НДС (факт SAP по 20 октября).</div></details>
-  <details><summary>Сколько человек в департаменте и кто за что отвечает?</summary><div class="ans"><b>${staff} человек.</b> Заместитель директора Дехканов Ж. ведёт весь департамент. Отдел рекламы и бренд-менеджмента: начальник Нуруллин И., моушн-дизайнер, графический дизайнер, маркетолог. Отдел маркетинга и конъюнктуры: 2 маркетолога, начальника нет — отдел курирует Нуруллин И. Директор департамента — вакансия. Раньше в маркетинге работало около 15 человек; по структуре нужно ${staff+VAC.length+1}: не хватает арт-менеджера, копирайтера, SMM, фото/видео, аналитика маркетинга, CRM-менеджера, trade-маркетолога и начальника отдела конъюнктуры.</div></details>
+  <details><summary>Сколько человек в департаменте и кто за что отвечает?</summary><div class="ans"><b>${staff} человек.</b> Заместитель директора Дехканов Ж. ведёт весь департамент. Отдел рекламы и бренд-менеджмента: начальник Нуруллин И., моушн-дизайнер, графический дизайнер, маркетолог. Отдел маркетинга и конъюнктуры: 2 маркетолога, начальника нет — отдел курирует Нуруллин И. Директор департамента — вакансия. Раньше в маркетинге работало около 20 человек на те же 55 магазинов; по структуре нужно ${staff+VAC.length+1}: не хватает арт-менеджера, копирайтера, SMM, фото/видео, аналитика маркетинга, CRM-менеджера, trade-маркетолога и начальника отдела конъюнктуры.</div></details>
   <details><summary>Сколько маркетинг заработал для компании?</summary><div class="ans">По факту SAP за 1 января — 20 октября 2026: <b>3,95 млрд сум</b> без НДС от 33 партнёров. Крупнейшие продажи вместе с коммерцией: <b>Rozmetov ~1 млрд</b>, <b>Pepsi 800 млн</b>, <b>Bahroma 10 млн в месяц</b> за LED (стандарт был 2,5 млн). Новый прайс дал <b>+10–20%</b> к доходу от рекламы. Промо и розыгрыши — за счёт поставщиков.</div></details>
   <details><summary>Какие главные проблемы сейчас?</summary><div class="ans"><b>Падает доход от рекламы:</b> из-за долгов компании поставщики перестали покупать рекламу, коммерческие менеджеры продают меньше. <b>Нет бюджета</b> на промо и розыгрыши. <b>В старых магазинах нет имиджа</b> — нужен ребрендинг ~40 магазинов. Плюс <b>нет директора департамента</b> и <b>не хватает людей</b>.</div></details>
   <details><summary>Почему не исправлены проблемы в магазинах?</summary><div class="ans">По <b>13 магазинам</b> задачи поставлены, <b>подрядчики есть</b>, <b>документы переданы закупщикам</b>. Работы стоят только потому, что <b>не выделены деньги</b>. Как только оплату согласуют, монтаж можно запускать сразу.</div></details>
@@ -1714,6 +1764,8 @@ function buildIncome(){
   <div class="gcard"><div class="glab">За что платили · млн сум</div><div class="hbar wide"><div><span>Доп. места продаж<small style="display:block;color:var(--mute);font-size:11px">стойки, паллеты, торцы, паразиты, FIFA-стенды</small></span><i style="width:100%"></i><b>1375 <small style="font-size:.6em;color:var(--mute)">35%</small></b></div><div><span>Маркетинговые услуги<small style="display:block;color:var(--mute);font-size:11px">включая разовый договор THE RDB-GROUP</small></span><i style="width:67%"></i><b>922 <small style="font-size:.6em;color:var(--mute)">23%</small></b></div><div><span>Холодильники и ХО<small style="display:block;color:var(--mute);font-size:11px">брендированное холодильное оборудование</small></span><i style="width:55%"></i><b>758 <small style="font-size:.6em;color:var(--mute)">19%</small></b></div><div><span>Транспорт и каталог Pepsi<small style="display:block;color:var(--mute);font-size:11px">реклама на грузовиках, каталог</small></span><i style="width:32%"></i><b>444 <small style="font-size:.6em;color:var(--mute)">11%</small></b></div><div><span>Прикассовая зона<small style="display:block;color:var(--mute);font-size:11px">размещение товаров у касс</small></span><i style="width:26%"></i><b>357 <small style="font-size:.6em;color:var(--mute)">9%</small></b></div><div><span>Соцсети, семплинг, прочее<small style="display:block;color:var(--mute);font-size:11px">посты, семплинг, воблеры</small></span><i style="width:7%"></i><b>90 <small style="font-size:.6em;color:var(--mute)">2%</small></b></div></div><p style="color:var(--mute);font-size:12px;margin:12px 0 0">Группировка по тексту документа в SAP.</p></div>
  </div>
  <div class="gcard" style="margin-top:12px;border-color:#5a4a2a"><div class="glab">Вывод</div><p style="margin:6px 0 0;line-height:1.55">Доход мог быть больше. Маркетинг сделал много акций, обновил медиакит и ввёл скидки на рекламные места, но большинство <b>топовых поставщиков не работали с нами из-за задолженности компании</b>. Когда работа с поставщиками наладится, доход от рекламы может расти дальше.</p></div>
+ <div class="glab" style="margin-top:34px">Задачи на рост дохода</div>
+ <div class="gcard" style="overflow-x:auto"><table class="bt"><thead><tr><th>Задача</th><th>Кто ведёт сейчас</th><th>Что нужно, чтобы ускорить</th></tr></thead><tbody><tr><td><b>Продавать рекламу и ДМП по медиакиту топ-поставщикам</b></td><td data-l="Сейчас ведёт">Заместитель директора и маркетологи вместе с категорийными менеджерами</td><td data-l="Нужно">Trade-маркетолог</td></tr><tr><td><b>Вернуть топовых поставщиков в рекламу</b></td><td data-l="Сейчас ведёт">Коммерция и маркетинг</td><td data-l="Нужно">График урегулирования задолженности</td></tr><tr><td><b>Привлечь внешних рекламодателей: банки, телеком, сервисы</b></td><td data-l="Сейчас ведёт">Заместитель директора</td><td data-l="Нужно">Пакетные предложения из медиакита</td></tr><tr><td><b>Продавать время на экранах SmartCast в магазинах</b></td><td data-l="Сейчас ведёт">Маркетолог (Усарова Н.)</td><td data-l="Нужно">Регулярный контент-план для экранов</td></tr><tr><td><b>Показывать поставщикам эффект акций: продажи до и после</b></td><td data-l="Сейчас ведёт">Заместитель директора вручную</td><td data-l="Нужно">Аналитик маркетинга и CRM-менеджер</td></tr><tr><td><b>Поднять цену рекламных мест в обновлённых магазинах</b></td><td data-l="Сейчас ведёт">Отдел рекламы и бренд-менеджмента</td><td data-l="Нужно">Оплата подрядчику на ребрендинг</td></tr></tbody></table></div>
  <div class="glab" style="margin-top:34px">Ключевые продажи и цены</div>
  <div class="dkpi">
   <div class="gcard"><div class="gnum">~1,8<small style="font-size:.5em"> млрд</small></div><span>сум договоров Rozmetov + Pepsi</span><em>крупнейшие сделки с коммерцией</em></div>
@@ -1962,6 +2014,8 @@ const h=location.hash.slice(1);if(["dash","income","done","issues","team","kit",
 </script>
 <style>
 .hbar.wide>div{grid-template-columns:minmax(150px,210px) 1fr auto}@media (max-width:600px){.hbar.wide>div{grid-template-columns:118px 1fr auto;font-size:12px}.hbar.wide b{font-size:16px}}
+.bt{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}.bt th{text-align:left;font-weight:600;color:var(--gold2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid #3a3222}.bt td{padding:10px;border-bottom:1px dashed #2f2a1f;vertical-align:top}.bt td small{display:block;color:var(--mute);font-size:11.5px}.bt td:nth-child(2),.bt td:nth-child(3){font-family:var(--brand);color:#f3dfa5;font-size:17px;white-space:nowrap}.bt tr.z td:nth-child(3){color:#f0a48f;font-family:inherit;font-size:12.5px}
+@media (max-width:640px){.bt{min-width:0}.bt thead{display:none}.bt tr{display:block;padding:12px 0;border-bottom:1px dashed #2f2a1f}.bt td{display:block;border:0;padding:3px 0}.bt td[data-l]{display:flex;gap:8px;align-items:baseline}.bt td[data-l]::before{content:attr(data-l);flex:0 0 92px;font-family:var(--sans,inherit);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}.bt td:nth-child(2),.bt td:nth-child(3){font-size:15px}}
 .mbars{display:flex;align-items:flex-end;gap:8px;height:200px;margin-top:14px}.mbars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;min-width:0}.mbars i{display:block;width:100%;max-width:46px;border-radius:6px 6px 2px 2px;background:var(--gg)}.mbars .part i{opacity:.45}.mbars b{font-size:12px;color:#f3dfa5;font-variant-numeric:tabular-nums}.mbars small{font-size:11px;color:var(--mute)}@media (max-width:600px){.mbars{gap:4px}.mbars b{font-size:9.5px}}
 .pacts{display:inline-flex;gap:8px;flex-wrap:wrap}
 .pdfbtn{background:#d8b46a1a}

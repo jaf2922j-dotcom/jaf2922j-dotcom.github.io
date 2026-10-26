@@ -1193,7 +1193,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
  <div class="hstage full" id="hstage">
   <img class="hposter" src="img/mk-intro-blue-poster.webp" alt="">
   <video id="hvid" src="img/mk-intro-blue.mp4" muted playsinline preload="auto" aria-label="Заставка MARKETING"></video>
-  <div class="hhead hw"><img class="hlogo" id="hlogo" alt="Makro yangi zamon"><span>Департамент · 2026</span></div>
+  <div class="hhead hw"><span>Департамент · 2026</span></div>
   <button class="hskip" id="hskip" type="button">Пропустить</button>
  </div>
 
@@ -2193,7 +2193,6 @@ buildLoad();
 /* ---- home: video intro → band, tree leaves open pages ---- */
 const h2=document.getElementById("home2"),hst=document.getElementById("hstage"),hv=document.getElementById("hvid"),HLOOP=5.0,HEND=7.88;
 let hDone=false;
-document.getElementById("hlogo").src=IMG.logo;
 {const K={team:TEAM.filter(p=>!p.team).length,cv:Object.keys(CVS).length,issues:ISSUES.length,kit:SL.length};
  h2.querySelectorAll("[data-k]").forEach(el=>{if(K[el.dataset.k])el.textContent=K[el.dataset.k]})}
 // after the intro only the calm tail (the light sweep over MARKETING) keeps looping in the band
@@ -2203,14 +2202,23 @@ function hSettle(){
  if(hDone)return;hDone=true;
  hst.classList.remove("full");h2.classList.remove("lock");
  setTimeout(()=>h2.classList.remove("intro"),350);
- if(hv.readyState<1)hv.addEventListener("loadedmetadata",()=>{if(hv.currentTime<HLOOP)hv.currentTime=HLOOP},{once:true});
- else if(hv.currentTime<HLOOP)hv.currentTime=HLOOP;
+ // jump to the calm tail; keep the video hidden (poster = same final frame) until the seek has landed
+ if(hv.currentTime<HLOOP){hv.classList.add("wait");
+  const seek=()=>{hv.addEventListener("seeked",vShow,{once:true});hv.currentTime=HLOOP};
+  if(hv.readyState<1)hv.addEventListener("loadedmetadata",seek,{once:true});else seek()}
  if(!current)hv.play().catch(()=>{});
  try{sessionStorage.setItem("mkIntro","1")}catch(_){}
 }
 function hStart(){
  hDone=false;hst.classList.add("full");h2.classList.add("intro","lock");h2.scrollTop=0;
- hv.currentTime=0;hv.play().catch(hSettle); // autoplay blocked (power saving): jump to the final frame
+ // black screen until the first frame really plays: no poster, no half-loaded frame
+ hv.classList.add("wait");hv.pause();hv.currentTime=0;
+ hv.addEventListener("playing",vShow,{once:true});
+ hv.play().catch(()=>{hv.removeEventListener("playing",vShow);hSettle()}); // autoplay blocked (power saving): jump to the final frame
+}
+function vShow(){
+ const on=()=>hv.classList.remove("wait");
+ if(hv.requestVideoFrameCallback)hv.requestVideoFrameCallback(on);else requestAnimationFrame(on);
 }
 hv.addEventListener("ended",()=>{hSettle();hv.currentTime=HLOOP;if(!current)hv.play().catch(()=>{})});
 document.getElementById("hskip").addEventListener("click",e=>{e.stopPropagation();hSettle()});
@@ -2420,5 +2428,8 @@ h1,h2,h3{font-family:var(--brand);font-weight:700;letter-spacing:.005em}
 @media (prefers-reduced-motion:reduce){
   .phead h2,.htree h2,.cvh h3,.hgold,.page.open .phead h2,.page::after,.page.open::after,.home2::before,.page.open .phead::after{animation:none!important}
 }
+.hstage.full .hposter{visibility:hidden}
+.hstage video.wait{opacity:0}
+.hhead{justify-content:flex-end}
 </style>
 </body></html>

@@ -1125,7 +1125,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 .hfoot .hw{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .hwm{font:700 clamp(60px,15vw,190px)/.8 var(--fs);letter-spacing:.06em;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(217,184,106,.16);margin-bottom:18px;white-space:nowrap}
 .hdl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}.hdl span{color:var(--hm);font-size:13px}
-.hpdf{font:800 14px var(--body);color:#1a140a;background:linear-gradient(180deg,#F3DFA6,#D9B86A 55%,#A88638);border-radius:99px;padding:12px 20px;box-shadow:0 10px 30px -12px rgba(217,184,106,.7)}.hpdf[disabled]{opacity:.7;cursor:progress}
+.hpdf{font:800 14px var(--body);color:#1a140a;background:linear-gradient(180deg,#F3DFA6,#D9B86A 55%,#A88638);border-radius:99px;padding:12px 20px;box-shadow:0 10px 30px -12px rgba(217,184,106,.7)}.hpdf[disabled]{opacity:.7;cursor:progress}.hpdf.alt{background:transparent;color:#F3DFA6;border:1px solid #D9B86A80;box-shadow:none}
 .hagain{font:600 12px var(--body);color:#F3DFA6;border:1px solid var(--hl);border-radius:99px;padding:7px 14px}
 @media (prefers-reduced-motion:reduce){.home2 *{transition:none!important;animation:none!important}}
 
@@ -1206,7 +1206,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
    <div><b class="hgold">3,95</b><span>млрд сум дохода от партнёров в 2026</span></div>
    <div><b class="hgold">100+</b><span>акций и активностей</span></div>
   </div>
-  <div class="hdl"><button class="hpdf" data-pdf="all" type="button">⤓ Скачать всё одним PDF</button><span>Команда, резюме, зоны ответственности, дашборды и отчёты на белом фоне, готово к печати</span></div>
+  <div class="hdl"><button class="hpdf" data-pdf="all" type="button">⤓ Отчёт для руководства, PDF</button><button class="hpdf alt" data-pdf="print" type="button">⤓ Версия для печати</button><span>Весь отчёт по шагам: команда, нагрузка, резюме, дашборды, доход, что сделано и чек-лист решений</span></div>
  </div>
 
  <div class="hmq" aria-hidden="true"><div><span>Бренд</span><span>Промо</span><span>Открытия</span><span>Медиа</span><span>Trade-маркетинг</span><span>Digital</span><span>Партнёры</span><span>Аналитика</span><span>Бренд</span><span>Промо</span><span>Открытия</span><span>Медиа</span><span>Trade-маркетинг</span><span>Digital</span><span>Партнёры</span><span>Аналитика</span></div></div>
@@ -1243,7 +1243,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
   </div>
  </section>
 
- <footer class="hfoot"><div class="hwm" aria-hidden="true">MARKETING</div><div class="hw"><span>© 2026 Департамент маркетинга · Makro</span><span style="display:flex;gap:8px;flex-wrap:wrap"><button class="hagain" data-pdf="all" type="button">⤓ Всё одним PDF</button><button class="hagain" id="hagain" type="button">↻ Показать заставку ещё раз</button></span></div></footer>
+ <footer class="hfoot"><div class="hwm" aria-hidden="true">MARKETING</div><div class="hw"><span>© 2026 Департамент маркетинга · Makro</span><span style="display:flex;gap:8px;flex-wrap:wrap"><button class="hagain" data-pdf="all" type="button">⤓ Отчёт PDF</button><button class="hagain" data-pdf="print" type="button">⤓ Для печати</button><button class="hagain" id="hagain" type="button">↻ Показать заставку ещё раз</button></span></div></footer>
 </div>
 
 
@@ -2242,7 +2242,7 @@ h2.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)retu
 </style>
 <script>
 /* ---- скачать PDF: отчёты и резюме ---- */
-const PDFNAMES={all:"Makro — Маркетинг 2026, полный отчёт",team:"Makro — Команда маркетинга",dash:"Makro — Дашборд октябрь 2026",income:"Makro — Доходность 6 месяцев",done:"Makro — Что сделано",issues:"Makro — Проблемы и решения"};
+const PDFNAMES={all:"Makro — Маркетинг 2026, отчёт для руководства",print:"Makro — Маркетинг 2026, версия для печати",team:"Makro — Команда маркетинга",dash:"Makro — Дашборд октябрь 2026",income:"Makro — Доходность 6 месяцев",done:"Makro — Что сделано",issues:"Makro — Проблемы и решения"};
 const loadJS=src=>new Promise((ok,no)=>{const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=()=>no(new Error("load "+src));document.head.appendChild(s)});
 let libs=null;
 function pdfLibs(){return libs||(libs=Promise.all([
@@ -2268,7 +2268,7 @@ async function makePDF(id){
  return {blob:pdf.output("blob"),filename:name+".pdf"};
 }
 // light, print-ready PDFs are prebuilt next to the page (pdf/*.pdf); the in-browser render is only a fallback
-async function prebuilt(key){try{const r=await fetch("pdf/"+(key==="all"?"makro-marketing-2026":key)+".pdf");if(r.ok){const b=await r.blob();if(b.size>1000&&!/html/.test(b.type))return b}}catch(_){}return null}
+async function prebuilt(key){try{const r=await fetch("pdf/"+({all:"makro-marketing-2026",print:"makro-marketing-2026-print"}[key]||key)+".pdf");if(r.ok){const b=await r.blob();if(b.size>1000&&!/html/.test(b.type))return b}}catch(_){}return null}
 async function savePDF(btn,id){
  const t=btn.textContent;btn.disabled=true;btn.textContent="Готовлю PDF…";
  try{const pre=await prebuilt(id==="cv"?"cv-"+cvCur:id);

@@ -2,7 +2,7 @@
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><style>html,body{margin:0;padding:0}</style></head><body>
 <title>Makro Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Cormorant+SC:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Cormorant+SC:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,600&family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
 /* Layout: one fixed screen — the yangi zamon emblem turning at the centre of a four-arm galaxy in brand colours; top buttons open full-screen pages that grow out of the logo */
 :root{
@@ -1042,34 +1042,207 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 .sst::before{content:"● ";}
 
 </style>
+<style>
+/* ---- home: video intro → band, gold tree of sections (JD Works language) ---- */
+.home2{position:fixed;inset:0;z-index:1;overflow-y:auto;overflow-x:hidden;background:#0E0F11;color:#F2EFE9;--fs:"Cormorant Garamond",Georgia,serif;--hl:rgba(217,184,106,.16);--hm:#A9A397;-webkit-overflow-scrolling:touch}
+.home2.lock{overflow:hidden}
+.hw{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.hgold{background:linear-gradient(180deg,#F3DFA6,#D9B86A 55%,#A88638);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hkick{font:600 italic 20px var(--fs);color:var(--gold);margin:0}
+.hstage{position:relative;height:min(56.25vw,56svh);min-height:220px;background:#000;overflow:hidden;transition:height 1.1s cubic-bezier(.7,0,.2,1)}
+.hstage.full{height:100svh}
+.hstage video,.hstage .hposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hstage video{z-index:1}
+@media (max-aspect-ratio:1/1){.hstage video,.hstage .hposter{inset:auto 0;top:50%;height:auto;aspect-ratio:16/9;transform:translateY(-50%);-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent)}}
+.hstage::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,#0E0F11);z-index:2;transition:opacity .8s}
+.hstage.full::after{opacity:0}
+.hhead{position:absolute;inset:0 0 auto;z-index:3;padding-top:calc(16px + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center;gap:12px;transition:opacity .6s}
+.hstage.full .hhead{opacity:0}
+.hlogo{height:28px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.9}
+.hhead span{font:700 10.5px var(--body);letter-spacing:.3em;text-transform:uppercase;color:#ffffffa0}
+.hskip{position:absolute;z-index:4;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));font:600 13px var(--body);color:var(--gold2);background:#00000066;border:1px solid #d9b86a66;border-radius:99px;padding:9px 16px;opacity:0;pointer-events:none;transition:opacity .4s}
+.hstage.full .hskip{opacity:1;pointer-events:auto}
+.htop{position:relative;z-index:3;margin-top:-40px;display:grid;gap:18px}
+.htop .hld{margin:0;color:var(--hm);max-width:44em;font-size:16.5px;line-height:1.6}
+.hkpi{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hl);border:1px solid var(--hl);border-radius:24px;overflow:hidden;margin-top:8px}
+@media(min-width:760px){.hkpi{grid-template-columns:repeat(4,1fr)}}
+.hkpi div{background:#0E0F11;padding:18px}
+.hkpi b{display:block;font:700 clamp(34px,5vw,50px)/1 var(--fs)}
+.hkpi span{display:block;margin-top:8px;color:var(--hm);font-size:13px;line-height:1.4}
+.hmq{overflow:hidden;border-block:1px solid var(--hl);margin-block:44px 8px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.hmq div{display:flex;width:max-content;animation:hmq 38s linear infinite}
+.hmq span{font:600 italic 22px var(--fs);color:var(--hm);padding:12px 22px;white-space:nowrap}
+.hmq span::after{content:"✦";font-style:normal;font-size:11px;color:#A88638;margin-left:44px;vertical-align:middle}
+@keyframes hmq{to{transform:translateX(-50%)}}
+.htree{padding-block:40px 70px;--x:20px}
+.htree h2{font:700 clamp(30px,4.4vw,44px)/1.05 var(--fs);margin:4px 0 6px;letter-spacing:.01em}
+.htree .hsub{color:var(--hm);margin:0 0 34px;max-width:40em}
+.hroot{position:relative;display:flex;align-items:center;gap:14px;width:fit-content;max-width:100%;margin:0 auto;padding:12px 22px 12px 12px;border:1px solid rgba(217,184,106,.45);border-radius:99px;background:radial-gradient(120% 140% at 0 0,#2a2418,#121214 60%);box-shadow:0 0 0 6px rgba(217,184,106,.05),0 20px 50px -20px rgba(217,184,106,.35)}
+.hseal{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 210deg,#8A6426,#F8E6B5,#B98A3B,#FFF3D1,#8A6426);color:#1a140a;font:700 26px/1 var(--fs)}
+.hroot b{display:block;font:800 16px/1.2 var(--body)}
+.hroot small{display:block;color:var(--hm);font-size:12.5px}
+.htrunk{position:relative;width:1px;height:46px;margin:0 auto;background:linear-gradient(#D9B86A,#A88638);transform-origin:top}
+.htrunk::after{content:"";position:absolute;left:-2px;top:0;width:5px;height:5px;border-radius:50%;background:#F3DFA6;box-shadow:0 0 10px 3px rgba(243,223,166,.7);animation:hspark 3.2s ease-in infinite}
+@keyframes hspark{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(44px);opacity:0}}
+.hbrs{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-top:36px}
+.hbrs::before{content:"";position:absolute;top:0;height:1px;left:var(--x);right:calc((100% - 40px)/3 - var(--x));background:linear-gradient(90deg,#A88638,#D9B86A,#A88638)}
+.hbr{position:relative;min-width:0}
+.hbr::before{content:"";position:absolute;left:var(--x);top:-36px;height:36px;width:1px;background:#D9B86A;transform-origin:top}
+.hbn{display:flex;align-items:center;gap:12px;min-height:40px}
+.hbn i{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid #D9B86A;background:#0E0F11;font:700 17px/1 var(--fs);font-style:normal;color:#F3DFA6;box-shadow:0 0 18px -4px rgba(217,184,106,.6)}
+.hbn b{display:block;font:700 24px/1.05 var(--fs);color:#F3DFA6}
+.hbn small{display:block;color:var(--hm);font-size:12.5px;line-height:1.3}
+.hlv{display:grid;gap:12px;margin-top:12px;padding-left:52px}
+.hlf{position:relative}
+.hlf::before{content:"";position:absolute;left:calc(var(--x) - 52px);top:-12px;height:calc(50% + 12px);width:1px;background:#A88638}
+.hlf:not(:last-child)::before{height:calc(100% + 12px)}
+.hlf::after{content:"";position:absolute;left:calc(var(--x) - 52px);top:50%;width:calc(52px - var(--x));height:1px;background:linear-gradient(90deg,#A88638,#D9B86A)}
+.hleaf{position:relative;width:100%;text-align:left;display:flex;flex-direction:column;gap:2px;min-height:150px;padding:18px 20px;border-radius:20px;border:1px solid var(--hl);background:linear-gradient(160deg,#211E1A,#131315);color:inherit;overflow:hidden;transition:border-color .3s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.hleaf::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(243,223,166,.10) 50%,transparent 65%);transform:translateX(-120%);transition:transform 1s;pointer-events:none}
+.hleaf:hover{border-color:rgba(217,184,106,.6);transform:translateY(-3px)}
+.hleaf:hover::before{transform:translateX(120%)}
+.hleaf .n{font:700 14px var(--fs);color:var(--gold)}
+.hleaf h3{margin:0;font:800 19px/1.2 var(--body);letter-spacing:-.01em}
+.hleaf .f{font:700 40px/1.05 var(--fs);margin-top:6px}
+.hleaf .f small{font-size:18px;margin-left:4px}
+.hleaf p{margin:0;color:var(--hm);font-size:13.5px;line-height:1.45}
+.hleaf em{margin-top:auto;padding-top:10px;font-style:normal;font-weight:800;font-size:13px;color:#F3DFA6}
+@media(max-width:899px){
+ .hbrs{grid-template-columns:1fr;gap:28px;padding-top:0}
+ .hbrs::before{left:var(--x);right:auto;width:1px;top:0;bottom:24px;background:linear-gradient(#D9B86A,#A88638)}
+ .hbr::before{display:none}
+ .hroot{margin:0}
+ .htrunk{margin:0 0 0 var(--x);height:28px}
+ .htrunk::after{animation-name:hsparkm}
+}
+@keyframes hsparkm{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(26px);opacity:0}}
+.hbrs::before,.hbr::before,.htrunk{transition:transform .9s cubic-bezier(.2,.8,.2,1) .2s}
+.hlf,.hbn,.hroot,.htop{transition:opacity .8s var(--d,0s),transform .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.home2.intro .htrunk,.home2.intro .hbr::before{transform:scaleY(0)}
+.home2.intro .hbrs::before{transform:scaleX(0)}
+.home2.intro .hlf,.home2.intro .hbn,.home2.intro .hroot,.home2.intro .htop{opacity:0;transform:translateY(18px)}
+.hfoot{position:relative;overflow:hidden;border-top:1px solid var(--hl);padding-block:26px calc(34px + env(safe-area-inset-bottom,0px));color:#6E695F;font-size:13px}
+.hfoot .hw{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.hwm{font:700 clamp(60px,15vw,190px)/.8 var(--fs);letter-spacing:.06em;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(217,184,106,.16);margin-bottom:18px;white-space:nowrap}
+.hagain{font:600 12px var(--body);color:#F3DFA6;border:1px solid var(--hl);border-radius:99px;padding:7px 14px}
+@media (prefers-reduced-motion:reduce){.home2 *{transition:none!important;animation:none!important}}
 
-<canvas id="sky" aria-hidden="true"></canvas>
+/* ---- responsibility tree of one person (inside the sheet) ---- */
+.sheet.wide{width:min(760px,100%)}
+.rz{margin-top:22px;--x:19px}
+.rzk{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#3a3222;border:1px solid #3a3222;border-radius:18px;overflow:hidden}
+.rzk div{background:#0e0c09;padding:14px 14px 12px}
+.rzk b{display:block;font:700 clamp(30px,6vw,42px)/1 "Cormorant Garamond",Georgia,serif;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rzk span{display:block;margin-top:6px;color:var(--mute);font-size:12px;line-height:1.35}
+.rzn{margin-top:14px;padding:14px 16px;border:1px solid #2f2a1f;border-radius:18px;background:linear-gradient(160deg,#17140f,#0e0c09)}
+.rzn .row{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:center}
+.rzn .row+.row{margin-top:10px}
+.rzn .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rzn .segs{display:flex;gap:4px;flex-wrap:wrap}
+.rzn .segs i{height:12px;flex:0 0 26px;border-radius:4px;border:1px solid #d8b46a66}
+.rzn .segs i.own{background:var(--gg);border-color:transparent}
+.rzn .segs i.ex{background:#d8b46a2e}
+.rzn .roles{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.rzn .roles span{font-size:12px;padding:4px 10px;border-radius:99px;border:1px solid #3a3222;color:var(--gold2)}
+.rzn .roles span.own{background:var(--gg);color:#1a140a;border-color:transparent;font-weight:700}
+.rzt{position:relative;margin-top:22px}
+.rzt::before{content:"";position:absolute;left:var(--x);top:28px;bottom:26px;width:1px;background:linear-gradient(#D9B86A,#A88638);transform-origin:top;animation:rzgrow 1s cubic-bezier(.2,.8,.2,1) .1s backwards}
+.rzr{display:flex;align-items:center;gap:12px}
+.rzr .ph{flex:none;width:40px;height:40px;border-radius:50%;overflow:hidden;border:1px solid var(--gold);box-shadow:0 0 0 4px #d8b46a14}
+.rzr .ph img{width:100%;height:100%;object-fit:cover}
+.rzr b{font-weight:800;font-size:15px}
+.rzr small{display:block;color:var(--mute);font-size:12px}
+.rzb{position:relative;padding:18px 0 0 54px;animation:rzin .6s cubic-bezier(.2,.8,.2,1) var(--d) backwards}
+.rzb::before{content:"";position:absolute;left:var(--x);top:36px;width:24px;height:1px;background:#D9B86A}
+.rzb>i{position:absolute;left:calc(var(--x) - 6px);top:31px;width:13px;height:13px;border-radius:50%;background:#0e0c09;border:1px solid var(--gold);box-shadow:0 0 12px -2px #d8b46a}
+.rzb h5{margin:0;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;font:700 22px/1.15 "Cormorant Garamond",Georgia,serif;color:var(--gold2)}
+.rzb h5 small{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.rzb h5 .tag{font:700 10.5px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px;border:1px solid #d8b46a55;color:var(--gold)}
+.rzb h5 .tag.nw{background:#d8b46a22}
+.rzc{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.rzc span{font-size:13px;line-height:1.3;padding:7px 11px;border-radius:12px;background:#17140f;border:1px solid #2f2a1f;animation:rzin .45s ease var(--d) backwards}
+.rzdraft{margin-top:14px;font-size:12px;color:var(--mute)}
+@keyframes rzin{from{opacity:0;transform:translateY(10px)}}
+@keyframes rzgrow{from{transform:scaleY(0)}}
 
-<main class="home" aria-label="Makro yangi zamon">
-  <button class="core" id="core" aria-label="Открыть разделы">
-    <svg class="emblem" viewBox="-60 -60 120 120" role="img" aria-label="Эмблема Makro">
-      <defs><mask id="gap"><rect x="-60" y="-60" width="120" height="120" fill="#000"/><circle r="56" fill="#fff"/>
-        <path d="M-60 -60 60 60M60 -60 -60 60" stroke="#000" stroke-width="7"/></mask></defs>
-      <g mask="url(#gap)">
-        <path d="M0 0 L-60 -60 L60 -60 Z" fill="#e0382f"/>
-        <path d="M0 0 L60 -60 L60 60 Z" fill="#4aa63f"/>
-        <path d="M0 0 L60 60 L-60 60 Z" fill="#f4c834"/>
-        <path d="M0 0 L-60 60 L-60 -60 Z" fill="#3d2e8c"/>
-      </g>
-      <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-12 -40c4-6 16-7 22-1 5 5 3 13-3 15-5 2-8 0-12 3-4 3-9 2-10-3-1-5 1-10 3-14z"/><circle cx="2" cy="-34" r="3"/>
-        <circle cx="35" cy="2" r="10"/><path d="M31 -8c2 3 6 3 8 0M35 -8v-4"/>
-        <path d="M-14 33c0-6 6-10 14-10s14 4 14 10-6 9-14 9-14-3-14-9z"/><path d="M-5 27l-3 6M2 26l-3 7M9 28l-3 6"/>
-        <path d="M-36 -10c-5 7-8 11-8 15a8 8 0 0 0 16 0c0-4-3-8-8-15z"/>
-      </g>
-    </svg>
-    <div class="word"><b>makro</b><span>yangi zamon</span></div>
-    <div class="sub">Департамент маркетинга</div>
-  </button>
-</main>
+/* ---- team page: who carries what ---- */
+.ld2{margin-top:44px}
+.ld2 .glab2{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.ld2 h3{font-size:clamp(26px,3.6vw,36px);margin:6px 0 6px;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ld2 p.s{color:var(--mute);margin:0 0 18px;max-width:60ch}
+.ldg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.ldc{position:relative;text-align:left;display:grid;gap:12px;padding:16px;border-radius:20px;border:1px solid #2f2a1f;background:linear-gradient(160deg,#1d1912,#0f0d0a);transition:border-color .3s,transform .3s}
+.ldc:hover{border-color:var(--gold);transform:translateY(-3px)}
+.ldc .who{display:flex;gap:12px;align-items:center;padding-right:38px}
+.ldc .who span.ph{flex:none;width:48px;height:48px;border-radius:50%;overflow:hidden;border:1px solid #d8b46a88}
+.ldc .who img{width:100%;height:100%;object-fit:cover}
+.ldc .who b{display:block;font-size:15px;line-height:1.2}
+.ldc .who small{display:block;color:var(--mute);font-size:12px}
+.ldc .mx{position:absolute;right:14px;top:12px;font:700 30px/1 "Cormorant Garamond",Georgia,serif;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ldc .bar3{display:grid;gap:6px;font-size:12px;color:var(--mute)}
+.ldc .bar3 div{display:grid;grid-template-columns:84px 1fr 24px;gap:8px;align-items:center}
+.ldc .bar3 i{display:block;height:6px;border-radius:9px;background:#2a251b;overflow:hidden}
+.ldc .bar3 i::after{content:"";display:block;height:100%;width:var(--w);background:var(--gg);border-radius:9px}
+.ldc .bar3 b{color:var(--fg);text-align:right}
+.ldc em{font-style:normal;font-size:12px;font-weight:700;color:var(--gold2)}
+</style>
 
-<div class="orbit" id="orbit"></div>
-<div class="hint" id="hint">Нажмите на логотип</div>
+<div class="home2 intro lock" id="home2">
+ <div class="hstage full" id="hstage">
+  <img class="hposter" src="img/14f231691e85.webp" alt="">
+  <video id="hvid" src="img/1cc73c81a006.mp4" muted playsinline preload="auto" aria-label="Заставка «Маркетинг»"></video>
+  <div class="hhead hw"><img class="hlogo" id="hlogo" alt="Makro yangi zamon"><span>Департамент · 2026</span></div>
+  <button class="hskip" id="hskip" type="button">Пропустить</button>
+ </div>
+
+ <div class="hw htop">
+  <p class="hkick">makro yangi zamon</p>
+  <p class="hld">Департамент маркетинга и рекламы сети Makro. Одна команда отвечает за бренд, промо, открытия магазинов и доход от партнёров. Ниже вся наша работа, разложенная по разделам.</p>
+  <div class="hkpi">
+   <div><b class="hgold" data-k="team">7</b><span>человек в команде</span></div>
+   <div><b class="hgold">55</b><span>магазинов сети</span></div>
+   <div><b class="hgold">3,95</b><span>млрд сум дохода от партнёров в 2026</span></div>
+   <div><b class="hgold">100+</b><span>акций и активностей</span></div>
+  </div>
+ </div>
+
+ <div class="hmq" aria-hidden="true"><div><span>Бренд</span><span>Промо</span><span>Открытия</span><span>Медиа</span><span>Trade-маркетинг</span><span>Digital</span><span>Партнёры</span><span>Аналитика</span><span>Бренд</span><span>Промо</span><span>Открытия</span><span>Медиа</span><span>Trade-маркетинг</span><span>Digital</span><span>Партнёры</span><span>Аналитика</span></div></div>
+
+ <section class="hw htree" aria-labelledby="htt">
+  <p class="hkick">Древо разделов</p>
+  <h2 id="htt" class="hgold">Всё, что растёт из одной команды</h2>
+  <p class="hsub">Три ветви: люди, результат и развитие. Нажмите на лист, чтобы открыть раздел.</p>
+  <div class="hroot" style="--d:.15s"><span class="hseal">M</span><span><b>Департамент маркетинга</b><small>Makro · одна команда, общий результат</small></span></div>
+  <div class="htrunk"></div>
+  <div class="hbrs">
+   <div class="hbr">
+    <div class="hbn" style="--d:.5s"><i>I</i><span><b>Команда</b><small>люди и зоны ответственности</small></span></div>
+    <div class="hlv">
+     <div class="hlf" style="--d:.7s"><button class="hleaf" data-go="team" type="button"><span class="n">01</span><h3>Структура и нагрузка</h3><span class="f hgold" data-k="team">7</span><p>Кто за что отвечает: у каждого своё дерево направлений</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:.8s"><button class="hleaf" data-go="cv" type="button"><span class="n">02</span><h3>Резюме</h3><span class="f hgold" data-k="cv">5</span><p>Команда в лицах, каждое резюме в PDF</p><em>Открыть →</em></button></div>
+    </div>
+   </div>
+   <div class="hbr">
+    <div class="hbn" style="--d:.6s"><i>II</i><span><b>Результат</b><small>цифры 2026 года</small></span></div>
+    <div class="hlv">
+     <div class="hlf" style="--d:.8s"><button class="hleaf" data-go="dash" type="button"><span class="n">03</span><h3>Дашборд</h3><span class="f hgold">55<small>магазинов</small></span><p>Маркетинг сети в цифрах</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:.9s"><button class="hleaf" data-go="income" type="button"><span class="n">04</span><h3>Доходность</h3><span class="f hgold">3,95<small>млрд сум</small></span><p>Доход от партнёров по факту SAP</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:1s"><button class="hleaf" data-go="done" type="button"><span class="n">05</span><h3>Что сделано</h3><span class="f hgold">100+</span><p>Акции, открытия, обновление бренда</p><em>Открыть →</em></button></div>
+    </div>
+   </div>
+   <div class="hbr">
+    <div class="hbn" style="--d:.7s"><i>III</i><span><b>Развитие</b><small>следующий шаг</small></span></div>
+    <div class="hlv">
+     <div class="hlf" style="--d:.9s"><button class="hleaf" data-go="issues" type="button"><span class="n">06</span><h3>Задачи и решения</h3><span class="f hgold" data-k="issues">13</span><p>Что усилит команду и доход</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:1s"><button class="hleaf" data-go="kit" type="button"><span class="n">07</span><h3>Медиакит</h3><span class="f hgold"><span data-k="kit">27</span><small>слайдов</small></span><p>Рекламные форматы для партнёров</p><em>Открыть →</em></button></div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <footer class="hfoot"><div class="hwm" aria-hidden="true">MARKETING</div><div class="hw"><span>© 2026 Департамент маркетинга · Makro</span><button class="hagain" id="hagain" type="button">↻ Показать заставку ещё раз</button></div></footer>
+</div>
+
 
 <div class="deck" id="deck" aria-hidden="true" role="dialog" aria-label="Медиакит 2026">
   <div class="dtop"><img id="dlogo" alt="makro yangi zamon"><span class="dcount" id="dcount">01 / 27</span><button class="dx" id="dclose">✕ Закрыть</button></div>
@@ -1082,6 +1255,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 <section class="page" id="p-team" aria-label="Департамент маркетинга"><div class="pin">
   <div class="phead reveal r1"><div><div class="eyebrow">01 · Команда</div><h2>Структура департамента</h2><p>Кто кому подчиняется, кто за что отвечает и кого не хватает команде.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← На главную</button></span></div>
   <div class="reveal r2"><div class="tree2" id="tree"></div></div>
+  <div class="reveal r2" id="load"></div>
   <div class="reveal r2" id="teamx"></div>
   </div></section>
 
@@ -1449,7 +1623,7 @@ let sw=null;stage.addEventListener("pointerdown",e=>{sw={x:e.clientX,y:e.clientY
 stage.addEventListener("pointerup",e=>{if(!sw)return;const dx=e.clientX-sw.x,dy=e.clientY-sw.y;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4&&performance.now()-sw.t<700)show(di+(dx<0?1:-1));sw=null});
 deck.addEventListener("pointermove",e=>{deck.style.setProperty("--px",(e.clientX/innerWidth-.5).toFixed(3));deck.style.setProperty("--py",(e.clientY/innerHeight-.5).toFixed(3))},{passive:true});
 function openDeck(x,y){deck.style.setProperty("--ox",(x??innerWidth/2)+"px");deck.style.setProperty("--oy",(y??innerHeight/2)+"px");deck.classList.add("open");deck.setAttribute("aria-hidden","false");current="kit";show(0,1);try{history.replaceState(null,"","#kit")}catch(_){}}
-function closeDeck(){deck.classList.remove("open");deck.setAttribute("aria-hidden","true");current=null;SL.forEach(s=>s.classList.remove("on"));try{history.replaceState(null,"",location.pathname)}catch(_){}}
+function closeDeck(){deck.classList.remove("open");homeVid(true);deck.setAttribute("aria-hidden","true");current=null;SL.forEach(s=>s.classList.remove("on"));try{history.replaceState(null,"",location.pathname)}catch(_){}}
 document.getElementById("dclose").onclick=closeDeck;
 function checkMore(){const x=SL[di];deck.classList.toggle("hasmore",x.scrollHeight-x.clientHeight-x.scrollTop>40)}
 SL.forEach(x=>x.addEventListener("scroll",()=>{if(x===SL[di])checkMore()},{passive:true}));
@@ -1467,42 +1641,12 @@ function go(id,x,y){
   current=id;const p=document.getElementById("p-"+id);if(p)p.scrollTop=0;
   try{history.replaceState(null,"","#"+id)}catch(_){}
 }
-function home(){pages.forEach(p=>p.classList.remove("open"));current=null;try{history.replaceState(null,"",location.pathname)}catch(_){}}
+function home(){pages.forEach(p=>p.classList.remove("open"));current=null;homeVid(true);try{history.replaceState(null,"",location.pathname)}catch(_){}}
 document.querySelectorAll("[data-home]").forEach(b=>{b.textContent="← Назад";b.onclick=home});
-
-/* ---- explosion + planets ---- */
-const PL=[
- {id:"dash",name:"Дашборд",sub:"всё в цифрах",ic:"chart",cls:"kitp"},
- {id:"income",name:"Доходность",sub:"что продали",ic:"cash"},
- {id:"done",name:"Что сделано",sub:"6 месяцев",ic:"clock"},
- {id:"issues",name:"Проблемы и решения",sub:"для руководства",ic:"flyer"},
- {id:"team",name:"Департамент",sub:"структура",ic:"users"},
- {id:"kit",name:"Медиакит 2026",sub:"27 слайдов",ic:"tv"},
- {id:"cv",name:"Резюме",sub:"команда",ic:"phone"}];
-const orbit=document.getElementById("orbit"),core=document.getElementById("core"),hint=document.getElementById("hint");
-orbit.innerHTML=PL.map((p,i)=>`<button class="pl ${p.cls||""}" data-pl="${p.id}" style="--c:${p.c};--c2:${p.c2}" hidden tabindex="-1"><span class="orb">${ico(p.ic)}</span><b>${p.name}</b><small>${p.sub}</small></button>`).join("");
-const pls=[...orbit.children];let exploded=false,tBoom=0,prog=PL.map(()=>0),burst=[],shock=0;
-function explode(){exploded=true;tBoom=performance.now();core.classList.add("boom");hint.classList.add("off");core.setAttribute("aria-label","Собрать логотип");
-  pls.forEach(p=>{p.hidden=false;p.tabIndex=0});
-  const cx0=innerWidth/2,cy0=innerHeight/2+10,cols=["#f3dfa5","#d8b46a","#fff4dc","#b8945a","#ffffff"];
-  for(let i=0;i<(RM?0:520);i++){const a=Math.random()*6.283,v=2+Math.random()*13;burst.push({x:cx0,y:cy0,vx:Math.cos(a)*v,vy:Math.sin(a)*v*.8,c:cols[i%5],s:Math.random()*2.2+.6,l:1})}
-  shock=1;zoom=1.4;zoomTarget=.35}
-function implode(){exploded=false;core.classList.remove("boom");hint.classList.remove("off");core.setAttribute("aria-label","Открыть разделы");zoomTarget=0;
-  pls.forEach(p=>p.tabIndex=-1);setTimeout(()=>{if(!exploded)pls.forEach(p=>p.hidden=true)},900)}
-core.onclick=()=>exploded?implode():explode();
-orbit.onclick=e=>{const b=e.target.closest("[data-pl]");if(!b)return;const r=b.querySelector(".orb").getBoundingClientRect();go(b.dataset.pl,r.left+r.width/2,r.top+r.height/2)};
-function placePlanets(now){
-  const W0=innerWidth,H0=innerHeight,mob=W0<700,rx=mob?Math.min(W0*.36,170):Math.min(W0*.34,460),ry=mob?Math.min(H0*.32,300):Math.min(H0*.3,280);
-  pls.forEach((el,i)=>{const delay=i*110,target=exploded?Math.min(1,Math.max(0,(now-tBoom-250-delay)/900)):0;
-    prog[i]+=(target-prog[i])*(exploded?.18:.12);const p=prog[i],e=1-Math.pow(1-p,3);
-    const ang=-Math.PI/2+i*2*Math.PI/PL.length+(RM?0:now*.00005),depth=.86+.22*(Math.sin(ang)+1)/2;
-    const x=Math.cos(ang)*rx*e,y=Math.sin(ang)*ry*e+10;
-    el.style.transform=`translate(-50%,-50%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${(e*depth).toFixed(3)})`;
-    el.style.opacity=Math.min(1,e*1.4).toFixed(3);el.style.zIndex=Math.round(depth*100)})}
 
 /* ---- detail sheet ---- */
 const sheet=document.getElementById("sheet"),scrim=document.getElementById("scrim"),sb=document.getElementById("sheetBody");
-function open(h){sheet.classList.toggle("green",current==="kit");sb.innerHTML=h;sheet.scrollTop=0;sheet.classList.add("on");scrim.classList.add("on")}
+function open(h){sheet.classList.toggle("green",current==="kit");sheet.classList.toggle("wide",h.includes('class="rz"'));sb.innerHTML=h;sheet.scrollTop=0;sheet.classList.add("on");scrim.classList.add("on")}
 function close(){sheet.classList.remove("on");scrim.classList.remove("on")}
 document.getElementById("close").onclick=close;scrim.onclick=close;
 addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(sheet.classList.contains("on"))close();else if(current&&current!=="kit")home()});
@@ -1512,9 +1656,10 @@ function person(p){const i=TEAM.indexOf(p);let boss=p.boss&&TEAM.find(x=>x.id===
  if(p.team){open(`<div class="eyebrow">${p.dept}</div><h2 style="margin-top:12px">${p.name}</h2><p style="color:var(--mute)">${p.role}</p><h4>Сотрудники отдела · ${subs.length}</h4><div class="subs">${subs.map(x=>`<button class="person" data-p="${x.id}"><span class="ava" style="overflow:hidden">${x.photo?`<img loading="lazy" decoding="async" src="${photoOf(x)}" alt="" style="width:100%;height:100%;object-fit:cover">`:ini(x.name)}</span><span><b>${x.name}</b><small>${x.role}</small></span></button>`).join("")}</div>`);return}
  open(`<div class="eyebrow">${p.grp}</div><div class="pcard">${p.photo?`<span class="pava"><img loading="lazy" decoding="async" src="${photoOf(p)}" alt=""></span>`:`<span class="pava" style="background:${grad(i)}">${ini(p.name)}</span>`}
  <div><h2>${p.name}</h2>${p.lat?`<div class="lat">${p.lat}</div>`:""}<div class="prole">${p.role}</div></div></div>
+ ${RESP[p.id]?respTree(p):""}
  <h4>Сведения о работе</h4><dl class="kv">${row("Подразделение",p.dept)}${row("Команда",p.grp!==p.dept?p.grp:"")}${row("Должность",p.role)}${row("Руководитель",boss?boss.name:"")}${row("В Makro с",p.since)}</dl>
  ${p.phone?`<h4>Контакты</h4><dl class="kv">${row("Телефон",p.phone,1)}${row("Почта",p.mail,1)}</dl>`:""}
- ${p.zone?`<h4>Отвечает за</h4><ul>${p.zone.map(z=>`<li>${z}</li>`).join("")}</ul>`:""}
+ ${p.zone&&!RESP[p.id]?`<h4>Отвечает за</h4><ul>${p.zone.map(z=>`<li>${z}</li>`).join("")}</ul>`:""}
  ${subs.length?`<h4>В подчинении · ${subs.length}</h4><div class="subs">${subs.map(x=>`<button class="person" data-p="${x.id}"><span class="ava" style="overflow:hidden;background:${grad(TEAM.indexOf(x))}">${x.photo?`<img loading="lazy" decoding="async" src="${photoOf(x)}" alt="" style="width:100%;height:100%;object-fit:cover">`:ini(x.name)}</span><span><b>${x.name}</b><small>${x.role}</small></span></button>`).join("")}</div>`:""}${typeof CVOF!=="undefined"&&CVOF[p.id]?`<p style="margin-top:22px"><button class="cta" data-opencv="${CVOF[p.id]}">Открыть резюме →</button></p>`:""}`)}
 function month(i){const m=MONTHS[i];
  open(`<div class="eyebrow">Сделанные работы · 2026</div><h2>${m.m}</h2>
@@ -1986,49 +2131,95 @@ document.addEventListener("click",e=>{
 });
 addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("on")});
 
-/* ---- galaxy ---- */
-const cv=document.getElementById("sky"),cx=cv.getContext("2d");
-let W=0,H=0,DPR=1,stars=[],dust=[],tx=0,ty=0,mx=0,my=0,zoom=0,zoomTarget=0;
-const ARM=["#f3dfa5","#d8b46a","#fff4dc","#b8945a"];
-const MOB=innerWidth<700||matchMedia("(pointer:coarse)").matches;
-function W0Lim(){return MOB?1:Math.max(1,Math.min(2,Math.sqrt(2600000/(innerWidth*innerHeight))))}
-function build(){
-  DPR=Math.min(devicePixelRatio||1,W0Lim());W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cx.setTransform(DPR,0,0,DPR,0,0);
-  const R=Math.max(W,H)*.62,n=Math.round(Math.min(MOB?750:3000,W*H/(MOB?320:300)));stars=[];
-  for(let i=0;i<n;i++){const arm=i%4,t=Math.pow(Math.random(),1.25),r=70+t*R,spread=(Math.random()-.5)*(.22+t*.7);
-    stars.push({r,a:arm*Math.PI/2+Math.log(r/60)*1.35+spread,arm,s:Math.random()*1.1+.25+(1-t)*.7,w:.00055*Math.pow(70/r,.55),tw:Math.random()*6})}
-  dust=[];for(let i=0;i<(MOB?90:220);i++)dust.push({x:Math.random()*W,y:Math.random()*H,s:Math.random()*1.1+.2,o:Math.random()*.6+.2});
-}
-build();let bw=innerWidth,bh=innerHeight;addEventListener("resize",()=>{if(innerWidth!==bw||Math.abs(innerHeight-bh)>140){bw=innerWidth;bh=innerHeight;build()}});
-addEventListener("pointermove",e=>{tx=(e.clientX/W-.5);ty=(e.clientY/H-.5)},{passive:true});
-let lastF=0;
-function draw(now){
-  if(current&&!burst.length){requestAnimationFrame(draw);return}
-  if(MOB&&now-lastF<32&&!burst.length&&shock<=0){requestAnimationFrame(draw);return}lastF=now;
-  mx+=(tx-mx)*.04;my+=(ty-my)*.04;zoom+=(zoomTarget-zoom)*.05;
-  cx.clearRect(0,0,W,H);
-  for(const d of dust){cx.globalAlpha=d.o*(.6+.4*Math.sin(now/900+d.x));cx.fillStyle="#efe3c6";cx.fillRect(d.x,d.y,d.s,d.s)}
-  const ox=W/2+mx*30,oy=H/2+10+my*30,tilt=.62+my*.12,sc=1+zoom*.9,rotZ=-.35+mx*.25;
-  const cz=Math.cos(rotZ),sz=Math.sin(rotZ);
-  cx.globalCompositeOperation="lighter";
-  for(const s of stars){const a=s.a+now*s.w*(RM?0:1);let x=Math.cos(a)*s.r*sc,y=Math.sin(a)*s.r*sc*tilt;
-    const X=ox+x*cz-y*sz,Y=oy+x*sz+y*cz;if(X<-20||X>W+20||Y<-20||Y>H+20)continue;
-    const fade=Math.min(1,s.r/140);cx.globalAlpha=(.35+.45*Math.sin(now/700+s.tw)**2)*fade;cx.fillStyle=ARM[s.arm];
-    if(MOB||s.s<1){const d=s.s*1.6;cx.fillRect(X-d/2,Y-d/2,d,d)}else{cx.beginPath();cx.arc(X,Y,s.s,0,6.283);cx.fill()}}
-  const g=cx.createRadialGradient(ox,oy,0,ox,oy,260*sc);g.addColorStop(0,"#d8b46a30");g.addColorStop(1,"#0000");
-  cx.globalAlpha=1;cx.fillStyle=g;cx.fillRect(0,0,W,H);
-  cx.globalCompositeOperation="source-over";
-  if(burst.length){cx.globalCompositeOperation="lighter";
-    for(const b of burst){b.x+=b.vx;b.y+=b.vy;b.vx*=.955;b.vy*=.955;b.l-=.011;if(b.l<=0)continue;cx.globalAlpha=b.l;cx.fillStyle=b.c;cx.beginPath();cx.arc(b.x,b.y,b.s*(.6+b.l),0,6.283);cx.fill()}
-    burst=burst.filter(b=>b.l>0);cx.globalCompositeOperation="source-over"}
-  if(shock>0){const r=(1-shock)*Math.max(W,H)*.75;cx.globalAlpha=shock*.8;cx.strokeStyle="#ffffff";cx.lineWidth=2+shock*6;cx.beginPath();cx.ellipse(W/2,H/2+10,r,r*.75,0,0,6.283);cx.stroke();
-    const fl=cx.createRadialGradient(W/2,H/2,0,W/2,H/2,240);fl.addColorStop(0,`rgba(255,255,255,${shock*.55})`);fl.addColorStop(1,"rgba(255,255,255,0)");cx.fillStyle=fl;cx.globalAlpha=1;cx.fillRect(0,0,W,H);shock-=.022}
-  cx.globalAlpha=1;placePlanets(now);
-  requestAnimationFrame(draw)}
-requestAnimationFrame(draw);
+/* ---- зоны ответственности: дерево направлений каждого сотрудника ----
+   own: своя должность; b: направления [название, задачи, роли которые человек закрывает дополнительно, новое направление?] */
+const RESP={
+ dehqonov:{own:"Заместитель директора",b:[
+  ["Руководство департаментом",["Процессы, команда и контроль","Работа маркетинга и рекламы","Ведёт департамент, пока позиция директора свободна","Запросы других департаментов"],["Директор департамента"]],
+  ["Коммерция",["Отчётность для коммерческого департамента","Решение вопросов коммерции","Продажа рекламы и ДМП поставщикам","Встречи и переговоры с поставщиками"],["Trade-маркетолог"],1],
+  ["Аналитика и бизнес-процессы",["Аналитика и презентации для руководства","Помощь другим отделам по аналитике","Новые бизнес-процессы: описание и запуск","SAP: выгрузки и отчёты"],["Аналитик маркетинга","CRM, SAP и отчётность"]],
+  ["Открытия магазинов",["Открытие новых маркетов","Совместно с операционным департаментом","Отдельной open-группы нет, ведёт маркетинг"],["Open-группа"],1],
+  ["E-commerce и B2B",["Wildberries","Ozon","Alif","Встречи и переговоры с площадками","Развитие B2B-направления"],[],1],
+  ["Проекты и технические задания",["Ведение проектов","Общие переговоры","Технические задания: обсуждение и создание","Новые идеи и решения за пределами маркетинга"],["Проект-менеджер"]]]},
+ nurullin:{own:"Начальник отдела рекламы",b:[
+  ["Отдел рекламы и бренд-менеджмента",["Бренд Makro yangi zamon","Реклама и визуал акций","Задачи дизайнерам и маркетологам"],[]],
+  ["Отдел маркетинга и конъюнктуры",["Курирует отдел, пока нет начальника","Исследования рынка и цены конкурентов","Промо-календарь"],["Начальник отдела конъюнктуры"]]]},
+ usarova:{own:"Маркетолог",b:[
+  ["Бренд и POSM",["Бренд в магазинах","POSM"],["Арт-менеджер"]],
+  ["SMM и видеоконтент",["Соцсети","Видеоконтент"],["SMM-менеджер"]],
+  ["CRM и лояльность",["Карта лояльности","Мобильное приложение"],["CRM-менеджер"]],
+  ["Экраны SmartCast",["Экраны в магазинах"],[]],
+  ["Промоакции с коммерцией",["Акции вместе с категорийными менеджерами"],["Промо-менеджер"]],
+  ["Открытия магазинов",["Участие в открытиях"],[],1]]},
+ qurbonov:{own:"Маркетолог",b:[
+  ["Наружная реклама и оформление",["Наружная реклама","Оформление магазинов"],[]],
+  ["Подрядчики",["Приёмка работ подрядчиков"],[]],
+  ["Выезды в магазины",["Обходы и аудит магазинов","На своей машине, служебной нет"],["Второй сотрудник по обходам"]]]},
+ kadirov:{own:"Моушн-дизайнер",draft:1,b:[
+  ["Видео и анимация",["Ролики для соцсетей","Видео для экранов в магазинах","Анимация акций"],["Дизайнер · раньше 4, сейчас 2"]]]},
+ toxtamurodov:{own:"Графический дизайнер",draft:1,b:[
+  ["Графический дизайн",["POSM и оформление","Макеты акций","Соцсети"],["Дизайнер · раньше 4, сейчас 2"]]]},
+ perdebayev:{own:"Маркетолог",draft:1,b:[
+  ["Рынок и конкуренты",["Цены конкурентов","Исследования рынка"],[]],
+  ["Промоакции",["Промо вместе с коммерцией"],[]]]}};
+const ROMAN=["I","II","III","IV","V","VI","VII","VIII"];
+function respStats(id){const r=RESP[id],roles=[...new Set(r.b.flatMap(x=>x[2]))];
+ return {dirs:r.b.length,tasks:r.b.reduce((s,x)=>s+x[1].length,0),roles,nw:r.b.filter(x=>x[3]).length}}
+function respTree(p){const r=RESP[p.id],s=respStats(p.id),all=1+s.roles.length;let d=.25;
+ return `<div class="rz"><h4 style="margin-top:4px">Зоны ответственности</h4>
+ <div class="rzk"><div><b>${s.dirs}</b><span>направлений</span></div><div><b>${s.tasks}</b><span>задач</span></div><div><b>×${all}</b><span>${all>1?"ролей в одном человеке":"роль"}</span></div></div>
+ <div class="rzn"><div class="row"><span class="lab">По штату</span><div class="segs"><i class="own"></i></div></div>
+  <div class="row"><span class="lab">Сейчас</span><div class="segs"><i class="own"></i>${s.roles.map(()=>`<i class="ex"></i>`).join("")}</div></div>
+  <div class="roles"><span class="own">${r.own}</span>${s.roles.map(x=>`<span>+ ${x}</span>`).join("")}</div>
+  ${s.nw?`<p style="margin:10px 0 0;font-size:12.5px;color:var(--mute)">${s.nw===1?"1 направление":s.nw+" направления"} раньше не входили в работу маркетинга.</p>`:""}</div>
+ <div class="rzt"><div class="rzr"><span class="ph">${p.photo?`<img loading="lazy" decoding="async" src="${photoOf(p)}" alt="">`:""}</span><span><b>${short(p)}</b><small>${r.own}</small></span></div>
+ ${r.b.map((x,i)=>{d+=.12;const bd=d;return `<div class="rzb" style="--d:${bd.toFixed(2)}s"><i></i><h5>${x[0]}${x[3]?`<span class="tag nw">новое</span>`:""}${x[2].length?`<span class="tag">за роль: ${x[2].join(", ")}</span>`:""}</h5>
+  <div class="rzc">${x[1].map((t,j)=>`<span style="--d:${(bd+.15+j*.06).toFixed(2)}s">${t}</span>`).join("")}</div></div>`}).join("")}</div>
+ ${r.draft?`<p class="rzdraft">Направления указаны по должности и будут уточнены.</p>`:""}</div>`}
+function buildLoad(){
+ const list=TEAM.filter(p=>RESP[p.id]).map(p=>({p,s:respStats(p.id)})).sort((a,b)=>b.s.tasks-a.s.tasks);
+ const mt=Math.max(...list.map(x=>x.s.tasks)),md=Math.max(...list.map(x=>x.s.dirs));
+ document.getElementById("load").innerHTML=`<div class="ld2"><div class="glab2">Зоны ответственности</div><h3>Кто что держит</h3>
+ <p class="s">У каждого в команде своё дерево направлений. Нажмите на человека, чтобы увидеть все его задачи и сколько ролей он совмещает.</p>
+ <div class="ldg">${list.map(({p,s})=>`<button class="ldc" data-p="${p.id}" type="button"><span class="mx">×${1+s.roles.length}</span>
+  <span class="who"><span class="ph">${p.photo?`<img loading="lazy" decoding="async" src="${photoOf(p)}" alt="">`:""}</span><span><b>${short(p)}</b><small>${p.role}</small></span></span>
+  <span class="bar3"><div><span>Направлений</span><i style="--w:${s.dirs/md*100}%"></i><b>${s.dirs}</b></div><div><span>Задач</span><i style="--w:${s.tasks/mt*100}%"></i><b>${s.tasks}</b></div></span>
+  <em>Открыть дерево →</em></button>`).join("")}</div>
+ <p style="color:var(--mute);font-size:12px;margin:12px 0 0">×N — сколько ролей человек закрывает вместе со своей должностью. Роли взяты из прежней структуры и предложенной целевой.</p></div>`}
+buildLoad();
 
-/* deep link */
-const h=location.hash.slice(1);if(["dash","income","done","issues","team","kit","cv"].includes(h)){explode();go(h)}
+/* ---- home: video intro → band, tree leaves open pages ---- */
+const h2=document.getElementById("home2"),hst=document.getElementById("hstage"),hv=document.getElementById("hvid"),HLOOP=6.8;
+let hDone=false;
+document.getElementById("hlogo").src=IMG.logo;
+{const K={team:TEAM.filter(p=>!p.team).length,cv:Object.keys(CVS).length,issues:ISSUES.length,kit:SL.length};
+ h2.querySelectorAll("[data-k]").forEach(el=>{if(K[el.dataset.k])el.textContent=K[el.dataset.k]})}
+// after the intro only the calm tail (gold word + dust) keeps looping in the band
+hv.addEventListener("timeupdate",()=>{if(hDone&&hv.currentTime>9.85)hv.currentTime=HLOOP});
+function homeVid(on){if(!hDone)return;if(on){hv.play().catch(()=>{})}else hv.pause()}
+function hSettle(){
+ if(hDone)return;hDone=true;
+ hst.classList.remove("full");h2.classList.remove("lock");
+ setTimeout(()=>h2.classList.remove("intro"),350);
+ if(hv.currentTime<HLOOP)hv.currentTime=HLOOP;
+ if(!current)hv.play().catch(()=>{});
+ try{sessionStorage.setItem("mkIntro","1")}catch(_){}
+}
+function hStart(){
+ hDone=false;hst.classList.add("full");h2.classList.add("intro","lock");h2.scrollTop=0;
+ hv.currentTime=0;hv.play().catch(hSettle); // autoplay blocked (power saving): jump to the final frame
+}
+hv.addEventListener("ended",()=>{hSettle();hv.currentTime=HLOOP;if(!current)hv.play().catch(()=>{})});
+document.getElementById("hskip").addEventListener("click",e=>{e.stopPropagation();hSettle()});
+hst.addEventListener("click",()=>{if(hst.classList.contains("full"))hSettle()});
+document.getElementById("hagain").addEventListener("click",hStart);
+h2.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;const r=b.getBoundingClientRect();go(b.dataset.go,r.left+r.width/2,r.top+r.height/2);homeVid(false)});
+
+/* deep link: open the page straight away, otherwise play the intro once per visit */
+{const h=location.hash.slice(1);let seen=false;try{seen=sessionStorage.getItem("mkIntro")==="1"}catch(_){}
+ if(["dash","income","done","issues","team","kit","cv"].includes(h)){hSettle();go(h);homeVid(false)}
+ else if(seen||RM){hSettle()}else hStart()}
+
 </script>
 <style>
 .hbar.wide>div{grid-template-columns:minmax(150px,210px) 1fr auto}@media (max-width:600px){.hbar.wide>div{grid-template-columns:118px 1fr auto;font-size:12px}.hbar.wide b{font-size:16px}}

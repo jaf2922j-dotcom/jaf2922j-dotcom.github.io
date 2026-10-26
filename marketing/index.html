@@ -1130,7 +1130,7 @@ const TEAM=[
  {id:"kadirov",boss:"nurullin",name:"Кадыров Фаррух Дилшод угли",lat:"Kadirov Farrux Dilshod o‘g‘li",role:"Моушн-дизайнер",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 33 900 30 10",since:"11.08.2025",photo:"kadirov"},
  {id:"usarova",boss:"nurullin",name:"Усарова Наргиз Эркин кизи",lat:"O‘sarova Nargiz Erkin qizi",role:"Маркетолог",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 99 443 03 04",since:"21.10.2025",photo:"usarova"},
  {id:"toxtamurodov",boss:"nurullin",name:"Тухтамуродов Иброхим Гайратулло угли",lat:"To‘xtamurodov Ibrohim G‘ayratullo o‘g‘li",role:"Графический дизайнер",grp:"Отдел рекламы и бренд-менеджмента",dept:"Управление маркетинга и рекламы",phone:"+998 93 587 19 75",since:"04.05.2026",photo:"toxtamurodov"},
- {id:"perdebayev",boss:"nurullin",name:"Пердебаев Абдувахоб Сейт улы",lat:"Perdebayev Abdio‘axab Seyt uli",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",since:"04.08.2026",photo:"perdebayev"},
+ {id:"perdebayev",boss:"nurullin",name:"Пердебаев Абдувахоб Сейт улы",phone:"+998 70 028 72 72",mail:"abdiuakhab@gmail.com",lat:"Perdebayev Abdio‘axab Seyt uli",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",since:"04.08.2026",photo:"perdebayev"},
  {id:"qurbonov",boss:"nurullin",name:"Курбонов Рамазон Мухтор угли",lat:"Qurbonov Ramazon Muxtor o‘g‘li",role:"Маркетолог",grp:"Отдел маркетинга и конъюнктуры",dept:"Управление маркетинга и рекламы",phone:"+998 94 635 70 72",since:"27.03.2026",photo:"qurbonov"},
 ];
 const CVPH={jd:"img/f306ac23697e.webp",perdebayev:"img/710956e5e709.webp",ib:"img/897c7a98bf7a.webp"};
@@ -1787,29 +1787,41 @@ CVS.rk=(function(){
 CVNAMES.rk=["Рамазон Курбонов","Маркетолог"];
 CVOF.qurbonov="rk";
 CVS.perdebayev=(function(){
- const jobs=[["Ташкентский банковский колледж","Среднее специальное","Студент",2016,2019,"2016 — 2019"],
-  ["БНТУ, Минск","Факультет маркетинга, менеджмента, предпринимательства","Студент · маркетолог-экономист",2020,2025,"2020 — 2025"],
-  ["Makro","Отдел маркетинга и конъюнктуры","Маркетолог",2026+7/12,2026+10/12,"Авг 2026 — сейчас"]];
+ const jobs=[["Ташкентский банковский колледж","Учёба","Колледж",2016,2019],
+  ["БНТУ, Минск","Маркетолог-экономист","Университет",2020,2025],
+  ["МЗОР, Минск","Маркетолог","Работа",2023,2024],
+  ["Маркетплейсы","Своё дело · e-commerce","Предприниматель",2023,2026+10/12],
+  ["Своя компания","Партнёр Яндекс Такси и Лавки","Учредитель и директор",2024,2025+2/12],
+  ["Global United Prestige","Финансист","Работа",2025+10.9/12,2026+3/12],
+  ["Makro","Маркетолог","Работа",2026+7/12,2026+10/12]];
  const A=2016,B=2027,x=v=>((v-A)/(B-A)*100).toFixed(2);
  const gantt=`<div class="gantt"><div class="gax">${Array.from({length:B-A+1},(_,i)=>`<span style="left:${x(A+i)}%">${A+i}</span>`).join("")}</div>
-  ${jobs.map((j,i)=>`<div class="grow"><div class="gl"><b>${j[0]}</b><small>${j[2]}</small></div><div class="gt">${Array.from({length:B-A+1},(_,k)=>`<i style="left:${x(A+k)}%"></i>`).join("")}<span class="gb ${i===jobs.length-1?"now":""}" style="left:${x(j[3])}%;width:${(x(j[4])-x(j[3])).toFixed(2)}%"></span></div></div>`).join("")}</div>`;
+  ${jobs.map((j,i)=>`<div class="grow"><div class="gl"><b>${j[0]}</b><small>${j[1]}</small></div><div class="gt">${Array.from({length:B-A+1},(_,k)=>`<i style="left:${x(A+k)}%"></i>`).join("")}<span class="gb ${j[4]>2026.7?"now":""}" style="left:${x(j[3])}%;width:${(x(j[4])-x(j[3])).toFixed(2)}%"></span></div></div>`).join("")}</div>`;
+ const xp=[["Авг 2026 — сейчас","Маркетолог","Makro","DARVOZA SAVDO · Отдел маркетинга и конъюнктуры",[]],
+  ["Ноя 2025 — мар 2026","Финансист","Global United Prestige","",[]],
+  ["2024 — начало 2025","Учредитель и директор","Собственная компания","Официальный партнёр Яндекс Такси и Яндекс Лавки",["Управление организацией","Организация и контроль операционной деятельности","Координация бизнес-процессов, развитие коммерческого направления"]],
+  ["2023","Маркетолог","МЗОР","Минск, Беларусь",[]]];
  return `<div class="cv">
   <div class="cvh"><div class="cvph"><img loading="lazy" decoding="async" src="${CVPH.perdebayev}" alt="Абдувахоб Пердебаев"></div>
    <div><div class="eyebrow">Резюме · 2026</div><h3>Абдувахоб Пердебаев</h3><div class="lat" style="color:var(--mute);font-size:12px;margin-top:6px">Пердебаев Абдувахоб Сейт улы</div><div class="t">Маркетолог · Отдел маркетинга и конъюнктуры · Makro с августа 2026</div>
-    <div class="cvc"><span><i>Г</i>Ташкент</span></div></div>
+    <div class="cvc"><span><i>T</i>+998 70 028 72 72</span><span><i>M</i>abdiuakhab@gmail.com</span><span><i>Г</i>Ташкент</span></div></div>
    <div class="mono">AP</div></div>
   <div class="ibk">
-   <div class="gcard"><div class="gnum">Высшее</div><span>маркетолог-экономист</span><em>БНТУ, 2025, очно</em></div>
-   <div class="gcard"><div class="gnum">2025</div><span>год выпуска</span><em>Белорусский национальный технический университет</em></div>
-   <div class="gcard"><div class="gnum">2</div><span>иностранных языка</span><em>русский, английский</em></div>
-   <div class="gcard"><div class="gnum">ПК</div><span>уверенный пользователь</span><em>по данным анкеты</em></div>
+   <div class="gcard"><div class="gnum">100 млн+</div><span>сум оборот за квартал</span><em>продажи на маркетплейсах</em></div>
+   <div class="gcard"><div class="gnum">с 2023</div><span>своё дело в e-commerce</span><em>онлайн-продажи до сих пор</em></div>
+   <div class="gcard"><div class="gnum">Директор</div><span>своей компании</span><em>партнёр Яндекс Такси и Лавки</em></div>
+   <div class="gcard"><div class="gnum">Высшее</div><span>маркетолог-экономист</span><em>БНТУ, Минск, 2025</em></div>
   </div>
   <div class="gcard"><div class="glab">Путь · 2016 → 2026</div>${gantt}</div>
+  <div class="gcard"><div class="glab">Опыт работы</div><div class="tl">${xp.map(j=>`<div class="job"><div class="d">${j[0]}</div><h4>${j[1]}</h4><p><b style="color:var(--gold2)">${j[2]}</b>${j[3]?" · "+j[3]:""}</p>${j[4].length?`<ul>${j[4].map(t=>`<li>${t}</li>`).join("")}</ul>`:""}</div>`).join("")}</div></div>
   <div class="cvg2">
-   <div class="gcard"><div class="glab">Образование</div><ul class="blist"><li>2020–2025 · Белорусский национальный технический университет — факультет маркетинга, менеджмента, предпринимательства; специальность «Маркетинг», квалификация маркетолог-экономист</li><li>2016–2019 · Ташкентский банковский колледж</li></ul></div>
-   <div class="gcard"><div class="glab">Качества и языки</div><div class="chips">${["Ответственный","Пунктуальный","Аккуратный","Навыки ПК"].map(x=>`<span>${x}</span>`).join("")}</div><p style="color:var(--mute);font-size:13px;margin:14px 0 0">Иностранные языки: русский, английский</p></div>
+   <div class="gcard"><div class="glab">Предпринимательство · e-commerce</div><div class="d" style="color:var(--mute);font-size:12px;margin-bottom:10px">2023 — сейчас</div><ul class="blist"><li>Организация и развитие продаж на маркетплейсах</li><li>Управление коммерческой деятельностью и онлайн-продажами</li><li>Квартальный оборот — <b>от 100 000 000 сум</b></li></ul></div>
+   <div class="gcard"><div class="glab">Направления</div><div class="resp resp2">${[["Маркетплейсы","Ведение продаж и рост оборота"],["Управление","Своя компания: операции и процессы"],["Финансы","Опыт финансиста"],["Маркетинг","Профильное образование и практика"]].map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join("")}</div></div>
   </div>
-  <div class="gcard"><div class="glab">Опыт работы</div><div class="tl"><div class="job"><div class="d">Авг 2026 — сейчас</div><h4>Маркетолог</h4><p><b style="color:var(--gold2)">Makro</b> · Отдел маркетинга и конъюнктуры</p></div></div><p style="color:var(--mute);font-size:13px;margin:14px 0 0">Первое место работы после университета.</p></div>
+  <div class="cvg2">
+   <div class="gcard"><div class="glab">Образование</div><ul class="blist"><li>2020–2025 · Белорусский национальный технический университет — факультет маркетинга, менеджмента, предпринимательства; маркетолог-экономист</li><li>2016–2019 · Ташкентский банковский колледж</li></ul></div>
+   <div class="gcard"><div class="glab">Качества и языки</div><div class="chips">${["Ответственный","Пунктуальный","Аккуратный","Навыки ПК","Предпринимательский опыт"].map(x=>`<span>${x}</span>`).join("")}</div><p style="color:var(--mute);font-size:13px;margin:14px 0 0">Иностранные языки: русский, английский</p></div>
+  </div>
  </div>`})();
 CVNAMES.perdebayev=["Абдувахоб Пердебаев","Маркетолог"];
 CVOF.perdebayev="perdebayev";

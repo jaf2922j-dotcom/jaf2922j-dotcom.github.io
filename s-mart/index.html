@@ -1,0 +1,1844 @@
+<!doctype html>
+<html lang="ru">
+<head><script>if(/netlify\.app$/.test(location.hostname))document.documentElement.classList.add("nl")</script>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>S-Mart · Makro yangi zamon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+<style>
+:root{
+ --bg:#0E0F11;--bg2:#16171A;--em:#10B981;--em2:#5EE3B4;--em3:#0E5A43;
+ --gold:#D9B86A;--gold2:#F3DFA6;--gold3:#A88638;
+ --tx:#F2EFE9;--mu:#A9A397;--mu2:#6E695F;--ln:rgba(217,184,106,.14);--cd:rgba(255,255,255,.035);
+ --r:#E4283B;--gr:#2FA04A;--ye:#FFC928;--bl:#2A47B5;
+ --fs:"Cormorant Garamond",Lora,Georgia,serif;--fb:Manrope,Inter,system-ui,sans-serif;
+ color-scheme:dark;box-sizing:border-box}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.55 var(--fb);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.gold{background:linear-gradient(180deg,var(--gold2) 0%,var(--gold) 50%,var(--gold3) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.kick{font:600 italic 20px var(--fs);color:var(--gold);margin-bottom:10px}
+.h2{font:800 clamp(34px,8vw,76px)/1.02 var(--fb);letter-spacing:-.035em;margin-bottom:16px}
+.lede{font-size:clamp(17px,2.2vw,21px);color:var(--mu);max-width:36em}
+section{position:relative}
+.sec{padding:clamp(90px,14vh,150px) 0}
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* ---------- chrome ---------- */
+.bar4{position:fixed;z-index:30;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--r) 0 25%,var(--gr) 25% 50%,var(--ye) 50% 75%,var(--bl) 75%);background-size:100vw 3px}
+header{position:fixed;z-index:25;top:0;left:0;right:0;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px 16px;display:flex;align-items:center;gap:12px;background:rgba(14,15,17,.6);backdrop-filter:saturate(1.4) blur(18px);-webkit-backdrop-filter:saturate(1.4) blur(18px);border-bottom:1px solid rgba(217,184,106,.08)}
+.mk{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:40px;padding:5px 13px 5px 5px;text-decoration:none}
+.mk i{width:26px;height:26px;border-radius:50%;background:conic-gradient(from -45deg,var(--r) 0 25%,var(--gr) 0 50%,var(--ye) 0 75%,var(--bl) 0)}
+.mk b{display:block;font:800 15px/1 var(--fb);color:#D8203A;letter-spacing:-.02em}
+.mk small{display:block;font:800 8.5px/1.2 var(--fb);color:#2A3DAA}
+.where{margin-left:auto;font-size:13px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb{width:42px;height:42px;flex:none;border-radius:50%;border:1px solid var(--ln);background:rgba(255,255,255,.04);display:grid;place-content:center;gap:5px}
+.hb i{display:block;width:17px;height:1.6px;border-radius:2px;background:var(--tx);transition:transform .4s,opacity .4s}
+.hb.on i:nth-child(1){transform:translateY(6.6px) rotate(45deg)}.hb.on i:nth-child(2){opacity:0}.hb.on i:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:20;background:rgba(14,15,17,.97);backdrop-filter:blur(20px);padding:calc(84px + env(safe-area-inset-top,0px)) 20px 30px;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
+.menu.on{opacity:1;visibility:visible}
+.menu ol{list-style:none;padding:0;max-width:760px;margin:0 auto}
+.menu li{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.menu.on li{opacity:1;transform:none}
+.menu a{display:grid;grid-template-columns:44px 1fr;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--ln);text-decoration:none}
+.menu a span{font:600 italic 19px var(--fs);color:var(--gold)}
+.menu a b{font:800 clamp(22px,6vw,36px)/1.1 var(--fb);letter-spacing:-.03em}
+.menu a:hover b,.menu a.on b{color:var(--gold2)}
+/* ---------- scenes ---------- */
+.scene{position:relative}
+.stick{position:sticky;top:0;height:100svh;overflow:hidden}
+/* hero */
+#hero{height:260vh}
+#hero .stick{background:radial-gradient(70% 55% at 50% 72%,rgba(217,170,95,.2),transparent 70%),radial-gradient(60% 40% at 50% 0,rgba(70,58,42,.55),transparent 70%),var(--bg)}
+.stars{position:absolute;inset:0;opacity:var(--night,0);transition:opacity .2s}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff}
+.htext{position:absolute;left:0;right:0;top:calc(96px + env(safe-area-inset-top,0px));text-align:center;padding:0 20px;will-change:transform,opacity}
+.htext .kick{margin-bottom:6px}
+.htext h1{font:700 clamp(64px,17vw,180px)/.86 var(--fs);letter-spacing:-.01em;filter:drop-shadow(0 12px 40px rgba(217,184,106,.22))}
+.htext p{margin-top:16px;font-size:clamp(16px,2vw,20px);color:var(--mu)}
+.hcap{position:absolute;left:0;right:0;bottom:calc(104px + env(safe-area-inset-bottom,0px));text-align:center;padding:0 20px;opacity:0}
+.hcap b{display:block;font:800 clamp(24px,5vw,44px)/1.1 var(--fb);letter-spacing:-.03em}
+.hcap span{display:block;margin-top:10px;color:var(--mu)}
+.scroll-hint{position:absolute;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);font-size:12px;color:var(--mu2);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint i{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:sh 2s infinite}
+@keyframes sh{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.stage{position:absolute;left:50%;top:58%;perspective:1100px;width:0;height:0;pointer-events:none}
+.store{position:absolute;left:-150px;top:-110px;width:300px;height:220px;transform-style:preserve-3d;will-change:transform}
+.store>div{position:absolute;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.fF,.fB{width:300px;height:220px}
+.fF{transform:translateZ(110px);background:repeating-linear-gradient(90deg,rgba(185,141,90,0) 0 7px,rgba(185,141,90,.16) 7px 9px),linear-gradient(160deg,#3A3B3F,#1F2023 55%,#121214);border:1px solid rgba(217,184,106,.5)}
+.fB{transform:rotateY(180deg) translateZ(110px);background:#17181B;border:1px solid rgba(217,184,106,.4)}
+.fR,.fL{width:220px;height:220px;left:40px}
+.fR{transform:rotateY(90deg) translateZ(150px);background:linear-gradient(160deg,#34353A,#141416);border:1px solid rgba(217,184,106,.45)}
+.fL{transform:rotateY(-90deg) translateZ(150px);background:linear-gradient(200deg,#34353A,#141416);border:1px solid rgba(217,184,106,.45)}
+.fT{width:300px;height:220px;transform:rotateX(90deg) translateZ(110px);background:linear-gradient(135deg,#2A2B2F,#121214);border:1px solid rgba(217,184,106,.55)}
+.floor{position:absolute;left:-330px;top:-330px;width:660px;height:660px;border-radius:50%;transform:rotateX(90deg) translateZ(-110px);background:radial-gradient(closest-side,rgba(217,170,95,.36),rgba(217,170,95,.07) 55%,transparent);pointer-events:none}
+.ring{position:absolute;left:-230px;top:-230px;width:460px;height:460px;border-radius:50%;border:1px solid rgba(217,184,106,.35);transform:rotateX(90deg) translateZ(-110px)}
+.sign{position:absolute;left:18px;right:18px;top:16px;height:50px;border-radius:4px;background:#0B0B0C;border:1px solid rgba(217,184,106,.5);display:grid;place-items:center;font:700 25px var(--fs);letter-spacing:.3em;color:var(--gold2);text-shadow:0 0 calc(var(--glow,0)*16px) rgba(243,223,166,.95),0 0 calc(var(--glow,0)*44px) rgba(217,184,106,.75);transition:text-shadow .2s}
+.win{position:absolute;top:84px;bottom:28px;width:58px;border:1px solid rgba(217,184,106,.45);background:linear-gradient(115deg,rgba(255,214,130,calc(var(--lit,0)*.6)),rgba(255,255,255,.04))}
+.door{position:absolute;left:100px;right:100px;top:84px;bottom:0;border:1px solid rgba(217,184,106,.55);border-bottom:0;display:grid;grid-template-columns:1fr 1fr;background:linear-gradient(115deg,rgba(255,214,130,calc(var(--lit,0)*.75)),rgba(255,255,255,.04))}
+.door i{border-right:1px solid rgba(217,184,106,.4)}
+.face{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.face b{font:700 54px/1 var(--fs);color:var(--gold2);text-shadow:0 0 18px rgba(217,184,106,.45)}
+.face small{margin-top:8px;font-size:11px;letter-spacing:.16em;color:var(--mu)}
+.glass{position:absolute;inset:22px;border:1px solid rgba(217,184,106,.55);background:linear-gradient(115deg,rgba(255,255,255,.12),transparent 45%,rgba(255,255,255,.05) 46%,transparent 70%)}
+/* ---------- inside: 3D store ---------- */
+#inside{height:1100vh}
+#inside .stick{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:16px;padding:calc(72px + env(safe-area-inset-top,0px)) 14px calc(90px + env(safe-area-inset-bottom,0px))}
+.v3{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--ln);background:#0E0F11;min-height:0;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.v3 canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lbs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lbl{position:absolute;left:0;top:0;white-space:nowrap;font:700 12px/1 var(--fb);padding:7px 11px;border-radius:30px;background:rgba(14,15,17,.8);color:var(--tx);border:1px solid rgba(217,184,106,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:opacity .4s;will-change:transform;opacity:0}
+.lbl::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:12px;background:linear-gradient(rgba(217,184,106,.8),transparent)}
+.lbl.big{font:700 26px/1 var(--fs);color:var(--gold2);padding:7px 16px 9px;border-color:var(--gold);box-shadow:0 0 24px rgba(217,184,106,.35)}
+.v3 .tag{position:absolute;left:12px;top:12px;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--mu);background:rgba(14,15,17,.65);border:1px solid var(--ln);border-radius:30px;padding:6px 11px}
+.pg3{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:5px}
+.pg3 i{width:6px;height:6px;border-radius:6px;background:rgba(255,255,255,.25);transition:width .4s,background .4s}
+.pg3 i.on{width:20px;background:var(--gold)}
+.v3.no3d::after{content:"3D-модель недоступна на этом устройстве";position:absolute;inset:0;display:grid;place-items:center;color:var(--mu);font-size:14px;padding:20px;text-align:center}
+.tx3{position:relative;min-height:178px}
+.tx3 .kick{display:none}
+.st{position:absolute;left:0;right:0;top:0;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .7s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.st.on{opacity:1;transform:none}
+.st i{font:600 italic 16px var(--fs);color:var(--gold);font-style:italic}
+.st b{display:block;font:800 clamp(25px,6vw,50px)/1.04 var(--fb);letter-spacing:-.035em;margin:2px 0 8px}
+.st p{color:var(--mu);font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.5;max-width:30em}
+@media(min-width:900px){
+ #inside .stick{grid-template-columns:minmax(320px,35%) 1fr;grid-template-rows:1fr;gap:40px;padding:92px 32px 108px;max-width:1440px;margin:0 auto}
+ .tx3{order:-1;align-self:center;min-height:360px}
+ .tx3 .kick{display:block;position:absolute;top:-56px}
+ .lbl{font-size:13px}
+}
+/* money + loyalty */
+.mg{display:grid;gap:10px;margin-top:34px}
+@media(min-width:760px){.mg{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.mg{grid-template-columns:repeat(4,1fr)}}
+.mg div{position:relative;border-radius:22px;border:1px solid var(--ln);background:var(--cd);padding:18px 16px 20px;min-width:0}
+.mg div.hi{background:linear-gradient(160deg,#2C2721,#151517);border-color:rgba(217,184,106,.4)}
+.mg i{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;font:800 15px var(--fb);font-style:normal;color:#1B1405;background:var(--gold);margin-bottom:14px}
+.mg b{display:block;font:800 19px/1.2 var(--fb);letter-spacing:-.02em;margin-bottom:6px}
+.mg p{font-size:14px;color:var(--mu)}
+.big{display:grid;gap:14px;margin-top:34px}
+@media(min-width:820px){.big{grid-template-columns:1.1fr 1fr}}
+.big .fm b{font-size:clamp(64px,12vw,104px)}
+.lw{display:grid;gap:22px;margin-top:38px;align-items:center}
+@media(min-width:900px){.lw{grid-template-columns:minmax(0,430px) 1fr;gap:40px}}
+.lflip{width:100%;max-width:430px;perspective:1300px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.lin{position:relative;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;animation:lspin 11s cubic-bezier(.65,0,.35,1) infinite}
+.lflip.hold .lin{animation-play-state:paused}
+@keyframes lspin{0%{transform:rotateX(5deg) rotateY(-14deg)}32%{transform:rotateX(5deg) rotateY(14deg)}50%{transform:rotateX(5deg) rotateY(166deg)}82%{transform:rotateX(5deg) rotateY(194deg)}100%{transform:rotateX(5deg) rotateY(346deg)}}
+.lcb{position:absolute!important;inset:0;transform:rotateY(180deg)}
+.lcard{position:relative;aspect-ratio:1.586;width:100%;border-radius:22px;padding:22px 24px;overflow:hidden;color:var(--tx);backface-visibility:hidden;-webkit-backface-visibility:hidden;
+ background:radial-gradient(120% 90% at 85% 0%,rgba(243,223,166,.18),transparent 55%),linear-gradient(135deg,#0F5E46,#06281D 58%,#0A3a2B);border:1px solid rgba(217,184,106,.55);
+ box-shadow:0 40px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:space-between}
+.lcb{padding:0;justify-content:flex-start}
+.lcb .mag{height:18%;margin-top:9%;background:linear-gradient(90deg,#0a0a0a,#1c1c1c,#0a0a0a)}
+.lcb .sig{display:flex;align-items:center;gap:12px;margin:5% 24px 0}
+.lcb .sig span{flex:1;height:30px;border-radius:4px;background:repeating-linear-gradient(-45deg,#EFE7D8 0 6px,#E2D7C2 6px 12px);display:flex;align-items:center;padding:0 10px;font:italic 600 15px var(--fs);color:#4A3020}
+.lcb .qr{width:56px;height:56px;border-radius:6px;background:#fff;padding:5px;display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
+.lcb .qr i{background:#111}.lcb .qr i.o{background:#fff}
+.lcb .bt{margin:auto 24px 18px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.lcb .bt b{font:700 18px/1.1 var(--fs);color:var(--gold2)}
+.lcb .bt small{display:block;font:500 11px/1.4 var(--fb);color:var(--mu);margin-top:4px}
+.lhint{margin-top:12px;font-size:12px;color:var(--mu2);text-align:center}
+.lcard::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.14) 50%,transparent 60%);animation:sheen 5s ease-in-out infinite}
+@keyframes sheen{0%,60%{transform:translateX(-40%)}100%{transform:translateX(40%)}}
+.lcard .t{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.lcard .t b{font:700 26px/1 var(--fs);letter-spacing:.08em}
+.lcard .t small{font-size:10.5px;letter-spacing:.2em;color:var(--gold)}
+.lcard .chp{width:46px;height:34px;border-radius:7px;background:linear-gradient(135deg,var(--gold2),var(--gold3));box-shadow:inset 0 0 0 1px rgba(0,0,0,.2)}
+.lcard .p{font:700 clamp(30px,6vw,40px)/1 var(--fs)}
+.lcard .p small{display:block;font:600 11px var(--fb);letter-spacing:.18em;color:var(--mu);margin-top:6px}
+.lr{display:grid;gap:10px}
+.lr div{border-radius:22px;border:1px solid var(--ln);background:var(--cd);padding:18px;display:grid;grid-template-columns:clamp(78px,10vw,112px) 1fr;gap:4px 16px;align-items:baseline}
+.lr div b{grid-row:1/3;font:700 clamp(40px,7vw,56px)/1 var(--fs);color:var(--gold2)}
+.lr div strong{font:800 17px var(--fb);letter-spacing:-.01em}
+.lr div p{font-size:14px;color:var(--mu)}
+@media(prefers-reduced-motion:reduce){.lcard::after{animation:none}.lin{animation:none;transition:transform .9s}.lflip.flip .lin{transform:rotateY(180deg)}}
+/* market stats */
+.mk4{display:grid;gap:14px;margin-top:36px}
+@media(min-width:900px){.mk4{grid-template-columns:1fr 1fr}}
+.mk4>div{border-radius:26px;border:1px solid var(--ln);background:linear-gradient(160deg,#211E1A,#131315);padding:20px 18px 16px;min-width:0}
+.mk4 h3{display:flex;align-items:center;gap:10px;font:800 22px var(--fb);letter-spacing:-.02em;margin-bottom:6px}
+.mk4 h3 i{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;font:800 14px var(--fb);font-style:normal;color:#1B1405;background:var(--gold)}
+.mrw{display:grid;grid-template-columns:96px 1fr;gap:4px 14px;padding:13px 0;border-top:1px solid var(--ln);align-items:baseline}
+.mrw:first-of-type{border-top:0}
+.mrw span{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.mrw b{font:700 clamp(28px,4.4vw,36px)/1 var(--fs);color:var(--gold2);white-space:nowrap}
+.mrw p{grid-column:2;font-size:14px;color:var(--mu);line-height:1.45}
+.mrw p em{font-style:normal;color:var(--tx)}
+.msrc{margin-top:8px;font-size:11.5px;color:var(--mu2);line-height:1.45}
+@media(max-width:520px){.mrw{grid-template-columns:1fr}.mrw p{grid-column:1}}
+/* brand */
+.bwm{margin-top:34px;border-radius:30px;border:1px solid rgba(217,184,106,.35);overflow:hidden;background:repeating-linear-gradient(90deg,rgba(185,141,90,0) 0 14px,rgba(185,141,90,.10) 14px 17px),linear-gradient(160deg,#26272B,#121214);padding:clamp(34px,7vw,64px) 20px;text-align:center;position:relative}
+.bwm::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#FFC56E,transparent);opacity:.8}
+.bw{font:700 clamp(58px,15vw,150px)/1 var(--fs);letter-spacing:.16em;padding-left:.16em;background:linear-gradient(180deg,#F6E3AE,#C99A48 55%,#8A6426);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,196,110,.28))}
+.bsub{margin-top:10px;font:700 clamp(10px,1.6vw,13px) var(--fb);letter-spacing:.42em;padding-left:.42em;color:var(--gold)}
+.beq{margin-top:22px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 10px;font:600 clamp(15px,2.2vw,19px) var(--fb);color:var(--mu)}
+.beq span{padding:5px 12px;border-radius:30px;border:1px solid rgba(217,184,106,.45);color:var(--gold2);font-weight:800;letter-spacing:.12em}
+.beq b{color:var(--tx)}
+.bmk{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+@media(min-width:860px){.bmk{grid-template-columns:repeat(4,1fr)}}
+.bmk figure{margin:0;border-radius:22px;border:1px solid var(--ln);background:var(--cd);padding:18px 12px 12px;display:grid;justify-items:center;gap:12px;min-width:0}
+.bmk figcaption{font-size:12.5px;color:var(--mu);text-align:center}
+.m-sign{width:100%;max-width:190px;height:64px;border-radius:6px;background:repeating-linear-gradient(90deg,#9C7041 0 6px,#C99A5E 6px 9px,#2A1B0F 9px 11px);display:grid;place-items:center;box-shadow:inset 0 -10px 18px -8px rgba(255,190,90,.7)}
+.m-sign b{background:#18191C;border:1px solid rgba(201,164,92,.7);padding:6px 12px;font:700 17px/1 var(--fs);letter-spacing:.22em;color:#F1DCA4;text-shadow:0 0 10px rgba(255,196,110,.6)}
+.m-app{width:72px;height:72px;border-radius:18px;background:linear-gradient(160deg,#2C2D31,#131315);border:1px solid rgba(201,164,92,.6);display:grid;place-items:center;font:700 44px/1 var(--fs);color:#E8C980;box-shadow:0 12px 26px -10px rgba(0,0,0,.8)}
+.m-bag{position:relative;width:70px;height:84px;margin-top:10px;border-radius:4px 4px 8px 8px;background:linear-gradient(160deg,#C9A06A,#9C7448);display:grid;place-items:center}
+.m-bag::before{content:"";position:absolute;top:-14px;left:20px;width:30px;height:22px;border:3px solid #6E4E2C;border-bottom:0;border-radius:16px 16px 0 0}
+.m-bag b{font:700 11px/1 var(--fs);letter-spacing:.2em;color:#1A1A1C}
+.m-tag{width:100%;max-width:150px;border-radius:8px;background:#F4F1EA;color:#151517;padding:8px 10px;font:600 10px var(--fb);display:grid;gap:2px}
+.m-tag b{font:800 18px var(--fb)}.m-tag i{font-style:normal;font:700 9px var(--fs);letter-spacing:.2em;color:#8A6426}
+/* palette + brand items */
+.pal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+@media(min-width:860px){.pal{grid-template-columns:repeat(5,1fr)}}
+.pal div{border-radius:20px;border:1px solid var(--ln);overflow:hidden;background:var(--cd)}
+.pal i{display:block;height:84px;background:var(--c)}
+.pal b{display:block;font:800 15px var(--fb);padding:10px 12px 0}
+.pal small{display:block;font:600 11px var(--fb);color:var(--gold);padding:2px 12px 0;letter-spacing:.06em}
+.pal p{font-size:12.5px;color:var(--mu);padding:4px 12px 12px;line-height:1.4}
+.bmk2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+@media(min-width:860px){.bmk2{grid-template-columns:repeat(3,1fr)}}
+.bmk2 figure{margin:0;border-radius:22px;border:1px solid var(--ln);background:radial-gradient(90% 70% at 50% 30%,rgba(217,170,95,.08),transparent 70%),var(--cd);padding:20px 12px 14px;display:grid;justify-items:center;align-content:start;gap:12px;min-width:0}
+.bmk2 .stg{height:112px;display:flex;align-items:flex-end;justify-content:center;gap:12px}
+.bmk2 figcaption{text-align:center}.bmk2 figcaption b{display:block;font:800 15px var(--fb)}.bmk2 figcaption span{display:block;font-size:12.5px;color:var(--mu);line-height:1.4;margin-top:3px}
+.m-bag.g{background:linear-gradient(160deg,#34353A,#18191C);border:1px solid rgba(201,164,92,.35)}
+.m-bag.g::before{border-color:#1A1A1C}.m-bag.g b{color:#E8C980}
+.m-bag.k{width:58px;height:68px}.m-bag.k b{font-size:8px;letter-spacing:.14em}.m-bag.k::before{left:14px;width:24px}
+.m-uni{position:relative;width:92px;height:104px}
+.m-uni .sh{position:absolute;inset:0;background:linear-gradient(160deg,#36373C,#1C1D20);clip-path:polygon(30% 0,70% 0,100% 18%,90% 36%,80% 30%,80% 100%,20% 100%,20% 30%,10% 36%,0 18%)}
+.m-uni .cl{position:absolute;left:38%;top:0;width:24%;height:14%;background:#111;clip-path:polygon(0 0,100% 0,50% 100%)}
+.m-uni .ap{position:absolute;left:24%;right:24%;top:40%;bottom:0;border-radius:3px 3px 6px 6px;background:linear-gradient(160deg,#C99A5E,#8A6236);display:grid;place-items:start center;padding-top:8px;font:700 15px/1 var(--fs);color:#2A1B0F}
+.m-uni .st{position:absolute;top:22%;width:3px;height:22%;background:#6E4E2C}.m-uni .st.l{left:30%;transform:rotate(-18deg)}.m-uni .st.r{right:30%;transform:rotate(18deg)}
+.m-cup{position:relative;width:58px;height:84px}
+.m-cup .bd{position:absolute;left:0;right:0;top:10px;bottom:0;background:linear-gradient(90deg,#1C1D20,#36373C 45%,#1C1D20);clip-path:polygon(4% 0,96% 0,84% 100%,16% 100%);display:grid;place-items:center;font:700 20px/1 var(--fs);color:#E8C980}
+.m-cup .ld{position:absolute;left:-3px;right:-3px;top:2px;height:10px;border-radius:5px 5px 2px 2px;background:#111}
+.m-cup .rg{position:absolute;left:10%;right:10%;top:62%;height:5px;background:#C9A45C}
+.m-dc{width:118px;aspect-ratio:1.586;border-radius:10px;background:repeating-linear-gradient(90deg,rgba(185,141,90,0) 0 6px,rgba(185,141,90,.14) 6px 8px),linear-gradient(135deg,#2E2F33,#151517);border:1px solid rgba(201,164,92,.6);display:flex;flex-direction:column;justify-content:space-between;padding:8px 10px;font:700 10px/1 var(--fs);letter-spacing:.2em;color:#F1DCA4}
+.m-dc small{font:700 7px var(--fb);letter-spacing:.12em;color:var(--gold)}
+/* brand photos */
+.bph{display:grid;gap:12px;margin-top:14px;grid-template-columns:1fr}
+@media(min-width:700px){.bph{grid-template-columns:repeat(6,1fr)}.bph .w{grid-column:span 6}.bph .h{grid-column:span 3}.bph .t{grid-column:span 2}}
+.bph figure{margin:0;border-radius:24px;overflow:hidden;border:1px solid var(--ln);background:var(--cd);display:flex;flex-direction:column;min-width:0}
+.bph img{display:block;width:100%;height:auto;aspect-ratio:var(--ar,4/3);object-fit:cover}
+.bph .w img{--ar:16/8}
+.bph .t img{--ar:4/5}
+.bph figcaption{padding:14px 16px 16px}
+.bph figcaption b{display:block;font:800 17px var(--fb);letter-spacing:-.01em}
+.bph figcaption span{display:block;font-size:13.5px;color:var(--mu);line-height:1.45;margin-top:4px}
+.bph figcaption a{display:inline-block;margin-top:8px;font-weight:800;font-size:13.5px;color:var(--gold2);text-decoration:none}
+.bnote{margin-top:10px;font-size:12px;color:var(--mu2)}
+/* realistic shelf tag */
+.tagw{flex:1;display:grid;align-items:center;padding:clamp(18px,4vw,34px) clamp(10px,3vw,30px) clamp(26px,5vw,44px);background:radial-gradient(70% 60% at 50% 40%,rgba(255,255,255,.05),transparent 70%),var(--cd)}
+.ptag{container-type:inline-size;position:relative;width:100%;max-width:760px;margin:0 auto;aspect-ratio:1000/330;background:#F7F6F2;color:#111;display:grid;grid-template-columns:23% 37% 40%;font-family:Manrope,Inter,Arial,sans-serif;box-shadow:0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.55),0 .3cqw .6cqw rgba(0,0,0,.25)}
+.ptag *{box-sizing:border-box}
+.pt-l{background:#232427;color:#F2EFE9;display:grid;grid-template-rows:20% 1fr 1fr;padding:0 2.2cqw}
+.pt-l .hd{display:flex;align-items:center;justify-content:center;border-bottom:.25cqw solid #C9A45C;font:700 2.6cqw/1 'Cormorant Garamond',Georgia,serif;letter-spacing:.32em;color:#E8C980;padding-left:.32em}
+.pt-l .r{display:flex;flex-direction:column;justify-content:center;border-bottom:.2cqw dotted rgba(255,255,255,.35)}
+.pt-l .r:last-child{border:0}
+.pt-l .r b{font:800 2.5cqw/1.1 Manrope,Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.pt-l .r small{font:600 1.6cqw/1.2 Manrope,Arial,sans-serif;color:#B8B2A6;margin-top:.5cqw}
+.pt-l .r.m b{color:#E8C980}
+.pt-m{display:grid;grid-template-rows:20% 1fr 1fr;padding:0 2.4cqw;border-right:.15cqw solid #DDD9CF}
+.pt-m .hd{display:flex;align-items:flex-end;padding-bottom:1cqw;border-bottom:.3cqw solid #111;font:600 2.3cqw/1 Manrope,Arial,sans-serif}
+.pt-m .p{display:flex;align-items:center;border-bottom:.2cqw dotted #777}
+.pt-m .p:last-child{border:0}
+.pt-m .p b{font:900 8.6cqw/1 Manrope,Arial,sans-serif;letter-spacing:-.04em}
+.pt-m .p sup{font:800 3cqw/1 Manrope,Arial,sans-serif;margin-left:.6cqw;align-self:flex-start;margin-top:1.4cqw}
+.pt-m .p.m{position:relative}
+.pt-m .p.m b{font-size:10.4cqw;color:#111}
+.pt-m .p.m::before{content:"";position:absolute;left:-2.4cqw;top:12%;bottom:12%;width:.9cqw;background:#C9A45C}
+.pt-r{padding:2.4cqw 2.6cqw 2.2cqw;display:flex;flex-direction:column}
+.pt-r h5{margin:0;font:800 3.4cqw/1.08 Manrope,Arial,sans-serif;text-transform:uppercase}
+.pt-r .o{font:600 1.9cqw Manrope,Arial,sans-serif;color:#444;margin-top:.8cqw}
+.pt-r .meta{margin-top:auto;display:grid;grid-template-columns:auto 1fr auto;gap:0 2cqw;align-items:end;font:600 1.6cqw/1.25 Manrope,Arial,sans-serif;color:#222}
+.pt-r .meta b{font:800 2.4cqw Manrope,Arial,sans-serif}
+.pt-r .sv{margin-top:1.4cqw;border:.35cqw solid #111;padding:1cqw 1.6cqw;font:800 2.1cqw/1 Manrope,Arial,sans-serif;text-transform:uppercase;display:flex;justify-content:space-between;gap:1cqw}
+.pt-r .sv span{color:#8A6426}
+.pt-r .bc{margin-top:1.2cqw;height:5.2cqw}.pt-r .bc svg{display:block;width:100%;height:100%;fill:#111}
+/* photo mode for the store walk-through */
+.ph3{position:absolute;inset:0;overflow:hidden;background:#0E0F11;display:none}
+.v3.photo .ph3{display:block}.v3.photo.no3d::after{display:none}.v3.photo canvas,.v3.photo .lbs{display:none}
+.ph3 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease,transform .45s linear;transform:scale(1.05);will-change:transform,opacity}
+.ph3 img.on{opacity:1}.v3 .tag{max-width:calc(100% - 190px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ph3 img{transition:opacity 1s ease,transform .45s linear,object-position .45s linear}
+.ph3::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),transparent 22%,transparent 78%,rgba(0,0,0,.35));pointer-events:none}
+.m3{position:absolute;right:12px;top:12px;z-index:3;display:flex;border-radius:30px;border:1px solid var(--ln);background:rgba(14,15,17,.7);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:3px}
+.m3 button{border:0;background:none;color:var(--mu);font:700 11.5px var(--fb);padding:6px 11px;border-radius:30px}
+.m3 button.on{background:var(--gold);color:#1B1405}
+/* team */
+.tm{display:flex;justify-content:center;gap:clamp(22px,6vw,64px);flex-wrap:wrap;margin-top:44px}
+.tm{align-items:flex-start}.tm figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:min(230px,42vw)}
+.tm .av{position:relative;width:min(200px,38vw);height:min(200px,38vw);flex:none;border-radius:50%;padding:5px;background:conic-gradient(from 210deg,#8A6426,#F3DFA6,#C9A45C,#8A6426,#F3DFA6,#8A6426);box-shadow:0 24px 50px -18px rgba(0,0,0,.9),0 0 40px -10px rgba(217,170,95,.35)}
+.tm .av span{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;border:3px solid #0E0F11;background:#151517}
+.tm .av img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);display:block}
+.tm figcaption b{display:block;font:700 clamp(20px,2.6vw,26px)/1.1 var(--fs);color:var(--gold2)}
+.tm figcaption small{display:block;margin-top:6px;font:700 11px var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+/* app phone */
+.ph{position:relative;width:min(290px,78vw);aspect-ratio:9/18.6;margin:0 auto;border-radius:46px;padding:11px;background:linear-gradient(160deg,#2A2B2F,#0B0B0C);border:1px solid rgba(201,164,92,.45);box-shadow:0 40px 80px -30px rgba(0,0,0,.9),inset 0 0 0 2px #050505;cursor:pointer;-webkit-tap-highlight-color:transparent;animation:pfl 6s ease-in-out infinite}
+@keyframes pfl{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+.ph.off{animation-play-state:paused}
+.phs{position:relative;height:100%;border-radius:36px;overflow:hidden;background:#111214;display:flex;flex-direction:column}
+.pnot{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:84px;height:22px;border-radius:14px;background:#000;z-index:3}
+.pbar{padding:40px 16px 10px;display:flex;justify-content:space-between;align-items:baseline}
+.pbar b{font:700 20px var(--fs);letter-spacing:.2em;color:#E8C980}
+.pbar small{font-size:10px;color:var(--mu2)}
+.pv{position:relative;flex:1}
+.pscr{position:absolute;inset:0;padding:4px 14px 0;opacity:0;transform:translateX(18px);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.pscr.on{opacity:1;transform:none}
+.dc{border-radius:16px;aspect-ratio:1.586;padding:12px 14px;background:repeating-linear-gradient(90deg,rgba(185,141,90,0) 0 9px,rgba(185,141,90,.12) 9px 11px),radial-gradient(120% 90% at 90% 0,rgba(243,223,166,.2),transparent 55%),linear-gradient(135deg,#2E2F33,#151517);border:1px solid rgba(201,164,92,.6);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.dc::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.12) 50%,transparent 58%);animation:sheen 5s ease-in-out infinite}
+.dc .a{display:flex;justify-content:space-between;align-items:center}
+.dc .a b{font:700 15px var(--fs);letter-spacing:.22em;color:#F1DCA4}
+.dc .a span{font-size:8px;letter-spacing:.2em;color:var(--gold)}
+.dc .p{font:700 22px/1 var(--fs);color:#F1DCA4}.dc .p small{display:block;font:700 8px var(--fb);letter-spacing:.16em;color:var(--mu);margin-top:4px}
+.pqr{margin:12px auto 0;width:112px;height:112px;border-radius:12px;background:#fff;padding:8px;display:grid;grid-template-columns:repeat(9,1fr);gap:1px}
+.pqr i{background:#111}.pqr i.o{background:#fff}
+.pcap2{text-align:center;font-size:11px;color:var(--mu);margin-top:8px}
+.pl{display:grid;gap:8px;margin-top:4px}
+.pl div{display:grid;grid-template-columns:38px 1fr auto;gap:10px;align-items:center;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--ln);padding:8px}
+.pl i{width:38px;height:38px;border-radius:10px;background:var(--c)}
+.pl span{line-height:1.25;min-width:0}.pl b{display:block;font:700 12px/1.25 var(--fb)}.pl small{display:block;font-size:10px;color:var(--mu)}
+.pl em{font-style:normal;font:800 9.5px var(--fb);color:#1B1405;background:var(--gold);border-radius:6px;padding:2px 6px}
+.ph h4{font:800 15px var(--fb);margin:2px 0 8px}
+.ptab{display:flex;justify-content:space-around;padding:10px 6px 16px;border-top:1px solid var(--ln);font-size:10px;color:var(--mu2)}
+.ptab span.on{color:var(--gold2);font-weight:800}
+@media(prefers-reduced-motion:reduce){.ph{animation:none}}
+/* perf */
+.bar4{width:100vw!important;transform:scaleX(0);transform-origin:0 0;will-change:transform}
+.lflip.off .lin,.lflip.off .lcard::after{animation-play-state:paused!important}
+/* statement */
+#why{height:280vh}
+#why .stick{display:grid;place-items:center;padding:0 20px}
+.stmt{max-width:1000px;font:800 clamp(34px,7.4vw,84px)/1.06 var(--fb);letter-spacing:-.04em;text-align:left}
+.stmt span{opacity:.12;transition:opacity .25s,color .25s}
+.stmt span.on{opacity:1}
+.stmt .g{color:var(--gold2)}
+.stmt-note{margin-top:28px;font-size:15px;color:var(--mu);max-width:34em;opacity:0;transition:opacity .6s}
+.stmt-note.on{opacity:1}
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:28px;overflow:hidden;margin-top:40px}
+.nums div{background:var(--bg);padding:26px 20px}
+.nums b{display:block;font:700 clamp(48px,9vw,96px)/.9 var(--fs)}
+.nums span{display:block;margin-top:10px;color:var(--mu);font-size:14.5px}
+.nums div:last-child{grid-column:1/-1}
+@media(min-width:900px){.nums{grid-template-columns:repeat(5,1fr)}.nums div:last-child{grid-column:auto}}
+/* compare */
+.cmp{display:grid;gap:14px;margin-top:40px}
+@media(min-width:820px){.cmp{grid-template-columns:1fr 1fr}}
+.bk{border-radius:30px;padding:28px 24px;position:relative;overflow:hidden}
+.bk.m{background:linear-gradient(160deg,#0D4A37,#03140D);color:#EEF6F2;border:1px solid rgba(94,227,180,.25)}
+.bk.n{background:linear-gradient(160deg,#2C2721,#151517);border:1px solid rgba(217,184,106,.4)}
+.bk h3{font:800 30px var(--fb);letter-spacing:-.03em;margin-bottom:4px}
+.bk .tg{font-size:13px;font-weight:700}
+.bk.m .tg{color:#5EE3B4}.bk.n .tg{color:var(--gold)}
+.bk ul{list-style:none;padding:0;margin-top:18px}
+.bk li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(94,227,180,.14);font-size:15px}
+.bk.n li{border-color:rgba(217,184,106,.14)}
+.bk li span:first-child{color:#93B3A7}.bk.n li span:first-child{color:var(--mu)}
+.bk li b{text-align:right;font-weight:700}
+.bk.n li b{color:var(--gold2)}
+.bk .strip{position:absolute;left:0;right:0;top:0;height:6px;display:flex}.bk .strip i{flex:1}
+.rule{margin-top:14px;border-radius:30px;padding:28px 24px;border:1px solid var(--ln);background:var(--cd);font:700 clamp(20px,3vw,28px)/1.3 var(--fb);letter-spacing:-.02em}
+.rule em{font-style:normal;color:var(--gold2)}
+/* planogram scene */
+#plan{height:420vh}
+#plan .stick{display:grid;grid-template-rows:auto 1fr auto;padding:calc(84px + env(safe-area-inset-top,0px)) 20px calc(24px + env(safe-area-inset-bottom,0px))}
+.ptitle{text-align:center}
+.ptitle .h2{font-size:clamp(30px,6vw,60px);margin:0}
+.pstage{position:relative;perspective:1200px;display:grid;place-items:center}
+.plane{position:relative;width:300px;height:360px;transform-style:preserve-3d;border:1px solid rgba(94,227,180,.45);border-radius:12px;background:linear-gradient(rgba(16,185,129,.08),rgba(16,185,129,.02)),repeating-linear-gradient(0deg,transparent 0 29px,rgba(94,227,180,.1) 29px 30px),repeating-linear-gradient(90deg,transparent 0 29px,rgba(94,227,180,.1) 29px 30px);will-change:transform}
+.z{position:absolute;border-radius:7px;border:1px solid var(--c);background:linear-gradient(160deg,color-mix(in srgb,var(--c) 50%,#03140d),color-mix(in srgb,var(--c) 18%,#03140d));display:grid;place-items:center;text-align:center;padding:4px;font:800 10.5px/1.15 var(--fb);color:#fff;transform:translateZ(var(--h,0px));transition:transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .5s,opacity .5s;opacity:.35}
+.z.up{opacity:1}
+.z.cur{box-shadow:0 0 0 2px var(--c),0 0 34px var(--c)}
+.pcap{max-width:560px;margin:0 auto;width:100%;min-height:118px;border-radius:24px;border:1px solid var(--ln);background:rgba(14,15,17,.75);backdrop-filter:blur(10px);padding:18px 20px}
+.pcap .n{font:600 italic 16px var(--fs);color:var(--gold)}
+.pcap b{display:block;font:800 22px var(--fb);letter-spacing:-.02em;margin:2px 0 4px}
+.pcap p{color:var(--mu);font-size:14.5px}
+.pdots{display:flex;gap:5px;justify-content:center;margin-top:10px}
+.pdots i{width:6px;height:6px;border-radius:50%;background:var(--ln);transition:background .3s,width .3s}
+.pdots i.on{background:var(--gold);width:18px;border-radius:4px}
+/* service grid */
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:40px}
+@media(min-width:900px){.sg{grid-template-columns:repeat(4,1fr)}}
+.sg div{border-radius:22px;border:1px solid var(--ln);background:var(--cd);padding:18px 16px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between}
+.sg span{font-size:12.5px;color:var(--mu)}
+.sg b{font:700 17px/1.25 var(--fb);letter-spacing:-.01em}
+.sg div.hi{background:linear-gradient(160deg,#2C2721,#151517);border-color:rgba(217,184,106,.35)}
+.sg div.hi b{color:var(--gold2)}
+/* markets */
+.mrow{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 24px;margin:36px -20px 0;scrollbar-width:none}
+.mrow::-webkit-scrollbar{display:none}
+.mc{flex:0 0 min(86vw,430px);scroll-snap-align:center;border-radius:30px;border:1px solid var(--ln);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));padding:24px 22px;position:relative;overflow:hidden}
+.mc .strip{position:absolute;left:0;right:0;top:0;height:5px;background:var(--c)}
+.mc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.mc h3{font:800 30px/1 var(--fb);letter-spacing:-.03em}
+.mc .code{font-size:12.5px;color:var(--mu2);margin-top:6px}
+.chip{display:inline-flex;font-size:12px;font-weight:700;padding:5px 11px;border-radius:30px;border:1px solid rgba(217,184,106,.4);color:var(--gold);white-space:nowrap}
+.chip.s{background:var(--gold);color:#1B1405;border-color:var(--gold)}
+.mc .area{font:700 74px/.9 var(--fs);margin:18px 0 4px}
+.mc .area small{font:600 16px var(--fb);color:var(--mu);margin-left:6px}
+.mc .lb{display:block;font:600 italic 16px var(--fs);color:var(--gold);margin:14px 0 2px}
+.mc p{font-size:14.5px;color:#DCD6CB}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.kp label,.kp div{display:block;border-radius:16px;border:1px solid var(--ln);background:rgba(0,0,0,.25);padding:10px 12px}
+.kp small{display:block;font-size:11.5px;color:var(--mu)}
+.kp input{width:100%;background:none;border:0;color:var(--tx);font:700 20px var(--fb);padding:2px 0;outline:none}
+.kp input::placeholder{color:var(--mu2)}
+.kp label:focus-within{border-color:var(--gold)}
+.kp b{font:700 20px var(--fb);display:block;padding:2px 0}
+.kp .auto{background:rgba(217,184,106,.06);border-color:rgba(217,184,106,.25)}
+.kp .auto b{color:var(--gold2)}
+.maplink{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding:13px 16px;border-radius:16px;background:#fff;color:#14201A;text-decoration:none;font-weight:800;font-size:14.5px}
+.maplink span{color:#1B8A3E}
+.note{font-size:13px;color:var(--mu2);margin-top:14px}
+.mnav{display:flex;gap:8px;justify-content:center}
+.mnav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:var(--cd)}
+/* matrix */
+.mx{display:grid;gap:24px;align-items:center;margin-top:40px}
+@media(min-width:860px){.mx{grid-template-columns:380px 1fr}}
+.donut{position:relative;width:min(340px,80vw);aspect-ratio:1;margin:0 auto}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut circle.s{transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1)}
+.donut .c{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.donut .c b{font:700 72px/1 var(--fs)}
+.donut .c span{font-size:13px;color:var(--mu)}
+.leg div{display:grid;grid-template-columns:12px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--ln);font-size:15px}
+.leg i{width:12px;height:12px;border-radius:4px;background:var(--c)}
+.leg b{font-variant-numeric:tabular-nums}
+/* steps */
+.steps{display:grid;gap:12px;margin-top:40px;counter-reset:s}
+@media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps div{border-radius:26px;padding:22px 20px;border:1px solid var(--ln);background:var(--cd);position:relative;overflow:hidden}
+.steps div::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:var(--c);color:#fff;font:800 17px var(--fb);margin-bottom:22px}
+.steps div:nth-child(3)::before{color:#3a2c00}
+.steps b{display:block;font:800 21px/1.15 var(--fb);letter-spacing:-.02em;margin-bottom:6px}
+.steps p{font-size:14.5px;color:var(--mu)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:14px;padding:8px 14px;border-radius:30px;border:1px solid var(--ln);background:var(--cd)}
+/* team */
+.phase{display:grid;gap:12px;margin-top:40px}
+@media(min-width:860px){.phase{grid-template-columns:repeat(3,1fr)}}
+.phase div{border-radius:26px;padding:24px 20px;border:1px solid var(--ln);background:var(--cd)}
+.phase div.now{background:linear-gradient(160deg,#0D4A37,#03140D);border-color:rgba(217,184,106,.4)}
+.phase i{font:600 italic 18px var(--fs);color:var(--gold);font-style:italic}
+.phase b{display:block;font:800 26px var(--fb);letter-spacing:-.03em;margin:4px 0 6px}
+.phase p{color:var(--mu);font-size:14.5px}
+/* permits */
+.pm{display:grid;gap:16px;margin-top:40px;align-items:start}
+@media(min-width:860px){.pm{grid-template-columns:1fr 300px}}
+.grid5{border-radius:26px;border:1px solid var(--ln);background:var(--cd);padding:16px;overflow-x:auto}
+.grid5 table{border-collapse:separate;border-spacing:5px;width:100%;min-width:500px}
+.grid5 th{font-size:12px;font-weight:600;color:var(--mu);text-align:center;padding:2px}
+.grid5 td:first-child{font-weight:800;font-size:14px;white-space:nowrap;padding-right:6px}
+.pc{width:100%;height:44px;border-radius:12px;border:1px solid var(--ln);background:rgba(255,255,255,.03);font-size:11px;font-weight:700;color:var(--mu);transition:all .3s}
+.pc.s1{background:rgba(217,184,106,.15);border-color:var(--gold);color:var(--gold2)}
+.pc.s2{background:var(--em);border-color:var(--em);color:#02150F}
+.pc:disabled{cursor:default}
+.prc{border-radius:26px;border:1px solid var(--ln);background:var(--cd);padding:20px;text-align:center}
+.prc svg{width:180px;height:180px;transform:rotate(-90deg)}
+.prc .v{font:700 48px/1 var(--fs);margin-top:-118px;margin-bottom:76px}
+.risks{display:grid;gap:10px;margin-top:16px}
+@media(min-width:860px){.risks{grid-template-columns:repeat(3,1fr)}}
+.risks div{border-radius:22px;padding:18px;border:1px solid var(--ln);background:var(--cd)}
+.risks b{display:block;font-weight:800;margin-bottom:4px}
+.risks p{font-size:14px;color:var(--mu)}
+/* control */
+.track{position:relative;display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px}
+.track::before{content:"";position:absolute;left:16%;right:16%;top:54px;height:2px;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
+.track div{position:relative;text-align:center}
+.track b{display:grid;place-items:center;width:108px;height:108px;margin:0 auto 14px;border-radius:50%;border:2px solid var(--gold);background:var(--bg);font:700 48px var(--fs);color:var(--gold2)}
+.track div:last-child b{background:var(--gold);color:#1B1405}
+.track span{font-size:14px;color:var(--mu)}
+/* votes */
+.qs{display:grid;gap:12px;margin-top:40px}
+@media(min-width:860px){.qs{grid-template-columns:1fr 1fr}}
+.q{border-radius:24px;border:1px solid var(--ln);background:var(--cd);padding:18px}
+.q h3{display:flex;gap:12px;align-items:flex-start;font:800 17px/1.3 var(--fb);margin-bottom:14px}
+.q h3 i{flex:none;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-style:normal;font-size:13px;background:var(--c);color:#fff}
+.ops{display:grid;gap:6px}
+.op{position:relative;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--ln);border-radius:14px;padding:11px 14px;background:none;text-align:left;font-weight:700;font-size:14.5px;overflow:hidden}
+.op::before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p,0%);background:rgba(217,184,106,.1);transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.op span{position:relative}
+.op small{position:relative;color:var(--mu);font-weight:600}
+.op.me{border-color:var(--gold);color:var(--gold2)}
+.op.me::before{background:rgba(217,184,106,.16)}
+.op:disabled{cursor:default}
+.vstat{margin-top:18px;font-size:14px;color:var(--mu)}
+/* final */
+#final{min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 20px;background:radial-gradient(60% 50% at 50% 60%,rgba(217,184,106,.14),transparent 70%)}
+#final h2{font:700 clamp(56px,13vw,150px)/.9 var(--fs)}
+#final p{margin-top:24px;color:var(--mu);max-width:34em;margin-left:auto;margin-right:auto;font-size:17px}
+.auth{margin-top:40px;font-size:13px;color:var(--mu2)}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120%);z-index:40;background:#fff;color:#14201A;border-radius:30px;padding:10px 18px;font-weight:700;font-size:14px;transition:transform .4s,visibility .4s;max-width:90vw;text-align:center;visibility:hidden}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+
+.shr{margin-top:40px;border-radius:28px;border:1px solid var(--ln);background:var(--cd);padding:22px 20px;display:grid;gap:18px}
+.sr{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:end}.sr .sb{grid-column:1/-1;grid-row:2}
+.sr span{font-size:14px;color:var(--mu)}
+.sr b{font:700 clamp(34px,7vw,52px)/1 var(--fs);text-align:right}
+.sb{height:16px;border-radius:16px;background:rgba(255,255,255,.05);overflow:hidden}
+.sb i{display:block;height:100%;width:0;border-radius:16px;background:rgba(255,255,255,.28);transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.sb i.g2{background:linear-gradient(90deg,var(--gold3),var(--gold2));transition-delay:.5s}
+.shr.fill .sb i{width:var(--w)}
+.crit{display:grid;gap:10px;margin-top:14px}
+@media(min-width:820px){.crit{grid-template-columns:repeat(3,1fr)}}
+.crit div{border-radius:22px;border:1px solid var(--ln);background:var(--cd);padding:18px}
+.crit b{display:block;font:800 19px var(--fb);letter-spacing:-.02em;margin-bottom:4px}
+.crit p{font-size:14px;color:var(--mu)}
+.fm{border-radius:28px;padding:24px 22px;border:1px solid rgba(217,184,106,.3);background:linear-gradient(160deg,#2C2721,#151517)}
+.fm b{display:block;font:700 64px/1 var(--fs);margin:14px 0 8px}
+.fm p{color:var(--mu);font-size:14.5px}
+
+.ct{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.ct div{border-radius:16px;border:1px solid var(--ln);background:rgba(0,0,0,.2);padding:10px 8px;text-align:center}
+.ct b{display:block;font:700 22px/1 var(--fs);color:var(--gold2);white-space:nowrap}
+.ct b span{color:var(--mu2);margin:0 2px}
+.ct small{display:block;margin-top:5px;font-size:11px;color:var(--mu)}
+.cl{margin-top:8px;border-radius:16px;border:1px solid var(--ln);overflow:hidden}
+.cl a{display:grid;grid-template-columns:10px 1fr auto;gap:10px;align-items:center;padding:9px 12px;border-top:1px solid var(--ln);text-decoration:none;font-size:13.5px}
+.cl a:first-child{border-top:0}
+.cl a:hover{background:rgba(255,255,255,.04)}
+.cl i{width:9px;height:9px;border-radius:50%}
+.cl i.ta{background:var(--gold)}.cl i.to{background:linear-gradient(90deg,var(--em2) 50%,var(--gold) 50%)}.cl em.o{background:none;color:var(--gold2);border:1px solid var(--gold)}.cl i.ts{background:var(--em2)}.cl i.tm{background:var(--r)}
+.cl span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cl em{font-style:normal;font-size:10.5px;font-weight:800;color:#1B1405;background:var(--gold);border-radius:6px;padding:1px 5px;margin-left:4px}
+.cl b{font-variant-numeric:tabular-nums;color:var(--mu)}
+.cn{margin-top:8px;font-size:12.5px;color:#F4A3AC}
+.cs{margin-top:6px;font-size:11px;color:var(--mu2)}
+.go{display:flex;align-items:center;gap:12px;margin-top:14px;background:#fff;border-radius:40px;padding:6px 16px 6px 6px;text-decoration:none}
+.go i{width:46px;height:46px;flex:none;border-radius:50%;background:conic-gradient(from -45deg,var(--r) 0 25%,var(--gr) 0 50%,var(--ye) 0 75%,var(--bl) 0);display:grid;place-items:center}
+.go i b{width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#fff;display:grid;place-items:center}
+.go i b::after{content:"";width:9px;height:9px;border-radius:50%;background:#E4283B}
+.go span{min-width:0}
+.go span b{display:block;font:900 16px/1.1 var(--fb);color:#D8203A;letter-spacing:-.02em}
+.go small{display:block;font:800 11px/1.3 var(--fb);color:#2A3DAA;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.go em{margin-left:auto;font-style:normal;font:900 20px var(--fb);color:#D8203A}
+
+.ag{display:grid;gap:10px;margin-top:30px}
+@media(min-width:860px){.ag{grid-template-columns:repeat(5,1fr)}}
+.ag div{position:relative;border-radius:22px;border:1px solid var(--ln);background:var(--cd);padding:18px 16px}
+.ag i{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;font:800 15px var(--fb);font-style:normal;color:#1B1405;background:var(--gold);margin-bottom:14px}
+.ag b{display:block;font:800 18px var(--fb);letter-spacing:-.02em;margin-bottom:4px}
+.ag p{font-size:14px;color:var(--mu)}
+
+.sgrid{display:grid;gap:14px;margin-top:40px}
+@media(min-width:900px){.sgrid{grid-template-columns:1fr 1fr}}
+.chart{margin:0;border-radius:26px;border:1px solid var(--ln);background:var(--cd);padding:20px 18px 16px;position:relative}
+.chart figcaption b{display:block;font:800 18px var(--fb);letter-spacing:-.02em}
+.chart figcaption span{font-size:13px;color:var(--mu)}
+.chart svg{display:block;width:100%;height:auto;margin-top:12px;overflow:visible}
+.chart text{font-family:var(--fb)}
+.lgd{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px;color:var(--mu)}
+.lgd span{display:inline-flex;align-items:center;gap:6px}.lgd i{width:14px;height:3px;border-radius:2px;background:var(--c)}
+.tip{position:absolute;pointer-events:none;background:#fff;color:#14201A;border-radius:12px;padding:8px 10px;font-size:12.5px;line-height:1.45;box-shadow:0 10px 24px rgba(0,0,0,.4);opacity:0;transition:opacity .15s;white-space:nowrap;z-index:2}
+.tip b{font-weight:800}.tip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:var(--c)}
+.tt{font:800 20px var(--fb);letter-spacing:-.02em;margin:34px 0 0}
+.stbl tr.tot td{font-weight:800;color:var(--gold2);border-top:1px solid rgba(217,184,106,.35)}
+.stbl{margin-top:14px;border-radius:26px;border:1px solid var(--ln);background:var(--cd);overflow-x:auto}
+.stbl table{width:100%;border-collapse:collapse;min-width:620px;font-size:14px}
+.stbl th{font-size:12px;font-weight:600;color:var(--mu);text-align:right;padding:14px 14px 10px;border-bottom:1px solid var(--ln)}
+.stbl th:first-child,.stbl td:first-child{text-align:left}
+.stbl td{padding:13px 14px;border-bottom:1px solid var(--ln);text-align:right;font-variant-numeric:tabular-nums}
+.stbl tr:last-child td{border-bottom:0}
+.stbl td:first-child{font-weight:800;white-space:nowrap}.stbl td:first-child i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;background:var(--c)}
+.stbl .dn{color:#F4A3AC}
+.ms{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+.ms div{border-radius:16px;border:1px solid var(--ln);background:rgba(0,0,0,.2);padding:10px 8px;text-align:center}
+.ms b{display:block;font:700 22px/1 var(--fs);color:var(--gold2);white-space:nowrap}
+.ms small{display:block;margin-top:5px;font-size:11px;color:var(--mu)}
+.ms .bad b{color:#F4A3AC}
+/* makro nav */
+.mnv{position:fixed;z-index:24;left:0;right:0;bottom:0;padding:12px 14px calc(14px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;pointer-events:none;background:linear-gradient(transparent,rgba(14,15,17,.85) 55%)}
+.mnv>*{pointer-events:auto}
+.nb{width:54px;height:54px;flex:none;border:0;border-radius:50%;padding:3px;background:conic-gradient(from -45deg,var(--r) 0 25%,var(--gr) 0 50%,var(--ye) 0 75%,var(--bl) 0);box-shadow:0 10px 24px rgba(0,0,0,.45)}
+.nb span{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:#fff;color:#D8203A;font:900 22px var(--fb)}
+.nb:disabled{opacity:.35}
+.nn{margin-left:auto;display:flex;align-items:center;gap:10px;border:0;border-radius:40px;background:#fff;padding:6px 18px 6px 6px;box-shadow:0 10px 24px rgba(0,0,0,.45);text-align:left;max-width:72vw}
+.nn i{width:42px;height:42px;flex:none;border-radius:50%;background:conic-gradient(from -45deg,var(--r) 0 25%,var(--gr) 0 50%,var(--ye) 0 75%,var(--bl) 0);display:grid;place-items:center}
+.nn i::after{content:"→";width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center;color:#D8203A;font:900 15px var(--fb)}
+.nn b{display:block;font:900 17px/1 var(--fb);color:#D8203A;letter-spacing:-.02em}
+.nn small{display:block;font:800 11px/1.3 var(--fb);color:#2A3DAA;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw}
+.mdots{display:flex;gap:4px;flex-wrap:wrap;max-width:120px}
+.mdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.18)}
+.mdots i.d{background:var(--mu2)}.mdots i.on{background:var(--gold);width:14px;border-radius:4px}
+#final{padding-bottom:170px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+
+/* ===== NV: formats, price, metrics, gates ===== */
+.hy{display:inline-block;vertical-align:middle;font:700 10px var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);border:1px dashed rgba(217,184,106,.55);border-radius:20px;padding:3px 9px;margin-left:6px;white-space:nowrap}
+.nv-src{font-size:12.5px;color:var(--mu2);margin-top:14px}
+.nv-data{display:grid;gap:10px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.nv-data div{border-radius:24px;border:1px solid var(--ln);background:var(--cd);padding:20px}
+.nv-data b{display:block;font:700 clamp(38px,5vw,52px)/1 var(--fs)}
+.nv-data span{display:block;margin-top:8px;color:var(--mu);font-size:14.5px;line-height:1.45}
+.nv-data strong{color:var(--tx)}
+.nv-fmt{display:grid;gap:12px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.nv-fmt>div{position:relative;border-radius:28px;border:1px solid var(--ln);background:linear-gradient(170deg,rgba(217,184,106,.07),rgba(255,255,255,.02));padding:24px 22px 18px;overflow:hidden}
+.nv-fmt>div.l{border-color:rgba(217,184,106,.45)}
+.nv-fmt .sz{position:absolute;right:16px;top:6px;font:700 92px/1 var(--fs);color:rgba(217,184,106,.13)}
+.nv-fmt h3{font:800 22px var(--fb);letter-spacing:-.02em}
+.nv-fmt .ar{font:700 clamp(34px,4vw,44px)/1.05 var(--fs);margin:6px 0 14px}
+.nv-fmt dl{display:grid;grid-template-columns:auto 1fr;gap:9px 14px;margin:0;font-size:14.5px}
+.nv-fmt dt{color:var(--mu)}.nv-fmt dd{margin:0;text-align:right;font-weight:700}
+.nv-fmt .bar{height:6px;border-radius:6px;background:rgba(255,255,255,.07);margin:16px 0 6px;overflow:hidden}
+.nv-fmt .bar i{display:block;height:100%;width:var(--w);border-radius:6px;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
+.nv-fmt small{display:block;color:var(--mu2);font-size:12.5px}
+.nv-roles{display:grid;gap:12px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.nv-roles>div{border-radius:26px;border:1px solid var(--ln);background:var(--cd);padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+.nv-roles i{font:600 italic 16px var(--fs);color:var(--gold)}
+.nv-roles h3{font:800 21px var(--fb);letter-spacing:-.02em}
+.nv-roles p{color:var(--mu);font-size:14.5px;line-height:1.5}
+.nv-roles ul{list-style:none;padding:0;margin:0;display:grid;gap:7px;font-size:14px}
+.nv-roles li{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:baseline;border-top:1px solid var(--ln);padding-top:7px}
+.nv-roles li span{color:var(--mu)}.nv-roles li b{text-align:right}
+.nv-roles .new{border-color:rgba(217,184,106,.45);background:linear-gradient(170deg,rgba(217,184,106,.1),rgba(255,255,255,.02))}
+.nv-kvi{margin-top:16px;border-radius:26px;border:1px solid var(--ln);background:var(--cd);padding:22px 20px}
+.nv-kvi h3{font:800 19px var(--fb);margin-bottom:6px}
+.nv-kvi p{color:var(--mu);font-size:14.5px}
+.nv-kvi .chips span{font-size:13px}
+.nv-rules{display:grid;gap:10px;margin-top:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.nv-rules div{border-left:2px solid var(--gold);padding:4px 0 4px 16px}
+.nv-rules b{display:block;font:800 16.5px var(--fb);margin-bottom:4px}
+.nv-rules p{color:var(--mu);font-size:14px;line-height:1.5}
+.nv-met{display:grid;gap:12px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.nv-met>div{border-radius:26px;border:1px solid var(--ln);background:var(--cd);padding:22px 20px}
+.nv-met>div.k{border-color:rgba(217,184,106,.45);background:linear-gradient(170deg,rgba(217,184,106,.1),rgba(255,255,255,.02))}
+.nv-met small{display:block;font:700 11px var(--fb);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.nv-met h3{font:800 20px var(--fb);margin-bottom:12px}
+.nv-met ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:14px;color:var(--mu)}
+.nv-met li{position:relative;padding-left:14px}
+.nv-met li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.nv-base{margin-top:14px;display:grid;gap:16px;align-items:center;border-radius:26px;border:1px solid rgba(217,184,106,.35);padding:22px;background:linear-gradient(90deg,rgba(217,184,106,.09),transparent)}
+@media(min-width:800px){.nv-base{grid-template-columns:1fr auto}}
+.nv-base b{font:800 18px var(--fb)}.nv-base p{color:var(--mu);font-size:14.5px;margin-top:4px}
+.nv-base .nums{display:flex;gap:22px;flex-wrap:wrap}
+.nv-base .nums div{text-align:left}.nv-base .nums b{display:block;font:700 34px/1 var(--fs)}.nv-base .nums span{font-size:12.5px;color:var(--mu)}
+.nv-gate{display:grid;gap:12px;margin-top:38px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.nv-gate>div{border-radius:26px;padding:22px 20px;border:1px solid var(--ln);background:var(--cd)}
+.nv-gate .nv-ok{border-color:rgba(94,227,180,.4);background:linear-gradient(170deg,rgba(16,185,129,.12),rgba(255,255,255,.02))}
+.nv-gate .nv-fix{border-color:rgba(217,184,106,.45);background:linear-gradient(170deg,rgba(217,184,106,.1),rgba(255,255,255,.02))}
+.nv-gate .nv-no{border-color:rgba(228,40,59,.35);background:linear-gradient(170deg,rgba(228,40,59,.1),rgba(255,255,255,.02))}
+.nv-gate i{font:700 11px var(--fb);letter-spacing:.18em;text-transform:uppercase;color:var(--mu)}
+.nv-gate h3{font:800 22px var(--fb);margin:6px 0 8px}
+.nv-gate p{color:var(--mu);font-size:14.5px;line-height:1.5}
+.nv-crit{margin-top:14px;border-radius:26px;border:1px solid var(--ln);background:var(--cd);padding:8px 20px}
+.nv-crit div{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--ln);font-size:15px}
+.nv-crit div:last-child{border-bottom:0}
+.nv-crit i{font:700 16px var(--fs);color:var(--gold);font-style:normal}
+.nv-crit b{display:block;font-weight:800}.nv-crit span{color:var(--mu);font-size:14px}
+
+
+/* hosted on Netlify: keep nav buttons above the "Powered by Netlify" badge */
+html.nl .mnv{bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+html.nl .toast{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+</style>
+</head>
+<body>
+<div class="bar4" id="bar4"></div>
+<header>
+ <a class="mk" href="#hero" aria-label="Makro yangi zamon"><i></i><span><b>makro</b><small>yangi zamon</small></span></a>
+ <span class="where" id="where">S-Mart</span>
+ <button class="hb" id="hb" aria-label="Все разделы" aria-expanded="false"><i></i><i></i><i></i></button>
+</header>
+<nav class="menu" id="menu" aria-label="Разделы"><ol id="ml"></ol></nav>
+
+<!-- HERO -->
+<section id="hero" class="scene" data-t="S-Mart">
+ <div class="stick">
+  <div class="stars" id="stars"></div>
+  <div class="htext" id="htext">
+   <div class="kick">Новый бренд · пилот 2026</div>
+   <h1 class="gold">S-MART</h1>
+   <p>Premium grocery · 24/7 · от Makro yangi zamon</p>
+   <p style="margin-top:8px;font-size:13px;color:var(--mu2);line-height:1.5">Над проектом работали: Жафархон Дехканов, Жасур Хакимов<br>Презентация: Жафархон Дехканов</p>
+  </div>
+  <div class="stage"><div class="store" id="store">
+   <div class="floor"></div><div class="ring"></div>
+   <div class="fF"><div class="sign" id="sign">S-MART</div><div class="win" style="left:18px"></div><div class="win" style="right:18px"></div><div class="door"><i></i><i></i></div></div>
+   <div class="fB"><div class="face"><b>5+1</b><small>ЛОКАЦИИ</small></div></div>
+   <div class="fR"><div class="glass"></div><div class="face"><b>21+</b><small>ЗАКРЫТАЯ ЗОНА</small></div></div>
+   <div class="fL"><div class="face"><b>24/7</b><small>ВСЕГДА ОТКРЫТО</small></div></div>
+   <div class="fT"></div>
+  </div></div>
+  <div class="hcap" id="hcap"><b>Магазин у дома, который не спит.</b><span>3 500 позиций · зона 21+ · редкий импорт</span></div>
+  <div class="scroll-hint" id="hint"><span>Листайте</span><i></i></div>
+ </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="scene" data-t="Почему">
+ <div class="stick"><div>
+  <p class="kick">Почему отдельный бренд</p>
+  <p class="stmt" id="stmt">Алкоголь и табак мы не продаём под именем Makro. Часть сотрудников и покупателей может уйти. <span class="g">Поэтому — отдельный бренд.</span></p>
+  <p class="stmt-note" id="stmtn">И второе: S-Mart начинает с чистого листа — премиальный вид, а цены на уровне Korzinka, Havas и Olma или ниже. Makro остаётся прежним, а S-Mart работает на его инфраструктуре: юрлицо, SAP, IT, закупки, логистика.</p>
+ </div></div>
+</section>
+
+<!-- BRAND -->
+<section id="brand" class="sec" data-t="Почему S-Mart">
+ <div class="wrap">
+  <p class="kick rv">Название и знак</p>
+  <h2 class="h2 rv">Почему S-Mart.</h2>
+  <div class="bwm rv"><div class="bw">S-MART</div><div class="bsub">PREMIUM GROCERY · 24/7</div>
+   <div class="beq"><span>SMART</span>+<span>MART</span>=<b>«умный магазин»</b>=<b>«у дома, 24/7»</b></div></div>
+  <h3 class="tt rv">Цвета S-Mart: графит, дуб и латунь</h3>
+  <div class="rule rv" style="margin-top:14px">Почему такие цвета: <em>у сетей Ташкента почти всегда яркие цвета</em> — зелёный у «Магнита» и у многих других, красный у Korzinka. Графит с дубом и латунью почти никто не использует, поэтому S-Mart сразу выделяется на улице и выглядит дороже. Дуб добавляет тепла и уюта, графит практичен и не выгорает.</div>
+  <div class="pal rv">
+   <div><i style="--c:linear-gradient(160deg,#36373C,#1F2023)"></i><b>Графит</b><small>#26282B</small><p>Основа: фасад, стены, стеллажи, форма, пакет.</p></div>
+   <div><i style="--c:repeating-linear-gradient(90deg,#9C7041 0 9px,#C99A5E 9px 15px,#8A6236 15px 18px)"></i><b>Дуб</b><small>#B98D5A</small><p>Тепло: рейки, торцы, фартук, крафт-пакет.</p></div>
+   <div><i style="--c:linear-gradient(135deg,#F3DFA6,#C9A45C 50%,#8A6426)"></i><b>Латунь</b><small>#C9A45C</small><p>Акцент: буквы логотипа, рамки, кольцо на стакане.</p></div>
+   <div><i style="--c:radial-gradient(80% 120% at 50% 100%,#FFC56E,#B7772A)"></i><b>Тёплый свет</b><small>#FFC56E</small><p>Подсветка вывески, торцов и фриза в зале.</p></div>
+   <div><i style="--c:#F2EFE9"></i><b>Молочный</b><small>#F2EFE9</small><p>Ценники, чеки, текст на графите.</p></div>
+  </div>
+  <div class="ag rv" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+   <div><i>1</i><b>Smart + Mart</b><p>«Умный магазин у дома»: подписка в приложении, кассы самообслуживания, 24/7.</p></div>
+   <div><i>2</i><b>Нейтральное</b><p>Без религии, махалли и семьи — уместно для магазина с зоной 21+ и табаком.</p></div>
+   <div><i>3</i><b>Легко читать</b><p>Короткое и понятное на любом языке: S-Mart — «Эс-Март». Крупно читается на вывеске и в приложении.</p></div>
+   <div><i>4</i><b>Товарный знак</b><p>Похожие названия (S-Mart, Smart) используют сети в других странах. До запуска проверим и зарегистрируем знак в Узбекистане.</p></div>
+  </div>
+  <h3 class="tt rv">Почему такой логотип</h3>
+  <div class="ag rv" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:14px">
+   <div><i>A</i><b>Латунь и засечки</b><p>Буквы с засечками и широким шагом — язык премиальных гастрономов: спокойно и дорого, без крика.</p></div>
+   <div><i>B</i><b>Как в зале</b><p>Графит, дуб и латунь — те же материалы, что внутри и на фасаде. Снаружи и внутри один бренд.</p></div>
+   <div><i>C</i><b>Чистый фасад</b><p>Только название — без бутылок и сигарет. Соответствует правилам о рекламе алкоголя и табака.</p></div>
+   <div><i>S</i><b>Один знак — везде</b><p>Буква S для иконки приложения, стакана, фартука и ценников. Узнаётся с первого взгляда.</p></div>
+  </div>
+  <h3 class="tt rv">S-Mart в жизни: всё в одних цветах</h3>
+  <div class="bph">
+   <figure class="w rv"><img loading="lazy" alt="Фасад S-Mart: графит, дубовые рейки, латунные буквы" src="img/a8d1f1e47ee7.webp"><figcaption><b>Фасад и вывеска</b><span>Графитовые панели, дубовые рейки, латунные буквы S-Mart с тёплой подсветкой. Оливковые деревья у входа. В витринах — без алкоголя и табака.</span></figcaption></figure>
+   <figure class="h rv"><img loading="lazy" alt="Пакеты S-Mart: графитовый пакет-майка и крафтовый бумажный" src="img/27f4c9dc10d5.webp"><figcaption><b>Пакеты</b><span>Основной — обычный пакет-майка на 7 кг, графитовый с латунным логотипом. Бумажный крафт — дополнительно, для выпечки. Без дорогих пакетов.</span></figcaption></figure>
+   <figure class="h rv"><div class="tagw"><div class="ptag" role="img" aria-label="Ценник S-Mart: обычная цена 13 900 сум, по подписке 11 900 сум">
+     <div class="pt-l"><div class="hd">S-MART</div><div class="r"><b>Обычная</b><small>для всех</small></div><div class="r m"><b>С подпиской</b><small>карта S-Mart</small></div></div>
+     <div class="pt-m"><div class="hd">сум / шт</div><div class="p"><b>13 900</b></div><div class="p m"><b>11 900</b></div></div>
+     <div class="pt-r"><h5>Макароны пенне<br>450 г</h5><div class="o">Италия</div>
+      <div class="meta"><b>№ 247</b><span>14.10.2026</span><span style="text-align:right">610 8 94150<br>Цены с НДС</span></div>
+      <div class="sv">Выгода с картой <span>−2 000</span></div><div class="bc"><svg viewBox="0 0 190 40" preserveAspectRatio="none"><rect x="4" y="0" width="1" height="40"/><rect x="6" y="0" width="1" height="40"/><rect x="7" y="0" width="2" height="40"/><rect x="9" y="0" width="1" height="40"/><rect x="10" y="0" width="2" height="40"/><rect x="12" y="0" width="2" height="40"/><rect x="17" y="0" width="2" height="40"/><rect x="20" y="0" width="1" height="40"/><rect x="21" y="0" width="1" height="40"/><rect x="22" y="0" width="1" height="40"/><rect x="23" y="0" width="2" height="40"/><rect x="25" y="0" width="3" height="40"/><rect x="28" y="0" width="2" height="40"/><rect x="30" y="0" width="1" height="40"/><rect x="33" y="0" width="2" height="40"/><rect x="35" y="0" width="1" height="40"/><rect x="36" y="0" width="2" height="40"/><rect x="38" y="0" width="1" height="40"/><rect x="39" y="0" width="2" height="40"/><rect x="45" y="0" width="1" height="40"/><rect x="46" y="0" width="2" height="40"/><rect x="49" y="0" width="1" height="40"/><rect x="50" y="0" width="1" height="40"/><rect x="51" y="0" width="2" height="40"/><rect x="53" y="0" width="1" height="40"/><rect x="54" y="0" width="2" height="40"/><rect x="56" y="0" width="3" height="40"/><rect x="59" y="0" width="2" height="40"/><rect x="61" y="0" width="1" height="40"/><rect x="62" y="0" width="1" height="40"/><rect x="66" y="0" width="1" height="40"/><rect x="67" y="0" width="3" height="40"/><rect x="73" y="0" width="3" height="40"/><rect x="80" y="0" width="3" height="40"/><rect x="83" y="0" width="2" height="40"/><rect x="85" y="0" width="2" height="40"/><rect x="87" y="0" width="1" height="40"/><rect x="88" y="0" width="1" height="40"/><rect x="89" y="0" width="1" height="40"/><rect x="90" y="0" width="2" height="40"/><rect x="92" y="0" width="2" height="40"/><rect x="101" y="0" width="1" height="40"/><rect x="102" y="0" width="1" height="40"/><rect x="103" y="0" width="1" height="40"/><rect x="104" y="0" width="2" height="40"/><rect x="106" y="0" width="1" height="40"/><rect x="107" y="0" width="2" height="40"/><rect x="109" y="0" width="2" height="40"/><rect x="117" y="0" width="1" height="40"/><rect x="121" y="0" width="2" height="40"/><rect x="123" y="0" width="2" height="40"/><rect x="125" y="0" width="3" height="40"/><rect x="128" y="0" width="1" height="40"/><rect x="129" y="0" width="1" height="40"/><rect x="130" y="0" width="1" height="40"/><rect x="131" y="0" width="1" height="40"/><rect x="132" y="0" width="2" height="40"/><rect x="135" y="0" width="2" height="40"/><rect x="137" y="0" width="1" height="40"/><rect x="139" y="0" width="1" height="40"/><rect x="140" y="0" width="2" height="40"/><rect x="144" y="0" width="2" height="40"/><rect x="146" y="0" width="1" height="40"/><rect x="148" y="0" width="3" height="40"/><rect x="151" y="0" width="3" height="40"/><rect x="154" y="0" width="1" height="40"/><rect x="155" y="0" width="2" height="40"/><rect x="157" y="0" width="3" height="40"/><rect x="163" y="0" width="1" height="40"/><rect x="164" y="0" width="1" height="40"/><rect x="165" y="0" width="1" height="40"/><rect x="166" y="0" width="2" height="40"/><rect x="168" y="0" width="1" height="40"/><rect x="172" y="0" width="1" height="40"/><rect x="173" y="0" width="2" height="40"/><rect x="176" y="0" width="1" height="40"/><rect x="178" y="0" width="1" height="40"/><rect x="182" y="0" width="1" height="40"/><rect x="183" y="0" width="1" height="40"/><rect x="184" y="0" width="1" height="40"/></svg></div></div>
+    </div></div><figcaption><b>Ценники</b><span>На каждом ценнике две цены: обычная — для всех, и цена с подпиской S-Mart. Покупатель сразу видит, сколько экономит с картой.</span></figcaption></figure>
+   <figure class="t rv"><img loading="lazy" alt="Кассир S-Mart в графитовом поло и дубовом фартуке" src="img/6c2b68795dd2.webp"><figcaption><b>Форма персонала</b><span>Графитовое поло, фартук цвета дуба с кожаными ремнями и вышитой латунной S, латунный бейдж с именем.</span></figcaption></figure>
+   <figure class="t rv"><img loading="lazy" alt="Стакан кофе-автомата S-Mart" src="img/ee06ef5ef537.webp"><figcaption><b>Стакан кофе-автомата</b><span>Графитовый стакан с латунной полосой и знаком S. Кофе S-Mart узнают на улице.</span></figcaption></figure>
+   <figure class="t rv"><img loading="lazy" alt="Электронная карта S-Mart в телефоне на кассе" src="img/da8b927f7d5a.webp"><figcaption><b>Приложение и карта</b><span>Электронная подписка: покупатель показывает QR на кассе.</span><a href="#loyalty">Смотреть приложение →</a></figcaption></figure>
+  </div>
+  <p class="bnote rv">Визуализации — пример того, как будет выглядеть бренд. Финальные макеты сделает дизайнер.</p>
+ </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="nums" class="sec" data-t="Коротко">
+ <div class="wrap">
+  <p class="kick rv">Резюме</p>
+  <h2 class="h2 rv">Пилот в пяти цифрах.</h2>
+  <div class="nums rv">
+   <div><b class="gold" data-n="3500">0</b><span>позиций максимум</span></div>
+   <div><b class="gold">24/7</b><span>режим во всех маркетах</span></div>
+   <div><b class="gold">21+</b><span>закрытая зона внутри</span></div>
+   <div><b class="gold">5+1</b><span>маркетов и резерв</span></div>
+   <div><b class="gold" data-n="90">0</b><span>дней до решения о сети</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- TWO BASKETS -->
+<section id="baskets" class="sec" data-t="Две корзины">
+ <div class="wrap">
+  <p class="kick rv">Модель</p>
+  <h2 class="h2 rv">Две корзины.<br>Не одна.</h2>
+  <p class="lede rv">Makro и S-Mart работают раздельно. Общая только система на старте.</p>
+  <div class="cmp">
+   <div class="bk m rv"><div class="strip"><i style="background:var(--r)"></i><i style="background:var(--gr)"></i><i style="background:var(--ye)"></i><i style="background:var(--bl)"></i></div><span class="tg">Как есть</span><h3>Makro</h3>
+    <ul><li><span>Бренд</span><b>Makro yangi zamon</b></li><li><span>Ассортимент</span><b>Привычный</b></li><li><span>Алкоголь и табак</span><b>Нет</b></li><li><span>Система</span><b>SAP, закупки</b></li><li><span>Команда</span><b>Makro</b></li></ul></div>
+   <div class="bk n rv"><span class="tg">Новое</span><h3 class="gold">S-Mart</h3>
+    <ul><li><span>Бренд</span><b>S-Mart, без Makro на фасаде</b></li><li><span>Ассортимент</span><b>До 3 500 SKU</b></li><li><span>Алкоголь и табак</span><b>Да, зона 21+</b></li><li><span>Система</span><b>Та же, Makro</b></li><li><span>Команда</span><b>Своя, постепенно</b></li></ul></div>
+  </div>
+  <div class="rule rv">Правило на будущее: <em>рентабельный маркет остаётся Makro,</em> нерентабельный — становится новым брендом.</div>
+ </div>
+</section>
+
+<!-- MONEY -->
+<section id="money" class="sec" data-t="Доходы">
+ <div class="wrap">
+  <p class="kick rv">Экономика формата</p>
+  <h2 class="h2 rv">Семь источников дохода.<br>На тех же метрах.</h2>
+  <p class="lede rv">S-Mart зарабатывает там, где Makro сейчас не может: новые категории, сервисы и подписка.</p>
+  <div class="big">
+   <div class="fm rv"><span class="chip">Россия · 2025</span><b class="gold">≈ $62 млрд</b><p>продажи алкоголя за 2025 год (5,2 трлн ₽). Вино и крепкое — +14,7%, виски, джин и ром — +21,6%. Это быстрее продуктовой розницы (+12,4%).</p><p style="font-size:12px;color:var(--mu2);margin-top:10px">INFOLine, июль 2026 · пересчёт по среднему курсу 2025 г. ≈ 84 ₽/$</p></div>
+   <div class="rule rv" style="margin:0;display:grid;align-content:center">Алкоголь и табак — <em>не дополнение, а основа модели.</em> Без них формат не зарабатывает так, как может.</div>
+  </div>
+  <div class="mg">
+   <div class="hi rv"><i>1</i><b>Алкоголь</b><p>Пиво, вино, крепкое. Высокий средний чек и регулярные покупки.</p></div>
+   <div class="hi rv"><i>2</i><b>Табак и стики</b><p>Сигареты и стики для нагреваемого табака. Курящий покупатель приходит каждый день.</p></div>
+   <div class="rv"><i>3</i><b>Оплата за места</b><p>Поставщики табака, стиков и алкоголя платят за доп. места, витрины и рекламу в магазине.</p></div>
+   <div class="rv"><i>4</i><b>Кофе-автомат</b><p>Кофе с собой 24/7. Высокая маржа, сезон — сейчас.</p></div>
+   <div class="rv"><i>5</i><b>Импорт</b><p>Редкие импортные товары — выше маржа, меньше прямой конкуренции по цене.</p></div>
+   <div class="rv"><i>6</i><b>Рынок и своя дистрибуция</b><p>Закупка на рынке и свои поставки — маржа остаётся у нас.</p></div>
+   <div class="rv"><i>7</i><b>Карта-подписка</b><p>50 000 сум в месяц. Покупатель платит заранее и возвращается постоянно.</p></div>
+   <div class="hi rv"><i>+</i><b>Вау-открытие</b><p>Первое впечатление решает. Открываемся красиво — и район запоминает.</p></div>
+  </div>
+  <h3 class="tt rv" style="margin-top:44px">Доход с первого дня — ещё до продаж</h3>
+  <div class="ag rv" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+   <div><i>1</i><b>Табачные компании</b><p>Платят аренду за дополнительные стойки и витрины у кассы — с открытия.</p></div>
+   <div><i>2</i><b>IQOS</b><p>Оплачивает отдельную стойку для стиков и устройств.</p></div>
+   <div><i>3</i><b>Кофе-автомат</b><p>Приносит деньги 24/7 с первого дня, без кассира.</p></div>
+  </div>
+  <div class="rule rv">Для учредителя: <em>часть расходов закрывают партнёры</em> — стойки табака и IQOS оплачены ими, кофе зарабатывает сам.</div>
+ </div>
+</section>
+
+<!-- MARKET -->
+<section id="market" class="sec" data-t="Рынок">
+ <div class="wrap">
+  <p class="kick rv">Рынок · последние данные</p>
+  <h2 class="h2 rv">Мы идём туда,<br>где растут деньги.</h2>
+  <p class="lede rv">Табак, стики, алкоголь и кофе — категории, которые растут в России, СНГ и Узбекистане. Цены у нас адекватные и конкурентные, а зарабатываем в основном на этих категориях, аренде доп. мест от поставщиков и своём импорте.</p>
+  <div class="mk4">
+   <div class="rv"><h3><i>1</i>Табак</h3>
+    <div class="mrw"><span>Россия</span><b>+13,8%</b><p>рост продаж табака в рознице в деньгах (в штуках — +4,9%). <em>Продукты в штуках растут медленнее — +3,1%.</em></p></div>
+    <div class="mrw"><span>Россия</span><b>105 млрд</b><p>сигарет произведено за I полугодие 2025 — +6,2% к прошлому году.</p></div>
+    <div class="mrw"><span>Узбекистан</span><b>~10,6 млрд</b><p>сигарет в год (оценка 2021). 14–16% продаж — нелегальные (2022): <em>легальный магазин с чеком забирает этот спрос.</em></p></div>
+    <div class="mrw"><span>Мир</span><b>$40,6 млрд</b><p>выручка Philip Morris за 2025 год, +7,3%.</p></div>
+    <p class="msrc">Nielsen (июль 2024 – июнь 2025), Росстат — Коммерсантъ, 31.07.2025 · Anhor.uz (Nielsen, Kantar), 2022 · PMI, итоги 2025</p></div>
+   <div class="rv"><h3><i>2</i>IQOS и стики</h3>
+    <div class="mrw"><span>Мир</span><b>~76%</b><p>доля IQOS в мировой категории нагреваемого табака. Продажи стиков PMI — +11% в 2025 году, бездымные продукты — уже 41,5% выручки ($16,9 млрд).</p></div>
+    <div class="mrw"><span>Мир</span><b>43 млн</b><p>взрослых пользователей бездымных продуктов PMI в 106 странах.</p></div>
+    <div class="mrw"><span>СНГ</span><b>+69%</b><p>рост стиков в Казахстане (янв–авг 2025), при этом сигареты падают.</p></div>
+    <div class="mrw"><span>Узбекистан</span><b>с 1.03.2026</b><p>вейпы запрещены, а <em>нагреваемый табак остаётся легальным.</em> Эксперты ждут, что спрос перейдёт на стики.</p></div>
+    <p class="msrc">PMI, итоги 2025 · Finratings.kz (система «Таңба»), 07.09.2025 · Spot.uz, 25.02.2026</p></div>
+   <div class="rv"><h3><i>3</i>Алкоголь</h3>
+    <div class="mrw"><span>Россия</span><b>≈ $62 млрд</b><p>продажи в 2025 году (5,2 трлн ₽). Вино и крепкое — +14,7%, виски, джин и ром — +21,6%. Доля премиума растёт.</p></div>
+    <div class="mrw"><span>Узбекистан</span><b>−50%</b><p>акциз на импортное пиво и вино с 2025 года (на импортный крепкий — −25%). <em>Импорт стал дешевле — наш шанс со своим импортом.</em></p></div>
+    <div class="mrw"><span>Узбекистан</span><b>Рост</b><p>в 2025 году рынок алкоголя вернулся к росту: пиво, премиальный крепкий, игристое.</p></div>
+    <div class="mrw"><span>Мир</span><b>−2%</b><p>объём в 2025 году в 21 крупнейшей стране. Растут готовые коктейли (RTD, +4% в деньгах) и развивающиеся рынки.</p></div>
+    <p class="msrc">INFOLine, июль 2026 · Spot.uz, 26.12.2024 (ставки акцизов 2025) · Euromonitor, Alcoholic Drinks in Uzbekistan · IWSR, апрель 2026</p></div>
+   <div class="rv"><h3><i>4</i>Кофе-автоматы</h3>
+    <div class="mrw"><span>Россия</span><b>≈ $1 млрд</b><p>рынок вендинга в 2024 году (98,1 млрд ₽, +23,9%). 40% — кофе-автоматы; сегмент вырос в 5 раз за 5 лет.</p></div>
+    <div class="mrw"><span>Узбекистан</span><b>+45%</b><p>импорт кофе за I полугодие 2025 (431 т против 298 т). <em>Узбекистан пьёт всё больше кофе.</em></p></div>
+    <div class="mrw"><span>Узбекистан</span><b>+11,2%</b><p>рост розничного товарооборота в 2025 году — 482 трлн сумов.</p></div>
+    <p class="msrc">Контур (РБК, infovend), 26.11.2025 · UzDaily (Госкомстат), 12.08.2025 · Frank.uz (Госкомстат), 23.01.2026</p></div>
+  </div>
+  <div class="rule rv">Вывод: <em>табак, стики и алкоголь — основа дохода S-Mart.</em> Цены — адекватные и конкурентные. Сверху — аренда доп. мест от табачных компаний и IQOS, кофе-автомат и свой импорт.</div>
+ </div>
+</section>
+
+<!-- LOYALTY -->
+<section id="loyalty" class="sec" data-t="Карта лояльности">
+ <div class="wrap">
+  <p class="kick rv">Карта лояльности · «Цена для своих»</p>
+  <h2 class="h2 rv">Подписка в телефоне —<br>экономия каждый день.</h2>
+  <p class="lede rv">Карта электронная: покупатель скачивает приложение S-Mart, оформляет подписку 50 000 сум в месяц и показывает QR на кассе. Пластик не нужен. Платформа — как у карты лояльности Makro: тот же сервер и одна база клиентов, поэтому подписка работает и в Makro, и в S-Mart. Модель как у Costco.</p>
+  <div class="lw">
+   <div class="rv"><div class="ph" id="ph" role="button" tabindex="0" aria-label="Приложение S-Mart: карта-подписка, новинки, цены для своих. Нажмите, чтобы листать экраны">
+    <div class="phs"><div class="pnot"></div><div class="pbar"><b>S-Mart</b><small>Мой магазин · 24/7</small></div>
+     <div class="pv">
+      <div class="pscr on"><div class="dc"><div class="a"><b>S-MART</b><span>MEMBER</span></div><div class="p">50 000 сум<small>В МЕСЯЦ · ПОДПИСКА АКТИВНА</small></div></div><div class="pqr"><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i></i><i></i></div><p class="pcap2">Покажите QR на кассе · S-Mart и Makro</p><div class="pl" style="margin-top:12px"><div style="--c:linear-gradient(135deg,#E2B04A,#9C6A20)"><i></i><span><b>4 новинки этой недели</b><small>Импорт, выпечка, фрукты</small></span><em>NEW</em></div></div></div>
+      <div class="pscr"><h4>Новинки недели</h4><div class="pl"><div style="--c:linear-gradient(135deg,#E2B04A,#9C6A20)"><i></i><span><b>Сыры из Италии</b><small>Импорт · новинка</small></span><em>NEW</em></div><div style="--c:linear-gradient(135deg,#5A2E1A,#2A140A)"><i></i><span><b>Шоколад из Бельгии</b><small>Импорт</small></span><em>NEW</em></div><div style="--c:linear-gradient(135deg,#7FA05A,#3B5A28)"><i></i><span><b>Фрукты недели</b><small>Свежее с утра</small></span><em>−%</em></div><div style="--c:linear-gradient(135deg,#C9893E,#6E4A20)"><i></i><span><b>Выпечка к кофе</b><small>Из пекарни S-Mart</small></span><em>NEW</em></div></div></div>
+      <div class="pscr"><h4>Цена для своих</h4><div class="pl"><div style="--c:linear-gradient(135deg,#F3E3D0,#C9B9A0)"><i></i><span><b>100 товаров каждый день</b><small>Молоко, хлеб, яйца, масло…</small></span><em>100</em></div><div style="--c:linear-gradient(135deg,#B5653F,#6E3322)"><i></i><span><b>400 позиций по себестоимости</b><small>Список этого месяца</small></span><em>400</em></div><div style="--c:linear-gradient(135deg,#3A6EA5,#1E2A4A)"><i></i><span><b>Ассортимент магазина</b><small>Что есть в вашем S-Mart</small></span><em>→</em></div></div><p class="pcap2">Без скидок на алкоголь и табак</p></div>
+     </div>
+     <div class="ptab"><span class="on">Карта</span><span>Новинки</span><span>Цены</span></div></div></div><p class="lhint">Нажмите на телефон, чтобы листать экраны</p></div>
+   <div class="lr">
+    <div class="rv"><b>1</b><strong>приложение вместо пластика</strong><p>Подписка, QR для кассы, новинки и ассортимент — в одном месте. Покупатель всегда видит, что нового в магазине.</p></div>
+    <div class="rv"><b>100</b><strong>ключевых товаров по карте</strong><p>Низкая цена каждый день, а не на неделю. Отбор — по доле в чеках и сравнению корзин с конкурентами.</p></div>
+    <div class="rv"><b>400</b><strong>товаров по себестоимости</strong><p>Вместо «1+1». Медленные позиции — месяц по себестоимости, компенсацию даёт поставщик. Потом товар остаётся или выводится.</p></div>
+    <div class="rv"><b>70k</b><strong>экономия семьи в месяц</strong><p>Семья с корзиной 2 млн сум в месяц экономит около 70 000 сум — больше цены карты. Алкоголь и табак — без скидок по карте.</p></div>
+   </div>
+  </div>
+  <div class="rule rv">Costco: взносы за карту — <em>51% прибыли, 92,3% продлевают карту.</em> <span style="display:block;font:500 12px var(--fb);color:var(--mu2);margin-top:8px">Costco, годовой отчёт 10-K за 2025 ф.г.</span></div>
+ </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service" class="sec" data-t="Сервис">
+ <div class="wrap">
+  <p class="kick rv">Формат и сервис</p>
+  <h2 class="h2 rv">Каждая деталь решена.</h2>
+  <div class="sg rv">
+   <div class="hi"><span>Режим</span><b>24/7 во всех маркетах</b></div>
+   <div><span>Зона 21+</span><b>Стеклянная комната, вход изнутри</b></div>
+   <div><span>Алкоголь</span><b>Пиво, вино, крепкий</b></div>
+   <div><span>Табак</span><b>Сигареты и стики, за кассой</b></div>
+   <div class="hi"><span>Возраст · закон РУз 2023</span><b>Покупатель 21+, документ на кассе. Продавец тоже 21+</b></div>
+   <div class="hi"><span>Цены</span><b>Как у Korzinka, Havas и Olma — или ниже. Честная цена вместо вечных акций</b></div>
+   <div><span>Импорт</span><b>Прямой и через рынок</b></div>
+   <div><span>Не халяль</span><b>Импорт без сертификата, отдельная полка</b></div>
+   <div class="hi"><span>Лояльность</span><b>Электронная подписка в приложении, 50 000 сум/мес: 100 ключевых товаров по лучшей цене. Не на 21+</b></div>
+   <div><span>Доставка</span><b>Агрегаторы, без алкоголя и табака</b></div>
+   <div><span>Оплата</span><b>Наличные, Uzcard, Humo, Visa, Mastercard, Click, Payme, Uzum</b></div>
+   <div><span>Кассы и кофе</span><b>С кассиром. Кофемашина самообслуживания</b></div>
+   <div><span>Оборудование 21+</span><b>Витрины и холодильники от поставщиков</b></div>
+   <div><span>Безопасность</span><b>Видео: зал, касса, 21+, вход</b></div>
+   <div><span>Фасад</span><b>Без изображений алкоголя и табака</b></div>
+   <div class="hi"><span>Матрица</span><b>До 3 500 SKU</b></div>
+  </div>
+ </div>
+</section>
+
+<!-- INSIDE 3D -->
+<section id="inside" class="scene" data-t="Внутри">
+ <div class="stick">
+  <div class="v3 photo" id="v3"><div class="ph3" id="ph3"><img loading="lazy" alt="" src="img/a8d1f1e47ee7.webp" data-k="0" class=on><img loading="lazy" alt="" src="img/a8d1f1e47ee7.webp" data-k="1"><img loading="lazy" alt="" src="img/ddd48c766fe5.webp" data-k="2"><img loading="lazy" alt="" src="img/4e089a41e1c6.webp" data-k="3"><img loading="lazy" alt="" src="img/a47f7e5c9465.webp" data-k="4"><img loading="lazy" alt="" src="img/713dba825ba2.webp" data-k="5"><img loading="lazy" alt="" src="img/013504a76f88.webp" data-k="6"><img loading="lazy" alt="" src="img/815b35c8c3d7.webp" data-k="7"></div><div class="m3" role="group" aria-label="Вид"><button id="mPh" class="on">Фото</button><button id="m3D">3D-схема</button></div><canvas id="cv3" aria-label="3D-концепт магазина: фасад, вход, кофе-автомат и овощи с фруктами справа, молочные холодильники, в конце зала выпечка, напитки и закрытая зона 21+, две кассы у выхода"></canvas><div class="lbs" id="lbs"></div><span class="tag" id="tag3">Визуализация · для наглядности</span><div class="pg3" id="pg3"></div></div>
+  <div class="tx3" id="tx3">
+   <p class="kick">Внутри магазина</p>
+   <div class="st"><i>01 / 08</i><b>Фасад.</b><p>Графит и дуб — как внутри. Латунные буквы S-Mart с тёплой подсветкой, чёрные козырьки, оливковые деревья у входа.</p></div>
+   <div class="st"><i>02 / 08</i><b>Вход.</b><p>Автоматические двери открываются сами. Сразу справа — кофе-автомат: оплата картой или по QR, без кассы.</p></div>
+   <div class="st"><i>03 / 08</i><b>Овощи и фрукты.</b><p>Сразу за кофе-автоматом — овощи и фрукты: длинный стеллаж вдоль правой стены и островная горка с двух сторон.</p></div>
+   <div class="st"><i>04 / 08</i><b>Молочные продукты.</b><p>Дальше по правой стене — холодильники с молочкой. Подсветка, ценники, свободный проход.</p></div>
+   <div class="st"><i>05 / 08</i><b>Конец зала.</b><p>Справа — выпечка и кондитерка, рядом готовая еда. По центру — напитки. Слева — закрытая комната «Не халяль продукция»: снаружи зеркальное стекло, внутрь не видно, вход только изнутри магазина.</p></div>
+   <div class="st"><i>06 / 08</i><b>Внутри комнаты.</b><p>Четыре стеллажа: водка, крепкие напитки (виски, коньяк, кагор, текила), вино, пиво. Три холодильника для напитков и холодильник-витрина для не халяль продукции. Только 21+.</p></div>
+   <div class="st"><i>07 / 08</i><b>Ряды и кассы.</b><p>В середине — стеллажи по зонам, торцы с подсветкой: бакалея, снеки и сладости, чай и кофе, импорт. Бытовая химия у левой стены. Две кассы у левой стены; за кассирами — шкаф с табаком и отдельная полка IQOS: стики и устройства.</p></div>
+   <div class="st"><i>08 / 08</i><b>Весь магазин.</b><p>Модель показывает идею. Размеры и точную планировку сделает архитектор.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- MARKETS -->
+<section id="markets" class="sec" data-t="Маркеты">
+ <div class="wrap">
+  <p class="kick rv">Локации</p>
+  <h2 class="h2 rv">Пять маркетов.<br>Один резерв.</h2>
+  <p class="lede rv">Листайте карточки: локация, конкуренты рядом и сценарий по каждому маркету.</p>
+  <div class="mrow" id="mrow"></div>
+  <div class="mnav"><button id="mprev" aria-label="Предыдущий маркет">←</button><button id="mnext" aria-label="Следующий маркет">→</button></div>
+  
+ </div>
+</section>
+
+<!-- MATRIX -->
+<section id="matrix" class="sec" data-t="Ассортимент">
+ <div class="wrap">
+  <p class="kick rv">Ассортимент</p>
+  <h2 class="h2 rv">Меньше полок.<br>Больше смысла.</h2>
+  <p class="lede rv">Продажи сети Makro за январь–сентябрь 2026 подтверждают: выручку делает небольшая часть ассортимента. Оставляем лидеров A, затем B — по данным. Освободившиеся деньги и полки идут в алкоголь, табак, импорт и кофе.</p>
+  <div class="nv-data rv"><div><b class="gold">613</b><span>товаров (3,5% ассортимента) дают <strong>половину</strong> всех продаж сети</span></div><div><b class="gold">3 097</b><span>товаров (18%) дают <strong>80%</strong> продаж</span></div><div><b class="gold">2,7%</b><span>продаж приходится на нижнюю половину ассортимента — 8 673 товара</span></div></div>
+  <p class="nv-src rv">Источник: отчёт по продажам Makro, январь–сентябрь 2026, 17 346 товаров с продажами, 379 товарных групп.</p>
+  <div class="shr rv" id="shr">
+   <div class="sr"><span>Сейчас</span><div class="sb"><i style="--w:100%"></i></div><b>6 000+</b></div>
+   <div class="sr"><span>S-Mart</span><div class="sb"><i class="g2" style="--w:56%"></i></div><b class="gold">≤ 3 500</b></div>
+  </div>
+  <div class="crit rv"><div><b>Самые ходовые</b><p>Высокая оборачиваемость.</p></div><div><b>Выше маржа</b><p>Каждая позиция зарабатывает место.</p></div><div><b>Меньше минусов</b><p>Меньше списаний и замороженного товара.</p></div></div>
+  <div class="nv-fmt rv">
+   <div><span class="sz">S</span><h3>Малый</h3><div class="ar gold">70–100 м²</div><dl><dt>Товаров</dt><dd>~1 200</dd><dt>Кассы</dt><dd>1 + 1 самообслуживание</dd><dt>Зона 21+</dt><dd>~8–10 м²</dd><dt>Штат 24/7 <span class="hy">гипотеза</span></dt><dd>6–8 чел.</dd></dl><div class="bar"><i style="--w:62%"></i></div><small>1 200 лидеров сети дают 62% её продаж</small></div>
+   <div><span class="sz">M</span><h3>Средний</h3><div class="ar gold">110–200 м²</div><dl><dt>Товаров</dt><dd>~2 200</dd><dt>Кассы</dt><dd>2 + 1 самообслуживание</dd><dt>Зона 21+</dt><dd>~12–15 м²</dd><dt>Штат 24/7 <span class="hy">гипотеза</span></dt><dd>10–12 чел.</dd></dl><div class="bar"><i style="--w:73%"></i></div><small>2 200 лидеров сети дают 73% её продаж</small></div>
+   <div class="l"><span class="sz">L</span><h3>Большой</h3><div class="ar gold">200–300 м²</div><dl><dt>Товаров</dt><dd>до 3 500</dd><dt>Кассы</dt><dd>2 + 2 самообслуживания</dd><dt>Зона 21+</dt><dd>~20 м²</dd><dt>Штат 24/7 <span class="hy">гипотеза</span></dt><dd>14–16 чел.</dd></dl><div class="bar"><i style="--w:82%"></i></div><small>3 500 лидеров сети дают 82% её продаж</small></div>
+  </div>
+  <p class="nv-src rv">Формат «матрёшка»: товары S входят в M, товары M — в L. Плюс новые категории S-Mart, которых нет в Makro: алкоголь, табак и стики, кофе, импорт. Штат зависит от площади и графика 24/7: считаем по сменам после выбора помещений. Кассы самообслуживания закрывают ночную смену без второго кассира.</p>
+  <div class="rule rv">Ключевая роль — <em>продуктовый аналитик.</em> Матрица, закупки, цены и остальные процессы — по его данным. Меньше позиций — меньше возвратов и списаний.</div>
+ </div>
+</section>
+
+<!-- PRICE -->
+<section id="price" class="sec" data-t="Цены">
+ <div class="wrap">
+  <p class="kick rv">Ценовая архитектура</p>
+  <h2 class="h2 rv">Не копировать рынок.<br>Управлять восприятием цены.</h2>
+  <p class="lede rv">У каждой категории — своя роль. Знакомые товары по честной цене приводят покупателя, а маржу делают напитки, снеки, 21+, кофе и импорт. Роли — по фактическим продажам и марже сети Makro.</p>
+  <div class="nv-roles">
+   <div class="rv"><i>Роль 1</i><h3>Трафик</h3><p>Цена не выше ближайших конкурентов. Ради этих товаров заходят каждый день.</p><ul><li><span>Молочные и яйца</span><b>12% продаж · 16,3%</b></li><li><span>Фрукты и овощи</span><b>11% · 16,0%</b></li><li><span>Хлеб и выпечка</span><b>4% · 19,8%</b></li></ul></div>
+   <div class="rv"><i>Роль 2</i><h3>Прибыль</h3><p>Главный кошелёк формата: высокая доля и хорошая маржа.</p><ul><li><span>Напитки и снеки</span><b>20% продаж · 19,2%</b></li><li><span>Кондитерские</span><b>10% · 18,6%</b></li><li><span>Косметика и гигиена</span><b>6% · 19,2%</b></li></ul></div>
+   <div class="rv"><i>Роль 3</i><h3>Маржа</h3><p>Покупают реже, но каждая продажа зарабатывает больше.</p><ul><li><span>Замороженные</span><b>4% · 21,9%</b></li><li><span>Консервация и специи</span><b>3% · 21,6%</b></li><li><span>Бытовая химия</span><b>2% · 20,5%</b></li></ul></div>
+   <div class="rv new"><i>Новое в S-Mart</i><h3>21+, кофе, импорт</h3><p>Категорий нет в Makro — это новые деньги на тех же метрах.</p><ul><li><span>Табак и стики</span><b>трафик + стойки</b></li><li><span>Алкоголь</span><b>прибыль</b></li><li><span>Кофе с собой, импорт</span><b>маржа</b></li></ul></div>
+  </div>
+  <p class="nv-src rv">Доля продаж и маржинальность категорий — сеть Makro, январь–сентябрь 2026.</p>
+  <div class="nv-kvi rv"><h3>Товары ценового имиджа (KVI)</h3><p>Покупатель помнит цену 50–100 товаров и по ним судит обо всём магазине. Кандидаты — самые покупаемые в штуках по данным сети:</p>
+   <div class="chips"><span>Лепёшка тандир</span><span>Хлеб серый</span><span>Патыр</span><span>Coca-Cola 0,5 и 1,5 л</span><span>Вода 0,5 л</span><span>MacCoffee 3в1</span><span>Snickers 50 г</span><span>Энергетик Flash</span><span>Масло Milter 1 л</span><span>Сахар 2 кг</span></div></div>
+  <div class="nv-rules rv">
+   <div><b>Мониторинг KVI</b><p>Еженедельно сверяем цены с конкурентами в радиусе 1 км. Цены конкурентов — источник данных, но не единственная основа решения.</p></div>
+   <div><b>Вторая цена — по подписке</b><p>На топ-100 товаров — цена для своих в приложении. Обычная цена держит маржу, подписка держит покупателя.</p></div>
+   <div><b>Поставщики платят за промо</b><p>Акции, ретро-бонусы и стойки — за счёт поставщиков, с расчётом чистой маржи до запуска.</p></div>
+   <div><b>Контроль результата</b><p>Валовая прибыль по категориям, реакция продаж на цену, повторные покупки. Целевые наценки по ролям — после расчёта <span class="hy">гипотеза</span></p></div>
+  </div>
+ </div>
+</section>
+
+<!-- LAUNCH -->
+<section id="launch" class="sec" data-t="Запуск">
+ <div class="wrap">
+  <p class="kick rv">Перевод маркета</p>
+  <h2 class="h2 rv">Четыре шага<br>до открытия.</h2>
+  <div class="steps rv">
+   <div style="--c:var(--r)"><b>Распродажа</b><p>Товар, который не входит в новую матрицу.</p></div>
+   <div style="--c:var(--gr)"><b>Перевод остатков</b><p>В другие маркеты Makro.</p></div>
+   <div style="--c:var(--ye)"><b>Закрытие</b><p>Ребрендинг, новый ассортимент, планограмма.</p></div>
+   <div style="--c:var(--bl)"><b>Вау-открытие</b><p>Под вывеской S-Mart. Первое впечатление решает.</p></div>
+  </div>
+  <div class="chips rv"><span>Instagram</span><span>Telegram</span><span>Листовки и чаты ЖК</span><span>Акции на открытие</span></div>
+ </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="sec" data-t="Команда">
+ <div class="wrap">
+  <p class="kick rv">Команда</p>
+  <h2 class="h2 rv">Сначала с Makro.<br>Потом — своя.</h2>
+  <div class="phase rv">
+   <div class="now"><i>Сейчас</i><b class="gold">Старт</b><p>Под юрисдикцией Makro: SAP, IT, закупки, логистика, артикулы.</p></div>
+   <div><i>Затем</i><b>Рост</b><p>Своя коммерция, менеджеры, закупки.</p></div>
+   <div><i>Цель</i><b>Автономия</b><p>Собственные департаменты и отдельная команда.</p></div>
+  </div>
+  <div class="chips rv"><span>Управление проектом</span><span>Маркетинг и бренд</span><span>Коммерция</span><span>Операции</span><span>Аренда</span><span>Финансы</span><span>IT и логистика</span></div>
+ </div>
+</section>
+
+<!-- RISKS -->
+<section id="risks" class="sec" data-t="Условия и риски">
+ <div class="wrap">
+  <p class="kick rv">Условие запуска</p>
+  <h2 class="h2 rv">Без письменного согласия — не стартуем.</h2>
+  <p class="lede rv">Согласования с арендодателем получаем поэтапно, письменно, по каждому из 5 маркетов. Процесс ведёт команда проекта.</p>
+  <div class="ag rv">
+   <div><i>1</i><b>Алкоголь</b><p>Право продавать пиво, вино и крепкий алкоголь в помещении.</p></div>
+   <div><i>2</i><b>Табак</b><p>Продажа сигарет и стиков за кассой.</p></div>
+   <div><i>3</i><b>Вывеска</b><p>Вывеска S-Mart вместо Makro, фасад без изображений алкоголя и табака.</p></div>
+   <div><i>4</i><b>Перепланировка</b><p>Стеклянная зона 21+, изменение зала.</p></div>
+   <div><i>5</i><b>Субаренда</b><p>Где нужно: Urban (остаток зала), Чиланзар — отдельно.</p></div>
+  </div>
+  <div class="risks">
+   <div class="rv"><b>Закон об алкоголе</b><p>Продажа только с 21 года, продавцы тоже 21+. Проверить юристом ночную продажу и правила расстояний от школ, спортивных и религиозных объектов (для алкоголя и для табака).</p></div>
+   <div class="rv"><b>Закрытие на переделку</b><p>Пока маркет закрыт, выручки нет.</p></div>
+   <div class="rv"><b>Конкуренты</b><p>Сильные у Urban и Чиланзара.</p></div>
+   <div class="rv"><b>Каннибализация</b><p>Юнусабад рядом с Makro.</p></div>
+   <div class="rv"><b>Новые категории</b><p>Не гарантируют рост прибыли.</p></div>
+   <div class="rv"><b>Площади</b><p>Субаренда Urban не согласована. Помещение в Юнусабаде не измерено.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- METRICS -->
+<section id="metrics" class="sec" data-t="Метрики">
+ <div class="wrap">
+  <p class="kick rv">Панель руководителя</p>
+  <h2 class="h2 rv">Пять блоков метрик.<br>Каждый день.</h2>
+  <p class="lede rv">Один отчёт для руководства и команды магазина: факт по каждому маркету и сравнение с тем же маркетом до перевода в S-Mart.</p>
+  <div class="nv-met">
+   <div class="rv"><small>01 · Продажи</small><h3>Продажи</h3><ul><li>Товарооборот</li><li>Выручка на 1 м²</li><li>Число чеков и средний чек</li><li>Сравнение с этим же маркетом до S-Mart</li></ul></div>
+   <div class="rv"><small>02 · Покупатель</small><h3>Покупатель</h3><ul><li>Повторные покупки</li><li>Доля чеков по подписке</li><li>Отзывы: Telegram и приложение</li><li>Время на кассе</li></ul></div>
+   <div class="rv"><small>03 · Товар</small><h3>Товар</h3><ul><li>Наличие ходовых (A)</li><li>Запас в днях</li><li>Списания и потери</li><li>Доля слабых товаров C</li></ul></div>
+   <div class="rv"><small>04 · Финансы</small><h3>Финансы</h3><ul><li>Валовая прибыль и маржа</li><li>Зарплаты к выручке</li><li>Аренда и расходы</li><li>Окупаемость вложений</li></ul></div>
+   <div class="rv k"><small>05 · Только S-Mart</small><h3>24/7 и 21+</h3><ul><li>Ночная выручка против ночной смены</li><li>Доля 21+ и табака в выручке</li><li>Доход от стоек и кофе-автомата</li><li>Проверка возраста: 0 нарушений</li></ul></div>
+  </div>
+  <div class="nv-base rv"><div><b>Основа уже работает</b><p>Отчёт по продажам Makro собран: ABC внутри каждой группы, лидеры и слабые товары, расчёт ассортимента по формату площади. Для S-Mart подключаем те же данные из SAP.</p></div>
+   <div class="nums"><div><b class="gold">17 346</b><span>товаров в анализе</span></div><div><b class="gold">379</b><span>товарных групп</span></div><div><b class="gold">4 года</b><span>истории продаж</span></div></div></div>
+ </div>
+</section>
+
+<!-- CONTROL -->
+<section id="control" class="sec" data-t="Контроль">
+ <div class="wrap">
+  <p class="kick rv">Контроль пилота</p>
+  <h2 class="h2 rv">Масштаб — только по цифрам.</h2>
+  <div class="track rv"><div><b>30</b><span>Первый отчёт</span></div><div><b>60</b><span>Второй отчёт</span></div><div><b>90</b><span>Решение о сети</span></div></div>
+  <div class="chips rv" style="justify-content:center;margin-top:34px"><span>Товарооборот</span><span>Средний чек</span><span>Число чеков</span><span>Списания</span><span>Наличие ходовых</span><span>Отзывы: Telegram и приложение</span></div>
+  <p class="lede rv" style="text-align:center;margin:24px auto 0">Отчёт руководству — ежемесячно. Если цель не достигнута, решаем по каждому маркету отдельно.</p>
+  <div class="nv-crit rv">
+   <div><i>1</i><p><b>Выручка на м² выше, чем у этого же маркета до перевода</b><span>Главное преимущество пилота: у нас есть честная база сравнения — тот же адрес, те же покупатели.</span></p></div>
+   <div><i>2</i><p><b>Валовая прибыль выше, чем до перевода</b><span>Новые категории должны добавлять деньги, а не просто оборот.</span></p></div>
+   <div><i>3</i><p><b>Ночь окупает себя</b><span>Выручка с 22:00 до 07:00 покрывает ночную смену. Если нет — меняем график.</span></p></div>
+   <div><i>4</i><p><b>Списания и наличие в норме</b><span>Лидеры A всегда на полке, свежие товары не уходят в потери.</span></p></div>
+   <div><i>5</i><p><b>Подписка растёт</b><span>Доля чеков по подписке растёт месяц к месяцу.</span></p></div>
+  </div>
+  <div class="nv-gate">
+   <div class="rv nv-ok"><i>4–5 из 5</i><h3>Масштабируем</h3><p>Переводим следующие маркеты по тому же стандарту и выбираем новые локации под форматы S, M, L.</p></div>
+   <div class="rv nv-fix"><i>2–3 из 5</i><h3>Дорабатываем</h3><p>Корректируем матрицу, цены, график и штат. Ещё 60 дней и повторное решение.</p></div>
+   <div class="rv nv-no"><i>0–1 из 5</i><h3>Возвращаем</h3><p>Маркет возвращается в формат Makro или меняем локацию. Решение — по каждому маркету отдельно.</p></div>
+  </div>
+  <p class="nv-src rv" style="text-align:center">Критерии и пороги — предложение для обсуждения с руководством <span class="hy">гипотеза</span></p>
+ </div>
+</section>
+
+<!-- FINAL -->
+<section id="final" data-t="Итог">
+ <div>
+  <p class="kick rv">Итог</p>
+  <h2 class="gold rv">Утвердить<br>пилот.</h2>
+  <p class="rv">S-Mart: алкоголь, табак и стики, кофе, импорт и карта-подписка — новые деньги на тех же метрах. С открытия — оплата стоек от табачных компаний и IQOS, доход кофе-автомата. Премиальный вид, честные цены, вау-открытие. Решение о сети — по цифрам через 90 дней, по каждому маркету отдельно.</p>
+  <div class="tm rv">
+   <figure><div class="av"><span><img loading="lazy" alt="Жафархон Дехканов" src="img/521c23cfca2d.webp"></span></div><figcaption><b>Жафархон Дехканов</b><small>Проект · презентация</small></figcaption></figure>
+   <figure><div class="av"><span><img loading="lazy" alt="Жасур Хакимов" src="img/976f31076b73.webp"></span></div><figcaption><b>Жасур Хакимов</b><small>Проект</small></figcaption></figure>
+  </div>
+  <p class="auth">Над проектом работали: Жафархон Дехканов, Жасур Хакимов · Презентация: Жафархон Дехканов · 2026</p>
+ </div>
+</section>
+<nav class="mnv" aria-label="Навигация по разделам"><button class="nb" id="nprev" aria-label="Предыдущий раздел"><span>←</span></button><div class="mdots" id="mdots"></div><button class="nn" id="nnext"><i></i><span><b id="nlab">Далее</b><small id="nsub"></small></span></button></nav>
+<div class="toast" id="toast" role="status"></div>
+
+
+<script>
+const $=id=>document.getElementById(id);
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const toast=(t,ms=2600)=>{const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),ms)};
+
+/* ---------- menu ---------- */
+const SEC=[...document.querySelectorAll('section[data-t]')];
+$('ml').innerHTML=SEC.map((s,i)=>`<li style="transition-delay:${i*.03}s"><a href="#${s.id}" data-i="${i}"><span>${String(i+1).padStart(2,'0')}</span><b>${s.dataset.t}</b></a></li>`).join('');
+const tm=f=>{$('menu').classList.toggle('on',f);$('hb').classList.toggle('on',f);$('hb').setAttribute('aria-expanded',f)};
+$('hb').onclick=()=>tm(!$('menu').classList.contains('on'));
+$('ml').onclick=e=>{if(e.target.closest('a'))tm(false)};
+addEventListener('keydown',e=>{if(e.key==='Escape')tm(false)});
+
+/* ---------- stars ---------- */
+(()=>{let h='';for(let i=0;i<70;i++)h+=`<i style="left:${Math.random()*100}%;top:${Math.random()*55}%;opacity:${.3+Math.random()*.7}"></i>`;$('stars').innerHTML=h})();
+
+/* ---------- statement words ---------- */
+(()=>{const s=$('stmt');const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w.trim()){f.appendChild(document.createTextNode(w));return}const sp=document.createElement('span');sp.textContent=w;f.appendChild(sp)});c.replaceWith(f)}else if(c.nodeType===1&&c.tagName==='SPAN'&&!c.dataset.w){c.dataset.w=1;const t=c.textContent,cls=c.className;const f=document.createDocumentFragment();t.split(/(\s+)/).forEach(w=>{if(!w.trim()){f.appendChild(document.createTextNode(w));return}const sp=document.createElement('span');sp.textContent=w;sp.className=cls;f.appendChild(sp)});c.replaceWith(f)}})};walk(s)})();
+const WORDS=[...$('stmt').querySelectorAll('span')];
+
+
+/* ---------- scroll engine (cached geometry: no layout reads while scrolling) ---------- */
+const GEO={sh:1,tops:[],h:{}};
+function measure(){GEO.sh=Math.max(1,document.documentElement.scrollHeight-innerHeight);GEO.tops=SEC.map(e=>e.offsetTop);['hero','why','inside'].forEach(id=>{const e=$(id);GEO.h[id]=[e.offsetTop,e.offsetHeight]})}
+const prog=el=>{const g=GEO.h[el.id];if(!g){const r=el.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))}return clamp((scrollY-g[0])/Math.max(1,g[1]-innerHeight))};
+let ticking=false,lastN=-1,lastNote=null;
+function frame(){ticking=false;const y=scrollY;
+ $('bar4').style.transform='scaleX('+clamp(y/GEO.sh)+')';
+ /* hero */
+ const p=prog($('hero'));
+ if(p<1.02||frame.hp!==1){frame.hp=p>=1?1:0;
+  const s=$('store');
+  if(!RM){s.style.transform=`translateY(${(1-p)*40-p*30}px) rotateX(${-14+p*4}deg) rotateY(${-32+p*52}deg) scale(${(.82+p*.42)*Math.min(1,innerWidth/560)})`}else s.style.transform='rotateX(-14deg) rotateY(-28deg) scale('+(.9*Math.min(1,innerWidth/560))+')';
+  const ht=$('htext');ht.style.opacity=clamp(1-p*2.4);ht.style.transform=`translateY(${-p*90}px)`;
+  const night=clamp((p-.25)*2.2);s.style.setProperty('--glow',night);s.style.setProperty('--lit',night);$('stars').style.setProperty('--night',night);
+  $('hcap').style.opacity=clamp((p-.55)*3);$('hint').style.opacity=clamp(1-p*6)}
+ /* statement */
+ const w=prog($('why'));const n=Math.floor(clamp(w*1.25)*WORDS.length);if(n!==lastN){lastN=n;WORDS.forEach((e,i)=>e.classList.toggle('on',i<n))}
+ const nt=w>.82;if(nt!==lastNote){lastNote=nt;$('stmtn').classList.toggle('on',nt)}
+ if(window.S3)S3.set(prog($('inside')));
+ /* where */
+ let cur=0;const lim=y+innerHeight*.45;for(let i=0;i<GEO.tops.length;i++)if(GEO.tops[i]<lim)cur=i;
+ if(frame.cur!==cur){frame.cur=cur;navUpd(cur);$('where').textContent=SEC[cur].dataset.t;document.querySelectorAll('#ml a').forEach((a,i)=>a.classList.toggle('on',i===cur))}
+}
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(frame)}},{passive:true});
+let rzT=0;addEventListener('resize',()=>{clearTimeout(rzT);rzT=setTimeout(()=>{measure();frame()},120)});
+addEventListener('load',()=>{measure();frame()});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{measure();frame()});
+
+/* ---------- makro nav ---------- */
+$('mdots').innerHTML=SEC.map(()=>'<i></i>').join('');
+function navUpd(c){[...$('mdots').children].forEach((d,i)=>{d.classList.toggle('on',i===c);d.classList.toggle('d',i<c)});$('nprev').disabled=c===0;
+ const last=c===SEC.length-1;$('nlab').textContent=last?'В начало':'Далее';$('nsub').textContent=last?SEC[0].dataset.t:SEC[c+1].dataset.t}
+const goSec=i=>{i=(i+SEC.length)%SEC.length;measure();window.scrollTo({top:GEO.tops[i]+(SEC[i].classList.contains('scene')&&i>0?2:0),behavior:RM?'auto':'smooth'})};
+$('nnext').onclick=()=>goSec((frame.cur||0)+1);$('nprev').onclick=()=>goSec((frame.cur||0)-1);
+addEventListener('keydown',e=>{if(e.target.matches('input'))return;if(e.key==='ArrowRight'||e.key==='PageDown')goSec((frame.cur||0)+1);if(e.key==='ArrowLeft'||e.key==='PageUp')goSec((frame.cur||0)-1)});
+/* ---------- reveal & counters ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);
+ e.target.querySelectorAll('[data-n]').forEach(b=>{const to=+b.dataset.n,t0=performance.now();const st=t=>{const k=clamp((t-t0)/1400),v=Math.round(to*(1-Math.pow(1-k,3)));b.textContent=v.toLocaleString('ru');if(k<1)requestAnimationFrame(st)};RM?b.textContent=to.toLocaleString('ru'):requestAnimationFrame(st)});
+ if(e.target.id==='shr')e.target.classList.add('fill')}),{threshold:.18});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+
+
+/* ---------- sales ---------- */
+const SL=[{"n": "Parisien", "c": "#2E9E50", "to": 3.0071, "ch": 69204, "chk": 43453, "plan": 4.346, "fact": 2.686, "pf": 61.8, "dev": -1.66}, {"n": "Чиланзар", "c": "#E5384B", "to": 1.7645, "ch": 48410, "chk": 36450, "plan": 2.137, "fact": 1.576, "pf": 73.8, "dev": -0.56}, {"n": "Urban", "c": "#5874E8", "to": 5.1763, "ch": 102852, "chk": 50328, "plan": 7.158, "fact": 4.624, "pf": 64.6, "dev": -2.534}, {"n": "Юнусабад", "c": "#D9A400", "to": 0.9618, "ch": 20644, "chk": 46591, "plan": 2.477, "fact": 0.859, "pf": 34.7, "dev": -1.617, "star": 1}, {"n": "Новомосковская", "c": "#D2AE62", "to": 0.8743, "ch": 22806, "chk": 38336}];
+const f0=v=>Math.round(v).toLocaleString('ru'),f2=v=>v.toLocaleString('ru',{minimumFractionDigits:2,maximumFractionDigits:2}),fb=f2;
+/* ---------- markets ---------- */
+const M=[
+{n:'Parisien',c:'T045–M069',a:380,col:'var(--gr)',pr:'1-я очередь',lat:41.278762,lon:69.249679,ad:'ул. Мухандислар, 17, ЖК PARISIEN',l:'Качественный ЖК, обеспеченные жители. Удобный вход, парковка, автомобильный поток.',k:'По обходу команды специализированных магазинов рядом не замечено, продажи средние. По Google Maps ближайший алкомаркет — в 200 м.',t:'Полноценный суббренд. Сравнить сохранение площади с сокращением зала.'},
+{n:'Чиланзар',c:'T049–M072 · 23 квартал',a:298,col:'var(--r)',pr:'1-я очередь',lat:41.288503,lon:69.173142,ad:'23 квартал, д. 18А',l:'Жилая локация, небольшая парковка. Есть спрос на алкоголь и табак.',k:'Havas ~30 м, алкомаркет напротив ~150 м, другие точки дальше 400 м.',t:'Полноценный суббренд, доступный и средний сегмент. Пересмотр ассортимента.'},
+{n:'Urban',c:'T070–M095 · Ок Сарой',a:595,col:'var(--bl)',pr:'Сравнение',lat:41.312763,lon:69.332175,ad:'ул. Паркент, 215, угол ул. Олтинтепа',l:'ЖК Golden House, смешанная аудитория. Вокруг людей много, внутри мало.',k:'Legion ~50 м, Bob’s Premium ~300 м, 2 Korzinka и ~3 планируемых.',t:'Около 300 м², 2 кассы, остаток в субаренду. Субаренда не согласована.'},
+{n:'Юнусабад',c:'T105–M146',a:264,col:'var(--ye)',pr:'Сравнение',lat:41.3747861,lon:69.2792192,ad:'Юнусабадский р-н, 9-й квартал, ул. Уч Кахрамон, 27',l:'Новая перспективная локация, пока небольшой поток.',k:'Рядом пустующее помещение в нашей аренде — не измерено.',t:'Ребрендинг целиком или отдельный магазин в соседнем помещении.'},
+{n:'Новомосковская',c:'T101–M139',a:'169,5',col:'var(--gold)',pr:'Новый',lat:41.323853,lon:69.297937,ad:'Мирзо-Улугбекский р-н, ул. Кары-Ниязи, 61',y:'https://yandex.ru/maps?whatshere%5Bpoint%5D=69.29793702783682%2C41.32385342558473&whatshere%5Bzoom%5D=16.734959&ll=69.29793702802947%2C41.3238534247434&z=16.734959&si=rfcqbztwrapvwturcmvqw9epb4',l:'Мирзо-Улугбекский район, жилая застройка. Компактный формат — 169,5 м².',k:'На месте: в 3 м, через стену, — алкомаркет, но с высокими ценами. Рядом «Магнит» и много других магазинов. По Google Maps: Korzinka Mahalla и Baraka Market — ~530 м, Havas — ~900 м.',t:'Покупатели постоянно спрашивают табак — спрос уже есть. Ставка: табак и IQOS за кассой, алкоголь дешевле соседа, 24/7.'},
+{n:'Новый маркет',c:'Резерв',a:null,col:'rgba(255,255,255,.25)',pr:'Резерв',ad:'',l:'250–350 м², ЖК или плотная жилая застройка, рядом нет алкомаркетов.',k:'',t:'Если действующие объекты не подойдут.'}];
+const CMP=[[{"n": "Brooklyn vino vodka", "t": "a", "d": 200, "h": 1, "id": "ChIJCUhhyQqLrjgR7SUQnD3InYg"}, {"n": "Brooklyn vino vodka", "t": "a", "d": 410, "h": 1, "id": "ChIJPVc_y4KLrjgROOEzhV7D7RE"}, {"n": "Amin super market", "t": "s", "d": 510, "h": 0, "id": "ChIJ3ViAB7uLrjgRxEXZLBeIEpU"}, {"n": "ESHONBOBO 25", "t": "s", "d": 640, "h": 1, "id": "ChIJ-485dACLrjgRwTLRplVwNgE"}, {"n": "Fortuna market", "t": "s", "d": 700, "h": 0, "id": "ChIJY_aRB5SKrjgRsq8E2qvhwQQ"}, {"n": "Vino Vodka", "t": "a", "d": 800, "h": 0, "id": "ChIJTW3FLWGLrjgRCzyv_o_tO4I"}, {"n": "Korzinka Mahalla — Bobur", "t": "s", "d": 820, "h": 0, "id": "ChIJK3r7g46LrjgRFCUXWYLk4g4"}, {"n": "Rikmas alcool market", "t": "a", "d": 940, "h": 0, "id": "ChIJoc82cC2LrjgReteNRtMBaPU"}], [{"n": "Vino vodka De Mariya 24/7", "t": "a", "d": 380, "h": 1, "id": "ChIJa2GBbQCJrjgRdLHovf6R8_A"}, {"n": "Korzinka — Uchtepa 23", "t": "s", "d": 470, "h": 0, "id": "ChIJucqIvQ2JrjgRZ0xTVn0ZEQc"}, {"n": "Korzinka Mahalla — Birlik", "t": "s", "d": 480, "h": 0, "id": "ChIJR6RuplCJrjgRkp0mFnnzBZA"}, {"n": "Korzinka", "t": "s", "d": 550, "h": 0, "id": "ChIJ5eljl3OJrjgRIELAm4EHf78"}, {"n": "Shirin Market", "t": "s", "d": 550, "h": 0, "id": "ChIJdVn1SJyJrjgRQZZhzSJgCAM"}, {"n": "UCHTEPA MARKET", "t": "s", "d": 710, "h": 1, "id": "ChIJh2tqbcGJrjgRmiJgUPdNRME"}, {"n": "SUPER MARKET", "t": "s", "d": 740, "h": 0, "id": "ChIJuTbsCHGJrjgRe2k4-91LnXM"}, {"n": "Uchtepa Super Market", "t": "s", "d": 830, "h": 0, "id": "ChIJZxxZTJ-JrjgREToBtneAtLo"}], [{"n": "Legion", "t": "a", "d": 30, "h": 0, "id": "ChIJIcTQ7hX1rjgRd09TqzYlbiQ"}, {"n": "Vinzavod", "t": "a", "d": 40, "h": 0, "id": "ChIJe5lCo9_1rjgRcilZCdN_TxQ"}, {"n": "HISOR life market", "t": "s", "d": 160, "h": 1, "id": "ChIJpwe9QQD1rjgRX-1e6KeMSjw"}, {"n": "Korzinka — Oltintepa", "t": "s", "d": 170, "h": 1, "id": "ChIJ_cjl2CD1rjgRdfAuFVo3xR4"}, {"n": "Korzinka", "t": "s", "d": 390, "h": 0, "id": "ChIJZdb09AP1rjgRSCzi1DKFWvE"}, {"n": "Brooklyn vino vodka", "t": "a", "d": 440, "h": 1, "id": "ChIJT4Jgn071rjgRCbdb_G-Iu4k"}, {"n": "HORECA OPTOM MARKET", "t": "s", "d": 680, "h": 0, "id": "ChIJG9RADXv1rjgRFNty8m4sYWg"}, {"n": "Makro", "t": "m", "d": 730, "h": 0, "id": "ChIJ3QZkMEf1rjgROwiQsSrVDMk"}, {"n": "LEGION", "t": "a", "d": 770, "h": 0, "id": "ChIJ712DC631rjgRUz3-x-2_Eqs"}, {"n": "Olma", "t": "s", "d": 910, "h": 1, "id": "ChIJrR8GPQD1rjgR3spuzA4h9q4"}, {"n": "LEGION", "t": "a", "d": 950, "h": 0, "id": "ChIJ-UueGn71rjgRPncRpcE2LEc"}], [{"n": "Korzinka", "t": "s", "d": 170, "h": 0, "id": "ChIJY4OwCnSNrjgRnQyYkCV1dS8"}, {"n": "Alko-Market", "t": "a", "d": 300, "h": 0, "id": "ChIJLd-MKNKMrjgRkUfmT1VWIhQ"}, {"n": "Olma market", "t": "s", "d": 410, "h": 1, "id": "ChIJbz-_IgCNrjgRRwSc4DaEeig"}, {"n": "HAVAS", "t": "s", "d": 500, "h": 0, "id": "ChIJER1GDnSNrjgRUARvF-D5vNI"}, {"n": "Vino Vodka", "t": "a", "d": 530, "h": 1, "id": "ChIJ0bSXcgCNrjgRm5OtqnRkcPY"}, {"n": "MAGNIT", "t": "s", "d": 550, "h": 0, "id": "ChIJeZtvIgCNrjgRkUE5Mk_aTBw"}, {"n": "Makro", "t": "m", "d": 630, "h": 0, "id": "ChIJqf4OLGiNrjgRTB6N-YR8fCQ"}, {"n": "Makro", "t": "m", "d": 690, "h": 0, "id": "ChIJuxc1ULeMrjgRK2ilksxA9xc"}, {"n": "Pivnaya Nomer 1", "t": "a", "d": 750, "h": 0, "id": "ChIJxcrZ312NrjgRQFu7lA4SeR4"}, {"n": "Korzinka — Yunusabad", "t": "s", "d": 1000, "h": 1, "id": "ChIJn8J_1dqMrjgRYg-QjMLvlqI"}], [{"n": "Элитный алкоголь", "t": "a", "d": 170, "h": 0, "id": "ChIJwQI2xcj0rjgRFunSFBew0ZI"}, {"n": "Wine & Whiskey by Legion", "t": "a", "d": 340, "h": 1, "id": "ChIJ7WZWNqT1rjgR90Wdji3ZSFw"}, {"n": "Full Market", "t": "s", "d": 490, "h": 0, "id": "ChIJcy8HO8T0rjgRPoXZl4u1PBo"}, {"n": "Baraka Market", "t": "s", "d": 530, "h": 0, "id": "ChIJURj71K31rjgRm2gezIBoNPY"}, {"n": "Korzinka Mahalla — Darhon", "t": "s", "d": 530, "h": 0, "id": "ChIJgyddwDX1rjgRuhhWLviSnkg"}, {"n": "Korzinka Mahalla — Asaka", "t": "s", "d": 820, "h": 0, "id": "ChIJVfPBNAD1rjgRAIyYM4UuQjA"}, {"n": "Havas", "t": "s", "d": 900, "h": 0, "id": "ChIJUS6ZyBn1rjgRZlw0lp8Ma_U"}, {"n": "Korzinka — Mudofachilar", "t": "s", "d": 940, "h": 0, "id": "ChIJlRUpLQD1rjgR4d3Nv5gTq6s"}, {"n": "Korzinka — Qazi mahalla", "t": "s", "d": 940, "h": 0, "id": "ChIJD_kFocH1rjgRLE0PRYKUdEc"}]];
+const MU=m=>m.y?m.y:m.lat?`https://maps.google.com/maps?q=${m.lat},${m.lon}&z=16`:`https://maps.google.com/maps?q=${encodeURIComponent('Ташкент, '+m.ad)}`;
+let MD={},canAdmin=false,dbRef=null;
+const fm=v=>v==null||v===''||isNaN(v)?'—':(+v>=100?Math.round(+v).toLocaleString('ru'):(Math.round(+v*100)/100).toLocaleString('ru'));
+function mcard(m,i){const d=MD['m'+i]||{};const f=(k,lab,ph)=>canAdmin?`<label><small>${lab}</small><input inputmode="decimal" data-m="${i}" data-k="${k}" value="${d[k]??''}" placeholder="${ph}"></label>`:`<div><small>${lab}</small><b>${d[k]!=null&&d[k]!==''?fm(d[k]):'⏳'}</b></div>`;
+ const sq=d.rev&&m.a?d.rev/m.a:null,dy=d.tr?d.tr/30:null;
+ return `<article class="mc" data-i="${i}"><div class="strip" style="--c:${m.col}"></div><div class="top"><div><h3>${m.n}</h3><div class="code">${m.c}</div></div><span class="chip ${i<2?'s':''}">${m.pr}</span></div>
+ ${m.a?`<div class="area gold">${m.a}<small>м²</small></div>`:'<div class="area gold" style="font-size:54px">250–350<small>м²</small></div>'}
+ <span class="lb">Локация</span><p>${m.l}</p>${m.k?`<span class="lb">Конкуренция</span><p>${m.k}</p>`:''}<span class="lb">Сценарий</span><p>${m.t}</p>
+ ${SL[i]?`<span class="lb">Аналитика · ${SL[i].star?'24.07':'01.07'}–30.09.2026 · данные финансов</span><div class="ms"><div><b>${f2(SL[i].to)} млрд</b><small>ТО за 3 мес, сум</small></div><div><b>${f0(SL[i].chk/1000)} тыс</b><small>средний чек, сум</small></div><div><b>${f0(SL[i].ch/1000)} тыс</b><small>чеков за 3 мес</small></div></div>`:''}${compHtml(i)}${m.ad?`<a class="go" href="${MU(m)}" target="_blank" rel="noopener"><i><b></b></i><span><b>Как добраться</b><small>${m.ad} · Google Maps</small></span><em>↗</em></a>`:''}</article>`}
+function compHtml(i){const L=CMP[i];if(!L)return '';const A=L.filter(x=>x.t==='a'||/olma/i.test(x.n)),S=L.filter(x=>x.t==='s'),K=L.filter(x=>x.t==='m');
+ const near=a=>a.length?a[0].d+' м':'нет';
+ return `<span class="lb">Вокруг · радиус 1 км</span><div class="ct"><div><b>${near(A)}</b><small>алкомаркет</small></div><div><b>${near(S)}</b><small>супермаркет</small></div><div><b>${A.length}<span>/</span>${S.length}</b><small>алко / супер</small></div></div>
+ <div class="cl">${L.slice(0,7).map(x=>`<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.n)}&query_place_id=${x.id}" target="_blank" rel="noopener"><i class="t${/olma/i.test(x.n)?'o':x.t}"></i><span>${x.n}${/olma/i.test(x.n)?' <em class="o">алко + табак</em>':''}${x.h?' <em>24/7</em>':''}</span><b>${x.d} м</b></a>`).join('')}</div>
+ ${K.length?`<p class="cn">Рядом ещё ${K.length===1?'один Makro':K.length+' Makro'} — учесть каннибализацию.</p>`:''}<p class="cs">Данные Google Maps · могут быть неполными</p>`}
+function renderM(){const sc=$('mrow').scrollLeft;$('mrow').innerHTML=M.map(mcard).join('');$('mrow').scrollLeft=sc}
+renderM();
+const step=()=>($('mrow').firstElementChild?.offsetWidth||300)+14;
+$('mprev').onclick=()=>$('mrow').scrollBy({left:-step(),behavior:'smooth'});$('mnext').onclick=()=>$('mrow').scrollBy({left:step(),behavior:'smooth'});
+/* ---------- inside: 3D store v2 (raw WebGL, no libraries) ---------- */
+(()=>{
+const cv=$('cv3'),wrap=$('v3'),STS=[...document.querySelectorAll('#tx3 .st')];
+$('pg3').innerHTML=STS.map(()=>'<i></i>').join('');const PGD=[...$('pg3').children];
+let curStep=-1,tgt=0,ready=false,kick=()=>{};
+const PH=[...document.querySelectorAll('#ph3 img')],MV=[[-3,-2],[2,-1],[-2,1],[3,0],[0,-2],[-3,1],[2,1],[0,-3]];
+const phMove=p=>{const t=clamp(p)*(NK-1),s=KEYS[Math.round(t)][2];let a=NK,b=-1;KEYS.forEach((k,i)=>{if(k[2]===s){a=Math.min(a,i);b=Math.max(b,i)}});const u=clamp((t-a+.5)/(b-a+1));const im=PH[s];if(!im)return;if(wrap.clientWidth<wrap.clientHeight*1.2){im.style.objectPosition=`${(10+80*u).toFixed(1)}% 50%`;im.style.transform=`scale(${(1.02+.04*u).toFixed(4)})`}else{im.style.objectPosition='';im.style.transform=`scale(${(1.04+.12*u).toFixed(4)}) translate(${(MV[s][0]*u).toFixed(2)}%,${(MV[s][1]*u).toFixed(2)}%)`}};
+const setStep=s=>{if(s===curStep)return;curStep=s;PH.forEach((e,i)=>e.classList.toggle('on',i===s));STS.forEach((e,i)=>e.classList.toggle('on',i===s));PGD.forEach((e,i)=>e.classList.toggle('on',i===s))};
+/* camera keys: [eye, target, step] — street → door → produce → chilled → drinks/21+ → aisle → checkout → overview */
+const KEYS=[
+ [[7,2.0,24],[.5,2.7,9.5],0],
+ [[2.3,1.7,15.2],[1.9,1.6,8.5],0],
+ [[3.0,1.72,6.6],[7.4,1.1,8.6],1],
+ [[2.6,1.75,8.3],[7.4,1.0,6.0],2],
+ [[6.2,1.75,8.0],[6.5,1.0,1.0],2],
+ [[6.25,1.75,2.4],[6.9,1.0,-5],3],[[3.4,1.8,-3.6],[6.6,0.9,-8.4],4],
+ [[4.6,1.8,-4.3],[-3.4,1.4,-8.4],4],
+ [[2.5,2.75,-.5],[-4.8,1.25,-4.6],4],
+ [[-.2,1.7,-5.7],[-3.2,1.5,-6.6],5],
+ [[-2.9,1.7,-5.3],[-4.4,1.3,-9.4],5],
+ [[-3.3,1.7,-6.4],[-8,1.15,-6.9],5],
+ [[0,1.7,-5.4],[-2.7,1.4,-2.0],6],
+ [[-2.7,1.7,-3.0],[-2.7,1.25,5.5],6],
+ [[-2.7,1.75,4.3],[-5.6,1.2,7.6],6],
+ [[-1.2,2.0,6.2],[-7.4,1.0,7.6],6],
+ [[13,19,18],[0,0,-.5],7]];
+const NK=KEYS.length;
+const stepAt=p=>KEYS[Math.round(clamp(p)*(NK-1))][2];
+window.MODE3D=false;
+window.S3={set(p){tgt=p;phMove(p);if(!ready||!window.MODE3D)setStep(stepAt(p));else kick()}};
+setStep(0);
+let gl=null;try{gl=cv.getContext('webgl',{antialias:true,alpha:false,stencil:true})||cv.getContext('experimental-webgl')}catch(e){}
+if(!gl){wrap.classList.add('no3d');return}
+const fl=(f,s)=>document.fonts?document.fonts.load(s).catch(()=>{}):Promise.resolve();
+const boot=()=>Promise.race([Promise.all([fl(0,'800 60px Manrope'),fl(0,'700 60px "Cormorant Garamond"')]),new Promise(r=>setTimeout(r,1500))]).then(()=>{init().catch(e=>{console.error(e);wrap.classList.add('no3d')})});
+{let started=false;const go=()=>{if(started)return;started=true;(window.requestIdleCallback||(f=>setTimeout(f,30)))(boot,{timeout:900})};
+ const sw=m=>{window.MODE3D=m;wrap.classList.toggle('photo',!m);$('mPh').classList.toggle('on',!m);$('m3D').classList.toggle('on',m);$('tag3').textContent=m?'3D-схема · планировка':'Визуализация · для наглядности';if(m){go();kick()}else{curStep=-1;setStep(stepAt(tgt))}};
+ $('mPh').onclick=()=>sw(false);$('m3D').onclick=()=>sw(true)}
+
+async function init(){const Y=()=>new Promise(r=>window.requestIdleCallback?requestIdleCallback(()=>r(),{timeout:120}):setTimeout(r,16));
+/* ================= texture atlas ================= */
+const AT=document.createElement('canvas');AT.width=AT.height=2048;const X=AT.getContext('2d');
+const RR=(x,y,w,h)=>[(x+1.5)/2048,(y+1.5)/2048,(x+w-1.5)/2048,(y+h-1.5)/2048];
+let sd=17;const rnd=()=>(sd=(sd*16807)%2147483647)/2147483647;
+const pick=a=>a[Math.floor(rnd()*a.length)];
+const FB='Manrope, "Helvetica Neue", Arial, sans-serif',FSR='"Cormorant Garamond", Georgia, serif';
+const txt=(t,x,y,size,col,font=FB,w=800,al='center',ls=0)=>{X.font=`${w} ${size}px ${font}`;X.fillStyle=col;X.textAlign=al;X.textBaseline='middle';try{X.letterSpacing=ls+'px'}catch(e){}X.fillText(t,x,y);try{X.letterSpacing='0px'}catch(e){}};
+const fit=(t,size,maxw,font=FB,w=800,ls=0)=>{let s=size;for(;s>8;s-=2){X.font=`${w} ${s}px ${font}`;try{X.letterSpacing=ls+'px'}catch(e){}if(X.measureText(t).width<=maxw)break}try{X.letterSpacing='0px'}catch(e){}return s};
+/* products 8x8 tiles of 128 */
+const PC=['#C8102E','#F2B705','#1F4E9E','#2E8B57','#F07C1E','#6A3D9A','#F4F1EA','#0FA3A3','#8B1E2D','#3D7DCA','#E94E77','#6B4A2E','#111111','#A3C644','#D9D2C0','#2B2B6E'];
+const ACC=['#FFFFFF','#F7D774','#111111','#E8E2D0','#D8203A','#0E4D3A'];
+const WD=['ЧАЙ','КОФЕ','РИС','СОК','МУКА','ПАСТА','СНЕК','ПЕЧЕНЬЕ','МАСЛО','СОУС','КРУПА','ВОДА','ЧИПСЫ','ШОКО','СЫР','ЙОГУРТ','МЮСЛИ','КАША'];
+const TC=[];
+for(let i=0;i<64;i++){const x=(i%8)*128,y=Math.floor(i/8)*128,c=PC[(i*5)%PC.length],a=ACC[(i*3+1)%ACC.length];TC.push(c);
+ X.fillStyle=c;X.fillRect(x,y,128,128);
+ const st=i%5;X.fillStyle=a===c?'#fff':a;
+ if(st===0)X.fillRect(x,y+14,128,26);else if(st===1){X.beginPath();X.arc(x+64,y+76,32,0,7);X.fill()}else if(st===2)X.fillRect(x+12,y+58,104,40);else if(st===3){X.beginPath();X.ellipse(x+64,y+40,48,22,0,0,7);X.fill()}else{X.fillRect(x,y+100,128,28)}
+ const tc=(st===1||st===2||st===3)?(a==='#111111'||a==='#0E4D3A'||a==='#D8203A'?'#fff':'#111'):(['#F4F1EA','#F2B705','#D9D2C0','#A3C644'].includes(c)?'#111':'#fff');
+ const ty=st===0?y+27:st===1?y+76:st===2?y+78:st===3?y+40:y+114;
+ txt(WD[i%WD.length],x+64,ty,fit(WD[i%WD.length],24,100),tc);
+ const g=X.createLinearGradient(x,0,x+128,0);g.addColorStop(0,'rgba(255,255,255,.16)');g.addColorStop(.45,'rgba(255,255,255,0)');g.addColorStop(1,'rgba(0,0,0,.22)');X.fillStyle=g;X.fillRect(x,y,128,128);
+ X.strokeStyle='rgba(0,0,0,.25)';X.lineWidth=2;X.strokeRect(x+1,y+1,126,126)}
+const PT=i=>RR((i%8)*128,Math.floor(i/8)*128,128,128);
+/* fruit piles 4x2 of 256 at y 1024 */
+const FR=[['#C0262D','#7A0F14'],['#F28C1B','#B5560A'],['#8CC63F','#4E7D1E'],['#E23B2E','#8E1B13'],['#F5D431','#B99512'],['#A97A4C','#6B4A2A'],['#3E8E3A','#1E5A22'],['#F2E25A','#C9A21A']];
+FR.forEach(([c1,c2],k)=>{const x=(k%4)*256,y=1024+Math.floor(k/4)*256;X.fillStyle=c2;X.fillRect(x,y,256,256);
+ const items=[];for(let i=0;i<150;i++)items.push([x+rnd()*256,y+rnd()*256,(k===6?11:15)+rnd()*7]);items.sort((a,b)=>a[1]-b[1]);
+ items.forEach(([px,py,r])=>{X.save();X.beginPath();X.rect(x,y,256,256);X.clip();
+  if(k===6){X.fillStyle=c1;X.beginPath();X.ellipse(px,py,r*1.8,r*.7,rnd()*3,0,7);X.fill()}
+  const g=X.createRadialGradient(px-r*.35,py-r*.4,r*.1,px,py,r);g.addColorStop(0,'rgba(255,255,255,.75)');g.addColorStop(.25,c1);g.addColorStop(1,c2);X.fillStyle=g;X.beginPath();
+  if(k===4){X.ellipse(px,py,r*1.5,r*.55,rnd()*1.2-.6,0,7)}else X.arc(px,py,r,0,7);X.fill();X.restore()})});
+const FT=k=>RR((k%4)*256,1024+Math.floor(k/4)*256,256,256);
+/* shadow blob (0,1536) */
+{const g=X.createRadialGradient(128,1664,0,128,1664,126);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.55,'rgba(0,0,0,.55)');g.addColorStop(1,'rgba(0,0,0,0)');X.clearRect(0,1536,256,256);X.fillStyle=g;X.fillRect(0,1536,256,256)}
+const SHT=RR(0,1536,256,256);
+/* building windows (256,1536) */
+{X.fillStyle='#1B2326';X.fillRect(256,1536,256,256);for(let i=0;i<2;i++)for(let j=0;j<2;j++){const x=256+18+i*128,y=1536+20+j*128,lit=rnd()<.55;X.fillStyle='#0E1416';X.fillRect(x-4,y-4,100,98);const g=X.createLinearGradient(x,y,x,y+90);if(lit){g.addColorStop(0,'#FFD79A');g.addColorStop(1,'#C98B45')}else{g.addColorStop(0,'#2A3A44');g.addColorStop(1,'#151E24')}X.fillStyle=g;X.fillRect(x,y,92,90);X.fillStyle='#0E1416';X.fillRect(x+44,y,4,90)}}
+const WIN=RR(256,1536,256,256);
+/* coffee machine front (512,1536,256,512) */
+{const x=512,y=1536;const g=X.createLinearGradient(x,y,x+256,y);g.addColorStop(0,'#0D0D0D');g.addColorStop(.5,'#1E1E1E');g.addColorStop(1,'#0A0A0A');X.fillStyle=g;X.fillRect(x,y,256,512);
+ X.fillStyle='#26282B';X.fillRect(x,y,256,92);X.fillStyle='#D2AE62';X.fillRect(x,y+92,256,4);
+ txt('КОФЕ',x+128,y+40,52,'#F1DCA4',FSR,700,'center',6);txt('24/7',x+128,y+76,20,'#D2AE62',FB,800,'center',4);
+ X.fillStyle='#0F2A3A';X.fillRect(x+30,y+122,196,150);for(let i=0;i<3;i++)for(let j=0;j<2;j++){X.fillStyle=['#2E7D6B','#7A5232','#C9A45C'][i];X.fillRect(x+40+i*62,y+134+j*66,54,56);txt(['Эспрессо','Капучино','Латте','Американо','Какао','Чай'][i+j*3],x+67+i*62,y+178+j*66,10,'#fff')}
+ const g2=X.createLinearGradient(x,y+300,x,y+430);g2.addColorStop(0,'#3A2A1A');g2.addColorStop(1,'#120D08');X.fillStyle=g2;X.fillRect(x+60,y+300,136,130);X.fillStyle='#FFE2A8';X.fillRect(x+70,y+304,116,6);
+ X.fillStyle='#E8E2D0';X.beginPath();X.moveTo(x+108,y+372);X.lineTo(x+148,y+372);X.lineTo(x+142,y+424);X.lineTo(x+114,y+424);X.fill();
+ X.fillStyle='#222';X.fillRect(x+30,y+450,90,44);X.fillStyle='#fff';X.fillRect(x+150,y+446,52,52);X.fillStyle='#111';for(let i=0;i<5;i++)for(let j=0;j<5;j++)if((i*3+j*7)%4)X.fillRect(x+154+i*9,y+450+j*9,8,8);
+ txt('карта',x+75,y+472,16,'#9FE3D0')}
+const COF=RR(512,1536,256,512);
+/* tobacco packs (768,1536) */
+{X.fillStyle='#141416';X.fillRect(768,1536,256,256);for(let r=0;r<6;r++){for(let k=0;k<8;k++){const x=768+6+k*31,y=1536+8+r*41;X.fillStyle=pick(['#F4F1EA','#E8E2D0','#C8102E','#1F3D8C','#D9D2C0','#2B2B2B','#C9A227']);X.fillRect(x,y,27,32);X.fillStyle='rgba(0,0,0,.65)';X.fillRect(x,y+20,27,12);X.fillStyle=pick(['#C8102E','#1F4E9E','#C9A227','#111']);X.fillRect(x,y+4,27,5)}X.fillStyle='#D2AE62';X.fillRect(768,1536+42+r*41-2,256,2)}}
+const TOB=RR(768,1536,256,256);
+/* pylon 24/7 (768,1792) */
+{X.fillStyle='#0E4D3A';X.fillRect(768,1792,256,256);X.strokeStyle='#D2AE62';X.lineWidth=6;X.strokeRect(780,1804,232,232);txt('24/7',896,1900,86,'#F1DCA4',FSR,700);txt('ОТКРЫТО',896,1975,24,'#D2AE62',FB,800,'center',5)}
+const PY=RR(768,1792,256,256);
+/* graphite glazed vertical tiles (0,1792): 8 x 2 */
+{for(let i=0;i<8;i++)for(let j=0;j<2;j++){const x=i*32,y=1792+j*128,v=rnd();const g=X.createLinearGradient(x,y,x+32,y);g.addColorStop(0,`rgb(${28+v*16|0},${29+v*16|0},${31+v*17|0})`);g.addColorStop(.5,`rgb(${35+v*18|0},${36+v*18|0},${39+v*19|0})`);g.addColorStop(1,`rgb(${23+v*14|0},${23+v*14|0},${25+v*14|0})`);X.fillStyle=g;X.fillRect(x,y,32,128);
+ const h=X.createLinearGradient(x,y,x,y+128);h.addColorStop(0,'rgba(255,255,255,0)');h.addColorStop(.25+v*.4,'rgba(255,255,255,.28)');h.addColorStop(.35+v*.4,'rgba(255,255,255,0)');X.fillStyle=h;X.fillRect(x+4,y,10,128);
+ X.strokeStyle='#080808';X.lineWidth=2;X.strokeRect(x+1,y+1,30,126)}}
+const ETL=RR(0,1792,256,256);
+/* non-halal room textures in (1024,1024,1024,512) */
+{const x=1024,y=1024;const g=X.createLinearGradient(x,y,x+512,y+128);g.addColorStop(0,'#24160C');g.addColorStop(1,'#120B06');X.fillStyle=g;X.fillRect(x,y,512,128);X.strokeStyle='#C9A45C';X.lineWidth=4;X.strokeRect(x+8,y+8,496,112);
+ const gg=X.createLinearGradient(0,y+20,0,y+90);gg.addColorStop(0,'#F6E2A8');gg.addColorStop(1,'#B88A3A');txt('НЕ ХАЛЯЛЬ ПРОДУКЦИЯ',x+256,y+56,fit('НЕ ХАЛЯЛЬ ПРОДУКЦИЯ',46,460,FSR,700,3),gg,FSR,700,'center',3);txt('21+ · ВХОД ИЗНУТРИ МАГАЗИНА',x+256,y+100,15,'#C9A45C',FB,700,'center',4);
+ const hd=(k,t)=>{const yy=y+128+k*80;X.fillStyle='#1C1D20';X.fillRect(x,yy,512,80);X.fillStyle='#C9A45C';X.fillRect(x,yy+4,512,2);X.fillRect(x,yy+74,512,2);txt(t,x+256,yy+41,fit(t,40,480,FB,800,4),'#F1DCA4',FB,800,'center',4)};
+ hd(0,'ВОДКА');hd(1,'ВИСКИ · КОНЬЯК · КАГОР · ТЕКИЛА');hd(2,'ВИНО');hd(3,'ПИВО');
+ const fh=(xx,yy,t,bg)=>{X.fillStyle=bg;X.fillRect(xx,yy,512,64);X.fillStyle='#C9A45C';X.fillRect(xx,yy+3,512,2);X.fillRect(xx,yy+59,512,2);txt(t,xx+256,yy+33,fit(t,34,480,FB,800,4),'#F1DCA4',FB,800,'center',4)};
+ fh(x,y+448,'НЕ ХАЛЯЛЬ','#4A1A14');fh(x+512,y,'ХОЛОДНЫЕ НАПИТКИ','#1C1D20');fh(x+512,y+64,'ГОТОВАЯ ЕДА · TAYYOR TAOMLAR','#0C0C0C');
+ ['СНЕКИ · СЛАДОСТИ','ЧАЙ · КОФЕ · КОНСЕРВЫ','ИМПОРТ','БЫТОВАЯ ХИМИЯ','ВЫПЕЧКА · КОНДИТЕРКА','БАКАЛЕЯ'].forEach((t,k)=>fh(x+512,y+128+k*64,t,'#1C1D20'))}
+/* acrylic endcap panel (1024,1536,128,512) */
+{const x=1024,y=1536;const g=X.createLinearGradient(x,y,x+128,y);g.addColorStop(0,'#111214');g.addColorStop(.5,'#1C1D20');g.addColorStop(1,'#111214');X.fillStyle=g;X.fillRect(x,y,128,512);
+ X.strokeStyle='#FFD49A';X.lineWidth=5;X.shadowColor='#FFD49A';X.shadowBlur=14;X.strokeRect(x+5,y+5,118,502);
+ X.save();X.translate(x+66,y+256);X.rotate(-Math.PI/2);X.font=`700 66px ${FSR}`;X.textAlign='center';X.textBaseline='middle';X.fillStyle='#FFE3B5';try{X.letterSpacing='6px'}catch(e){}X.fillText('S-MART',0,-10);X.font=`800 15px ${FB}`;try{X.letterSpacing='8px'}catch(e){}X.fillStyle='#FFD49A';X.fillText('PREMIUM GROCERY',0,38);try{X.letterSpacing='0px'}catch(e){}X.restore();X.shadowBlur=0}
+const ACR=RR(1024,1536,128,512);
+/* neon icons (1152/1280/1408,1536) */
+const icon=(k,draw)=>{const x=1152+k*128,y=1536;X.fillStyle='#0C0C0C';X.fillRect(x,y,128,128);X.save();X.strokeStyle='#FFD49A';X.lineWidth=5;X.lineCap='round';X.lineJoin='round';X.shadowColor='#FFD49A';X.shadowBlur=10;X.beginPath();draw(x,y);X.stroke();X.restore();return RR(x,y,128,128)};
+const IC_LEAF=icon(0,(x,y)=>{X.moveTo(x+30,y+98);X.quadraticCurveTo(x+34,y+30,x+98,y+28);X.quadraticCurveTo(x+96,y+92,x+30,y+98);X.moveTo(x+30,y+98);X.lineTo(x+78,y+50)});
+const IC_CUP=icon(1,(x,y)=>{X.moveTo(x+34,y+44);X.lineTo(x+42,y+100);X.lineTo(x+82,y+100);X.lineTo(x+90,y+44);X.closePath();X.moveTo(x+90,y+56);X.quadraticCurveTo(x+110,y+60,x+88,y+82);X.moveTo(x+52,y+34);X.quadraticCurveTo(x+46,y+24,x+54,y+16);X.moveTo(x+70,y+34);X.quadraticCurveTo(x+64,y+24,x+72,y+16)});
+const IC_BASK=icon(2,(x,y)=>{X.moveTo(x+22,y+56);X.lineTo(x+106,y+56);X.lineTo(x+94,y+102);X.lineTo(x+34,y+102);X.closePath();X.moveTo(x+40,y+56);X.lineTo(x+58,y+26);X.moveTo(x+88,y+56);X.lineTo(x+70,y+26);X.moveTo(x+52,y+68);X.lineTo(x+54,y+92);X.moveTo(x+76,y+68);X.lineTo(x+74,y+92)});
+/* ceiling: black slats in alternating squares (1152,1664,256,256) */
+{const x=1152,y=1664;X.fillStyle='#050505';X.fillRect(x,y,256,256);for(let a=0;a<2;a++)for(let b2=0;b2<2;b2++){const ox=x+a*128,oy=y+b2*128,hz=(a+b2)%2===0;X.fillStyle='#1E1E1E';for(let k=4;k<128;k+=14){if(hz)X.fillRect(ox+3,oy+k,122,8);else X.fillRect(ox+k,oy+3,8,122)}X.strokeStyle='#000';X.lineWidth=3;X.strokeRect(ox+1.5,oy+1.5,125,125)}}
+const CEIL=RR(1152,1664,256,256);
+/* oak slat frieze with warm under-glow (1408,1664,128,256) */
+{const x=1408,y=1664;X.fillStyle='#2A1B0F';X.fillRect(x,y,128,256);for(let k=0;k<128;k+=11){const g=X.createLinearGradient(x+k,0,x+k+8,0);g.addColorStop(0,'#9C7041');g.addColorStop(.5,'#C99A5E');g.addColorStop(1,'#8A6236');X.fillStyle=g;X.fillRect(x+k,y,8,256)}
+ const w=X.createLinearGradient(0,y+256,0,y+150);w.addColorStop(0,'rgba(255,190,90,.85)');w.addColorStop(1,'rgba(255,190,90,0)');X.fillStyle=w;X.fillRect(x,y+150,128,106)}
+const OAKS=RR(1408,1664,128,256);
+const NHP=RR(1024,1024,512,128),NHH=[0,1,2,3].map(k=>RR(1024,1152+k*80,512,80)),HNH=RR(1024,1472,512,64),HDR=RR(1536,1024,512,64),HRF=RR(1536,1088,512,64),ZS=[0,1,2,3,4,5].map(k=>RR(1536,1152+k*64,512,64));
+{const x=256,y=1792;X.fillStyle='#121212';X.fillRect(x,y,256,256);X.strokeStyle='#C9A45C';X.lineWidth=4;X.strokeRect(x+10,y+10,236,236);
+ ['КОФЕ 24/7','ВЫПЕЧКА','ФРУКТЫ','ДЕЛИКАТЕСЫ','ИМПОРТ'].forEach((t,i)=>{txt(t,x+128,y+52+i*40,i?20:26,i?'#E8E2D0':'#F1DCA4',i?FB:FSR,i?700:700,'center',3);if(i<4){X.fillStyle='rgba(201,164,92,.5)';X.fillRect(x+70,y+72+i*40,116,1)}})}
+const MENU=RR(256,1792,256,256);
+/* 21+ sign (1536,1536,512) */
+{const x=1536,y=1536;const g=X.createLinearGradient(x,y,x+512,y+512);g.addColorStop(0,'#2A1A10');g.addColorStop(1,'#140C07');X.fillStyle=g;X.fillRect(x,y,512,512);X.strokeStyle='#D2AE62';X.lineWidth=8;X.strokeRect(x+24,y+24,464,464);
+ txt('21+',x+256,y+232,230,'#F1DCA4',FSR,700);X.fillStyle='#D2AE62';X.fillRect(x+136,y+352,240,3);txt('ВИНО · ПИВО · КРЕПКОЕ',x+256,y+398,26,'#D2AE62',FB,800,'center',4);txt('вход с 21 года',x+256,y+440,24,'#B9A27A',FB,600)}
+const T21=RR(1536,1536,512,512);
+/* posters */
+const poster=(x,y,draw)=>{X.save();X.beginPath();X.rect(x,y,512,512);X.clip();draw(x,y);X.restore()};
+const P1=RR(1024,1024,512,512),P2=RR(1536,1024,512,512),P3=RR(1024,1536,512,512);
+/* main sign 1024x256 at (1024,0): brass letters on cream stone */
+{const x=1024,y=0;const bg=X.createLinearGradient(x,y,x,y+256);bg.addColorStop(0,'#232427');bg.addColorStop(1,'#16171A');X.fillStyle=bg;X.fillRect(x,y,1024,256);
+ X.strokeStyle='rgba(210,174,98,.55)';X.lineWidth=3;X.strokeRect(x+10,y+10,1004,236);
+ const brass=(t,cy,size,font,w,ls,glow)=>{X.save();X.shadowColor=glow?'rgba(255,196,110,.75)':'rgba(0,0,0,.6)';X.shadowBlur=glow?26:4;X.shadowOffsetY=glow?0:3;const g=X.createLinearGradient(0,y+cy-size/2,0,y+cy+size/2);g.addColorStop(0,'#F6E3AE');g.addColorStop(.5,'#C99A48');g.addColorStop(1,'#8A6426');txt(t,x+512,y+cy,size,g,font,w,'center',ls);X.restore()};
+ brass('S-Mart',112,fit('S-Mart',156,900,FSR,700,46),FSR,700,46,1);X.fillStyle='rgba(210,174,98,.6)';X.fillRect(x+330,y+170,364,2);brass('PREMIUM GROCERY · 24/7',210,30,FB,700,12,0)}
+const SIGN=RR(1024,0,1024,256);
+/* strips 1024x128 */
+const strip=(k,t,uz)=>{const x=1024,y=256+k*128;X.fillStyle='#0C0C0C';X.fillRect(x,y,1024,128);txt(t,x+512,y+38,fit(t,40,900,FB,700,6),'#F2F2F2',FB,700,'center',6);X.fillStyle='rgba(255,255,255,.55)';X.fillRect(x+260,y+64,504,2);txt(uz,x+512,y+96,fit(uz,34,900,FB,700,6),'#D8D8D8',FB,700,'center',6);return RR(x,y,1024,128)};
+const S_VEG=strip(0,'ОВОЩИ / ФРУКТЫ','SABZAVOT / MEVALAR'),S_DAI=strip(1,'МОЛОЧНЫЕ ПРОДУКТЫ','SUT MAHSULOTLARI'),S_DRI=strip(2,'НАПИТКИ','ICHIMLIKLAR'),S_IQ=(()=>{const x=1024,y=256+3*128;X.fillStyle='#F4F4F2';X.fillRect(x,y,1024,128);txt('IQOS',x+512,y+52,66,'#1E2A4A',FB,800,'center',16);txt('СТИКИ · УСТРОЙСТВА',x+512,y+104,26,'#4A5878',FB,700,'center',6);return RR(x,y,1024,128)})(),S_CSH=strip(4,'КАССЫ','KASSALAR'),S_FRE=strip(5,'ВЫПЕЧКА / КОНДИТЕРКА','NON / SHIRINLIKLAR');
+
+await Y();
+/* ================= geometry ================= */
+const hx=h=>{h=h.replace('#','');return[parseInt(h.slice(0,2),16)/255,parseInt(h.slice(2,4),16)/255,parseInt(h.slice(4,6),16)/255]};
+const col=c=>typeof c==='string'?hx(c):c;
+const B=()=>({p:[],n:[],c:[],t:[]});
+const vtx=(b,v,n,c,e,t)=>{b.p.push(v[0],v[1],v[2]);b.n.push(n[0],n[1],n[2]);b.c.push(c[0],c[1],c[2],e);b.t.push(t[0],t[1],t[2],t[3])};
+const T0=g=>[0,0,0,g];
+const quad=(b,a,q,r,d,n,c,e,g,uv)=>{const t=uv?[[uv[0],uv[3]],[uv[2],uv[3]],[uv[2],uv[1]],[uv[0],uv[1]]]:null;
+ [[a,0],[q,1],[r,2],[a,0],[r,2],[d,3]].forEach(([v,i])=>vtx(b,v,n,c,e,t?[t[i][0],t[i][1],1,g]:T0(g)))};
+function box(b,cx,y0,cz,w,h,d,cc,e=0,g=0,bot=0){const c=col(cc),x0=cx-w/2,x1=cx+w/2,y1=y0+h,z0=cz-d/2,z1=cz+d/2;
+ quad(b,[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1],[0,0,1],c,e,g);
+ quad(b,[x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0],[0,0,-1],c,e,g);
+ quad(b,[x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1],[1,0,0],c,e,g);
+ quad(b,[x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0],[-1,0,0],c,e,g);
+ quad(b,[x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[x0,y1,z0],[0,1,0],c,e,g);
+ if(bot)quad(b,[x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1],[0,-1,0],c,e,g)}
+function cylT(b,cx,y0,cz,r0,r1,h,cc,e=0,g=0,s=8,cap=1){const c=col(cc);
+ for(let i=0;i<s;i++){const a0=i/s*6.2832,a1=(i+1)/s*6.2832,x0=Math.cos(a0),z0=Math.sin(a0),x1=Math.cos(a1),z1=Math.sin(a1),nm=[(x0+x1)/2,(r0-r1)/h*.5,(z0+z1)/2];
+  quad(b,[cx+x0*r0,y0,cz+z0*r0],[cx+x1*r0,y0,cz+z1*r0],[cx+x1*r1,y0+h,cz+z1*r1],[cx+x0*r1,y0+h,cz+z0*r1],nm,c,e,g);
+  if(cap){vtx(b,[cx,y0+h,cz],[0,1,0],c,e,T0(g));vtx(b,[cx+x0*r1,y0+h,cz+z0*r1],[0,1,0],c,e,T0(g));vtx(b,[cx+x1*r1,y0+h,cz+z1*r1],[0,1,0],c,e,T0(g))}}}
+const cyl=(b,cx,y0,cz,r,h,cc,e=0,g=0,s=8)=>cylT(b,cx,y0,cz,r,r,h,cc,e,g,s);
+function sph(b,cx,cy,cz,r,cc,e=0,g=0,la=6,lo=9,top=1){const c=col(cc);const P=(i,j)=>{const t=i/la*Math.PI*top,f=j/lo*6.2832;return[Math.sin(t)*Math.cos(f),Math.cos(t),Math.sin(t)*Math.sin(f)]};
+ for(let i=0;i<la;i++)for(let j=0;j<lo;j++){const a=P(i,j),q=P(i+1,j),s=P(i+1,j+1),d=P(i,j+1);[a,q,s,a,s,d].forEach(v=>vtx(b,[cx+v[0]*r,cy+v[1]*r,cz+v[2]*r],v,c,e,T0(g)))}}
+/* textured quad: center, right vector, up vector */
+const FACE={pz:[1,0,0],nz:[-1,0,0],px:[0,0,-1],nx:[0,0,1]};
+function tq(b,c,ux,vy,w,h,uv,e=0,g=0,tint='#FFFFFF'){const cc=col(tint),hw=w/2,hh=h/2;
+ const P=(sx,sy)=>[c[0]+ux[0]*hw*sx+vy[0]*hh*sy,c[1]+ux[1]*hw*sx+vy[1]*hh*sy,c[2]+ux[2]*hw*sx+vy[2]*hh*sy];
+ const n=[ux[1]*vy[2]-ux[2]*vy[1],ux[2]*vy[0]-ux[0]*vy[2],ux[0]*vy[1]-ux[1]*vy[0]];
+ quad(b,P(-1,-1),P(1,-1),P(1,1),P(-1,1),n,cc,e,g,uv)}
+const UP=[0,1,0];
+const bottle=(b,x,y,z,c,s=1)=>{cyl(b,x,y,z,.04*s,.2*s,c,0,.5,6);cylT(b,x,y+.2*s,z,.04*s,.016*s,.05*s,c,0,.5,6,0);cyl(b,x,y+.25*s,z,.016*s,.05*s,c,0,.5,5)};
+
+const S=B(),G=B(),F=B(),CE=B(),BL=B(),SH=B();
+const shadow=(x,z,w,d,b=SH)=>tq(b,[x,.008,z],[1,0,0],[0,0,-1],w,d,SHT);
+/* product run along an axis. ax='z': items spaced along z, facing dir (+1 => +x, -1 => -x). ax='x': along x, facing dir on z */
+function run(b,ax,dir,a0,a1,o,y,depth,hMax,mode='mix'){let a=a0;
+ while(a<a1-.08){const k=Math.floor(rnd()*64),w=.09+rnd()*.11,h=Math.min(hMax,hMax*(.55+rnd()*.45)),n=2+Math.floor(rnd()*4),tp=mode==='mix'?(rnd()<.72?'b':rnd()<.5?'bt':'c'):mode;
+  for(let i=0;i<n&&a+w<=a1;i++){const ca=a+w/2,cx=ax==='z'?o+dir*depth/2:ca,cz=ax==='z'?ca:o+dir*depth/2;
+   if(tp==='b'){box(b,cx,y,cz,ax==='z'?depth:w*.92,h,ax==='z'?w*.92:depth,TC[k],0,.15);
+    const fc=ax==='z'?[o+dir*(depth+.004),y+h/2,ca]:[ca,y+h/2,o+dir*(depth+.004)];tq(b,fc,ax==='z'?(dir>0?FACE.px:FACE.nx):(dir>0?FACE.pz:FACE.nz),UP,w*.92,h,PT(k),0,.15)}
+   else if(tp==='bt'){for(let r=0;r<2;r++){const off=dir*(depth*.25+r*depth*.45);bottle(b,ax==='z'?o+off:ca,y,ax==='z'?ca:o+off,TC[k],Math.min(1.15,h/.27))}}
+   else{for(let r=0;r<2;r++){const off=dir*(depth*.25+r*depth*.45);cyl(b,ax==='z'?o+off:ca,y,ax==='z'?ca:o+off,Math.min(.045,w*.45),Math.min(h,.16),TC[k],0,.45,7)}}
+   a+=w+.008}a+=.01}}
+
+/* ---------- street & surroundings ---------- */
+box(S,0,-.16,10,220,.1,220,'#17191B',0,.12);
+box(S,0,-.06,12.4,60,.06,5.6,'#5A5650',0,.08);
+box(S,0,-.06,15.25,60,.14,.2,'#8C8880');
+for(let x=-30;x<30;x+=3.2)box(S,x,-.055,21,1.7,.005,.14,'#BDB9AE');
+[[-6,14.7],[10.5,14.7]].forEach(([x,z])=>{cyl(S,x,0,z,.06,4.2,'#2A2A2A',0,.3);box(S,x,4.12,z-.3,.24,.08,.62,'#2A2A2A');box(S,x,4.1,z-.38,.18,.02,.4,'#FFE2B0',1)});
+[[-11,13.4]].forEach(([x,z])=>{box(S,x,0,z,1.2,.5,1.2,'#5A3D28',0,.15);box(S,x,.5,z,1.1,.02,1.1,'#2A1E14');cyl(S,x,.5,z,.07,1.5,'#3A2A1E');sph(S,x,2.5,z,.8,'#22432E');sph(S,x+.3,2.1,z+.2,.55,'#2A5238')});
+box(S,-6.2,0,13.6,1.8,.45,.5,'#6B4A2E',0,.2);box(S,-6.2,0,13.6,1.6,.42,.4,'#2A2A2A');
+/* residential floors above the store */
+box(BL,0,5.42,.05,16.6,9.4,19.7,'#C9BDA7',0,.1);
+for(let i=0;i<4;i++)for(let j=0;j<2;j++){tq(BL,[-5.6+i*3.75,7.6+j*3.4,9.93],FACE.pz,UP,3.4,3.2,WIN,.9,.3);if((i+j)%2)box(BL,-5.0+i*3.75,6.1+j*3.4,10.05,.7,.45,.25,'#D8D8D4',0,.2)}
+box(BL,0,5.42,9.95,16.7,.12,.1,'#DCD2C0');
+/* neighbour residential blocks */
+[[-15.5],[15.5]].forEach(([cx])=>{box(BL,cx,0,-2.4,14.4,16,24,'#B9AD98',0,.1);box(BL,cx,0,9.5,14.4,.5,.2,'#141A1C');
+ for(let i=0;i<4;i++)for(let j=0;j<4;j++)tq(BL,[cx-5.4+i*3.6,5.6+j*3.4,9.62],FACE.pz,UP,3.4,3.2,WIN,.9,.3);
+ box(BL,cx,.3,9.61,13,3.3,.02,'#2A3B3A',.18,.6);box(BL,cx,3.6,9.7,14.4,.25,.25,'#0F1416')});
+
+/* ---------- facade: cream stone, emerald awnings, brass letters ---------- */
+const STONE='#2B2C30',FRM='#0E0E0F';
+box(S,0,0,9.74,16.6,.36,.5,'#151517',0,.25);
+/* wall pieces around openings: left win -6.9..-4.1, centre -1.2..4.0, right win 5.0..7.6 */
+[[-8.3,-6.9],[-4.1,-1.2],[4.0,5.0],[7.6,8.3]].forEach(([a,b2])=>box(S,(a+b2)/2,.36,9.74,b2-a,2.94,.48,STONE,0,.1));
+[[-6.9,-4.1],[5.0,7.6]].forEach(([a,b2])=>box(S,(a+b2)/2,.36,9.74,b2-a,.24,.48,STONE,0,.1));
+box(S,0,3.3,9.74,16.6,2.0,.48,STONE,0,.1);
+/* oak slat fascia with warm under-glow, graphite cornice, brass trims */
+for(let x=-7.8;x<8.31;x+=1.0)tq(S,[x,4.28,9.984],FACE.pz,UP,1.0,1.96,OAKS,.18,.2);
+box(S,0,3.12,9.99,16.6,.05,.03,'#C9A45C',.35,.7);box(S,0,3.17,10.0,16.6,.012,.02,'#FFC56E',1);
+box(S,0,5.22,9.8,16.9,.14,.62,'#1C1D20',0,.3);box(S,0,5.36,9.74,16.7,.06,.5,'#151517');box(S,0,5.205,10.1,16.9,.012,.02,'#FFC56E',1);
+box(S,1.4,3.42,10.0,6.7,1.72,.06,'#18191C',0,.35);box(S,1.4,3.4,10.02,6.78,.03,.06,'#C9A45C',.35,.7);box(S,1.4,5.12,10.02,6.78,.03,.06,'#C9A45C',.35,.7);
+tq(S,[1.4,4.28,10.034],FACE.pz,UP,6.4,1.6,SIGN,.55,.25);
+/* vertical oak slats on piers */
+[[-7.6],[-2.65],[4.5],[7.95]].forEach(([x])=>{for(let k=-3;k<=3;k++)box(S,x+k*.09,.36,9.995,.05,2.7,.03,'#B98D5A',0,.25)});
+const frame=(x0,x1,y0,y1,mull)=>{box(S,x0+.04,y0,9.62,.08,y1-y0,.12,FRM,0,.5);box(S,x1-.04,y0,9.62,.08,y1-y0,.12,FRM,0,.5);box(S,(x0+x1)/2,y1-.08,9.62,x1-x0,.08,.12,FRM,0,.5);box(S,(x0+x1)/2,y0,9.62,x1-x0,.06,.12,FRM,0,.5);
+ mull.forEach(x=>box(S,x,y0,9.62,.05,y1-y0,.1,FRM,0,.5));box(G,(x0+x1)/2,y0,9.6,x1-x0,y1-y0,.02,'#CBD2D6',.14,.95)};
+frame(-6.9,-4.1,.6,3.0,[-5.97,-5.03]);frame(5.0,7.6,.6,3.0,[5.87,6.73]);
+box(S,-.35,0,9.62,.06,3.0,.12,FRM,0,.5);box(S,3.5,0,9.62,.06,3.0,.12,FRM,0,.5);box(S,1.4,2.9,9.62,5.2,.1,.12,FRM,0,.5);
+box(S,-1.16,0,9.62,.08,3.0,.12,FRM,0,.5);box(S,3.96,0,9.62,.08,3.0,.12,FRM,0,.5);
+box(G,-.78,0,9.6,.76,2.9,.02,'#CBD2D6',.14,.95);box(G,3.75,0,9.6,.44,2.9,.02,'#CBD2D6',.14,.95);
+function awning(cx,w,y0,h,d){box(S,cx,y0+.06,9.98+d/2,w,.1,d,'#141416',0,.45);box(S,cx,y0+.045,9.98+d/2,w-.06,.015,d-.06,'#B98D5A',0,.25);box(S,cx,y0+.16,9.98+d,w,.02,.02,'#C9A45C',.35,.7);
+ for(let k=0;k<3;k++)cyl(S,cx-w/3+k*w/3,y0+.03,9.98+d*.55,.05,.015,'#FFE2B0',1,0,10);[-1,1].forEach(q=>cyl(S,cx+q*(w/2-.1),y0+.16,9.98+d*.6,.008,.9,'#111',0,.5,5))}
+awning(-5.5,3.1,3.02,.95,.85);awning(6.3,2.9,3.02,.95,.85);
+/* sconces */
+[-7.6,-3.2,4.5,7.95].forEach(x=>{box(S,x,2.45,10.02,.12,.34,.08,'#151515',0,.5);box(S,x,2.79,10.05,.08,.03,.06,'#FFE2B0',1);box(S,x,2.42,10.05,.08,.03,.06,'#FFE2B0',1)});
+/* menu boards, 24/7 plaque */
+[[-1.75],[4.5]].forEach(([x])=>{box(S,x,.9,10.0,.6,1.15,.04,'#0E0E0E');tq(S,[x,1.475,10.022],FACE.pz,UP,.56,1.1,MENU,.15)});
+/* olive trees in dark planters */
+[[-3.2,10.6],[5.45,10.65]].forEach(([x,z])=>{cylT(S,x,0,z,.26,.34,.62,'#1C1C1C',0,.5,16);cyl(S,x,.6,z,.3,.02,'#2A2118',0,0,16);cyl(S,x,.6,z,.035,1.2,'#5A4A38',0,0,6);
+ [[0,1.95,0,.42],[.25,1.75,.1,.3],[-.22,1.8,-.08,.32],[.08,2.25,-.05,.3],[-.1,1.6,.18,.26]].forEach(([dx,y,dz,r])=>sph(S,x+dx,y,z+dz,r,'#6E7F55',0,.1,5,8));shadow(x,z,1.1,1.1)});
+await Y();
+/* ---------- shell ---------- */
+const WALLX='#1F2023';
+box(S,-8.15,0,0,.3,4.2,19.6,WALLX);box(S,8.15,0,0,.3,4.2,19.6,WALLX);box(S,0,0,-9.65,16.6,4.2,.3,WALLX);
+const inWall=(side)=>{/* sage green wall, oak slat frieze with warm glow, oak cornice */
+ const SAGE='#3E3F42',CORN='#7A5532';
+ if(side==='l'||side==='r'){const sx=side==='l'?-1:1,xw=sx*7.99,fc=side==='l'?FACE.px:FACE.nx;box(S,xw,0,0,.02,2.5,19,SAGE,0,.08);for(let z=-9;z<=9.01;z+=1)tq(S,[xw-sx*.012,3.06,z],fc,UP,1.0,1.05,OAKS,.12,.2);box(S,xw-sx*.03,2.47,0,.06,.07,19,CORN,0,.3);box(S,xw-sx*.03,2.535,0,.02,.012,19,'#FFC56E',1)}
+ if(side==='b'){box(S,0,0,-9.49,16,2.5,.02,SAGE,0,.08);for(let x=-7.5;x<=7.51;x+=1)tq(S,[x,3.06,-9.478],FACE.pz,UP,1.0,1.05,OAKS,.12,.2);box(S,0,2.47,-9.46,16,.07,.06,CORN,0,.3);box(S,0,2.535,-9.43,16,.012,.02,'#FFC56E',1)}};
+['l','r','b'].forEach(inWall);
+box(S,0,3.42,9.48,16,.18,.04,'#26282B');
+/* floor */
+box(F,0,-.02,0,16,.02,19,'#121213',0,.6);
+/* ceiling: black slats, LED lines, oak coffers & batons */
+box(CE,0,3.62,0,16,.1,19,'#0A0A0A',0,0,1);for(let x=-7.4;x<8;x+=1.2)for(let z=-8.9;z<9.6;z+=1.2)tq(CE,[x,3.6,z],[1,0,0],[0,0,1],1.2,1.2,CEIL,0,.12);
+[-5.85,-2.7,-.1,2.5].forEach(x=>box(CE,x,3.44,1.15,.08,.04,6.4,'#FFFFFF',1,0,1));box(CE,6.4,3.44,-1.7,.08,.04,7.4,'#FFFFFF',1,0,1);box(CE,1.4,3.44,-8.3,5,.04,.08,'#FFFFFF',1,0,1);box(CE,-6.6,3.44,.6,.08,.04,7.6,'#FFFFFF',1,0,1);
+const OAK='#BE8D4E';[-6.2,-8.0].forEach(z=>box(CE,-4.8,3.44,z,5.6,.04,.08,'#FFE9C0',1,0,1));
+const coffer=(x0,x1,z0,z1)=>{const t=.3,cx=(x0+x1)/2,cz=(z0+z1)/2,W=x1-x0,D=z1-z0;
+ box(CE,cx,3.2,z0,W,.24,t,OAK,0,.3,1);box(CE,cx,3.2,z1,W,.24,t,OAK,0,.3,1);box(CE,x0,3.2,cz,t,.24,D,OAK,0,.3,1);box(CE,x1,3.2,cz,t,.24,D,OAK,0,.3,1);
+ box(CE,cx,3.19,z0+t/2+.04,W-t,.025,.05,'#FFFFFF',1,0,1);box(CE,cx,3.19,z1-t/2-.04,W-t,.025,.05,'#FFFFFF',1,0,1);box(CE,x0+t/2+.04,3.19,cz,.05,.025,D-t,'#FFFFFF',1,0,1);box(CE,x1-t/2-.04,3.19,cz,.05,.025,D-t,'#FFFFFF',1,0,1)};
+coffer(-5.1,4.6,-2.5,4.65);coffer(5.0,7.8,2.6,9.2);coffer(-4.9,-.1,5.95,8.05);
+for(let x=-3.6;x<3.2;x+=.48)box(CE,x,3.0,5.3,.16,.38,1.0,OAK,0,.3,1);
+for(let z=3.2;z<9;z+=.5)box(CE,6.4,3.02,z,2.4,.3,.14,OAK,0,.3,1);
+[[5.6,2.1],[5.6,3.9]].forEach(([x,z])=>{cyl(CE,x,2.6,z,.008,.6,'#111');sph(CE,x,2.44,z,.24,'#111111',0,.6,5,14,.5);cyl(CE,x,2.41,z,.2,.012,'#FFF1D0',1,0,14)});
+[[-7.6,-3.8],[7.5,-5],[-.2,8.9],[3.8,-8.9],[-4.5,3.2]].forEach(([x,z])=>sph(CE,x,3.4,z,.08,'#111',0,.6,4,8));
+const hang=(uv,x,y,z,w,h,face,ic)=>{const f=FACE[face],bf=FACE[face==='pz'?'nz':face==='nz'?'pz':face==='px'?'nx':'px'];const nrm=face==='pz'?[0,0,1]:face==='nz'?[0,0,-1]:face==='px'?[1,0,0]:[-1,0,0];
+ box(CE,x,y-h/2-.03,z,Math.abs(f[0])*(w+.06)+.04*Math.abs(f[2]),h+.06,Math.abs(f[2])*(w+.06)+.04*Math.abs(f[0]),'#17130F');
+ tq(CE,[x+nrm[0]*.025,y,z+nrm[2]*.025],f,UP,w,h,uv,.55);tq(CE,[x-nrm[0]*.025,y,z-nrm[2]*.025],bf,UP,w,h,uv,.55);
+ if(ic)[-1,1].forEach(s=>{const o=s*(w/2+h*.62),cx=x+f[0]*o,cz=z+f[2]*o,sz=h*1.15;box(CE,cx,y-sz/2,cz,Math.abs(f[0])*sz+.04*Math.abs(f[2]),sz,Math.abs(f[2])*sz+.04*Math.abs(f[0]),'#0C0C0C');tq(CE,[cx+nrm[0]*.025,y,cz+nrm[2]*.025],f,UP,sz*.94,sz*.94,ic,.6);tq(CE,[cx-nrm[0]*.025,y,cz-nrm[2]*.025],bf,UP,sz*.94,sz*.94,ic,.6)});
+ [-1,1].forEach(s=>cyl(CE,x+f[0]*w*.4*s,y+h/2,z+f[2]*w*.4*s,.006,3.6-y-h/2,'#222'))};
+hang(S_VEG,5.6,2.95,3.0,2.2,.34,'pz',IC_LEAF);hang(S_FRE,5.6,2.95,-6.0,2.2,.34,'pz',IC_CUP);hang(S_CSH,-5.0,2.95,5.95,1.8,.28,'nz',IC_BASK);
+tq(S,[7.975,3.05,-1.7],FACE.nx,UP,4.4,.55,S_DAI,.6);tq(S,[7.975,3.05,5.3],FACE.nx,UP,4.4,.55,S_VEG,.6);tq(S,[1.4,3.05,-9.475],FACE.pz,UP,4.4,.55,S_DRI,.6);
+
+/* ---------- produce: long wall rack ---------- */
+box(S,7.5,0,4.9,1.0,.3,5.6,'#2A2A2C',0,.15);box(S,7.93,.3,4.9,.1,2.2,5.6,'#26282B',0,.3);box(S,7.93,2.5,4.9,.13,.03,5.6,'#D2AE62',.4,.6);
+for(let t=0;t<3;t++){const xc=7.18+t*.3,y0=.3+t*.42;box(S,xc,.3,4.9,.3,y0-.3+.02,5.6,'#5A3D28',0,.15);
+ for(let z=2.5;z<7.4;z+=.78){const k=Math.floor(rnd()*8);box(S,xc,y0,z,.32,.12,.74,'#7A5536',0,.2);tq(S,[xc,y0+.14,z],[0,0,1],[.906,.423,0],.72,.36,FT(k),0,.1);
+  if(t===2)for(let i=0;i<5;i++)sph(S,xc-.08+rnd()*.12,y0+.2,z-.28+rnd()*.56,.045,FR[k][0],0,.35,4,7)}}
+shadow(7.3,4.9,1.6,6.1);
+/* ---------- produce island (both sides) ---------- */
+{const cx=5.6,cz=3.0,L=2.0;box(S,cx,0,cz,1.1,.3,L,'#2A2A2C',0,.2);box(S,cx,.3,cz,.16,.95,L,'#5A3D28',0,.15);box(S,cx,1.25,cz,.2,.04,L+.04,'#D2AE62',.4,.6);
+ [-1,1].forEach(s=>{for(let t=0;t<2;t++){const xc=cx+s*(.4-t*.24),y0=.34+t*.38;box(S,xc,.3,cz,.3,y0-.3+.02,L,'#5A3D28',0,.15);
+  for(let z=cz-L/2+.39;z<cz+L/2;z+=.75){const k=Math.floor(rnd()*8);box(S,xc,y0,z,.32,.12,.72,'#7A5536',0,.2);tq(S,[xc,y0+.14,z],s<0?[0,0,1]:[0,0,-1],[-s*.906,.423,0],.7,.36,FT(k),0,.1);
+   if(t===1)for(let i=0;i<4;i++)sph(S,xc-.06+rnd()*.12,y0+.2,z-.26+rnd()*.52,.045,FR[k][0],0,.35,4,7)}}});
+ shadow(cx,cz,1.6,2.6)}
+/* ---------- bakery wall (end of hall, right) ---------- */
+{const bx=5.6,bz=-9.2,BL=2.8;
+ box(S,bx,0,-9.42,BL,2.1,.04,'#B98D5A',0,.25);[-1,1].forEach(q=>box(S,bx+q*BL/2,0,bz,.05,2.1,.5,'#111111',0,.5));
+ box(S,bx,0,bz,BL,.12,.5,'#111111');box(S,bx,2.1,bz,BL+.05,.04,.52,'#111111',0,.5);
+ for(let i=0;i<4;i++){const y=.12+i*.46;box(S,bx,y,bz,BL-.05,.025,.46,'#CDA673',0,.3);box(S,bx,y-.035,bz+.23,BL-.05,.05,.012,'#F2F2F2',.15);box(S,bx,y+.43,-9.38,BL-.1,.012,.03,'#FFE2B0',.9);
+  for(let x=bx-BL/2+.14;x<bx+BL/2-.1;x+=.18){const c=pick(['#C8893E','#B5762F','#D9A35A','#9C5E24']);if(i%2)sph(S,x,y+.09,bz+.05,.08,c,0,.25,4,8);else{box(S,x,y+.025,bz+.05,.15,.09,.3,c,0,.25);sph(S,x,y+.11,bz+.05,.075,c,0,.25,3,8,.5)}}}
+ box(S,bx,2.2,bz+.2,BL,.28,.03,'#111111');tq(S,[bx,2.34,bz+.217],FACE.pz,UP,BL-.1,.26,ZS[4],.55);shadow(bx,bz,3.0,.9)}
+/* ---------- confectionery: serve-over glass counter ---------- */
+{const cx=5.0,cz=-7.1,L=2.0;box(S,cx,0,cz,1.0,.84,L,'#24170E',0,.3);
+ [-1,1].forEach(s=>{for(let z=cz-L/2+.06;z<cz+L/2;z+=.09)box(S,cx+s*.505,.06,z,.02,.76,.045,'#B8894A',0,.25);box(S,cx+s*.51,.02,cz,.01,.03,L,'#FFE2B0',1)});
+ box(S,cx,.84,cz,1.04,.03,L+.04,'#0E0E0E',0,.6);box(S,cx,.86,cz,.92,.01,L-.1,'#DADFE2',0,.7);
+ for(let i=0;i<3;i++)for(let z=cz-L/2+.2;z<cz+L/2-.1;z+=.3){const c=pick(['#5A2E1A','#F3E3D0','#E8A0A8','#C9893E','#7A3B2A','#F2D27A']);cyl(S,cx-.3+i*.3,.87,z,.1,.08,c,0,.4,10);cyl(S,cx-.3+i*.3,.95,z,.1,.012,'#FFF6EA',0,.4,10);sph(S,cx-.3+i*.3,.975,z,.018,'#C8102E',0,.6,3,6)}
+ box(G,cx,.87,cz,.98,.42,L,'#DDEEF5',.1,.95);box(S,cx,1.29,cz,1.02,.025,L+.02,'#0E0E0E',0,.6);
+ [-1,1].forEach(d=>box(S,cx,0,cz+d*(L/2+.02),1.04,1.31,.04,'#0E0E0E',0,.5));shadow(cx,cz,1.6,2.7)}
+/* ---------- ready food: open multideck next to bakery ---------- */
+for(const zc of [-6.95,-8.45]){const W2=1.5;
+ box(S,7.55,0,zc,.9,.45,W2,'#1A1A1A',0,.3);box(S,7.1,0,zc,.04,.45,W2,'#5A3D28',0,.2);
+ box(S,7.95,.45,zc,.06,1.75,W2,'#F4F7F5',.5);[-W2/2,W2/2].forEach(d=>box(S,7.5,.45,zc+d,.95,1.75,.02,'#2A2A2A',0,.5));
+ box(S,7.55,2.2,zc,.95,.32,W2+.02,'#26282B',0,.3);tq(S,[7.07,2.36,zc],FACE.nx,UP,W2-.08,.19,HRF,.55);box(S,7.35,2.185,zc,.5,.015,W2-.1,'#FFFFFF',1);
+ for(let i=0;i<5;i++){const y=.45+i*.36,d=.72-i*.07,xf=7.92-d;box(S,7.92-d/2,y,zc,d,.025,W2-.04,'#C9CFD2',0,.4);box(S,xf-.006,y-.045,zc,.012,.05,W2-.04,'#F3E7C4',.15);
+  for(let z=zc-W2/2+.1;z<zc+W2/2-.08;z+=.15){const c=pick(['#7FA05A','#E2B04A','#E8896A','#F0D5C0','#C94F5A','#A3C644','#D9B38C']);
+   for(let st=0;st<(i>2?1:2);st++){box(S,xf+.12,y+.025+st*.075,z,.17,.06,.13,c,0,.4);box(S,xf+.12,y+.085+st*.075,z,.175,.012,.135,'#EEF3F5',0,.9)}}}}
+shadow(7.4,-7.7,1.8,3.2);
+/* ---------- chilled (right wall) ---------- */
+for(let u=0;u<6;u++){const zc=-4.85+u*1.25;
+ box(S,7.55,0,zc,.9,.45,1.23,'#1A1A1A',0,.3);box(S,7.1,0,zc,.04,.45,1.23,'#5A3D28',0,.2);
+ box(S,7.95,.45,zc,.06,1.75,1.23,'#EEF5F2',.5);[-.615,.615].forEach(d=>box(S,7.5,.45,zc+d,.95,1.75,.02,'#2A2A2A',0,.5));
+ box(S,7.55,2.2,zc,.95,.32,1.25,'#26282B',0,.3);box(S,7.075,2.2,zc,.02,.32,1.25,'#D2AE62',.4,.6);box(S,7.35,2.185,zc,.5,.015,1.15,'#FFFFFF',1);
+ for(let i=0;i<5;i++){const y=.45+i*.36,d=.72-i*.07,xf=7.92-d;box(S,7.92-d/2,y,zc,d,.025,1.2,'#C9CFD2',0,.4);box(S,xf-.006,y-.045,zc,.012,.05,1.2,'#F3E7C4',.15);
+  run(S,'z',-1,zc-.58,zc+.58,xf+.42,y+.025,.4,i===0?.32:.26,i%2?'b':'mix')}}
+shadow(7.4,-1.1,1.8,8);
+
+/* ---------- drinks (back wall) ---------- */
+for(let u=0;u<4;u++){const xc=-.55+u*1.3;
+ box(S,xc,.1,-9.45,1.28,2.1,.04,'#F2F7FF',.55);[-.64,.64].forEach(d=>box(S,xc+d,0,-9.07,.04,2.3,.85,'#151515',0,.4));box(S,xc,2.1,-9.07,1.3,.32,.85,'#151515',0,.4);box(S,xc,2.2,-8.63,1.3,.1,.02,'#26282B',.2);box(S,xc,0,-9.07,1.3,.12,.85,'#151515');
+ for(let i=0;i<5;i++){const y=.12+i*.4;box(S,xc,y,-9.07,1.24,.02,.8,'#9AA3A8',0,.4);
+  for(let r=0;r<2;r++){const z=-8.86-r*.24;let x=xc-.58;const tp=pick(['w','c','g','o','can']);while(x<xc+.56){
+   if(tp==='can'){cyl(S,x+.035,y+.02,z,.033,.12,pick(['#C8102E','#1F4E9E','#D9D2C0','#2E8B57','#F2B705']),0,.6,7);x+=.075}
+   else{bottle(S,x+.045,y+.02,z,{w:'#BFE3F2',c:'#3A1A12',g:'#2FA04A',o:'#F07C1E'}[tp],1.15);x+=.095}}}}
+ box(G,xc,.12,-8.62,1.26,1.98,.02,'#DDEEF5',.1,.95);box(S,xc+.52,.8,-8.59,.025,.6,.03,'#C9C9C9',0,.7)}
+
+/* ---------- non-halal room (21+): mirror outside, 4 racks + 4 fridges inside ---------- */
+const GL21='#5A3C26',MQ=B(),GM=B();
+box(MQ,-4.8,.15,-4.5,6.4,3.45,.002,'#FFFFFF');box(GM,-4.8,.15,-4.5,6.4,3.45,.03,'#7A5A3C',.28,1);
+box(G,-1.6,.15,-7.9,.04,3.45,3.2,GL21,.93,1);box(G,-1.6,.15,-4.8,.04,3.45,.6,GL21,.93,1);box(G,-1.6,2.45,-5.7,.04,1.15,1.2,GL21,.93,1);
+box(S,-4.8,0,-4.5,6.45,.15,.08,'#3B2A1E');box(S,-1.6,0,-7.9,.08,.15,3.2,'#3B2A1E');
+for(let x=-8;x<=-1.59;x+=6.4/6)box(S,x,0,-4.5,.05,3.6,.07,'#C9A45C',.3,.7);
+[-9.5,-8.4,-7.35,-6.3,-5.1,-4.5].forEach(z=>box(S,-1.6,0,z,.07,3.6,.05,'#C9A45C',.3,.7));
+box(S,-4.8,3.48,-4.5,6.45,.1,.09,'#C9A45C',.3,.7);box(S,-1.6,3.48,-7,.09,.1,5,'#C9A45C',.3,.7);box(S,-1.6,2.42,-5.7,.08,.04,1.2,'#C9A45C',.3,.7);
+box(S,-4.8,2.25,-4.47,3.35,.9,.03,'#120C07');tq(S,[-4.8,2.7,-4.452],FACE.pz,UP,3.25,.82,NHP,.45);
+box(S,-1.575,2.52,-5.7,.02,.62,.62,'#120C07');tq(S,[-1.56,2.83,-5.7],FACE.px,UP,.56,.56,T21,1);
+box(S,-4.8,0,-9.46,6.4,3.6,.02,'#1C1D20');box(S,-7.96,0,-7,.02,3.6,5,'#1C1D20');box(S,-4.8,2.9,-9.44,6.4,.04,.02,'#C9A45C',.35,.7);
+const RK=['v','s','w','b'];
+RK.forEach((tp,u)=>{const xc=-6.3+u*1.33;
+ box(S,xc,0,-9.4,1.27,2.35,.06,'#2A1A10',0,.3);[-1,1].forEach(q=>box(S,xc+q*.635,0,-9.17,.03,2.35,.52,'#2A1A10',0,.3));
+ box(S,xc,0,-9.17,1.27,.18,.52,'#1A100A');box(S,xc,2.35,-9.17,1.3,.1,.54,'#2A1A10');box(S,xc,2.35,-8.91,1.3,.1,.015,'#C9A45C',.4,.7);
+ box(S,xc,2.52,-9.03,1.29,.28,.02,'#1C1D20');tq(S,[xc,2.66,-9.015],FACE.pz,UP,1.25,.2,NHH[u],.6);
+ for(let i=0;i<5;i++){const y=.18+i*.42;box(S,xc,y,-9.17,1.25,.025,.48,'#6B4A33',0,.35);box(S,xc,y-.03,-8.925,1.25,.035,.012,'#C9A45C',.3,.7);box(S,xc,y+.385,-9.36,1.2,.012,.04,'#FFE2B0',.9);
+  for(let r=0;r<2;r++){const z=-9.0-r*.2;let x=xc-.56;
+   while(x<xc+.55){
+    if(tp==='v'){bottle(S,x+.05,y+.025,z,pick(['#DCE8EE','#E9F0F3','#CFE0E8','#F2F2F2']),1.3);x+=.11}
+    else if(tp==='s'){const c=pick(['#B8752A','#8A4E18','#5A2A10','#4A0E14','#E2CC8E','#C08A3A']);if(rnd()<.5){box(S,x+.05,y+.025,z,.09,.21,.07,c,0,.7);cyl(S,x+.05,y+.235,z,.018,.07,'#2A1A10',0,.4,5)}else bottle(S,x+.05,y+.025,z,c,1.2);x+=.12}
+    else if(tp==='w'){bottle(S,x+.045,y+.025,z,pick(['#3B0F16','#1F3A1F','#5A1A22','#2A3B1A','#E8D9A8']),1.25);x+=.1}
+    else{if(i<1){box(S,x+.12,y+.025,z,.24,.17,.17,pick(['#C8102E','#1F4E9E','#2E8B57','#D9A400']),0,.3);x+=.26}else if(i%2){cyl(S,x+.035,y+.025,z,.033,.12,pick(['#C8102E','#1F4E9E','#D9D2C0','#2E8B57','#F2B705','#111']),0,.6,7);x+=.075}else{bottle(S,x+.04,y+.025,z,'#5A3412',1.05);x+=.09}}}}}});
+[-8.45,-7.45,-6.45,-5.45].forEach((zc,k)=>{const nh=k===3;
+ [-.49,.49].forEach(d=>box(S,-7.6,0,zc+d,.8,2.25,.03,'#151515',0,.5));box(S,-7.6,2.0,zc,.8,.25,1.0,'#151515',0,.5);box(S,-7.6,0,zc,.8,.15,1.0,'#151515');
+ box(S,-7.94,.15,zc,.03,1.85,.96,nh?'#FFE9E0':'#F2F7FF',.6);tq(S,[-7.188,2.125,zc],FACE.px,UP,.94,.2,nh?HNH:HDR,.6);
+ for(let i=0;i<5;i++){const y=.17+i*.37;box(S,-7.58,y,zc,.74,.02,.94,'#9AA3A8',0,.4);
+  if(nh){for(let z=zc-.42;z<zc+.4;z+=.15){if(i%2)cyl(S,-7.42,y+.02,z+.06,.032,.24,pick(['#8B3A2A','#A0522D','#6E2A1E']),0,.4,7);else box(S,-7.44,y+.02,z+.06,.2,.06,.13,pick(['#C94F5A','#D9826B','#B5653F','#E8B4A8']),0,.5)}}
+  else{for(let z=zc-.42;z<zc+.42;z+=.085){if(i%2)cyl(S,-7.42,y+.02,z+.04,.032,.12,pick(['#C8102E','#1F4E9E','#D9D2C0','#2E8B57','#F2B705']),0,.6,7);else bottle(S,-7.42,y+.02,z+.04,pick(['#5A3412','#2FA04A','#BFE3F2']),1.05)}}}
+ box(G,-7.185,.15,zc,.02,1.85,.96,'#DDEEF5',.1,.95);box(S,-7.17,.7,zc+.4,.03,.6,.025,'#C9C9C9',0,.7)});
+await Y();
+/* ---------- gondolas: black metal, emerald LED edges ---------- */
+const LED='#1BE3A6';
+[-4,-1.4,1.2,3.8].forEach(x=>{const zc=1.15,L=5.7;
+ box(S,x,0,zc,1.0,.12,L,'#111111',0,.35);box(S,x,.12,zc,.06,1.78,L,'#161616',0,.3);box(S,x,1.9,zc,1.04,.04,L+.04,'#111111',0,.45);
+ for(let i=0;i<5;i++){const y=.12+i*.36;box(S,x,y,zc,1.0,.025,L,'#1C1C1C',0,.45);
+  [-1,1].forEach(s=>{box(S,x+s*.5,y-.035,zc,.012,.05,L,'#F2F2F2',.15);run(S,'z',s,zc-L/2+.04,zc+L/2-.04,x+s*.03,y+.025,.42,.3)})}
+ [1,-1].forEach(d=>{const ez=zc+d*L/2,ec=ez+d*.27;
+  [-1,1].forEach(s=>box(S,x+s*.49,0,ez,.04,1.94,.05,'#111',0,.5));
+  box(S,x,0,ec,1.0,1.3,.5,'#B98D5A',0,.3);box(S,x,1.3,ec,1.04,.03,.54,'#111111',0,.5);box(S,x,0,ec,1.02,.1,.52,'#111111');box(S,x,.004,ec+d*.3,1.0,.006,.12,'#FFC56E',.85);[-1,1].forEach(s=>{const px=x+s*.522;box(S,px,.1,ec,.02,1.84,.52,'#16171A',0,.9);tq(S,[px+s*.011,1.02,ec],s>0?FACE.px:FACE.nx,UP,.5,1.84,ACR,.85,.6);box(S,px,1.94,ec,.03,.02,.54,'#FFD49A',1);box(S,px,.1,ec+d*.26,.03,1.86,.02,'#FFD49A',1)});
+  for(let i=0;i<4;i++){const k2=Math.floor(rnd()*64);for(let j=0;j<2;j++){box(S,x-.33+i*.22,1.33+j*.17,ec+.02,.19,.16,.3,TC[k2],0,.2);tq(S,[x-.33+i*.22,1.41+j*.17,d>0?ec+.175:ec-.135],d>0?FACE.pz:FACE.nz,UP,.19,.16,PT(k2))}}});
+ shadow(x,zc,1.5,7.4)});
+/* zone boards on gondola tops */
+[[-4,5],[-1.4,0],[1.2,1],[3.8,2]].forEach(([x,k])=>{[1,-1].forEach(d=>{const z=1.15+d*2.87;box(S,x,1.94,z,1.0,.16,.03,'#111111');tq(S,[x,2.02,z+d*.017],d>0?FACE.pz:FACE.nz,UP,.96,.12,ZS[k],.5)});
+ box(S,x,1.94,1.15,.03,.16,5.7,'#111111');[-1,1].forEach(q=>tq(S,[x+q*.017,2.02,1.15],q>0?FACE.px:FACE.nx,UP,2.4,.3,ZS[k],.5))});
+/* emerald tiled columns */
+function column(x,z,w=.62){box(S,x,0,z,w,3.6,w,'#0B4D3A',0,.5);box(S,x,0,z,w+.04,.12,w+.04,'#0A0A0A',0,.5);
+ for(let j=0;j<6;j++){const y=.12+j*.58+.29;[['pz',[x,y,z+w/2+.003]],['nz',[x,y,z-w/2-.003]],['px',[x+w/2+.003,y,z]],['nx',[x-w/2-.003,y,z]]].forEach(([f,c])=>tq(S,c,FACE[f],UP,w,.58,ETL,0,.8))}
+ box(S,x,3.18,z,w+.16,.26,w+.16,'#9C7041',0,.3);box(S,x,3.13,z,w+.2,.05,w+.2,'#7A5532',0,.3);box(S,x,3.115,z,w+.12,.012,w+.12,'#FFC56E',1);shadow(x,z,1.1,1.1)}
+[[-4,-2.75],[3.8,-2.75],[-4,5.55],[3.8,5.2]].forEach(([x,z])=>column(x,z));
+/* left wall racks */
+box(S,-7.93,.12,.5,.06,2.0,8,'#B98D5A',0,.25);box(S,-7.6,0,.5,.72,.12,8,'#111111');[-3.5,4.5].forEach(z=>box(S,-7.25,0,z,.03,2.14,.03,'#111111',0,.5));box(S,-7.6,2.12,.5,.72,.03,8,'#111111');tq(S,[-7.975,2.45,.5],FACE.px,UP,3.2,.4,ZS[3],.55);
+for(let i=0;i<6;i++){const y=.12+i*.36;box(S,-7.6,y,.5,.7,.025,8,'#CDA673',0,.3);box(S,-7.25,y-.035,.5,.012,.05,8,'#F2F2F2',.15);run(S,'z',1,-3.45,4.45,-7.9,y+.025,.6,.3)}
+shadow(-7.5,.5,1.3,8.6);
+
+await Y();
+/* ---------- checkouts along the left wall (two tills, cashier on wall side) ---------- */
+[6.9,8.6].forEach(cz=>{const xc=-5.0,so=-1,L=1.4;box(S,xc,0,cz,.8,.9,L,'#B98D5A',0,.25);
+ for(let z=cz-L/2+.08;z<cz+L/2-.02;z+=.12)box(S,xc-so*.405,.06,z,.02,.78,.06,'#8A6236');
+ box(S,xc,.9,cz,.86,.04,L+.06,'#F2EFE8',0,.55);box(S,xc,.94,cz-.3,.5,.008,.7,'#1A1A1A',0,.4);
+ box(S,xc+so*.22,.94,cz+.35,.08,.06,.08,'#222');box(S,xc+so*.22,1.0,cz+.35,.04,.3,.04,'#222');box(S,xc+so*.22,1.12,cz+.35,.03,.3,.42,'#111',0,.6);box(S,xc+so*.2,1.14,cz+.35,.005,.26,.38,'#8FD6C4',.7);
+ box(S,xc-so*.28,.94,cz+.5,.1,.04,.16,'#1A1A1A');box(S,xc-so*.28,.98,cz+.56,.09,.12,.03,'#111');
+ for(let i=0;i<4;i++)box(S,xc-so*.2,.94,cz+.62-i*.07,.12,.06+rnd()*.05,.05,pick(PC),0,.2);
+ shadow(xc,cz,1.4,1.9)});
+/* tobacco cabinet on the left wall behind till 1 */
+{const x=-7.6,cz=6.9;box(S,x,0,cz,.8,2.3,1.3,'#1A1A1C',0,.35);box(S,x,2.3,cz,.84,.05,1.34,'#D2AE62',.4,.6);
+ tq(S,[x+.405,1.45,cz],FACE.px,UP,1.2,1.3,TOB,.35,.2);box(S,x+.41,.62,cz,.02,.03,1.25,'#FFF1D0',.9);box(S,x,0,cz,.84,.75,1.34,'#2A2A2C',0,.25)}
+/* separate IQOS shelf on the left wall behind till 2 */
+{const x=-7.6,cz=8.6;box(S,x,0,cz,.8,2.3,1.2,'#EDEDEA',0,.5);box(S,x,0,cz,.84,.75,1.24,'#2A2A2C',0,.25);box(S,x,2.0,cz,.84,.3,1.24,'#F4F4F2',0,.5);box(S,x,2.3,cz,.86,.05,1.26,'#D2AE62',.4,.6);
+ box(S,x+.41,.78,cz,.01,1.2,1.1,'#FFFFFF',.55);
+ for(let i=0;i<4;i++){const y=.8+i*.3;box(S,x+.33,y,cz,.16,.02,1.1,'#DADDE0',0,.6);
+  if(i<3){for(let z=cz-.5;z<cz+.5;z+=.07)box(S,x+.33,y+.02,z,.06,.09,.05,pick(['#E3A21A','#2BB3C0','#7A4FA0','#3B7A3B','#C8102E','#1F4E9E','#D9C27A','#5A5A5A']),0,.3)}
+  else{for(let z=cz-.42;z<cz+.46;z+=.18){box(S,x+.33,y+.02,z,.08,.025,.1,'#CFCFCF',0,.6);box(S,x+.33,y+.045,z,.03,.13,.05,pick(['#1E2A4A','#E8E6E0','#3A6EA5','#7C2A3A']),0,.8)}}}
+ tq(S,[x+.425,2.15,cz],FACE.px,UP,1.12,.14,S_IQ,.6)}
+/* coffee machine + baskets + gates */
+box(S,7.5,0,8.75,.66,1.95,.75,'#141414',0,.6);tq(S,[7.165,1.15,8.75],FACE.nx,UP,.7,1.4,COF,.6,.4);box(S,7.5,1.95,8.75,.68,.06,.77,'#26282B',.15);shadow(7.4,8.75,1.0,1.1);
+cyl(S,7.55,0,8.0,.16,.6,'#2A2A2A',0,.5,10);
+for(let i=0;i<7;i++)box(S,-.2,i*.095,8.85,.44,.09,.32,'#26282B',0,.3);box(S,-.2,.66,8.85,.46,.03,.34,'#D2AE62',.2);
+
+box(S,1.75,0,9.1,2.4,.005,1.2,'#22201C');
+
+await Y();
+/* ================= GL ================= */
+const VS=`attribute vec3 aP;attribute vec3 aN;attribute vec4 aC;attribute vec4 aT;attribute vec4 aI0;attribute vec4 aI1;attribute vec4 aI2;attribute vec4 aI3;attribute vec4 aIC;uniform mat4 uVP;uniform mat4 uM;uniform mat4 uPre;uniform float uInst;varying vec3 vN;varying vec3 vW;varying vec4 vC;varying vec4 vT;
+void main(){mat4 M=uM;vec4 c=aC;if(uInst>.5){M=uPre*mat4(aI0,aI1,aI2,aI3);c=vec4(aIC.rgb,0.);}vec4 w=M*vec4(aP,1.);vW=w.xyz;vN=(M*vec4(aN,0.)).xyz;vC=c;vT=aT;gl_Position=uVP*w;}`;
+const FS=`#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+varying vec3 vN;varying vec3 vW;varying vec4 vC;varying vec4 vT;
+uniform sampler2D uTex;uniform vec3 uEye;uniform vec4 uCol;uniform float uTint;uniform float uMode;uniform float uFA;uniform float uMir;uniform float uGA;
+float h21(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float vn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h21(i),h21(i+vec2(1.,0.)),f.x),mix(h21(i+vec2(0.,1.)),h21(i+vec2(1.,1.)),f.x),f.y);}
+float fbm(vec2 p){float s=0.,a=.5;for(int i=0;i<4;i++){s+=a*vn(p);p*=2.03;a*=.5;}return s;}
+vec3 porc(vec2 p){vec2 q=vec2(p.x/1.2,p.y/.6);float row=floor(q.y);q.x+=mod(row,2.)*.5;vec2 id=floor(q),fq=fract(q);float t=h21(id)*.06;float m=fbm(p*1.7+id*3.1)*.09+fbm(p*9.)*.03;vec3 c=vec3(.30,.30,.29)*(.92+t+m);float gr=step(.992,fq.x)+step(.985,fq.y)+step(fq.x,.008)+step(fq.y,.015);return mix(c,c*.55,clamp(gr,0.,1.));}
+vec3 marbleL(vec2 p){vec2 tid=floor(p/1.2);float r=h21(tid)*6.2832;vec2 q=mat2(cos(r),-sin(r),sin(r),cos(r))*p;float n=fbm(q*1.1+tid*7.3);float v=pow(1.-abs(sin(q.x*1.5+n*7.)),22.);return vec3(.66,.62,.55)*(.93+.07*fbm(q*3.))-vec3(.22,.21,.2)*v;}
+vec3 marble(vec2 p){vec2 tid=floor(p/1.2);float r=h21(tid)*6.2832;vec2 q=mat2(cos(r),-sin(r),sin(r),cos(r))*p;
+ float n=fbm(q*1.1+tid*7.3);float v=pow(1.-abs(sin(q.x*1.7+n*7.5)),18.);float v2=pow(1.-abs(sin(q.y*3.1+n*12.)),46.);
+ vec3 b=vec3(.022,.022,.025)+vec3(.018)*fbm(q*3.5);return b+vec3(.62,.58,.52)*(v*.55+v2*.3);}
+vec3 aces(vec3 x){return clamp((x*(2.51*x+.03))/(x*(2.43*x+.59)+.14),0.,1.);}
+void main(){
+ vec4 C=mix(vC,uCol,uTint);vec3 base=C.rgb*C.rgb;
+ bool glass=uMode>.5&&uMode<1.5,shad=uMode>1.5&&uMode<2.5,refl=uMode>2.5&&uMode<3.5,floorm=uMode>3.5;
+ float e=glass?0.:C.a;
+ if(vT.z>.5){vec4 t=texture2D(uTex,vT.xy);if(shad){gl_FragColor=vec4(0.,0.,0.,t.a*.42);return;}base=t.rgb*t.rgb;}
+if(uMir>.5&&vW.z>-4.5)discard;
+ if(refl&&(vW.y>0.||abs(vW.x)>8.||abs(vW.z)>9.5))discard;
+ bool dk=vW.x<-1.6&&vW.z<-4.5;
+ if(floorm)base=dk?marble(vW.xz):porc(vW.xz);
+ vec3 V=normalize(uEye-vW);vec3 n=normalize(vN);if(dot(n,V)<0.)n=-n;
+ float ins=(abs(vW.x)<8.02&&abs(vW.z)<9.62&&vW.y<3.7)||refl?1.:0.;
+ vec3 li;
+ if(ins>.5){
+  li=mix(vec3(.30,.28,.26),vec3(1.06,1.,.93),n.y*.5+.5)+max(dot(n,normalize(vec3(.2,1.,.25))),0.)*.22;
+  if(abs(n.y)<.6)li*=mix(.58,1.,clamp(vW.y/1.3,0.,1.));
+  if(n.y>.6&&vW.y<.05){float dw=min(min(8.-abs(vW.x),9.5-abs(vW.z)),2.);li*=mix(.7,1.,clamp(dw/1.2,0.,1.));}
+  if(n.y<-.6)li*=.55;
+ }else{
+  li=mix(vec3(.045,.055,.08),vec3(.19,.24,.35),n.y*.5+.5);
+  float fz=vW.z-9.6;float sp=exp(-max(fz,0.)*.3)*smoothstep(-9.,-7.,vW.x)*(1.-smoothstep(7.,9.,vW.x))*step(-.6,fz)*smoothstep(5.5,.5,vW.y);
+  li+=vec3(1.,.8,.56)*sp*.85;
+  for(int i=0;i<2;i++){vec3 lp=i==0?vec3(-6.,4.,14.4):vec3(10.5,4.,14.4);vec3 d=lp-vW;float a=1./(1.+dot(d,d)*.1);li+=vec3(1.,.76,.48)*a*(max(dot(n,normalize(d)),0.)*.8+.25);}
+ }
+ vec3 col=base*li;float g=vT.w;
+ vec3 R=reflect(-V,n);float fr=pow(1.-max(dot(n,V),0.),4.);
+ if(g>0.){vec3 env=ins>.5?(R.y<0.?vec3(.82,.79,.74)*pow(-R.y,.35):mix(vec3(.07,.065,.06),vec3(1.5,1.45,1.35),pow(max(R.y,0.),4.))):mix(vec3(.03,.04,.06),vec3(.3,.34,.45),max(R.y,0.))+vec3(1.,.8,.55)*.25*step(0.,-R.z)*step(9.,vW.z);
+  float s=pow(max(R.y,0.),60.)*(ins>.5?3.:0.);col=mix(col,env,clamp(fr*g+g*(glass?.26:.08),0.,1.))+vec3(s*g*(glass?.9:.3));}
+ col=mix(col,base*2.1,e);
+ if(refl)col*=.62*exp(vW.y*.8);
+ float dist=distance(vW,uEye);col=mix(col,vec3(.018,.026,.04),clamp((dist-34.)/70.,0.,1.));
+ if(uMir>.5)col*=vec3(.62,.5,.38);
+ col=sqrt(aces(col*1.2));
+ float a=1.;
+ if(glass)a=uGA>0.?uGA:clamp(C.a+fr*.55,0.,1.);
+ if(floorm){a=dk?uFA:max(uFA,.82);if(dk){vec2 q=fract(vW.xz/1.2);col+=vec3(.05)*step(.994,max(q.x,q.y));}}
+ gl_FragColor=vec4(col,a);}`;
+const shd=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);if(!gl.getShaderParameter(o,gl.COMPILE_STATUS))throw gl.getShaderInfoLog(o);return o};
+const pr=gl.createProgram();gl.attachShader(pr,shd(gl.VERTEX_SHADER,VS));gl.attachShader(pr,shd(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);if(!gl.getProgramParameter(pr,gl.LINK_STATUS))throw 'link';
+gl.useProgram(pr);
+const L={P:gl.getAttribLocation(pr,'aP'),N:gl.getAttribLocation(pr,'aN'),C:gl.getAttribLocation(pr,'aC'),T:gl.getAttribLocation(pr,'aT')};
+const LI=['aI0','aI1','aI2','aI3','aIC'].map(n=>gl.getAttribLocation(pr,n)),EXI=gl.getExtension('ANGLE_instanced_arrays');
+const U={};['uVP','uM','uEye','uTint','uCol','uMode','uFA','uTex','uMir','uGA','uPre','uInst'].forEach(k=>U[k]=gl.getUniformLocation(pr,k));
+const tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,AT);gl.generateMipmap(gl.TEXTURE_2D);
+gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+const an=gl.getExtension('EXT_texture_filter_anisotropic')||gl.getExtension('WEBKIT_EXT_texture_filter_anisotropic');if(an)gl.texParameterf(gl.TEXTURE_2D,an.TEXTURE_MAX_ANISOTROPY_EXT,Math.min(8,gl.getParameter(an.MAX_TEXTURE_MAX_ANISOTROPY_EXT)));
+gl.uniform1i(U.uTex,0);
+const up=b=>{const mk=a=>{const v=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,v);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(a),gl.STATIC_DRAW);return v};const m={p:mk(b.p),n:mk(b.n),c:mk(b.c),t:mk(b.t),cnt:b.p.length/3};b.p=b.n=b.c=b.t=null;return m};
+/* people part meshes */
+const PLg=B(),PSh=B(),PTo=B(),PAr=B(),PHd=B(),PHr=B(),PBk=B(),PNk=B(),SQ=B(),PCt=B(),PHd2=B();
+{const C='#C3C9CC';box(PCt,0,.32,0,.52,.03,.8,C,0,.8);[-1,1].forEach(s=>{box(PCt,s*.26,.32,0,.02,.5,.8,C,0,.8);for(let z=-.36;z<.4;z+=.12)box(PCt,s*.26,.33,z,.022,.48,.012,C,0,.8)});
+ box(PCt,0,.32,.4,.54,.5,.02,C,0,.8);box(PCt,0,.32,-.4,.54,.5,.02,C,0,.8);box(PCt,0,.82,-.4,.54,.03,.03,C,0,.8);box(PCt,0,.92,-.5,.5,.04,.04,'#0E4D3A',0,.4);
+ [-1,1].forEach(s=>{box(PCt,s*.2,0,-.42,.02,.92,.02,C,0,.8);box(PCt,s*.2,0,.35,.02,.32,.02,C,0,.8)});
+ [[-.2,-.38],[.2,-.38],[-.2,.35],[.2,.35]].forEach(([x,z])=>cyl(PCt,x,0,z,.05,.05,'#1A1A1A',0,.2,8))}
+box(PHd2,0,-.28,-.06,.2,.34,.08,'#FFFFFF',0,.2);
+/* smooth lathe-built body parts (white, tinted per person) */
+function lathe(b,prof,seg=12,zs=1,g=.12,cap=0){const c=[1,1,1];
+ for(let k=0;k<prof.length-1;k++){const[y0,r0]=prof[k],[y1,r1]=prof[k+1],dy=y1-y0,dr=r1-r0,L=Math.hypot(dy,dr)||1;
+  for(let i=0;i<seg;i++){const a0=i/seg*6.2832,a1=(i+1)/seg*6.2832;const V=(y,r,a)=>[Math.cos(a)*r,y,Math.sin(a)*r*zs];const N=a=>{const v=[Math.cos(a)*dy/L,-dr/L,Math.sin(a)*dy/L/zs],l=Math.hypot(v[0],v[1],v[2])||1;return[v[0]/l,v[1]/l,v[2]/l]};
+   const A=V(y0,r0,a0),Bv=V(y0,r0,a1),Cv=V(y1,r1,a1),D=V(y1,r1,a0),na=N(a0),nb=N(a1);
+   [[A,na],[Bv,nb],[Cv,nb],[A,na],[Cv,nb],[D,na]].forEach(([v,n])=>vtx(b,v,n,c,0,T0(g)))}}
+ if(cap){const[y,r]=prof[prof.length-1];for(let i=0;i<seg;i++){const a0=i/seg*6.2832,a1=(i+1)/seg*6.2832;[[0,y,0],[Math.cos(a0)*r,y,Math.sin(a0)*r*zs],[Math.cos(a1)*r,y,Math.sin(a1)*r*zs]].forEach(v=>vtx(b,v,[0,1,0],c,0,T0(g)))}}}
+const PTh=B(),PSn=B(),PUa=B(),PFa=B(),PHn=B(),PPv=B(),PDr=B();
+lathe(PTo,[[.86,.155],[.95,.16],[1.05,.148],[1.17,.17],[1.28,.185],[1.36,.17],[1.41,.11],[1.43,.06]],14,.62,.12,1);
+lathe(PPv,[[.76,.12],[.8,.15],[.88,.162],[.95,.16]],14,.66,.1,1);
+lathe(PTh,[[.02,.072],[-.06,.078],[-.22,.068],[-.42,.05]],10,1,.1);
+lathe(PSn,[[.01,.052],[-.12,.05],[-.28,.04],[-.37,.033]],10,1,.1);
+box(PSh,0,-.075,.035,.1,.075,.25,'#FFFFFF',0,.35);sph(PSh,0,-.075,.15,.05,'#FFFFFF',0,.35,4,8,.5);
+lathe(PUa,[[.03,.055],[-.02,.054],[-.16,.046],[-.29,.04]],9,1,.1);
+lathe(PFa,[[0,.04],[-.14,.035],[-.26,.03]],9,1,.1);
+sph(PHn,0,-.04,0,.042,'#FFFFFF',0,.2,4,7);
+cyl(PNk,0,1.4,0,.05,.12,'#FFFFFF',0,0,8);
+sph(PHd,0,0,0,.105,'#FFFFFF',0,.15,8,12);sph(PHr,0,0,0,.112,'#FFFFFF',0,.2,5,12,.58);
+lathe(PDr,[[.95,.16],[.86,.18],[.7,.22],[.5,.26],[.42,.27]],14,.8,.15);
+box(PBk,0,0,0,.36,.2,.26,'#FFFFFF',0,.3);box(PBk,0,.2,0,.02,.14,.02,'#FFFFFF');
+tq(SQ,[0,0,0],[1,0,0],[0,0,-1],1,1,SHT);
+function upChunk(b,cell){const P=b.p,N=b.n,Cc=b.c,T=b.t,nt=P.length/9,map=new Map();
+ for(let i=0;i<nt;i++){const o=i*9,k=Math.floor((P[o]+P[o+3]+P[o+6])/3/cell)+':'+Math.floor((P[o+2]+P[o+5]+P[o+8])/3/cell);let a=map.get(k);if(!a){a=[];map.set(k,a)}a.push(i)}
+ const pp=new Float32Array(P.length),nn=new Float32Array(N.length),cc=new Float32Array(Cc.length),tt=new Float32Array(T.length),R=[];let v=0;
+ map.forEach(list=>{const first=v,mn=[1e9,1e9,1e9],mx=[-1e9,-1e9,-1e9];for(const i of list)for(let j=0;j<3;j++){const sv=i*3+j;for(let q=0;q<3;q++){const val=P[sv*3+q];pp[v*3+q]=val;nn[v*3+q]=N[sv*3+q];if(val<mn[q])mn[q]=val;if(val>mx[q])mx[q]=val}for(let q=0;q<4;q++){cc[v*4+q]=Cc[sv*4+q];tt[v*4+q]=T[sv*4+q]}v++}R.push({f:first,c:v-first,mn,mx})});
+ const mk=a=>{const bb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,bb);gl.bufferData(gl.ARRAY_BUFFER,a,gl.STATIC_DRAW);return bb};const m={p:mk(pp),n:mk(nn),c:mk(cc),t:mk(tt),cnt:v,R};b.p=b.n=b.c=b.t=null;return m}
+function frPlanes(m){const r=i=>[m[i],m[4+i],m[8+i],m[12+i]],r0=r(0),r1=r(1),r2=r(2),r3=r(3),pl=[];[[1,r0],[-1,r0],[1,r1],[-1,r1],[1,r2],[-1,r2]].forEach(([sg,x])=>pl.push([r3[0]+sg*x[0],r3[1]+sg*x[1],r3[2]+sg*x[2],r3[3]+sg*x[3]]));return pl}
+function boxVis(pl,mn,mx){for(const[a,b2,c,d]of pl){if(a*(a>=0?mx[0]:mn[0])+b2*(b2>=0?mx[1]:mn[1])+c*(c>=0?mx[2]:mn[2])+d<0)return false}return true}
+function drawChunks(m,clip){bind(m);const pl=frPlanes(clip);let s0=-1,e0=-1;for(const r of m.R){if(!boxVis(pl,r.mn,r.mx))continue;if(r.f===e0)e0+=r.c;else{if(s0>=0)gl.drawArrays(gl.TRIANGLES,s0,e0-s0);s0=r.f;e0=r.f+r.c}}if(s0>=0)gl.drawArrays(gl.TRIANGLES,s0,e0-s0)}
+await Y();
+const MMQ=up(MQ),MGM=up(GM),MS=upChunk(S,3),MG=up(G),MF=up(F),MC=upChunk(CE,3),MB=upChunk(BL,6),MSH=up(SH);
+const MP={th:up(PTh),sn:up(PSn),ua:up(PUa),fa:up(PFa),hn:up(PHn),pv:up(PPv),dr:up(PDr),ct:up(PCt),lh:up(PHd2),lg:up(PLg),sh:up(PSh),to:up(PTo),ar:up(PAr),hd:up(PHd),hr:up(PHr),bk:up(PBk),nk:up(PNk),sq:up(SQ)};
+/* door leaves */
+const DL=B(),DF=B();box(DL,0,0,0,1.24,2.85,.025,'#BFE0D5',.12,.95);box(DF,0,0,0,1.26,.06,.05,'#17130F');box(DF,0,2.83,0,1.26,.06,.05,'#17130F');box(DF,-.62,0,0,.05,2.9,.05,'#17130F');box(DF,.62,0,0,.05,2.9,.05,'#17130F');
+const MDL=up(DL),MDF=up(DF);
+[L.P,L.N,L.C,L.T].forEach(l=>gl.enableVertexAttribArray(l));
+function bind(m){gl.bindBuffer(gl.ARRAY_BUFFER,m.p);gl.vertexAttribPointer(L.P,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,m.n);gl.vertexAttribPointer(L.N,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,m.c);gl.vertexAttribPointer(L.C,4,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,m.t);gl.vertexAttribPointer(L.T,4,gl.FLOAT,false,0,0)}
+
+/* ---- math ---- */
+const M4={id(){const o=new Float32Array(16);o[0]=o[5]=o[10]=o[15]=1;return o},
+ mul(a,b){const o=new Float32Array(16);for(let i=0;i<4;i++)for(let j=0;j<4;j++){let s=0;for(let k=0;k<4;k++)s+=a[k*4+j]*b[i*4+k];o[i*4+j]=s}return o},
+ T(x,y,z){const o=M4.id();o[12]=x;o[13]=y;o[14]=z;return o},
+ S(x,y=x,z=x){const o=M4.id();o[0]=x;o[5]=y;o[10]=z;return o},
+ RY(a){const o=M4.id(),c=Math.cos(a),s=Math.sin(a);o[0]=c;o[2]=-s;o[8]=s;o[10]=c;return o},
+ RX(a){const o=M4.id(),c=Math.cos(a),s=Math.sin(a);o[5]=c;o[6]=s;o[9]=-s;o[10]=c;return o},
+ per(f,as,n,fa){const t=1/Math.tan(f/2),o=new Float32Array(16);o[0]=t/as;o[5]=t;o[10]=(fa+n)/(n-fa);o[11]=-1;o[14]=2*fa*n/(n-fa);return o}};
+const mm=(...a)=>a.reduce((x,y)=>M4.mul(x,y));
+const sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],cro=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],nrm=a=>{const l=Math.hypot(a[0],a[1],a[2])||1;return[a[0]/l,a[1]/l,a[2]/l]};
+const look=(e,c)=>{const z=nrm(sub(e,c)),x=nrm(cro([0,1,0],z)),y=cro(z,x);return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-dot(x,e),-dot(y,e),-dot(z,e),1])};
+const ID=M4.id(),MIR=M4.S(1,-1,1);
+
+/* ---- people ---- */
+const TOPS=['#2F3B52','#8A7356','#5B6B4A','#7A2E2E','#D9D4C7','#3F5E7A','#4A4A4A','#B88A5A','#6E4B6B','#E8E2D6'],PANTS=['#2B2F3A','#3A3F4B','#1E2430','#4A4036','#5A6270','#2E3A4A'],HAIR=['#1B1410','#3A2618','#2A2018','#5A4632','#0F0D0B'],SKIN=['#E0B48C','#C99268','#B57A55','#EBC7A3'];
+const W=(x,z,p=0,f)=>[x,z,p,f];
+const PATHS=[
+ {bk:1,sp:.8,path:[W(2.4,13.6),W(2.4,10.2),W(2.6,8.2),W(4.2,8.4),W(6.6,7.4),W(6.6,6.0,2.2,Math.PI/2),W(6.6,3.4,1.8,-Math.PI/2),W(6.6,-4.4,2.5,Math.PI/2),W(5.4,-5.1),W(2.2,-7.9,2,Math.PI),W(-.1,-5.4),W(-.1,3.9),W(-2.6,5.7),W(-3.95,8.6,2.6,-Math.PI/2),W(-2.0,9.0),W(1.1,9.0),W(1.2,12.6),W(2.4,13.6,1)]},
+ {sp:.72,path:[W(-.1,-3.6),W(-.9,-5.7),W(-3.6,-8.3,3.5,Math.PI),W(-6.6,-6.4,2.5,-Math.PI/2),W(-3,-5.9),W(-.9,-5.7),W(-2.7,-3.4),W(-2.7,4.4),W(-3.3,6.2),W(-3.95,6.9,2.6,-Math.PI/2),W(-3.2,8.2),W(.9,9.0),W(1.1,12.4,2),W(1.0,9.3),W(-.1,4.4),W(-.1,-3.6,1)]},
+ {sp:.6,lh:1,dr:1,path:[W(3.95,6.5,2.4,Math.PI/2),W(4.55,4.3),W(4.55,2.4,2.2,Math.PI/2),W(6.6,5.0,2.2,Math.PI/2),W(5.5,7.0),W(3.95,7.6)]},
+ {bk:1,sp:.6,path:[W(6.6,1.6,2.5,Math.PI/2),W(6.6,-4.3,2.5,Math.PI/2)]},
+ {sp:.62,path:[W(-5.85,-3.1,1.5,-Math.PI/2),W(-5.85,4.0,2,-Math.PI/2)]},
+ {sp:.75,path:[W(5,13.6),W(2.5,10.2),W(6.75,8.75,3.8,Math.PI/2),W(1.4,8.9),W(1.2,12.6),W(5,13.6,1.5)]},
+ {sp:.66,path:[W(2.5,-1.4,1.5,-Math.PI/2),W(2.5,3.6,1.8,Math.PI/2)]},
+ {sp:.7,path:[W(-2.7,-1.3,1.4,Math.PI/2),W(-2.7,3.4,1.6,-Math.PI/2)]},
+ {sp:1.0,path:[W(-14,12.2),W(16,12.2,.5),W(16,12.8),W(-14,12.8,.5)]},
+ {ct:1,sp:.5,path:[W(2.5,3.7,2.2,Math.PI),W(2.5,-1.0,2.4,0)]},
+ {ct:1,sp:.5,lh:1,path:[W(6.6,1.6,2.6,Math.PI/2),W(6.6,-4.0,2.8,Math.PI/2),W(6.6,-1.2,1.5,Math.PI/2)]},
+ {sp:.42,s:.62,path:[W(6.6,4.4,2.4,Math.PI/2),W(6.6,7.0,2.6,Math.PI/2),W(5.6,8.0,1.5)]},
+ {sp:.6,lh:1,path:[W(-.1,-1.2,1.8,-Math.PI/2),W(-.1,3.6,2.2,Math.PI/2),W(-.1,1.0,1.6,-Math.PI/2)]},
+ {sp:.9,path:[W(14,12.0),W(-14,12.0,1),W(-14,12.6),W(14,12.6,1)]}];
+const PP=PATHS.map((d,i)=>({reach:1,lh:i%3===1?1:0,...d,x:d.path[0][0],z:d.path[0][1],h:0,i:1,wait:0,mv:0,ph:rnd()*6,s:d.s||(.93+rnd()*.13),sk:hx(SKIN[i%4]),hr:hx(HAIR[i%5]),tp:hx(TOPS[i%TOPS.length]),pn:hx(PANTS[i%PANTS.length])}));
+[[6.9],[8.6]].forEach(([z],k)=>PP.push({x:-6.35,z,h:Math.PI/2,path:null,mv:0,ph:k*2,s:1,sk:hx(SKIN[k+1]),hr:hx(HAIR[k]),tp:hx('#26282B'),pn:hx('#2B2F3A')}));
+PP.forEach(p=>{if(p.path){const w=p.path[1];p.h=Math.atan2(w[0]-p.x,w[1]-p.z)}});
+function moveP(p,dt){if(!p.path){p.mv=0;return}
+ if(p.wait>0){p.wait-=dt;p.mv=0;if(p.face!=null){let df=p.face-p.h;df=Math.atan2(Math.sin(df),Math.cos(df));p.h+=df*Math.min(1,dt*4)}return}
+ p.mv=1;p.face=null;const w=p.path[p.i],dx=w[0]-p.x,dz=w[1]-p.z,d=Math.hypot(dx,dz),s=p.sp*dt;
+ if(d<=s){p.x=w[0];p.z=w[1];p.i=(p.i+1)%p.path.length;p.wait=w[2]||0;p.face=w[3]!=null?w[3]:null;return}
+ p.x+=dx/d*s;p.z+=dz/d*s;let df=Math.atan2(dx,dz)-p.h;df=Math.atan2(Math.sin(df),Math.cos(df));p.h+=df*Math.min(1,dt*7)}
+const drawM=(m,M,c)=>{bind(m);gl.uniformMatrix4fv(U.uM,false,M);gl.uniform4f(U.uCol,c[0],c[1],c[2],0);gl.drawArrays(gl.TRIANGLES,0,m.cnt)};
+/* GPU instancing: one draw call per body-part type instead of one per part */
+const IG=new Map(),SHG={mesh:null,buf:null,data:new Float32Array(20*32),n:0};let ITime=-1;
+function igPush(g,M,c){if((g.n+1)*20>g.data.length){const d=new Float32Array(g.data.length*2);d.set(g.data);g.data=d}const o=g.n*20;g.data.set(M,o);g.data[o+16]=c[0];g.data[o+17]=c[1];g.data[o+18]=c[2];g.data[o+19]=0;g.n++}
+function preparePeople(t){if(!EXI)return;IG.forEach(g=>g.n=0);SHG.n=0;SHG.mesh=MP.sq;
+ PP.forEach(p=>{if(p._f!==FID){p._f=FID;p._parts=buildP(p,t)}for(const[m,M,c]of p._parts){let g=IG.get(m);if(!g){g={mesh:m,buf:gl.createBuffer(),data:new Float32Array(20*32),n:0};IG.set(m,g)}igPush(g,M,c)}igPush(SHG,mm(M4.T(p.x,.01,p.z),M4.S(.8,1,.8)),WHT)});
+ const upl=g=>{if(!g.buf)g.buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.buf);gl.bufferData(gl.ARRAY_BUFFER,g.data.subarray(0,g.n*20),gl.DYNAMIC_DRAW)};IG.forEach(upl);upl(SHG)}
+function drawInst(g,PRE){if(!g.n)return;bind(g.mesh);gl.bindBuffer(gl.ARRAY_BUFFER,g.buf);for(let k=0;k<5;k++){const l=LI[k];if(l<0)continue;gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,4,gl.FLOAT,false,80,k*16);EXI.vertexAttribDivisorANGLE(l,1)}
+ EXI.drawArraysInstancedANGLE(gl.TRIANGLES,0,g.mesh.cnt,g.n);for(let k=0;k<5;k++){const l=LI[k];if(l<0)continue;EXI.vertexAttribDivisorANGLE(l,0);gl.disableVertexAttribArray(l)}}
+function drawPeople(PRE,t){if(!EXI){gl.uniform1f(U.uTint,1);PP.forEach(p=>drawP(p,t,PRE));gl.uniform1f(U.uTint,0);return}
+ gl.uniform1f(U.uInst,1);gl.uniform1f(U.uTint,0);gl.uniformMatrix4fv(U.uPre,false,PRE||ID);IG.forEach(g=>drawInst(g,PRE));gl.uniform1f(U.uInst,0)}
+function drawShadows(){if(!EXI){bind(MP.sq);PP.forEach(p=>{gl.uniformMatrix4fv(U.uM,false,mm(M4.T(p.x,.01,p.z),M4.S(.8,1,.8)));gl.drawArrays(gl.TRIANGLES,0,MP.sq.cnt)});return}
+ gl.uniform1f(U.uInst,1);gl.uniformMatrix4fv(U.uPre,false,ID);drawInst(SHG,null);gl.uniform1f(U.uInst,0)}
+const WHT=[1,1,1];
+function buildP(p,t){const out=[],D=(m,M,c)=>out.push([m,M,c]);const ph=t*6.4*(p.sp||.7)+p.ph,mv=p.mv;
+ const bob=mv?Math.abs(Math.cos(ph))*.028:Math.sin(t*1.3+p.ph)*.004;
+ const P=mm(M4.T(p.x,bob,p.z),M4.RY(p.h),M4.S(p.s));
+ const T=mm(P,M4.RY(mv?Math.sin(ph)*.07:0));
+ [-1,1].forEach(s=>{const ps=ph+(s>0?0:Math.PI),th=mv?-.42*Math.sin(ps):0,kn=mv?.75*Math.max(0,Math.cos(ps)):.03;
+  const Hm=mm(P,M4.T(s*.085,.86,0),M4.RX(th));D(MP.th,Hm,p.dr?p.sk:p.pn);
+  const Km=mm(Hm,M4.T(0,-.43,0),M4.RX(kn));D(MP.sn,Km,p.dr?p.sk:p.pn);D(MP.sh,mm(Km,M4.T(0,-.37,0),M4.RX(-kn*.4-th*.3)),[.07,.065,.06]);
+  let sh=mv?.38*Math.sin(ps):.03,el=mv?-.22-.18*Math.max(0,-Math.sin(ps)):-.12;
+  if(p.ct){sh=-.85;el=-.55}else if(p.bk&&s>0){sh=.04;el=-.15}else if(!p.path){sh=-.55;el=-.7}else if(!mv&&p.reach&&p.face!=null&&s>0){sh=-1.35-.3*Math.max(0,Math.sin(t*1.7+p.ph));el=-.25}
+  const Sm=mm(T,M4.T(s*.205,1.36,0),M4.RX(sh));D(MP.ua,Sm,p.tp);const Em=mm(Sm,M4.T(0,-.29,0),M4.RX(el));D(MP.fa,Em,p.tp);D(MP.hn,mm(Em,M4.T(0,-.26,0)),p.sk)});
+ D(MP.pv,P,p.dr?p.tp:p.pn);D(MP.to,T,p.tp);if(p.dr)D(MP.dr,P,p.tp);
+ D(MP.nk,T,p.sk);D(MP.hd,mm(T,M4.T(0,1.6,.01),M4.S(1,1.16,1.06)),p.sk);D(MP.hr,mm(T,M4.T(0,1.635,-.012),M4.S(1.02,1.05,1.08)),p.hr);
+ if(p.lh)D(MP.lh,mm(T,M4.T(0,1.66,0)),p.hr);
+ if(p.bk)D(MP.bk,mm(P,M4.T(.24,.5,.04)),[.5,.36,.22]);
+ if(p.ct)D(MP.ct,mm(P,M4.T(0,0,.95)),WHT);return out}
+let FID=0;
+function drawP(p,t,PRE){if(p._f!==FID){p._f=FID;p._parts=buildP(p,t)}for(const[m,M,c]of p._parts)drawM(m,PRE?M4.mul(PRE,M):M,c)}
+
+/* ---- labels ---- */
+const LB=[
+ {t:'Вход',p:[1.75,2.2,10.6],s:[0]},
+ {t:'Кофе-автомат · оплата на месте',p:[7.4,2.3,8.75],s:[1]},
+ {t:'Зеркальное стекло · снаружи не видно',p:[-6.6,1.2,-4.4],s:[4]},
+ {t:'Вход только изнутри',p:[-1.5,2.35,-5.7],s:[4,5]},
+ {t:'Витрина · не халяль',p:[-7.4,2.45,-5.45],s:[5]},
+ {t:'Холодильники · напитки',p:[-7.4,2.45,-7.45],s:[5]},
+ {t:'Касса · проверка 21+',p:[-5.0,1.75,6.9],s:[6]},
+ {t:'Табак и IQOS за кассой',p:[-7.4,2.7,7.75],s:[6]},
+ {t:'Не халяль · 21+',p:[-4.8,3.9,-7],s:[7],big:1},
+ {t:'Овощи и фрукты',p:[6.2,2.2,3.0],s:[7]},{t:'Выпечка · кондитерка',p:[5.4,2.7,-8],s:[4,7]},{t:'Готовая еда',p:[7.4,2.8,-7.7],s:[4]},
+ {t:'Молочные продукты',p:[7.4,2.8,-1.2],s:[7]},
+ {t:'Напитки',p:[1.4,2.7,-9],s:[7]},
+ {t:'Кассы',p:[-5.6,2.6,7.7],s:[7]},
+ {t:'Кофе',p:[7.4,2.3,8.75],s:[7]}];
+$('lbs').innerHTML=LB.map(l=>`<span class="lbl${l.big?' big':''}">${l.t}</span>`).join('');
+const LE=[...$('lbs').children];
+
+/* ---- camera path (Catmull-Rom with dwell) ---- */
+const cr=(a,b,c,d,u)=>a.map((_,i)=>.5*((2*b[i])+(-a[i]+c[i])*u+(2*a[i]-5*b[i]+4*c[i]-d[i])*u*u+(-a[i]+3*b[i]-3*c[i]+d[i])*u*u*u));
+const ease=u=>u*u*(3-2*u);
+function want(p){const t=clamp(p)*(NK-1),k=Math.min(NK-2,Math.floor(t)),u=ease(clamp((t-k-.1)/.8));const g=i=>KEYS[Math.max(0,Math.min(NK-1,i))];
+ return{e:cr(g(k-1)[0],g(k)[0],g(k+1)[0],g(k+2)[0],u),c:cr(g(k-1)[1],g(k)[1],g(k+1)[1],g(k+2)[1],u),s:KEYS[Math.round(t)][2]}}
+let vis=false,raf=0,last=0,Wd=1,Hd=1,mx=0,my=0,door=0;
+const w0=want(tgt);const cam={e:[...w0.e],c:[...w0.c]};
+const MOB=matchMedia('(pointer:coarse)').matches||innerWidth<700,DPRMAX=Math.min(devicePixelRatio||1,2),DPRMIN=Math.min(devicePixelRatio||1,innerWidth<700?1.5:1.75);
+let dpr=DPRMIN,Q=2,cbox={width:1,height:1},ft=0,fn=0,ref=16.7,good=0;
+const measureBox=()=>{const r=cv.getBoundingClientRect();cbox={width:r.width,height:r.height}};measureBox();
+if(window.ResizeObserver)new ResizeObserver(measureBox).observe(cv);else addEventListener('resize',measureBox);
+function size(){Wd=Math.max(1,Math.round(cbox.width*dpr));Hd=Math.max(1,Math.round(cbox.height*dpr));if(cv.width!==Wd||cv.height!==Hd){cv.width=Wd;cv.height=Hd}return cbox}
+function adapt(ms){if(ms<=0||document.hidden)return;ms=Math.min(ms,200);ref=Math.min(ref,Math.max(6,ms));ft+=ms;fn++;if(fn<30)return;const avg=ft/fn;ft=0;fn=0;
+ /* quality is never lowered below the original; sharper (up to 2x) only when the device has headroom */
+ if(avg<ref*1.12){if(++good>=3){good=0;if(dpr<DPRMAX-.01)dpr=Math.min(DPRMAX,dpr+.1)}}else good=0}
+function render(now){raf=0;if(last)adapt(now-last);const dt=Math.min(.05,(now-(last||now))/1000);last=now;FID++;
+ const rc=size();const w=want(tgt);setStep(w.s);
+ const kf=1-Math.exp(-dt*(RM?30:4.5));for(let i=0;i<3;i++){cam.e[i]+=(w.e[i]-cam.e[i])*kf;cam.c[i]+=(w.c[i]-cam.c[i])*kf}
+ const sw=RM?0:Math.sin(now/2100)*.03;const E=[cam.e[0]+mx*.3+sw,cam.e[1]+my*.15,cam.e[2]],C=[cam.c[0]+mx*.45,cam.c[1]-my*.22,cam.c[2]];
+ const as=Wd/Hd,fov=(as<1?70:54)*Math.PI/180;const VP=M4.mul(M4.per(fov,as,.06,160),look(E,C));
+ PP.forEach(p=>moveP(p,RM?dt*.5:dt));preparePeople(now/1000);
+ let near=Math.hypot(E[0]-1.75,E[2]-9.6)<2.8&&E[1]<3;PP.forEach(p=>{if(Math.hypot(p.x-1.75,p.z-9.6)<2.3)near=true});door+=((near?1:0)-door)*Math.min(1,dt*3);
+ const showC=E[1]<3.5,showB=E[1]<9;
+ gl.viewport(0,0,Wd,Hd);gl.clearColor(.02,.03,.045,1);gl.uniform1f(U.uMir,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.depthMask(true);gl.disable(gl.BLEND);
+ gl.uniformMatrix4fv(U.uVP,false,VP);gl.uniform3f(U.uEye,E[0],E[1],E[2]);gl.uniform1f(U.uTint,0);
+ /* 1 reflection */
+ const doRefl=showC&&Q>0;
+ if(doRefl){gl.uniform1f(U.uMode,3);gl.uniformMatrix4fv(U.uM,false,MIR);const VPR=M4.mul(VP,MIR);drawChunks(MS,VPR);drawChunks(MC,VPR);drawPeople(MIR,now/1000)}
+ /* 2 floor */
+ gl.uniform1f(U.uMode,4);gl.uniform1f(U.uFA,doRefl?.58:1);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.uniformMatrix4fv(U.uM,false,ID);bind(MF);gl.drawArrays(gl.TRIANGLES,0,MF.cnt);gl.disable(gl.BLEND);
+ /* 3 solids */
+ gl.uniform1f(U.uMode,0);drawChunks(MS,VP);
+ if(showC)drawChunks(MC,VP);
+ if(showB)drawChunks(MB,VP);
+ const dl=door*1.2;drawM(MDF,M4.T(1.125-dl,.0,9.66),[.09,.08,.07]);drawM(MDF,M4.T(2.375+dl,0,9.66),[.09,.08,.07]);
+ drawPeople(null,now/1000);
+ /* 3b mirror (front of non-halal room) */
+ const inRoom=E[2]<-4.5&&E[0]<-1.6&&E[1]<3.6;
+ const doMir=E[2]>-4.5&&E[1]<9&&boxVis(frPlanes(VP),[-8,.15,-4.52],[-1.6,3.6,-4.48]);
+ if(doMir){const MZ=mm(M4.T(0,0,-4.5),M4.S(1,1,-1),M4.T(0,0,4.5)),tt=now/1000;
+  gl.enable(gl.STENCIL_TEST);gl.clearStencil(0);gl.clear(gl.STENCIL_BUFFER_BIT);
+  gl.stencilFunc(gl.ALWAYS,1,255);gl.stencilOp(gl.KEEP,gl.KEEP,gl.REPLACE);gl.colorMask(false,false,false,false);gl.depthMask(false);
+  gl.uniform1f(U.uMode,0);gl.uniformMatrix4fv(U.uM,false,ID);bind(MMQ);gl.drawArrays(gl.TRIANGLES,0,MMQ.cnt);
+  gl.stencilFunc(gl.EQUAL,1,255);gl.stencilOp(gl.KEEP,gl.KEEP,gl.KEEP);gl.depthMask(true);gl.depthFunc(gl.ALWAYS);gl.depthRange(1,1);gl.drawArrays(gl.TRIANGLES,0,MMQ.cnt);gl.depthRange(0,1);gl.depthFunc(gl.LESS);
+  gl.colorMask(true,true,true,true);gl.uniform1f(U.uMir,1);
+  gl.uniformMatrix4fv(U.uM,false,MZ);const VPZ=M4.mul(VP,MZ);drawChunks(MS,VPZ);if(showC)drawChunks(MC,VPZ);
+  gl.uniform1f(U.uMode,4);gl.uniform1f(U.uFA,1);bind(MF);gl.drawArrays(gl.TRIANGLES,0,MF.cnt);gl.uniform1f(U.uMode,0);
+  drawPeople(MZ,tt);
+  gl.uniform1f(U.uMir,0);gl.disable(gl.STENCIL_TEST)}
+ /* 4 shadows */
+ gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);gl.uniform1f(U.uMode,2);
+ gl.uniformMatrix4fv(U.uM,false,ID);bind(MSH);gl.drawArrays(gl.TRIANGLES,0,MSH.cnt);
+ drawShadows();
+ /* 5 glass */
+ gl.uniform1f(U.uMode,1);gl.uniformMatrix4fv(U.uM,false,ID);bind(MG);gl.drawArrays(gl.TRIANGLES,0,MG.cnt);if(!doMir&&!inRoom)gl.uniform1f(U.uGA,.94);bind(MGM);gl.drawArrays(gl.TRIANGLES,0,MGM.cnt);gl.uniform1f(U.uGA,0);
+ bind(MDL);gl.uniformMatrix4fv(U.uM,false,M4.T(1.125-dl,.0,9.66));gl.drawArrays(gl.TRIANGLES,0,MDL.cnt);gl.uniformMatrix4fv(U.uM,false,M4.T(2.375+dl,0,9.66));gl.drawArrays(gl.TRIANGLES,0,MDL.cnt);
+ gl.depthMask(true);gl.disable(gl.BLEND);
+ /* labels */
+ const rw=rc.width,rh=rc.height;
+ LB.forEach((l,i)=>{const p=l.p,x=VP[0]*p[0]+VP[4]*p[1]+VP[8]*p[2]+VP[12],y=VP[1]*p[0]+VP[5]*p[1]+VP[9]*p[2]+VP[13],ww=VP[3]*p[0]+VP[7]*p[1]+VP[11]*p[2]+VP[15];
+  const el=LE[i];if(ww<=.3){el.style.opacity=0;return}const sx=(x/ww*.5+.5)*rw,sy=(1-(y/ww*.5+.5))*rh;
+  const on=l.s.includes(w.s)&&sx>20&&sx<rw-20&&sy>34&&sy<rh-24;el.style.opacity=on?1:0;el.style.transform=`translate(${sx}px,${sy}px) translate(-50%,calc(-100% - 12px))`});
+ if(vis&&window.MODE3D)raf=requestAnimationFrame(render);else raf=0}
+kick=()=>{if(!raf&&vis&&window.MODE3D){last=0;raf=requestAnimationFrame(render)}};
+new IntersectionObserver(es=>{vis=es[0].isIntersecting;kick()},{rootMargin:'200px 0px'}).observe($('inside'));
+addEventListener('pointermove',e=>{if(e.pointerType==='mouse'){mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)}},{passive:true});
+ready=true;kick();
+}
+})();
+
+(()=>{const p=$('ph');if(!p)return;const sc=[...p.querySelectorAll('.pscr')],tb=[...p.querySelectorAll('.ptab span')];let k=0,vis=false,tm=0;
+ const go=n=>{k=(n+sc.length)%sc.length;sc.forEach((e,i)=>e.classList.toggle('on',i===k));tb.forEach((e,i)=>e.classList.toggle('on',i===k))};
+ const loop=()=>{clearInterval(tm);if(vis&&!RM)tm=setInterval(()=>go(k+1),3800)};
+ new IntersectionObserver(es=>{vis=es[0].isIntersecting;p.classList.toggle('off',!vis);loop()}).observe(p);
+ p.onclick=()=>{go(k+1);loop()};p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go(k+1);loop()}}})();
+measure();frame.cur=-1;frame();
+</script>
+</body>
+</html>

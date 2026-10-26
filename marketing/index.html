@@ -1124,6 +1124,8 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 .hfoot{position:relative;overflow:hidden;border-top:1px solid var(--hl);padding-block:26px calc(34px + env(safe-area-inset-bottom,0px));color:#6E695F;font-size:13px}
 .hfoot .hw{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .hwm{font:700 clamp(60px,15vw,190px)/.8 var(--fs);letter-spacing:.06em;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(217,184,106,.16);margin-bottom:18px;white-space:nowrap}
+.hdl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}.hdl span{color:var(--hm);font-size:13px}
+.hpdf{font:800 14px var(--body);color:#1a140a;background:linear-gradient(180deg,#F3DFA6,#D9B86A 55%,#A88638);border-radius:99px;padding:12px 20px;box-shadow:0 10px 30px -12px rgba(217,184,106,.7)}.hpdf[disabled]{opacity:.7;cursor:progress}
 .hagain{font:600 12px var(--body);color:#F3DFA6;border:1px solid var(--hl);border-radius:99px;padding:7px 14px}
 @media (prefers-reduced-motion:reduce){.home2 *{transition:none!important;animation:none!important}}
 
@@ -1204,6 +1206,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
    <div><b class="hgold">3,95</b><span>млрд сум дохода от партнёров в 2026</span></div>
    <div><b class="hgold">100+</b><span>акций и активностей</span></div>
   </div>
+  <div class="hdl"><button class="hpdf" data-pdf="all" type="button">⤓ Скачать всё одним PDF</button><span>Команда, резюме, зоны ответственности, дашборды и отчёты на белом фоне, готово к печати</span></div>
  </div>
 
  <div class="hmq" aria-hidden="true"><div><span>Бренд</span><span>Промо</span><span>Открытия</span><span>Медиа</span><span>Trade-маркетинг</span><span>Digital</span><span>Партнёры</span><span>Аналитика</span><span>Бренд</span><span>Промо</span><span>Открытия</span><span>Медиа</span><span>Trade-маркетинг</span><span>Digital</span><span>Партнёры</span><span>Аналитика</span></div></div>
@@ -1240,7 +1243,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
   </div>
  </section>
 
- <footer class="hfoot"><div class="hwm" aria-hidden="true">MARKETING</div><div class="hw"><span>© 2026 Департамент маркетинга · Makro</span><button class="hagain" id="hagain" type="button">↻ Показать заставку ещё раз</button></div></footer>
+ <footer class="hfoot"><div class="hwm" aria-hidden="true">MARKETING</div><div class="hw"><span>© 2026 Департамент маркетинга · Makro</span><span style="display:flex;gap:8px;flex-wrap:wrap"><button class="hagain" data-pdf="all" type="button">⤓ Всё одним PDF</button><button class="hagain" id="hagain" type="button">↻ Показать заставку ещё раз</button></span></div></footer>
 </div>
 
 
@@ -1419,13 +1422,6 @@ function buildTeamX(){
   </tbody></table>
   <p style="color:var(--mute);font-size:12.5px;margin:12px 0 0">Было — около 20 человек при 54–55 магазинах (по памяти руководителя, уточняется). ${BEFORE.filter(r=>r[3]==="0").length} функций сейчас ведутся без отдельного сотрудника.</p></div>
  <div class="dgrid" style="margin-top:12px">
-  <div class="gcard"><div class="glab">Кто что совмещает · вся команда</div><div class="resp resp2">${[
-   ["Руководство","Заместитель директора и начальник отдела рекламы: процессы, команда, поставщики, отчётность, открытия"],
-   ["Дизайнеры · 2","Вся реклама сети: POSM, соцсети, экраны, ролики — работа, которую раньше делали 4 дизайнера"],
-   ["Маркетологи рекламы","Бренд, SMM, CRM и лояльность, экраны SmartCast, промо с коммерцией"],
-   ["Маркетологи конъюнктуры","Рынок и цены конкурентов, промоакции, наружная реклама, выезды в магазины"]
-  ].map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join("")}</div>
-   <p style="color:var(--mute);font-size:12px;margin:12px 0 0">Нажмите на сотрудника в схеме выше, чтобы увидеть его направления.</p></div>
   <div class="gcard"><div class="glab">Что команда взяла на себя дополнительно</div><ul class="blist">${EXTRA.map(x=>`<li>${x}</li>`).join("")}</ul>
    <p style="color:var(--mute);font-size:12.5px;margin:12px 0 0">Раньше продажей рекламы занимались категорийные менеджеры, а маркетинг готовил дизайн. Сейчас у коммерции тоже меньше людей, поэтому маркетинг участвует в продажах сам.</p></div>
  </div>
@@ -1651,15 +1647,15 @@ function close(){sheet.classList.remove("on");scrim.classList.remove("on")}
 document.getElementById("close").onclick=close;scrim.onclick=close;
 addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(sheet.classList.contains("on"))close();else if(current&&current!=="kit")home()});
 const photos=(i,l)=>`<div class="phs"><div style="background:${grad(i,150)}"><span>фото · ${l}</span></div><div style="display:grid;gap:2px"><div style="background:${grad(i+1,200)}"><span>фото</span></div><div style="background:${grad(i+2,60)}"><span>фото</span></div></div></div>`;
-function person(p){const i=TEAM.indexOf(p);let boss=p.boss&&TEAM.find(x=>x.id===p.boss);if(boss&&boss.team)boss=TEAM.find(x=>x.id===boss.boss);const subs=(function d(id){return TEAM.filter(x=>x.boss===id&&!x.team).flatMap(x=>[x,...d(x.id)])})(p.id);
+function person(p,tree){const i=TEAM.indexOf(p);let boss=p.boss&&TEAM.find(x=>x.id===p.boss);if(boss&&boss.team)boss=TEAM.find(x=>x.id===boss.boss);const subs=(function d(id){return TEAM.filter(x=>x.boss===id&&!x.team).flatMap(x=>[x,...d(x.id)])})(p.id);
  const row=(k,v,copy)=>v?`<dt>${k}</dt><dd>${v}${copy?` <button class="cp" data-copy="${v}">Копировать</button>`:""}</dd>`:"";
  if(p.team){open(`<div class="eyebrow">${p.dept}</div><h2 style="margin-top:12px">${p.name}</h2><p style="color:var(--mute)">${p.role}</p><h4>Сотрудники отдела · ${subs.length}</h4><div class="subs">${subs.map(x=>`<button class="person" data-p="${x.id}"><span class="ava" style="overflow:hidden">${x.photo?`<img loading="lazy" decoding="async" src="${photoOf(x)}" alt="" style="width:100%;height:100%;object-fit:cover">`:ini(x.name)}</span><span><b>${x.name}</b><small>${x.role}</small></span></button>`).join("")}</div>`);return}
  open(`<div class="eyebrow">${p.grp}</div><div class="pcard">${p.photo?`<span class="pava"><img loading="lazy" decoding="async" src="${photoOf(p)}" alt=""></span>`:`<span class="pava" style="background:${grad(i)}">${ini(p.name)}</span>`}
  <div><h2>${p.name}</h2>${p.lat?`<div class="lat">${p.lat}</div>`:""}<div class="prole">${p.role}</div></div></div>
- ${RESP[p.id]?respTree(p):""}
+ ${tree&&RESP[p.id]?respTree(p):""}
  <h4>Сведения о работе</h4><dl class="kv">${row("Подразделение",p.dept)}${row("Команда",p.grp!==p.dept?p.grp:"")}${row("Должность",p.role)}${row("Руководитель",boss?boss.name:"")}${row("В Makro с",p.since)}</dl>
  ${p.phone?`<h4>Контакты</h4><dl class="kv">${row("Телефон",p.phone,1)}${row("Почта",p.mail,1)}</dl>`:""}
- ${p.zone&&!RESP[p.id]?`<h4>Отвечает за</h4><ul>${p.zone.map(z=>`<li>${z}</li>`).join("")}</ul>`:""}
+ ${p.zone&&!RESP[p.id]&&0?`<h4>Отвечает за</h4><ul>${p.zone.map(z=>`<li>${z}</li>`).join("")}</ul>`:""}
  ${subs.length?`<h4>В подчинении · ${subs.length}</h4><div class="subs">${subs.map(x=>`<button class="person" data-p="${x.id}"><span class="ava" style="overflow:hidden;background:${grad(TEAM.indexOf(x))}">${x.photo?`<img loading="lazy" decoding="async" src="${photoOf(x)}" alt="" style="width:100%;height:100%;object-fit:cover">`:ini(x.name)}</span><span><b>${x.name}</b><small>${x.role}</small></span></button>`).join("")}</div>`:""}${typeof CVOF!=="undefined"&&CVOF[p.id]?`<p style="margin-top:22px"><button class="cta" data-opencv="${CVOF[p.id]}">Открыть резюме →</button></p>`:""}`)}
 function month(i){const m=MONTHS[i];
  open(`<div class="eyebrow">Сделанные работы · 2026</div><h2>${m.m}</h2>
@@ -1668,7 +1664,7 @@ function month(i){const m=MONTHS[i];
 document.addEventListener("click",e=>{
  const c=e.target.closest("[data-copy]");if(c){const v=c.dataset.copy;try{navigator.clipboard.writeText(v).then(()=>{c.textContent="Скопировано";setTimeout(()=>c.textContent="Копировать",1500)},()=>c.textContent=v)}catch(_){c.textContent=v}return}
  const t=e.target.closest("[data-p],[data-m]");if(!t)return;
- if(t.dataset.p)person(TEAM.find(p=>p.id===t.dataset.p));else month(+t.dataset.m)});
+ if(t.dataset.p)person(TEAM.find(p=>p.id===t.dataset.p),t.classList.contains("ldc"));else month(+t.dataset.m)});
 
 /* ===== NEW PAGES: dashboard, done, issues, resume ===== */
 const DONE={"i90": "img/449739e0e2c5.webp", "i72": "img/dd339ca61470.webp", "i59": "img/d85be7830b55.webp", "i57": "img/c5e7edd6f3ca.webp", "i33": "img/9d5b0183ad68.webp", "i64": "img/44771bacb7bd.webp", "i55": "img/fd143e6a0423.webp", "i82": "img/b20a20e20f3d.webp", "i47": "img/8711ad779df2.webp", "i46": "img/3e3c7f483701.webp", "i12": "img/e34eb21cc1a3.webp", "i75": "img/643d2aa9f602.webp", "i61": "img/9329329b87d2.webp", "i23": "img/5b030c607bd2.webp", "i36": "img/fa1614cf7111.webp", "i16": "img/c60461f0b798.webp", "i68": "img/402980762d4d.webp", "i44": "img/af0d6192176a.webp", "i14": "img/fdf2677ba58a.webp", "i83": "img/becf9d1ff03c.webp", "i87": "img/f7066c8908e7.webp", "i22": "img/5e68d71a24fe.webp", "i40": "img/6cf9279397f8.webp", "i18": "img/f34d5ad32275.webp", "i73": "img/72e827e46c09.webp", "i30": "img/118ecc655827.webp", "i69": "img/0f94d5d5bb5b.webp", "i39": "img/6de86f5f5cc3.webp", "i80": "img/99fb638488e6.webp", "i21": "img/9dfe68bda8f4.webp", "i35": "img/82437847bd03.webp", "i50": "img/ef61313b229e.webp", "i20": "img/0f87be823a19.webp", "i89": "img/41d4d1830615.webp", "i63": "img/468c385e7a2e.webp", "i17": "img/83f8314519ce.webp", "i41": "img/076f46dc24db.webp", "i56": "img/074501f41741.webp", "i93": "img/66be3a34e9e8.webp", "i54": "img/a6ae933e00b2.webp", "i65": "img/6800a3a8080e.webp", "i48": "img/b5ab2be7246e.webp", "i78": "img/934705e5e751.webp", "i19": "img/e0674d15a958.webp", "i58": "img/9481bc5075e7.webp", "i52": "img/d0fb992e2a07.webp", "i91": "img/a954ef6b8cfd.webp", "i38": "img/c711e99abd69.webp", "i62": "img/a2efbdc7c81e.webp", "i86": "img/2b4798f5ef2b.webp", "i81": "img/1085f6da6c8f.webp", "i42": "img/92adcf97ed2d.webp", "i88": "img/61fc6cb9e61f.webp", "i25": "img/34f7d093098e.webp", "i60": "img/f6217701f9e8.webp", "i27": "img/b30c09466601.webp", "i94": "img/f583751ecc77.webp"};
@@ -2177,7 +2173,7 @@ function respTree(p){const r=RESP[p.id],s=respStats(p.id),all=1+s.roles.length;l
  <div class="rzn"><div class="row"><span class="lab">По штату</span><div class="segs"><i class="own"></i></div></div>
   <div class="row"><span class="lab">Сейчас</span><div class="segs"><i class="own"></i>${s.roles.map(()=>`<i class="ex"></i>`).join("")}</div></div>
   <div class="roles"><span class="own">${r.own}</span>${s.roles.map(x=>`<span>+ ${x}</span>`).join("")}</div>
-  ${s.nw?`<p style="margin:10px 0 0;font-size:12.5px;color:var(--mute)">${s.nw===1?"1 направление":s.nw+" направления"} раньше не входили в работу маркетинга.</p>`:""}</div>
+  ${s.nw?`<p style="margin:10px 0 0;font-size:12.5px;color:var(--mute)">${s.nw===1?"1 направление раньше не входило":s.nw+" направления раньше не входили"} в работу маркетинга.</p>`:""}</div>
  <div class="rzt"><div class="rzr"><span class="ph">${p.photo?`<img loading="lazy" decoding="async" src="${photoOf(p)}" alt="">`:""}</span><span><b>${short(p)}</b><small>${r.own}</small></span></div>
  ${r.b.map((x,i)=>{d+=.12;const bd=d;return `<div class="rzb" style="--d:${bd.toFixed(2)}s"><i></i><h5>${x[0]}${x[3]?`<span class="tag nw">новое</span>`:""}${x[4]?`<span class="tag">${x[4]===1?"поддержка":x[4]}</span>`:""}${x[2].length?`<span class="tag">за роль: ${x[2].join(", ")}</span>`:""}</h5>
   <div class="rzc">${x[1].map((t,j)=>`<span style="--d:${(bd+.15+j*.06).toFixed(2)}s">${t}</span>`).join("")}</div></div>`}).join("")}</div>
@@ -2246,7 +2242,7 @@ h2.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)retu
 </style>
 <script>
 /* ---- скачать PDF: отчёты и резюме ---- */
-const PDFNAMES={team:"Makro — Команда маркетинга",dash:"Makro — Дашборд октябрь 2026",income:"Makro — Доходность 6 месяцев",done:"Makro — Что сделано",issues:"Makro — Проблемы и решения"};
+const PDFNAMES={all:"Makro — Маркетинг 2026, полный отчёт",team:"Makro — Команда маркетинга",dash:"Makro — Дашборд октябрь 2026",income:"Makro — Доходность 6 месяцев",done:"Makro — Что сделано",issues:"Makro — Проблемы и решения"};
 const loadJS=src=>new Promise((ok,no)=>{const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=()=>no(new Error("load "+src));document.head.appendChild(s)});
 let libs=null;
 function pdfLibs(){return libs||(libs=Promise.all([
@@ -2271,15 +2267,18 @@ async function makePDF(id){
  const name=cvMode?"Резюме — "+CVNAMES[cvCur][0]:PDFNAMES[id];
  return {blob:pdf.output("blob"),filename:name+".pdf"};
 }
+// light, print-ready PDFs are prebuilt next to the page (pdf/*.pdf); the in-browser render is only a fallback
+async function prebuilt(key){try{const r=await fetch("pdf/"+(key==="all"?"makro-marketing-2026":key)+".pdf");if(r.ok){const b=await r.blob();if(b.size>1000&&!/html/.test(b.type))return b}}catch(_){}return null}
 async function savePDF(btn,id){
  const t=btn.textContent;btn.disabled=true;btn.textContent="Готовлю PDF…";
- try{const {blob,filename}=await makePDF(id);
+ try{const pre=await prebuilt(id==="cv"?"cv-"+cvCur:id);
+  const {blob,filename}=pre?{blob:pre,filename:(id==="cv"?"Резюме — "+CVNAMES[cvCur][0]:PDFNAMES[id])+".pdf"}:await makePDF(id);
   const dl=window.claude&&window.claude.use?await window.claude.use("downloads"):null;
   if(dl){try{await dl.save({filename,data:blob})}catch(e){if(e&&e.code!=="declined")throw e}}
   else{const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000)}}
  catch(e){console.error(e);btn.textContent="Не получилось, печать…";setTimeout(()=>window.print(),300)}
  finally{setTimeout(()=>{btn.disabled=false;btn.textContent=t},1200)}}
-document.addEventListener("click",e=>{const b=e.target.closest("[data-pdf]");if(!b)return;const id=b.closest(".page").id.slice(2);savePDF(b,id)});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-pdf]");if(!b)return;const id=b.dataset.pdf||b.closest(".page").id.slice(2);savePDF(b,id)});
 </script>
 
 </body></html>

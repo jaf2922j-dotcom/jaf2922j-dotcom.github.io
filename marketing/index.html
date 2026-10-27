@@ -876,6 +876,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 .gal3 button{aspect-ratio:1;border-radius:14px;overflow:hidden;background:#0c1328 center/cover no-repeat;border:1px solid #1a2448;transition:transform .25s,border-color .2s}
 .gal3 button:hover{transform:scale(1.03);border-color:var(--gold)}
 .gal3.tall button{aspect-ratio:3/4}
+.nph,.deal .im.nph,.sim.nph{cursor:default;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#141a3a,#0c1028);border:1px dashed rgba(127,216,224,.35);color:var(--mute);font-size:13px;text-align:center}.sim.nph{font-size:10px}.nph-note{margin-top:12px;padding:12px 16px;border:1px dashed rgba(127,216,224,.35);border-radius:14px;color:var(--mute);font-size:14px}
 .sdw-h{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:16px}.sdw-h h4{margin:0;font:700 26px/1.15 var(--brand);color:var(--fg,#fff)}.sdw-h p{margin:6px 0 0;color:var(--mute);font-size:13.5px;max-width:600px}
 .sdw-ks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .sdw-k{display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line,#2f2a1f);border-radius:18px;overflow:hidden;background:#ffffff06;min-width:0}
@@ -1827,12 +1828,12 @@ function buildDone(){
   <div class="tri3" style="margin-bottom:14px"><div><div class="gnum">14+</div><span>маркетов обновлено</span></div><div><div class="gnum">45</div><span>указателей установлено</span></div><div><div class="gnum">42</div><span>фасадных флажка · итого 87 элементов</span></div></div>
   ${gallery([63,64,65,68,69,72,73,75])}</section>
  <section class="dsec" id="d-po"><header><div><div class="dsn">05</div><h3>Своё производство POSM</h3><p>Внутренний плоттер: дизайн → печать → доставка по сети → размещение. Плюс новые скидочные указатели и ценники в едином стиле.</p></div><div class="bignum"><span class="gnum">100+</span><span>A1-постеров своей печати</span></div></header>
-  ${gallery([78,80,81,82,83])}</section>
+  ${gallery([78])}<div class="nph-note">Скидочные указатели и ценники в едином стиле: делали, фото пока нет.</div></section>
  <section class="dsec" id="d-ad"><header><div><div class="dsn">06</div><h3>Makro — рекламная платформа</h3><p>Каждая точка контакта с покупателем стала рекламной площадкой: фасады, LED, кассовые зоны и лотки, торговый зал, тележки, служебный транспорт, POSM. Продажи — вместе с коммерческим департаментом.</p></div><div class="bignum"><span class="gnum">~1,8</span><span>млрд сум договоров</span></div></header>
   <div class="deals">
    <div class="gcard deal"><div class="im" data-lb="86" style="background-image:url(${im(86)})"></div><div class="glab">Rozmetov × Makro</div><div class="gnum">~1 млрд</div><p>Кассовые зоны, кассовые лотки, фасадная баннерная реклама.</p></div>
    <div class="gcard deal"><div class="im" data-lb="89" style="background-image:url(${im(89)})"></div><div class="glab">Pepsi × Makro</div><div class="gnum">800 млн</div><p>Реклама на служебном автотранспорте Makro.</p></div>
-   <div class="gcard deal"><div class="im" data-lb="93" style="background-image:url(${im(93)})"></div><div class="glab">Bahroma × Makro</div><div class="gnum">10 млн/мес</div><p>LED-панель при стандарте 2,5 млн. В ролике показан и бренд Makro.</p></div>
+   <div class="gcard deal"><div class="im nph"><span>Фото пока нет</span></div><div class="glab">Bahroma × Makro</div><div class="gnum">10 млн/мес</div><p>LED-панель при стандарте 2,5 млн. В ролике показан и бренд Makro.</p></div>
   </div>
   <div class="gcard" style="margin-top:12px"><div class="glab">Ещё по рекламе</div><ul class="blist"><li>Новый прайс на рекламные зоны: доход +10–20%</li><li>10+ новых партнёров и рекламодателей</li><li>Аудит 30–60 магазинов: POSM, навигация, протоколы</li></ul></div>
   <div style="margin-top:12px">${gallery([87,88,90,91,94])}</div></section>
@@ -1952,7 +1953,7 @@ function buildIncome(){
  <div class="sold">
   <div class="srow"><div class="sim" data-lb="86" style="background-image:url(${im(86)})"></div><div><b>Rozmetov</b><small>Кассовые зоны, кассовые лотки, фасадная баннерная реклама</small></div><div class="sbar"><i style="width:100%"></i></div><div class="gnum">~1 млрд</div></div>
   <div class="srow"><div class="sim" data-lb="89" style="background-image:url(${im(89)})"></div><div><b>Pepsi</b><small>Реклама на служебном автотранспорте Makro</small></div><div class="sbar"><i style="width:80%"></i></div><div class="gnum">800 млн</div></div>
-  <div class="srow"><div class="sim" data-lb="93" style="background-image:url(${im(93)})"></div><div><b>Bahroma</b><small>LED-панель · в ролике показан и бренд Makro</small></div><div class="sbar"><i style="width:4%"></i></div><div class="gnum">10 млн<small style="font-size:.45em">/мес</small></div></div>
+  <div class="srow"><div class="sim nph"><span>нет фото</span></div><div><b>Bahroma</b><small>LED-панель · в ролике показан и бренд Makro</small></div><div class="sbar"><i style="width:4%"></i></div><div class="gnum">10 млн<small style="font-size:.45em">/мес</small></div></div>
   <div class="srow"><div class="sim" data-lb="55" style="background-image:url(${im(55)})"></div><div><b>Промо и розыгрыши</b><small>Египет, Вьетнам, Sardor Snack, скретч-карты — призы и бюджет от партнёров</small></div><div class="sbar"><i style="width:0"></i></div><div class="gnum">экономия</div></div>
  </div>
  <div class="dgrid">

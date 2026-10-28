@@ -150,6 +150,7 @@ svg .wheel{fill:var(--fg)}
 .lb.src small{color:#7fb0e6}
 .lb.fl small{color:#ff6fd8}
 .lb.ru small{color:#34d1c6}
+.lb.uz small{color:#7be0a8}
 .lb.fl{font-size:11.5px;padding:3px 8px}
 .lb.hub{border-color:#f08a3a;font-size:13.5px}
 .lb::after{content:"";position:absolute;left:50%;bottom:-6px;width:1px;height:6px;background:rgba(255,255,255,.45)}
@@ -220,6 +221,25 @@ svg .wheel{fill:var(--fg)}
 @media(max-width:640px){.open>div{grid-template-columns:1fr;gap:4px}}
 
 .pay{margin-top:20px;width:100%;padding:14px 16px;border-radius:12px;background:var(--accent-soft);font-size:.93rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:var(--fg);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn.ghost{background:var(--surface);color:var(--fg);border:1.5px solid var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mk{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.mk{grid-template-columns:1fr}}
+.mkc{border-radius:18px;padding:26px;display:grid;gap:14px;align-content:start;color:#fff;position:relative;overflow:hidden}
+.mkc.uz{background:linear-gradient(150deg,#0f6e5c,#0b4f63)}
+.mkc.cis{background:linear-gradient(150deg,#1d4e89,#5b2a86)}
+.mkc::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
+.mkc h3{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.3rem);color:#fff}
+.mkc ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:.96rem}
+.mkc .mkn{font-size:.88rem;color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.2);padding-top:12px}
+.tagx{font:600 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.navpdf{flex:none;margin-left:auto;font-size:.82rem;font-weight:600;color:#fff;background:var(--accent);text-decoration:none;padding:7px 12px;border-radius:99px;white-space:nowrap}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;inset:0 -40px auto -40px;height:100%;z-index:-1;background:radial-gradient(600px 260px at 85% 10%,rgba(216,102,26,.14),transparent 70%),radial-gradient(500px 240px at 10% 90%,rgba(29,78,137,.12),transparent 70%)}
+
 /* ask */
 .asks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%}
 @media(max-width:820px){.asks{grid-template-columns:1fr}}
@@ -309,19 +329,20 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 <nav class="topnav" aria-label="Разделы"><div class="in">
   <a class="brand" href="#top">OGM <b>E-com</b></a>
-  <a class="l" href="#schema">Схема</a><a class="l" href="#value">Польза</a><a class="l" href="#cases">Кейсы</a><a class="l" href="#process">Процесс</a><a class="l" href="#assort">Ассортимент</a><a class="l" href="#fbo">FBO/FBS</a><a class="l" href="#team">Структура</a><a class="l" href="#roadmap">Этапы</a><a class="l" href="#finance">Финансы</a><a class="l" href="#discuss">Обсудить</a><a class="l" href="#ask">Решения</a><a class="l" href="#authors">Авторы</a>
+  <a class="l" href="#schema">Схема</a><a class="l" href="#markets">Рынки</a><a class="l" href="#value">Польза</a><a class="l" href="#cases">Кейсы</a><a class="l" href="#process">Процесс</a><a class="l" href="#assort">Ассортимент</a><a class="l" href="#fbo">FBO/FBS</a><a class="l" href="#team">Структура</a><a class="l" href="#roadmap">Этапы</a><a class="l" href="#finance">Финансы</a><a class="l" href="#discuss">Обсудить</a><a class="l" href="#ask">Решения</a><a class="l" href="#authors">Авторы</a><a class="navpdf" href="https://jaf2922j-dotcom.github.io/ecom/OGM-Ecom.pdf" target="_blank" rel="noopener">PDF</a>
 </div></nav>
 <div class="wrap" id="top">
 
 <header class="hero">
   <span class="eyebrow">Проект для учредителей ОГМ · 31 октября 2026</span>
   <h1>OGM E-com</h1>
-  <p class="lead">Отдельная компания группы, которая продаёт товары через маркетплейсы и быструю доставку в Узбекистане и СНГ. Пять отдельных направлений: Wildberries, мультимаркетплейсы (Ozon, Uzum, Яндекс Маркет), B2B для HoReCa и офисов, экспорт Coca-Cola в Россию и дарксторы для быстрой доставки.</p>
+  <p class="lead">Компания группы, которая продаёт на двух рынках сразу. <b>В Узбекистане</b>: Wildberries, Ozon, Uzum, Яндекс Маркет, быстрая доставка и B2B для HoReCa и офисов. <b>В СНГ</b>: экспорт через Wildberries и Ozon, основной объём в Россию, а также Казахстан, Кыргызстан, Беларусь и Армения. Импортируем из Европы и Китая и продаём на обоих рынках.</p>
+  <div class="cta"><a class="btn" href="#schema">Смотреть 3D-схему</a><a class="btn ghost" href="https://jaf2922j-dotcom.github.io/ecom/OGM-Ecom.pdf" target="_blank" rel="noopener">Скачать презентацию PDF</a></div>
   <div class="meta"><span>Новое юрлицо, учредитель ОГМ 100%</span><span>Подготовили: Ж. Дехканов, Ж. Хакимов</span></div>
   <div class="facts">
     <div class="fact"><b>22,6 трлн сум</b><span>рынок e-com Узбекистана в 2025 году, рост в 22 раза за 5 лет</span></div>
     <div class="fact"><b>4,6%</b><span>доля онлайна в рознице. В среднем по миру 22%</span></div>
-    <div class="fact"><b>×3</b><span>рост продаж узбекских продавцов в Россию за I полугодие 2026</span></div>
+    <div class="fact"><b>×3</b><span>рост продаж узбекских продавцов в Россию за I полугодие 2026. Россия — главный рынок экспорта</span></div>
     <div class="fact"><b>&gt;$2 млрд</b><span>прогноз оборота узбекских товаров на Wildberries в 2026 году</span></div>
   </div>
 </header>
@@ -425,6 +446,22 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="legend"><span><i></i>Направление 1, запуск сразу</span><span><i class="l2"></i>Направления 2–4, запускаем по очереди</span><span><i class="l3"></i>Направление 5, после открытия новой сети</span></div>
 </section>
 
+<section id="markets">
+  <div class="sec-head">
+    <span class="eyebrow">Цель проекта</span>
+    <h2>Два рынка одновременно</h2>
+    <p>Один склад-хаб и одна команда работают и на внутренний рынок, и на экспорт. Каждый товар продаём там, где он даёт лучшую цену.</p>
+  </div>
+  <div class="mk">
+    <div class="mkc uz"><span class="tagx">Внутренний рынок</span><h3>Узбекистан</h3>
+      <ul><li><b>Маркетплейсы:</b> Wildberries, Ozon, Uzum Market, Яндекс Маркет</li><li><b>Быстрая доставка:</b> Uzum Tezkor, Яндекс Еда и Лавка через наши дарксторы</li><li><b>B2B:</b> HoReCa и офисы</li><li><b>Импорт</b> из Европы и Китая продаём здесь же</li></ul>
+      <p class="mkn">E-com в Узбекистане — 22,6 трлн сум в 2025 году, а доля онлайна в рознице всего 4,6%. Рынок только начинает расти.</p></div>
+    <div class="mkc cis"><span class="tagx">Экспорт</span><h3>СНГ</h3>
+      <ul><li><b>Россия</b> — основной объём</li><li><b>Казахстан, Кыргызстан, Беларусь, Армения</b> — везде, где есть Wildberries и Ozon</li><li><b>Каналы:</b> склады Wildberries и Ozon, партии через Orient Logistic</li><li><b>Coca-Cola</b> в РФ — идея учредителей, прорабатываем</li></ul>
+      <p class="mkn">Оборот узбекских товаров на Wildberries в 2026 году может превысить $2 млрд. Uzum работает только в Узбекистане, поэтому на экспорт идём через WB и Ozon.</p></div>
+  </div>
+</section>
+
 <section id="value">
   <div class="sec-head">
     <span class="eyebrow">Зачем это группе</span>
@@ -433,8 +470,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   </div>
   <div class="ben">
     <div class="card"><span class="pill o">Продажи</span><h3>Новый канал для товаров группы</h3><p>Ассортимент Дамир Савдо и поставщиков группы продаётся в Узбекистане и по СНГ без открытия новых магазинов.</p></div>
-    <div class="card"><span class="pill o">Рынок СНГ</span><h3>Выход в Россию и ЕАЭС</h3><p>Продажи узбекских продавцов в Россию за полгода выросли втрое. Wildberries и Ozon дают эту аудиторию сразу.</p></div>
-    <div class="card"><span class="pill o">Экспорт</span><h3>Валютная выручка</h3><p>Экспорт Coca-Cola в РФ и продажи на российских площадках приносят выручку из-за рубежа.</p></div>
+    <div class="card"><span class="pill o">Два рынка</span><h3>Узбекистан и СНГ</h3><p>Внутренний рынок растёт быстрее розницы. Через Wildberries и Ozon тот же товар сразу выходит в Россию и страны СНГ.</p></div>
+    <div class="card"><span class="pill o">Экспорт</span><h3>Валютная выручка</h3><p>Продажи в Россию и страны СНГ через Wildberries и Ozon, а в перспективе экспорт Coca-Cola, приносят выручку из-за рубежа.</p></div>
     <div class="card"><span class="pill">Данные</span><h3>Синергия с новой сетью</h3><p>Маркетплейсы каждый день показывают, что покупают и по какой цене. Эти данные усиливают закупки новой сети, а общие поставщики дают лучшие условия.</p></div>
     <div class="card"><span class="pill o">Прибыль</span><h3>Маржа на своём ассортименте</h3><p>Импорт, свой бренд и прямые поставки с заводов дают наценку выше, чем в классической рознице, без аренды торговых залов.</p></div>
     <div class="card"><span class="pill">Контроль</span><h3>Отдельный P&amp;L</h3><p>Отдельное юрлицо ОГМ с прозрачными цифрами по каждому направлению. Склад, команда и данные остаются активом группы.</p></div>
@@ -486,7 +523,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <span class="pill o">Новое юрлицо</span>
       <h3>OGM E-com</h3>
       <ul>
-        <li>Направления 1–2: Wildberries, затем Ozon, Uzum, Яндекс Маркет</li>
+        <li>Направления 1–2: Wildberries, затем Ozon, Uzum, Яндекс Маркет — в Узбекистане и на экспорт в СНГ</li>
         <li>Направление 3: B2B для HoReCa и офисов</li>
         <li>Направление 4: экспорт Coca-Cola в Россию</li>
         <li>Направление 5: дарксторы и быстрая доставка</li>
@@ -542,7 +579,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 <section id="fbo">
   <div class="sec-head">
     <span class="eyebrow">Выбор учредителей</span>
-    <h2>Склады и доставка: FBO, FBS и Россия</h2>
+    <h2>Склады и доставка: FBO, FBS и экспорт в СНГ</h2>
     <p>У маркетплейсов два способа доставки до покупателя. От выбора зависят склад, штат и скорость оборота денег.</p>
   </div>
   <div class="opts">
@@ -560,13 +597,13 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <span class="muted" style="font-size:.85rem">Ozon с июля 2026 вдвое снизил тарифы для продавцов из Узбекистана, пока именно по FBS</span></div>
   </div>
   <div class="sec-head" style="margin-top:40px">
-    <span class="eyebrow">Поставки в Россию</span>
-    <h3 style="font-size:1.25rem">Три пути в РФ</h3>
-    <p>Часть продукции пойдёт в Россию. После встречи с Wildberries уточняем их условия и выбираем основной путь. Остальные остаются запасными.</p>
+    <span class="eyebrow">Экспорт в СНГ</span>
+    <h3 style="font-size:1.25rem">Три пути на экспорт</h3>
+    <p>Основной объём экспорта — Россия, дальше Казахстан, Кыргызстан, Беларусь и Армения. После встречи с Wildberries уточняем их условия и выбираем основной путь.</p>
   </div>
   <div class="opts">
-    <div class="card"><span class="pill" style="background:#fbe3f6;color:#a3157f">Путь 1</span><h3>Через Wildberries</h3><p class="muted">Сдаём товар на склад WB в Узбекистане. Площадка сама везёт его в Россию и продаёт там покупателям.</p></div>
-    <div class="card"><span class="pill">Путь 2</span><h3>Через Ozon</h3><p class="muted">Так же, но через Ozon. Его покупатели в России, Беларуси и Казахстане видят наш товар.</p></div>
+    <div class="card"><span class="pill" style="background:#fbe3f6;color:#a3157f">Путь 1</span><h3>Через Wildberries</h3><p class="muted">Сдаём товар на склад WB в Узбекистане. Площадка сама везёт его в Россию и другие страны СНГ и продаёт там.</p></div>
+    <div class="card"><span class="pill">Путь 2</span><h3>Через Ozon</h3><p class="muted">Так же, но через Ozon: Россия, Беларусь, Казахстан и другие страны, где он работает.</p></div>
     <div class="card"><span class="pill" style="background:#dcf5f3;color:#127a72">Путь 3</span><h3>Через Orient Logistic</h3><p class="muted">Компания группы ОГМ. Своя доставка партиями. Подходит для экспорта Coca-Cola и крупных поставок, где нужны свои сроки и цена логистики.</p></div>
   </div>
 </section>
@@ -684,7 +721,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="open">
     <div><b>Доставка на склады площадок</b><span>Транспорт группы, Orient Logistic или наёмный перевозчик</span></div>
     <div><b>Растаможка импорта</b><span>Брокер группы, сами от нового юрлица или бондовый склад</span></div>
-    <div><b>Путь в Россию</b><span>Через Wildberries, через Ozon или через Orient Logistic. Решаем после встречи с Wildberries</span></div>
+    <div><b>Путь экспорта в СНГ</b><span>Через Wildberries, через Ozon или через Orient Logistic. Решаем после встречи с Wildberries</span></div>
     <div><b>Экспорт Coca-Cola</b><span>Схема поставок и юридическая проверка</span></div>
     <div><b>Условия руководителей</b><span>Оклад и процент от прибыли для руководителей проекта</span></div>
   </div>
@@ -706,7 +743,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <li>Одобрить создание OGM E-com как отдельного юрлица</li>
       <li>Выбрать вариант размещения: А, Б или В</li>
       <li>Выбрать схему работы со складами: FBO, FBS или обе</li>
-      <li>Утвердить основной путь поставок в Россию после встречи с Wildberries</li>
+      <li>Утвердить основной путь экспорта в СНГ после встречи с Wildberries</li>
       <li>Согласовать договор поставки с Дамир Савдо</li>
       <li>Утвердить пилот, штат на старт и расчёт бюджета</li>
       <li>Согласовать условия и официальный переход руководителей</li>
@@ -801,6 +838,9 @@ B(6.4,3.6,5.2,0xe3e8ee,47,0,-1);G(6.5,0.32,5.3,0x2f6fb3,47,3.6,-1);G(6.5,0.2,5.3
 B(0.4,3.4,0.4,0x8b98a5,40.4,0,-10);B(0.4,3.4,0.4,0x8b98a5,40.4,0,8);
 P(33,10,8,6,0xb3bfca);B(4.2,2.4,3.2,0x1f6f73,33,0,10.4);G(4.3,0.3,3.3,0x34d1c6,33,2.4,10.4);G(1.6,1.2,0.06,0xbff7f2,33,0.6,8.78);
 
+/* domestic customers (Uzbekistan) */
+P(32.5,18,10,8,0xd4dccf);
+[[30,15.8],[32,15.8],[34,15.8],[36,15.8],[30,19.6],[32.6,19.6],[35.2,19.6]].forEach(function(q,i){var h=0.9+(i%3)*0.45;B(1.4,h,1.4,[0xe8dcc8,0xd9c7ad,0xf0e6d6][i%3],q[0],0,q[1]);G(1.44,0.12,1.44,0xb85c3a,q[0],h+0.06,q[1]);});
 /* details */
 function tree(x,z,h){h=h||1;var t=new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.16,0.9*h,8),M(0x6b4f35));t.position.set(x,0.45*h,z);t.castShadow=true;S.add(t);
  var c=new THREE.Mesh(new THREE.IcosahedronGeometry(0.75*h,1),new THREE.MeshStandardMaterial({color:0x5f9a52,roughness:.9,flatShading:true}));c.position.set(x,1.25*h,z);c.castShadow=true;S.add(c);}
@@ -831,6 +871,7 @@ var fbsOz=curve([[2,-1.2],[6.4,-1.6],[11,-6.2],[15.6,-10],[19.6,-10],[22.1,-8.8]
 var ruWB=curve([[24,-16],[29,-16.4],[35,-12],[40,-7],[45.5,-2.6]]);road(ruWB,0xcb11ab,0.9);
 var ruOz=curve([[22.1,-8],[28,-7.6],[34,-5],[40,-2.6],[45.5,-0.8]]);road(ruOz,0x2f7bff,0.85);
 var toOr=curve([[23.5,8],[27,8.6],[30,9.4],[33,10.2]]);road(toOr,0xe8414f,0.8);
+var toUz1=curve([[24,16],[27,17.6],[29,17.6]]);road(toUz1,0x3ddc97,0.9);var toUz2=curve([[23,2],[27,6],[29.5,12.5],[30,14.8]]);road(toUz2,0x4d9bff,0.7);
 var ruOr=curve([[33,10.2],[36,8],[40,4],[45.5,0.6]]);road(ruOr,0x34d1c6,0.9);
 
 /* vehicles */
@@ -847,7 +888,7 @@ srcC.forEach(function(c){add(c,0x7fb0e6,1,0.07);});
 add(dstC[0],0xf08a3a,3,0.09);
 function pp(cu,col,n,speed){for(var i=0;i<n;i++)movers.push({c:cu,u:i*2/n,v:speed,o:truck(col),pp:true});}
 pp(fbsWB,0xcb11ab,2,0.07);pp(fbsOz,0x2f7bff,1,0.07);
-add(ruWB,0xcb11ab,2,0.06);add(ruOz,0x2f7bff,1,0.06);add(toOr,0xe41e2b,1,0.1,1.2);add(ruOr,0x34d1c6,2,0.07,1.15);add(dstC[1],0xe7edf2,2,0.075);add(dstC[2],0xe7edf2,2,0.065);add(dstC[3],0xe41e2b,2,0.06,1.25);add(dstC[4],0x3ddc97,3,0.11,0.6);
+add(ruWB,0xcb11ab,2,0.06);add(toUz1,0x3ddc97,2,0.16,0.6);add(toUz2,0xe7edf2,1,0.09);add(ruOz,0x2f7bff,1,0.06);add(toOr,0xe41e2b,1,0.1,1.2);add(ruOr,0x34d1c6,2,0.07,1.15);add(dstC[1],0xe7edf2,2,0.075);add(dstC[2],0xe7edf2,2,0.065);add(dstC[3],0xe41e2b,2,0.06,1.25);add(dstC[4],0x3ddc97,3,0.11,0.6);
 var tmp=new THREE.Vector3();
 function place(m){var u,sg=1;if(m.pp){var w=m.u%2;u=w<1?w:2-w;sg=w<1?1:-1;}else u=m.u%1;var p=m.c.getPointAt(u);var t=m.c.getTangentAt(u).multiplyScalar(sg);m.o.position.copy(p);m.o.position.y=0.02;tmp.copy(p).add(t);tmp.y=0.02;m.o.lookAt(tmp);}
 
@@ -866,9 +907,10 @@ var L=[
  {p:[13.5,1.2,-15],s:'FBS',t:'Площадка забирает с хаба',sh:'FBS · забирают',k:'fl'},
  {p:[10.5,1.2,-4.6],s:'FBO',t:'Везём на склады площадок',sh:'FBO · везём мы',k:'fl'},
  {p:[33,3.4,10.4],s:'КОМПАНИЯ ГРУППЫ',t:'Orient Logistic',sh:'Orient Logistic',k:'ru'},
- {p:[47,5.2,-1],s:'РОССИЯ',t:'Покупатели и склады РФ',sh:'Россия',k:'ru'}
+ {p:[47,5.2,-1],s:'ЭКСПОРТ · СНГ',t:'Россия, Казахстан, Кыргызстан, Беларусь',sh:'СНГ · экспорт',k:'ru'},
+ {p:[32.6,3.2,17.6],s:'ВНУТРЕННИЙ РЫНОК',t:'Покупатели Узбекистана',sh:'Узбекистан',k:'uz'}
 ];
-var LV=[1,1,1,1,2,3,4,5,6,7,8,8,9,9];L.forEach(function(l,i){var d=document.createElement('button');d.type='button';d.className='lb'+(l.k?' '+l.k:'');l.view=LV[i];d.addEventListener('click',function(){go(l.view);});l.d=d;l.v=new THREE.Vector3(l.p[0],l.p[1],l.p[2]);lbBox.appendChild(d);});
+var LV=[1,1,1,1,2,3,4,5,6,7,8,8,9,9,0];L.forEach(function(l,i){var d=document.createElement('button');d.type='button';d.className='lb'+(l.k?' '+l.k:'');l.view=LV[i];d.addEventListener('click',function(){go(l.view);});l.d=d;l.v=new THREE.Vector3(l.p[0],l.p[1],l.p[2]);lbBox.appendChild(d);});
 var narrow=null;
 function setText(n){if(n===narrow)return;narrow=n;L.forEach(function(l){l.d.innerHTML='<small>'+l.s+'</small>'+(n&&l.sh?l.sh:l.t);l.w=0;});}
 
@@ -876,16 +918,16 @@ function setText(n){if(n===narrow)return;narrow=n;L.forEach(function(l){l.d.inne
 var W=1,H=1,base=0,el0=0.78,fitD=60,drag=0,view=0,first=true;
 var cur={x:0,z:0,d:120,e:1.3},goal={x:0,z:0,d:60,e:0.78};var target=new THREE.Vector3();
 var V=[
- {n:'Обзор',x:11,z:-1,k:1,t:'Как это работает',b:'Товар едет от поставщиков на наш склад-хаб. Оттуда в пять направлений по Узбекистану и в Россию.',w:'Руководят вместе: Жафархон Дехканов и Жасур Хакимов'},
+ {n:'Обзор',x:11,z:-1,k:1,t:'Как это работает',b:'Товар едет от поставщиков на наш склад-хаб. Оттуда продаём на два рынка: внутри Узбекистана и на экспорт в СНГ, где основной объём — Россия.',w:'Руководят вместе: Жафархон Дехканов и Жасур Хакимов'},
  {n:'Поставщики',x:-24,z:0,k:0.62,t:'Откуда товар',b:'Дамир Савдо, заводы и дистрибьюторы Узбекистана, импорт из Европы и Китая. Только товар с документами.',w:'Ведут вместе: Жафархон и Жасур'},
  {n:'Хаб',x:0,z:0,k:0.4,t:'Склад-хаб и офис',b:'Приёмка, маркировка, фото, упаковка. Ходовой товар уходит на склады площадок (FBO), остальное отгружаем сами (FBS).',w:'Логист-кладовщик, дизайнер-контентщик'},
- {n:'1 · WB',x:24,z:-16,k:0.3,t:'1 · Wildberries',b:'Старт проекта. Работаем по FBO и FBS. Пилот 90 дней, затем решение по цифрам: оборот, маржа после комиссий, оборачиваемость, рейтинг.',w:'Менеджер Wildberries · ведут Жафархон и Жасур'},
- {n:'2 · Ozon/Uzum',x:24,z:-8,k:0.3,t:'2 · Ozon, Uzum, Яндекс Маркет',b:'Те же товары выходят на новые площадки. Один отчёт по всем каналам.',w:'Менеджеры Ozon и Uzum/Яндекс · ведут Жафархон и Жасур'},
+ {n:'1 · WB',x:24,z:-16,k:0.3,t:'1 · Wildberries',b:'Старт проекта. Продажи в Узбекистане и экспорт в СНГ через WB. Работаем по FBO и FBS. Пилот 90 дней, затем решение по цифрам: оборот, маржа после комиссий, оборачиваемость, рейтинг.',w:'Менеджер Wildberries · ведут Жафархон и Жасур'},
+ {n:'2 · Ozon/Uzum',x:24,z:-8,k:0.3,t:'2 · Ozon, Uzum, Яндекс Маркет',b:'Те же товары на новых площадках. Ozon продаёт и в Узбекистане, и в СНГ. Uzum и Яндекс Маркет — внутренний рынок. Один отчёт по всем каналам.',w:'Менеджеры Ozon и Uzum/Яндекс · ведут Жафархон и Жасур'},
  {n:'3 · HoReCa',x:24,z:0,k:0.3,t:'3 · B2B: HoReCa и офисы',b:'Регулярные поставки ресторанам, кафе, отелям и офисам по B2B-прайсу.',w:'Менеджер B2B · ведут Жафархон и Жасур'},
  {n:'4 · Coca-Cola',x:24,z:8,k:0.3,t:'4 · Экспорт Coca-Cola в РФ',b:'Идея учредителей. Через новое юрлицо и Orient Logistic (компания группы), после юридической проверки схемы. Валютная выручка.',w:'Менеджер ВЭД · ведут Жафархон и Жасур'},
  {n:'5 · Дарксторы',x:24,z:16,k:0.3,t:'5 · Дарксторы',b:'3–4 точки, запускаем, когда остальные направления работают стабильно. Быстрая доставка через Uzum Tezkor, Яндекс Еду и Лавку.',w:'Менеджер быстрой доставки · ведут Жафархон и Жасур'},
  {n:'FBO / FBS',x:13,z:-10,k:0.42,t:'FBO и FBS',b:'FBO: наши машины везут партии на склады WB и Ozon, площадка хранит и доставляет. FBS: товар хранится у нас на хабе, машины площадки забирают заказы. Часть товара держим у них, часть у себя.',w:'Схему выбирают учредители: FBO, FBS или обе'},
- {n:'Россия',x:39,z:0,k:0.48,t:'Доставка в Россию: три пути',b:'Через Wildberries или Ozon: сдаём товар площадке, она везёт и продаёт в РФ. Через Orient Logistic: своя доставка партиями, сюда же экспорт Coca-Cola. Основной путь выбираем после встречи с Wildberries.',w:'Ведут Жафархон и Жасур'}
+ {n:'Экспорт в СНГ',x:39,z:0,k:0.48,t:'Экспорт в СНГ: три пути',b:'Основной объём — Россия, дальше Казахстан, Кыргызстан, Беларусь, Армения. Через Wildberries или Ozon: сдаём товар площадке, она везёт и продаёт. Через Orient Logistic: партии и экспорт Coca-Cola. Основной путь выбираем после встречи с Wildberries.',w:'Ведут Жафархон и Жасур'}
 ];
 var nav=document.getElementById('v3nav'),info=document.getElementById('v3info'),zf=1;
 info.addEventListener('click',function(e){if(e.target.closest('.x'))info.hidden=true;});
@@ -903,7 +945,7 @@ function fit(){W=box.clientWidth;H=box.clientHeight;R.setSize(W,H,false);C.aspec
 function cam(time,dt){var a=still?1:1-Math.exp(-dt*2.2);cur.x+=(goal.x-cur.x)*a;cur.z+=(goal.z-cur.z)*a;cur.d+=(goal.d-cur.d)*a;cur.e+=(goal.e-cur.e)*a;
  var az=base+drag+((still||touched)?0:0.18*Math.sin(time*0.00012));target.set(cur.x,0,cur.z);S.fog.near=cur.d*1.3;S.fog.far=cur.d*3;if(Math.abs(C.far-cur.d*5)>1){C.far=cur.d*5;C.updateProjectionMatrix();}
  C.position.set(cur.x+cur.d*Math.cos(cur.e)*Math.sin(az),cur.d*Math.sin(cur.e),cur.z+cur.d*Math.cos(cur.e)*Math.cos(az));C.lookAt(target);}
-var PR=[4,5,6,7,8,9,13,12,10,11,0,1,2,3];
+var PR=[4,13,14,5,6,7,8,9,12,10,11,0,1,2,3];
 function labels(){var kept=[];PR.forEach(function(i){var l=L[i];tmp.copy(l.v).project(C);var x=(tmp.x*0.5+0.5)*W,y=(-tmp.y*0.5+0.5)*H;
  if(!l.w){l.w=l.d.offsetWidth;l.h=l.d.offsetHeight;}
  var r={a:x-l.w/2-3,b:x+l.w/2+3,c:y-l.h-9,d:y-3};var ok=tmp.z<1&&x>-l.w&&x<W+l.w&&y>0&&y<H+l.h;
@@ -927,7 +969,7 @@ function panBy(dx,dy){var az=base+drag,k=2*cur.d*Math.tan(THREE.MathUtils.degToR
  var rx=Math.cos(az),rz=-Math.sin(az),fx=Math.sin(az),fz=Math.cos(az);
  var nx=cur.x-dx*k*rx-dy*k*fx/se,nz=cur.z-dx*k*rz-dy*k*fz/se;
  cur.x=goal.x=Math.max(-36,Math.min(52,nx));cur.z=goal.z=Math.max(-28,Math.min(28,nz));}
-var NODES=[[33,10,9],[47,-1,9],[40,-2,9],[12,-11,8],[-24,-13.5,1],[-24,-4.5,1],[-24,4.5,1],[-24,13.5,1],[0,0,2],[24,-16,3],[24,-8,4],[24,0,5],[24,8,6],[24,16,7]];
+var NODES=[[33,10,9],[47,-1,9],[40,-2,9],[32.5,18,0],[12,-11,8],[-24,-13.5,1],[-24,-4.5,1],[-24,4.5,1],[-24,13.5,1],[0,0,2],[24,-16,3],[24,-8,4],[24,0,5],[24,8,6],[24,16,7]];
 function pick(e){var r=cv.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,C);
  var h=ray.intersectObjects(S.children,true);if(!h.length)return;var pt=h[0].point,best=-1,bd=7.5;
  NODES.forEach(function(n){var d=Math.hypot(pt.x-n[0],pt.z-n[1]);if(d<bd){bd=d;best=n[2];}});if(best>0)go(best);}

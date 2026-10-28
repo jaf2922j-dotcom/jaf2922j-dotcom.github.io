@@ -262,13 +262,28 @@ svg .wheel{fill:var(--fg)}
 .mini span{padding:6px 10px;border-radius:8px;background:#fff4f5;border:1px solid #f3c3ca}
 .mini i{width:18px;height:2px;background:#e41e2b;position:relative;display:inline-block}
 .mini i::after{content:"";position:absolute;right:-3px;top:-4px;border-left:6px solid #e41e2b;border-top:5px solid transparent;border-bottom:5px solid transparent}
-.logi{margin-top:12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.logi{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .logi>div{display:grid;gap:4px;padding:12px 14px;border-radius:12px;border:1px dashed var(--line);font-size:.9rem}
 .logi span{color:var(--muted)}
 @media(max-width:980px){.chain{grid-template-columns:1fr}.ar{justify-self:center;width:4px;height:28px;margin:4px 0;background:repeating-linear-gradient(180deg,var(--accent) 0 8px,transparent 8px 14px);background-size:4px 28px;animation:flowv 1s linear infinite}.ar::after{right:-5px;top:auto;bottom:-7px;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--accent);border-bottom:0}.coke{grid-template-columns:1fr}}
 @keyframes flowv{to{background-position:0 28px}}
 @media(max-width:520px){.split{grid-template-columns:1fr}.logi{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.ar{animation:none}}
+
+.lanes{display:grid;gap:14px}
+.lane{background:var(--surface);border:1px solid #f3c3ca;border-radius:16px;padding:18px;display:grid;gap:14px}
+.ln-h{display:flex;gap:10px;align-items:baseline}
+.ln-h b{font-family:var(--display);font-size:1.05rem;color:#b0102a}
+.ln-h span{color:var(--muted);font-size:.9rem}
+.ln{display:flex;align-items:center}
+.n2{flex:1 1 0;min-width:0;padding:12px 10px;border-radius:12px;background:#fff6f7;border:1px solid #f3c3ca;display:grid;gap:3px;text-align:center}
+.n2 b{font-size:.92rem}.n2 span{font-size:.8rem;color:var(--muted)}
+.n2.red{background:linear-gradient(150deg,#d4142f,#8f0b21);border:0;color:#fff}.n2.red span{color:rgba(255,255,255,.8)}
+.n2.ru{background:linear-gradient(150deg,#1d4e89,#5b2a86);border:0;color:#fff}.n2.ru span{color:rgba(255,255,255,.8)}
+.cr{flex:0 0 38px;height:4px;margin:0 4px;position:relative;border-radius:2px;background:repeating-linear-gradient(90deg,#e41e2b 0 8px,transparent 8px 14px);background-size:28px 4px;animation:flow 1s linear infinite}
+.cr::after{content:"";position:absolute;right:-6px;top:-5px;border-left:9px solid #e41e2b;border-top:7px solid transparent;border-bottom:7px solid transparent}
+@media(max-width:700px){.ln{flex-direction:column;align-items:stretch}.cr{flex:0 0 24px;width:4px;height:24px;align-self:center;margin:4px 0;background:repeating-linear-gradient(180deg,#e41e2b 0 8px,transparent 8px 14px);background-size:4px 28px;animation:flowv 1s linear infinite}.cr::after{right:-5px;top:auto;bottom:-7px;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid #e41e2b;border-bottom:0}}
+@media(prefers-reduced-motion:reduce){.cr{animation:none}}
 
 /* ask */
 .asks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%}
@@ -359,7 +374,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 <nav class="topnav" aria-label="Разделы"><div class="in">
   <a class="brand" href="#top">OGM <b>E-com</b></a>
-  <a class="l" href="#schema">Схема</a><a class="l" href="#chain">Цепочка</a><a class="l" href="#markets">Рынки</a><a class="l" href="#value">Польза</a><a class="l" href="#cases">Кейсы</a><a class="l" href="#process">Процесс</a><a class="l" href="#assort">Ассортимент</a><a class="l" href="#fbo">FBO/FBS</a><a class="l" href="#team">Структура</a><a class="l" href="#roadmap">Этапы</a><a class="l" href="#finance">Финансы</a><a class="l" href="#discuss">Обсудить</a><a class="l" href="#ask">Решения</a><a class="l" href="#authors">Авторы</a><a class="navpdf" href="https://jaf2922j-dotcom.github.io/ecom/OGM-Ecom.pdf" target="_blank" rel="noopener">PDF</a>
+  <a class="l" href="#schema">Схема</a><a class="l" href="#chain">Цепочка</a><a class="l" href="#coke">Coca-Cola</a><a class="l" href="#markets">Рынки</a><a class="l" href="#value">Польза</a><a class="l" href="#cases">Кейсы</a><a class="l" href="#process">Процесс</a><a class="l" href="#assort">Ассортимент</a><a class="l" href="#fbo">FBO/FBS</a><a class="l" href="#team">Структура</a><a class="l" href="#roadmap">Этапы</a><a class="l" href="#finance">Финансы</a><a class="l" href="#discuss">Обсудить</a><a class="l" href="#ask">Решения</a><a class="l" href="#authors">Авторы</a><a class="navpdf" href="https://jaf2922j-dotcom.github.io/ecom/OGM-Ecom.pdf" target="_blank" rel="noopener">PDF</a>
 </div></nav>
 <div class="wrap" id="top">
 
@@ -483,7 +498,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <p>Все заказы создаёт главный офис. Весь товар сначала приходит на наш большой склад, оттуда распределяется по каналам.</p>
   </div>
   <div class="chain">
-    <div class="st"><span class="sn">1</span><h3>Закупка</h3><p>Берём там, где дешевле: Дамир Савдо, заводы, оптовые рынки, Европа, Китай, Coca-Cola</p></div>
+    <div class="st"><span class="sn">1</span><h3>Закупка</h3><p>Берём там, где дешевле: Дамир Савдо, заводы, оптовые рынки, Европа, Китай</p></div>
     <div class="ar" aria-hidden="true"></div>
     <div class="st of"><span class="sn">2</span><h3>Главный офис</h3><p>Создаёт заказы поставщикам, планирует остатки, распределяет товар по каналам</p></div>
     <div class="ar" aria-hidden="true"></div>
@@ -496,15 +511,29 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       </div>
     </div>
   </div>
-  <div class="coke">
-    <div class="ck-h"><span class="pill" style="background:#fde3e6;color:#b0102a">Coca-Cola · экспорт в Россию</span><p class="muted">Заказ тоже создаёт главный офис. Дальше два возможных пути, выбираем вместе с учредителями.</p></div>
-    <div class="ck-p"><b>Путь А</b><div class="mini"><span>Завод Coca-Cola</span><i></i><span>Наш склад</span><i></i><span>Арендная логистика</span><i></i><span>Россия</span></div></div>
-    <div class="ck-p"><b>Путь Б</b><div class="mini"><span>Завод Coca-Cola</span><i></i><span>Склад арендной логистики</span><i></i><span>Россия</span></div></div>
-  </div>
   <div class="logi">
     <div><b>Своя логистика</b><span>Поставщики → наш склад → склады площадок, дарксторы, B2B-клиенты</span></div>
     <div><b>Orient Logistic (компания группы)</b><span>Партии на экспорт в страны СНГ</span></div>
-    <div><b>Арендная логистика</b><span>Coca-Cola в Россию: путь А и путь Б</span></div>
+  </div>
+</section>
+
+<section id="coke">
+  <div class="sec-head">
+    <span class="eyebrow">Отдельный проект</span>
+    <h2>Coca-Cola: экспорт в Россию</h2>
+    <p>Идея учредителей. Заказ создаёт главный офис, доставку делает арендная логистика. Есть два пути, выбираем вместе с учредителями.</p>
+  </div>
+  <div class="lanes">
+    <div class="lane">
+      <div class="ln-h"><b>Путь А</b><span>через наш склад</span></div>
+      <div class="ln"><div class="n2 red"><b>Завод Coca-Cola</b><span>Узбекистан</span></div><i class="cr"></i><div class="n2"><b>Наш большой склад</b><span>приёмка и проверка</span></div><i class="cr"></i><div class="n2"><b>Арендная логистика</b><span>доставка партиями</span></div><i class="cr"></i><div class="n2 ru"><b>Россия</b><span>покупатели</span></div></div>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Товар и остатки под нашим контролем</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Лишняя перевалка, дольше и дороже</li></ul></div></div>
+    </div>
+    <div class="lane">
+      <div class="ln-h"><b>Путь Б</b><span>напрямую</span></div>
+      <div class="ln"><div class="n2 red"><b>Завод Coca-Cola</b><span>Узбекистан</span></div><i class="cr"></i><div class="n2"><b>Склад арендной логистики</b><span>хранение и отправка</span></div><i class="cr"></i><div class="n2 ru"><b>Россия</b><span>покупатели</span></div></div>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Быстрее и дешевле</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Меньше контроля над товаром</li></ul></div></div>
+    </div>
   </div>
 </section>
 
@@ -518,7 +547,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <div class="mkc uz"><span class="tagx">Внутренний рынок</span><h3>Узбекистан</h3>
       <ul><li><b>Маркетплейсы:</b> Wildberries, Ozon, Uzum Market, Яндекс Маркет</li><li><b>Быстрая доставка:</b> Uzum Tezkor, Яндекс Еда и Лавка через наши дарксторы</li><li><b>B2B:</b> HoReCa и офисы</li><li><b>Импорт</b> из Европы и Китая продаём здесь же</li></ul></div>
     <div class="mkc cis"><span class="tagx">Экспорт</span><h3>СНГ</h3>
-      <ul><li><b>Россия</b> — основной объём</li><li><b>Казахстан, Кыргызстан, Беларусь, Армения</b> — везде, где есть Wildberries и Ozon</li><li><b>Каналы:</b> склады Wildberries и Ozon, партии через Orient Logistic</li><li><b>Coca-Cola</b> в РФ — идея учредителей, прорабатываем</li></ul></div>
+      <ul><li><b>Россия</b> — основной объём</li><li><b>Казахстан, Кыргызстан, Беларусь, Армения</b> — везде, где есть Wildberries и Ozon</li><li><b>Каналы:</b> склады Wildberries и Ozon, партии через Orient Logistic</li></ul></div>
   </div>
 </section>
 
@@ -657,7 +686,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="opts">
     <div class="card"><span class="pill" style="background:#fbe3f6;color:#a3157f">Путь 1</span><h3>Через Wildberries</h3><p class="muted">Сдаём товар на склад WB в Узбекистане. Площадка сама везёт его в Россию и другие страны СНГ и продаёт там.</p></div>
     <div class="card"><span class="pill">Путь 2</span><h3>Через Ozon</h3><p class="muted">Так же, но через Ozon: Россия, Беларусь, Казахстан и другие страны, где он работает.</p></div>
-    <div class="card"><span class="pill" style="background:#dcf5f3;color:#127a72">Путь 3</span><h3>Через Orient Logistic</h3><p class="muted">Компания группы ОГМ. Доставка партиями для крупных поставок, где нужны свои сроки и цена логистики. Coca-Cola идёт отдельно, через арендную логистику.</p></div>
+    <div class="card"><span class="pill" style="background:#dcf5f3;color:#127a72">Путь 3</span><h3>Через Orient Logistic</h3><p class="muted">Компания группы ОГМ. Доставка партиями для крупных поставок, где нужны свои сроки и цена логистики.</p></div>
   </div>
 </section>
 
@@ -860,9 +889,6 @@ B(3.4,9,3.4,0x2b4a66,OX,0,OZ);bands(OX,OZ,3.4,3.4,1.0,10,0xa9cfe9);G(3.5,0.5,3.5
 B(5,1.6,2.4,0x3a5874,OX+3.4,0,OZ+0.4);bands(OX+3.4,OZ+0.4,5,2.4,0.8,1,0xa9cfe9);
 var ring=new THREE.Mesh(new THREE.TorusGeometry(1.1,0.09,8,40),new THREE.MeshBasicMaterial({color:0xf08a3a}));ring.rotation.x=Math.PI/2;ring.position.set(OX,10.2,OZ);S.add(ring);
 var beacon=G(0.35,0.35,0.35,0xff9a4a,OX,9.8,OZ);
-/* Coca-Cola plant */
-var KX=-14,KZ=21;P(KX,KZ,9,7,0xb3bfca);B(4.6,2.6,3.4,0xc8102e,KX,0,KZ);G(4.65,0.28,3.45,0xffffff,KX,1.9,KZ);
-cyl(0.75,0.75,4.2,0xe6e9ec,KX+3.4,0,KZ-0.8);cyl(0.75,0.75,4.2,0xe6e9ec,KX+3.4,0,KZ+0.9);G(1.6,1.1,0.06,0xffe1e1,KX,0.55,KZ-1.73);
 
 /* directions x=24 */
 var DX=24,DZ=[-16,-8,0,8,16];
@@ -873,9 +899,6 @@ B(1.7,3.1,1.7,0x35186e,DX,0,-8);G(1.75,0.4,1.75,0x8a3dff,DX,3.0,-8);
 B(1.7,2,1.7,0x5e4a06,DX+1.9,0,-8);G(1.75,0.4,1.75,0xffcc00,DX+1.9,1.9,-8);
 B(3.2,1.8,2.8,0x7a4a2a,DX-1,0,0.6);var aw=G(3.4,0.12,1.1,0xd9482b,DX-1,1.7,2.3);aw.rotation.x=-0.35;G(1.2,0.9,0.06,0xffd59a,DX-1,0.6,2.03);
 B(1.9,5.2,1.9,0x26394d,DX+1.8,0,-0.9);bands(DX+1.8,-0.9,1.9,1.9,0.9,6,0xffd59a);
-cont(DX-0.5,0,7.3,0xe41e2b);cont(DX-0.5,0,8.7,0xe41e2b);cont(DX-0.5,1.15,8,0xf5f5f5);
-B(0.35,3.4,0.35,0x8b98a5,DX+3,0,5.6);B(0.35,3.4,0.35,0x8b98a5,DX+3,0,10.4);
-for(var s=0;s<6;s++)G(0.32,0.32,0.8,s%2?0xffffff:0xe41e2b,DX+3,3.4,6+s*0.8);
 [14.3,16,17.7].forEach(function(z){B(1.6,1.4,1.4,0x1d5a43,DX,0,z);G(1.64,0.22,1.44,0x3ddc97,DX,1.25,z);});
 
 /* Russia zone + Orient Logistic */
@@ -884,7 +907,7 @@ for(var q=0;q<12;q++)G(0.25,0.06,1.1,0xe41e2b,39.6,0.05,-11+q*1.9);
 B(6.4,3.6,5.2,0xe3e8ee,47,0,-1);G(6.5,0.32,5.3,0x2f6fb3,47,3.6,-1);G(6.5,0.2,5.3,0xe41e2b,47,3.95,-1);
 [-2.6,-0.2].forEach(function(z){G(0.06,1.6,1.4,0xffd59a,43.77,0.8,z);});
 B(0.4,3.4,0.4,0x8b98a5,40.4,0,-10);B(0.4,3.4,0.4,0x8b98a5,40.4,0,8);
-P(33,10,8,6,0xb3bfca);B(4.2,2.4,3.2,0x6b5a2e,33,0,10.4);G(4.3,0.3,3.3,0xf2b705,33,2.4,10.4);G(1.6,1.2,0.06,0xfff1c2,33,0.6,8.78);
+
 /* Orient Logistic depot (group company) */
 P(6,-21.5,8,5,0xb3bfca);B(4.4,2.2,2.6,0x1f6f73,6,0,-22.4);G(4.5,0.3,2.7,0x34d1c6,6,2.2,-22.4);G(3,1.3,0.06,0xbff7f2,6,0.65,-21.07);
 
@@ -915,16 +938,12 @@ var door=[-1.6,0.4,0.4,2.4];var srcC=SZ.map(function(z,i){var d=door[i]+(i===2?0
 srcC.forEach(function(c){road(c,0x7fb0e6,0.8);});
 var dCol=[0xf08a3a,0x4d9bff,0x4d9bff,0xe8414f,0x3ddc97];
 var dEnd=[[DX,-16],[DX-1.9,-8],[DX-1,0.6],[DX-0.5,8],[DX,16]];var dstC=DZ.map(function(z,j){var z0=[-1.6,-1.1,0.4,1.9,2.4][j];var e=dEnd[j];return curve([[2,z0],[6.2,z0],[10,z0+(z-z0)*0.3],[15,z],[e[0]-3.2,e[1]],[e[0],e[1]]]);});
-dstC.forEach(function(c,j){road(c,dCol[j],j===0?1:0.7);});
+dstC.forEach(function(c,j){if(j!==3)road(c,dCol[j],j===0?1:0.7);});
 var fbsWB=curve([[2,-2.3],[6.4,-2.9],[11,-10],[15.6,-18],[20.6,-18],[23.4,-17.1]]);road(fbsWB,0xcb11ab,0.95);
 var fbsOz=curve([[2,-1.2],[6.4,-1.6],[11,-6.2],[15.6,-10],[19.6,-10],[22.1,-8.8]]);road(fbsOz,0x2f7bff,0.85);
 var ruWB=curve([[24,-16],[29,-16.4],[35,-12],[40,-7],[45.5,-2.6]]);road(ruWB,0xcb11ab,0.9);
 var ruOz=curve([[22.1,-8],[28,-7.6],[34,-5],[40,-2.6],[45.5,-0.8]]);road(ruOz,0x2f7bff,0.85);
-var toOr=curve([[23.5,8],[27,8.6],[30,9.4],[33,10.2]]);road(toOr,0xe8414f,0.8);
 var toUz1=curve([[24,16],[27,17.6],[29,17.6]]);road(toUz1,0x3ddc97,0.9);var toUz2=curve([[23,2],[27,6],[29.5,12.5],[30,14.8]]);road(toUz2,0x4d9bff,0.7);
-var cokeWh=curve([[-14,19.3],[-12.5,14.5],[-9.5,7],[-7.6,3.1],[-3,3.1]]);road(cokeWh,0xe41e2b,0.95);
-var cokeOr=curve([[-11.6,22.6],[-2,24.8],[26,24.8],[37.5,23.4],[39,16.5],[34.6,12.3]]);road(cokeOr,0xe41e2b,0.55);
-var ruOr=curve([[33,10.2],[36,8],[40,4],[45.5,0.6]]);road(ruOr,0xf2b705,0.9);
 var whOr=curve([[3.6,-2.8],[4.6,-8],[6,-14],[6,-19.6]]);road(whOr,0x34d1c6,0.9);
 var orRu=curve([[8.6,-20.6],[20,-23.4],[31,-21.5],[39,-13],[45.5,-3.6]]);road(orRu,0x34d1c6,0.9);
 
@@ -942,7 +961,7 @@ srcC.forEach(function(c){add(c,0x7fb0e6,1,0.07);});
 add(dstC[0],0xf08a3a,3,0.09);
 function pp(cu,col,n,speed){for(var i=0;i<n;i++)movers.push({c:cu,u:i*2/n,v:speed,o:truck(col),pp:true});}
 pp(fbsWB,0xcb11ab,2,0.07);pp(fbsOz,0x2f7bff,1,0.07);
-add(ruWB,0xcb11ab,2,0.06);add(cokeWh,0xe41e2b,2,0.09,1.15);add(cokeOr,0xe41e2b,2,0.035,1.15);add(toUz1,0x3ddc97,2,0.16,0.6);add(toUz2,0xe7edf2,1,0.09);add(ruOz,0x2f7bff,1,0.06);add(toOr,0xe41e2b,1,0.1,1.2);add(ruOr,0xf2b705,2,0.07,1.15);add(whOr,0x34d1c6,1,0.12,1.1);add(orRu,0x34d1c6,2,0.05,1.15);add(dstC[1],0xe7edf2,2,0.075);add(dstC[2],0xe7edf2,2,0.065);add(dstC[3],0xe41e2b,2,0.06,1.25);add(dstC[4],0x3ddc97,3,0.11,0.6);
+add(ruWB,0xcb11ab,2,0.06);add(toUz1,0x3ddc97,2,0.16,0.6);add(toUz2,0xe7edf2,1,0.09);add(ruOz,0x2f7bff,1,0.06);add(whOr,0x34d1c6,1,0.12,1.1);add(orRu,0x34d1c6,2,0.05,1.15);add(dstC[1],0xe7edf2,2,0.075);add(dstC[2],0xe7edf2,2,0.065);add(dstC[4],0x3ddc97,3,0.11,0.6);
 /* orders: office -> suppliers & warehouse */
 var pulses=[];
 function arc(a,b,h,col){var m=new THREE.Vector3((a.x+b.x)/2,h,(a.z+b.z)/2);var c=new THREE.QuadraticBezierCurve3(a,m,b);
@@ -950,7 +969,7 @@ function arc(a,b,h,col){var m=new THREE.Vector3((a.x+b.x)/2,h,(a.z+b.z)/2);var c
  for(var i=0;i<2;i++){var sp=new THREE.Mesh(new THREE.SphereGeometry(0.24,12,10),new THREE.MeshBasicMaterial({color:col}));S.add(sp);pulses.push({c:c,u:i/2+Math.random()*0.1,v:0.28,o:sp});}}
 var O3=new THREE.Vector3(OX,9.6,OZ);
 SZ.forEach(function(z){arc(O3,new THREE.Vector3(SX,2.8,z),14,0xf08a3a);});
-arc(O3,new THREE.Vector3(KX,3,KZ),16,0xf08a3a);arc(O3,new THREE.Vector3(-1,3.6,0.6),12,0x2f7bff);
+arc(O3,new THREE.Vector3(-1,3.6,0.6),12,0x2f7bff);
 /* forklifts and people */
 function forklift(){var g=new THREE.Group();var b=new THREE.Mesh(new THREE.BoxGeometry(0.6,0.5,0.9),M(0xf2b705));b.position.y=0.4;
  var m1=new THREE.Mesh(new THREE.BoxGeometry(0.08,1.1,0.08),M(0x333333));m1.position.set(-0.22,0.7,0.5);var m2=m1.clone();m2.position.x=0.22;
@@ -962,8 +981,7 @@ var walk=[];
 [[[OX-3,OZ+3],[OX+3,OZ+3.4]],[[OX+4.5,OZ-2],[OX+4.5,OZ+3.2]],[[OX-3.8,OZ-2.6],[OX-3.8,OZ+2.8]],[[OX+1,OZ+3.6],[OX+1,OZ+2.4]],[[-4,4.8],[2,4.9]]].forEach(function(q,i){walk.push({c:curve(q),u:i*0.37,v:0.12+i*0.02,o:person([0x1d4e89,0xd8661a,0x2f7a4f,0x5b2a86,0x7d8a96][i]),pp:true});});
 /* smoke, clouds, cars */
 var puffs=[];for(var i=0;i<8;i++){var pf=new THREE.Mesh(new THREE.SphereGeometry(0.45,10,8),new THREE.MeshStandardMaterial({color:0xf2f4f6,transparent:true,opacity:0.7,roughness:1}));pf.position.set(SX+1.9,5.3,-5.4);S.add(pf);puffs.push({o:pf,t:i/8,x:SX+1.9,z:-5.4,y0:5.3});}
-for(var i=0;i<6;i++){var pf2=new THREE.Mesh(new THREE.SphereGeometry(0.35,10,8),new THREE.MeshStandardMaterial({color:0xf7f8f9,transparent:true,opacity:0.6,roughness:1}));pf2.position.set(KX+3.4,4.3,KZ-0.8);S.add(pf2);puffs.push({o:pf2,t:i/6,x:KX+3.4,z:KZ-0.8,y0:4.3});}
-var clouds=[];[[-30,-8,22],[0,10,24],[25,-14,23],[40,14,25]].forEach(function(q){var g=new THREE.Group();for(var j=0;j<5;j++){var c=new THREE.Mesh(new THREE.SphereGeometry(1.6+Math.random(),12,10),new THREE.MeshBasicMaterial({colorWrite:false,depthWrite:false}));c.position.set(j*1.6-3,Math.random()*0.6,(Math.random()-0.5)*1.6);c.castShadow=true;g.add(c);}g.position.set(q[0],q[2],q[1]);S.add(g);clouds.push(g);});
+var clouds=[];[].forEach(function(q){var g=new THREE.Group();for(var j=0;j<5;j++){var c=new THREE.Mesh(new THREE.SphereGeometry(1.6+Math.random(),12,10),new THREE.MeshBasicMaterial({colorWrite:false,depthWrite:false}));c.position.set(j*1.6-3,Math.random()*0.6,(Math.random()-0.5)*1.6);c.castShadow=true;g.add(c);}g.position.set(q[0],q[2],q[1]);S.add(g);clouds.push(g);});
 function carObj(col){var g=new THREE.Group();var b=new THREE.Mesh(new THREE.BoxGeometry(0.7,0.3,1.3),M(col));b.position.y=0.28;var t=new THREE.Mesh(new THREE.BoxGeometry(0.62,0.26,0.7),M(0x2a3540));t.position.set(0,0.52,-0.05);b.castShadow=true;g.add(b,t);S.add(g);return g;}
 [[srcC[1],0x2f6fb3,0.1],[dstC[2],0xf2f2f2,0.12],[toUz2,0xc0392b,0.14],[srcC[2],0x1f1f1f,0.11],[dstC[4],0xe7e2d4,0.13]].forEach(function(q,i){movers.push({c:q[0],u:0.3+i*0.17,v:q[2],o:carObj(q[1])});});
 var tmp=new THREE.Vector3();
@@ -979,19 +997,19 @@ var L=[
  {p:[DX,4.4,-16],s:'1 · СТАРТ',t:'Wildberries',sh:'WB'},
  {p:[DX,4.2,-8],s:'2',t:'Ozon · Uzum · Яндекс Маркет',sh:'Ozon · Uzum · Яндекс'},
  {p:[DX+0.4,6.4,-0.4],s:'3',t:'B2B: HoReCa и офисы',sh:'HoReCa'},
- {p:[DX+1,4.4,8],s:'4',t:'Экспорт Coca-Cola в РФ',sh:'Coca-Cola РФ'},
+ {p:[DX+1,4.4,8],s:'4',t:'',off:1},
  {p:[DX,2.6,16],s:'5',t:'Дарксторы · быстрая доставка',sh:'Дарксторы'},
  {p:[13.5,1.2,-15],s:'FBS',t:'Площадка забирает с нашего склада',sh:'FBS · забирают',k:'fl'},
  {p:[10.5,1.2,-4.6],s:'FBO',t:'Везём на склады площадок',sh:'FBO · везём мы',k:'fl'},
- {p:[33,3.4,10.4],s:'АРЕНДНАЯ ЛОГИСТИКА',t:'Склад · Coca-Cola в Россию',sh:'Аренд. логистика',k:'ru'},
+ {p:[33,3.4,10.4],s:'',t:'',off:1},
  {p:[47,5.2,-1],s:'ЭКСПОРТ · СНГ',t:'Россия, Казахстан, Кыргызстан, Беларусь',sh:'СНГ · экспорт',k:'ru'},
  {p:[32.6,3.2,17.6],s:'ВНУТРЕННИЙ РЫНОК',t:'Покупатели Узбекистана',sh:'Узбекистан',k:'uz'},
  {p:[OX,11.4,OZ],s:'ГЛАВНЫЙ ОФИС',t:'Здесь создаются все заказы',sh:'Главный офис',k:'hub'},
- {p:[KX,4.6,KZ],s:'ПОСТАВЩИК',t:'Завод Coca-Cola',sh:'Coca-Cola',k:'src'},
- {p:[14,1.2,24.8],s:'ПУТЬ Б · COCA-COLA',t:'Напрямую на склад арендной логистики',sh:'Путь Б',k:'fl'},
+ {p:[0,0,0],s:'',t:'',off:1},
+ {p:[0,0,0],s:'',t:'',off:1},
  {p:[6,3.4,-22.4],s:'КОМПАНИЯ ГРУППЫ',t:'Orient Logistic · партии в СНГ',sh:'Orient Logistic',k:'ru'}
 ];
-var LV=[1,1,1,1,2,3,4,5,6,7,8,8,9,9,0,10,11,11,9];L.forEach(function(l,i){var d=document.createElement('button');d.type='button';d.className='lb'+(l.k?' '+l.k:'');l.view=LV[i];d.addEventListener('click',function(){go(l.view);});l.d=d;l.v=new THREE.Vector3(l.p[0],l.p[1],l.p[2]);lbBox.appendChild(d);});
+var LV=[1,1,1,1,2,3,4,5,6,7,8,8,9,9,0,10,11,11,9];L.forEach(function(l,i){var d=document.createElement('button');d.type='button';d.className='lb'+(l.k?' '+l.k:'');l.view=LV[i];if(l.off)d.hidden=true;d.addEventListener('click',function(){go(l.view);});l.d=d;l.v=new THREE.Vector3(l.p[0],l.p[1],l.p[2]);lbBox.appendChild(d);});
 var narrow=null;
 function setText(n){if(n===narrow)return;narrow=n;L.forEach(function(l){l.d.innerHTML='<small>'+l.s+'</small>'+(n&&l.sh?l.sh:l.t);l.w=0;});}
 
@@ -1005,16 +1023,16 @@ var V=[
  {n:'1 · WB',x:24,z:-16,k:0.3,t:'1 · Wildberries',b:'Старт проекта. Продажи в Узбекистане и экспорт в СНГ через WB. Работаем по FBO и FBS. Решения о росте принимаем по цифрам: оборот, маржа после комиссий, оборачиваемость, рейтинг.',w:'Менеджер Wildberries · ведут Жафархон и Жасур'},
  {n:'2 · Ozon/Uzum',x:24,z:-8,k:0.3,t:'2 · Ozon, Uzum, Яндекс Маркет',b:'Те же товары на новых площадках. Ozon продаёт и в Узбекистане, и в СНГ. Uzum и Яндекс Маркет — внутренний рынок. Один отчёт по всем каналам.',w:'Менеджеры Ozon и Uzum/Яндекс · ведут Жафархон и Жасур'},
  {n:'3 · HoReCa',x:24,z:0,k:0.3,t:'3 · B2B: HoReCa и офисы',b:'Регулярные поставки ресторанам, кафе, отелям и офисам по B2B-прайсу.',w:'Менеджер B2B · ведут Жафархон и Жасур'},
- {n:'4 · Coca-Cola',x:24,z:8,k:0.3,t:'4 · Экспорт Coca-Cola в РФ',b:'Идея учредителей. Через новое юрлицо и арендную логистику: путь А через наш склад или путь Б напрямую. После юридической проверки схемы.',w:'Менеджер ВЭД · ведут Жафархон и Жасур'},
+ {off:1,n:'4 · Coca-Cola',x:24,z:8,k:0.3,t:'4 · Экспорт Coca-Cola в РФ',b:'Идея учредителей. Через новое юрлицо и арендную логистику: путь А через наш склад или путь Б напрямую. После юридической проверки схемы.',w:'Менеджер ВЭД · ведут Жафархон и Жасур'},
  {n:'5 · Дарксторы',x:24,z:16,k:0.3,t:'5 · Дарксторы',b:'3–4 точки, запускаем, когда остальные направления работают стабильно. Быстрая доставка через Uzum Tezkor, Яндекс Еду и Лавку.',w:'Менеджер быстрой доставки · ведут Жафархон и Жасур'},
  {n:'FBO / FBS',x:13,z:-10,k:0.42,t:'FBO и FBS',b:'FBO: наши машины везут партии на склады WB и Ozon, площадка хранит и доставляет. FBS: товар хранится у нас на складе, машины площадки забирают заказы. Часть товара держим у них, часть у себя.',w:'Схему выбирают учредители: FBO, FBS или обе'},
- {n:'Экспорт в СНГ',x:39,z:0,k:0.48,t:'Экспорт в СНГ: три пути',b:'Основной объём — Россия, дальше Казахстан, Кыргызстан, Беларусь, Армения. Через Wildberries или Ozon: сдаём товар площадке, она везёт и продаёт. Через Orient Logistic (компания группы): партии. Coca-Cola — через арендную логистику. Основной путь выбираем после встречи с Wildberries.',w:'Ведут Жафархон и Жасур'},
+ {n:'Экспорт в СНГ',x:39,z:0,k:0.48,t:'Экспорт в СНГ: три пути',b:'Основной объём — Россия, дальше Казахстан, Кыргызстан, Беларусь, Армения. Через Wildberries или Ozon: сдаём товар площадке, она везёт и продаёт. Через Orient Logistic (компания группы): партии. Основной путь выбираем после встречи с Wildberries.',w:'Ведут Жафархон и Жасур'},
  {n:'Главный офис',x:-2,z:-14,k:0.32,t:'Главный офис',b:'',w:''},
- {n:'Путь Coca-Cola',x:10,z:17,k:0.75,t:'Coca-Cola',b:'',w:''}
+ {off:1,n:'Путь Coca-Cola',x:10,z:17,k:0.75,t:'Coca-Cola',b:'',w:''}
 ];
 var nav=document.getElementById('v3nav'),info=document.getElementById('v3info'),zf=1;
 info.addEventListener('click',function(e){if(e.target.closest('.x'))info.hidden=true;});
-V.forEach(function(v,i){var b=document.createElement('button');b.type='button';b.textContent=v.n;b.addEventListener('click',function(){go(i);});nav.appendChild(b);});
+V.forEach(function(v,i){var b=document.createElement('button');b.type='button';b.textContent=v.n;b.addEventListener('click',function(){go(i);});if(v.off)b.hidden=true;nav.appendChild(b);});
 function go(i){view=i;var v=V[i];goal.x=(i===0&&C.aspect<0.95)?15:v.x;goal.z=v.z;goal.d=fitD*v.k*zf;goal.e=i===0?el0:Math.min(el0+0.12,1.05);drag=0;
  Array.prototype.forEach.call(nav.children,function(b,j){b.classList.toggle('on',j===i);b.setAttribute('aria-pressed',j===i);});
  info.hidden=(i===0&&W<640);info.innerHTML='<button type="button" class="x" aria-label="Скрыть описание">×</button><small>'+v.t+'</small><p>'+v.b+'</p><span>'+v.w+'</span>';
@@ -1029,7 +1047,7 @@ function cam(time,dt){var a=still?1:1-Math.exp(-dt*2.2);cur.x+=(goal.x-cur.x)*a;
  var az=base+drag+((still||touched)?0:0.18*Math.sin(time*0.00012));target.set(cur.x,0,cur.z);S.fog.near=cur.d*1.3;S.fog.far=cur.d*3;if(Math.abs(C.far-cur.d*5)>1){C.far=cur.d*5;C.updateProjectionMatrix();}
  C.position.set(cur.x+cur.d*Math.cos(cur.e)*Math.sin(az),cur.d*Math.sin(cur.e),cur.z+cur.d*Math.cos(cur.e)*Math.cos(az));C.lookAt(target);}
 var PR=[15,4,5,6,7,8,9,13,14,16,18,12,17,10,11,0,1,2,3];
-function labels(){var kept=[];PR.forEach(function(i){var l=L[i];tmp.copy(l.v).project(C);var x=(tmp.x*0.5+0.5)*W,y=(-tmp.y*0.5+0.5)*H;
+function labels(){var kept=[];PR.forEach(function(i){var l=L[i];if(l.off)return;tmp.copy(l.v).project(C);var x=(tmp.x*0.5+0.5)*W,y=(-tmp.y*0.5+0.5)*H;
  if(!l.w){l.w=l.d.offsetWidth;l.h=l.d.offsetHeight;}
  var ok=tmp.z<1&&x>-l.w&&x<W+l.w&&y>-l.h&&y<H+l.h;var yb=y-6;
  if(ok){for(var it=0;it<8;it++){var hit=null;for(var k=0;k<kept.length;k++){var q=kept[k];if(x-l.w/2-2<q.b&&x+l.w/2+2>q.a&&yb-l.h<q.d&&yb>q.c){hit=q;break;}}if(!hit)break;yb=hit.c-3;}
@@ -1053,7 +1071,7 @@ function panBy(dx,dy){var az=base+drag,k=2*cur.d*Math.tan(THREE.MathUtils.degToR
  var rx=Math.cos(az),rz=-Math.sin(az),fx=Math.sin(az),fz=Math.cos(az);
  var nx=cur.x-dx*k*rx-dy*k*fx/se,nz=cur.z-dx*k*rz-dy*k*fz/se;
  cur.x=goal.x=Math.max(-36,Math.min(52,nx));cur.z=goal.z=Math.max(-30,Math.min(30,nz));}
-var NODES=[[6,-21.5,9],[-2,-14,10],[-14,21,11],[33,10,9],[47,-1,9],[40,-2,9],[32.5,18,0],[12,-11,8],[-24,-13.5,1],[-24,-4.5,1],[-24,4.5,1],[-24,13.5,1],[0,0,2],[24,-16,3],[24,-8,4],[24,0,5],[24,8,6],[24,16,7]];
+var NODES=[[6,-21.5,9],[-2,-14,10],[33,10,9],[47,-1,9],[40,-2,9],[32.5,18,0],[12,-11,8],[-24,-13.5,1],[-24,-4.5,1],[-24,4.5,1],[-24,13.5,1],[0,0,2],[24,-16,3],[24,-8,4],[24,0,5],[24,16,7]];
 function pick(e){var r=cv.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,C);
  var h=ray.intersectObjects(S.children,true);if(!h.length)return;var pt=h[0].point,best=-1,bd=7.5;
  NODES.forEach(function(n){var d=Math.hypot(pt.x-n[0],pt.z-n[1]);if(d<bd){bd=d;best=n[2];}});if(best>0)go(best);}

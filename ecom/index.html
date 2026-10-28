@@ -8,17 +8,17 @@
 <meta property="og:title" content="OGM E-com · проект Жафархона и Жасура">
 <meta property="og:description" content="Пять направлений: Wildberries, Ozon, Uzum и Яндекс Маркет, B2B для HoReCa, экспорт Coca-Cola, дарксторы.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0b131c">
-<style>:root{color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="theme-color" content="#f4f6f8">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>OGM E-com</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Single dark look. Layout: dispatch-board — один широкий поток-схема в центре, вокруг неё плотные «накладные» блоки */
+/* Single light business look. Layout: dispatch-board — один широкий поток-схема в центре, вокруг неё плотные «накладные» блоки */
 :root{
-  --bg:#0b131c; --surface:#121d29; --fg:#e9eef3; --muted:#93a4b3; --line:#243444;
-  --accent:#f08a3a; --accent-soft:#3a2615; --blue:#7fb0e6; --blue-soft:#18293c; --ok:#6cc08f; color-scheme:dark;
+  --bg:#f4f6f8; --surface:#ffffff; --fg:#14202b; --muted:#5a6875; --line:#dde3e9;
+  --accent:#d8661a; --accent-soft:#fdeee2; --blue:#1d4e89; --blue-soft:#e4ecf6; --ok:#2f7a4f; color-scheme:light;
   --display:"Unbounded", "Arial Black", system-ui, sans-serif;
   --body:"Golos Text", "Segoe UI", system-ui, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
@@ -134,13 +134,13 @@ svg .wheel{fill:var(--fg)}
 .risk span{color:var(--muted);font-size:.93rem}
 @media(max-width:640px){.risk>div{grid-template-columns:1fr;gap:4px}}
 
-.ask{background:linear-gradient(160deg,#1a2a3b,#101a25);color:var(--fg);border:1px solid #f08a3a55;border-radius:14px;padding:28px;display:grid;gap:16px}
+.ask{background:linear-gradient(160deg,#1a2a3b,#101a25);color:#e9eef3;border:1px solid #f08a3a55;border-radius:14px;padding:28px;display:grid;gap:16px}
 .ask h2{color:#fff}
 .ask ol{margin:0;padding-left:22px;display:grid;gap:8px;max-width:70ch}
 .ask .eyebrow{color:var(--accent)}
 
 /* 3D scene */
-.scene3d{position:relative;height:clamp(460px,56vw,640px);border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#0a121b;box-shadow:0 30px 80px -40px rgba(240,138,58,.35)}
+.scene3d{position:relative;height:clamp(460px,56vw,640px);border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#dfe8f0;box-shadow:0 30px 70px -40px rgba(20,32,43,.35)}
 @media(max-width:640px){.scene3d{height:620px}}
 .scene3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
 .lbls{position:absolute;inset:0;pointer-events:none;overflow:hidden}
@@ -154,7 +154,7 @@ svg .wheel{fill:var(--fg)}
 .lb.hub{border-color:#f08a3a;font-size:13.5px}
 .lb::after{content:"";position:absolute;left:50%;bottom:-6px;width:1px;height:6px;background:rgba(255,255,255,.45)}
 @media(max-width:640px){.lb{font-size:11px;padding:4px 7px}.lb small{font-size:8.5px}.lb.hub{font-size:12px}}
-.hint3d{position:absolute;left:14px;right:max(12px,env(safe-area-inset-right,0px));text-align:right;bottom:10px;font:500 11px var(--mono);color:rgba(255,255,255,.55);pointer-events:none}
+.hint3d{position:absolute;left:14px;text-shadow:0 1px 0 rgba(255,255,255,.6);right:max(12px,env(safe-area-inset-right,0px));text-align:right;bottom:10px;font:500 11px var(--mono);color:rgba(20,32,43,.7);pointer-events:none}
 /* benefits */
 .ben{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media(max-width:900px){.ben{grid-template-columns:1fr 1fr}}
@@ -204,6 +204,22 @@ svg .wheel{fill:var(--fg)}
 @media(max-width:1000px){.groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.groups{grid-template-columns:1fr}}
 
+.kvi{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.kvi{grid-template-columns:1fr}}
+.src4{margin-top:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.src4 div{background:var(--surface);padding:14px 16px;display:grid;gap:4px;align-content:start}
+.src4 b{font-family:var(--display);font-size:.9rem}
+.src4 span{color:var(--muted);font-size:.9rem}
+@media(max-width:860px){.src4{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.src4{grid-template-columns:1fr}}
+.open{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.open>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px;padding:16px 18px;border-top:1px solid var(--line)}
+.open>div:first-child{border-top:0}
+.open b{font-weight:600}
+.open span{color:var(--muted);font-size:.93rem}
+@media(max-width:640px){.open>div{grid-template-columns:1fr;gap:4px}}
+
+.pay{margin-top:20px;width:100%;padding:14px 16px;border-radius:12px;background:var(--accent-soft);font-size:.93rem}
 /* ask */
 .asks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%}
 @media(max-width:820px){.asks{grid-template-columns:1fr}}
@@ -243,8 +259,8 @@ svg .wheel{fill:var(--fg)}
 body.noscroll{overflow:hidden}
 
 /* top nav */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:rgba(11,19,28,.92)}
-.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(11,19,28,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:rgba(244,246,248,.96)}
+.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(244,246,248,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .topnav .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .topnav .in::-webkit-scrollbar{display:none}
 .topnav .brand{font:700 .85rem var(--display);margin-right:10px;white-space:nowrap;color:var(--fg);text-decoration:none}
@@ -254,7 +270,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .topnav a.l.on{color:var(--fg);border-color:var(--accent);background:var(--accent-soft)}
 section{scroll-margin-top:64px}
 /* cases */
-.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media(max-width:860px){.cases{grid-template-columns:1fr}}
 .cases .big{font-family:var(--display);font-size:1.7rem;color:var(--accent);font-variant-numeric:tabular-nums}
 .cases p{color:var(--muted);font-size:.93rem}
@@ -269,6 +285,19 @@ section{scroll-margin-top:64px}
 .tm b{font-family:var(--display);font-size:1.05rem}
 .tm small{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
 
+@media print{
+ @page{size:A4;margin:12mm 10mm}
+ body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:13px}
+ .topnav,.v3info,.v3nav,.v3ctl,.hint3d,body::before{display:none!important}
+ .scene3d{height:auto!important;box-shadow:none;border-radius:12px}
+ .scene3d canvas,.scene3d .lbls{display:none!important}
+ #sceneShot{display:block!important;width:100%;height:auto}
+ section{padding-block:26px}
+ .card,.proc li,.road>div,.open>div,.risk>div,.src4 div,.asks div,.tm figure,.fact,.heads div,.nd,.grp{break-inside:avoid}
+ h2,h3{break-after:avoid}
+ .sec-head{break-after:avoid}
+}
+
 footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);display:grid;gap:10px}
 footer ol{margin:0;padding-left:18px;display:grid;gap:3px}
 footer a{color:var(--blue)}
@@ -280,7 +309,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 <nav class="topnav" aria-label="Разделы"><div class="in">
   <a class="brand" href="#top">OGM <b>E-com</b></a>
-  <a class="l" href="#schema">Схема</a><a class="l" href="#value">Польза</a><a class="l" href="#cases">Кейсы</a><a class="l" href="#process">Процесс</a><a class="l" href="#fbo">FBO/FBS</a><a class="l" href="#team">Структура</a><a class="l" href="#roadmap">Этапы</a><a class="l" href="#finance">Финансы</a><a class="l" href="#ask">Решения</a><a class="l" href="#authors">Авторы</a>
+  <a class="l" href="#schema">Схема</a><a class="l" href="#value">Польза</a><a class="l" href="#cases">Кейсы</a><a class="l" href="#process">Процесс</a><a class="l" href="#assort">Ассортимент</a><a class="l" href="#fbo">FBO/FBS</a><a class="l" href="#team">Структура</a><a class="l" href="#roadmap">Этапы</a><a class="l" href="#finance">Финансы</a><a class="l" href="#discuss">Обсудить</a><a class="l" href="#ask">Решения</a><a class="l" href="#authors">Авторы</a>
 </div></nav>
 <div class="wrap" id="top">
 
@@ -288,7 +317,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <span class="eyebrow">Проект для учредителей ОГМ · 31 октября 2026</span>
   <h1>OGM E-com</h1>
   <p class="lead">Отдельная компания группы, которая продаёт товары через маркетплейсы и быструю доставку в Узбекистане и СНГ. Пять отдельных направлений: Wildberries, мультимаркетплейсы (Ozon, Uzum, Яндекс Маркет), B2B для HoReCa и офисов, экспорт Coca-Cola в Россию и дарксторы для быстрой доставки.</p>
-  <div class="meta"><span>Рабочее название, юрлицо регистрируется</span><span>Подготовили: Ж. Дехканов, Ж. Хакимов</span></div>
+  <div class="meta"><span>Новое юрлицо, учредитель ОГМ 100%</span><span>Подготовили: Ж. Дехканов, Ж. Хакимов</span></div>
   <div class="facts">
     <div class="fact"><b>22,6 трлн сум</b><span>рынок e-com Узбекистана в 2025 году, рост в 22 раза за 5 лет</span></div>
     <div class="fact"><b>4,6%</b><span>доля онлайна в рознице. В среднем по миру 22%</span></div>
@@ -406,9 +435,9 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <div class="card"><span class="pill o">Продажи</span><h3>Новый канал для товаров группы</h3><p>Ассортимент Дамир Савдо и поставщиков группы продаётся в Узбекистане и по СНГ без открытия новых магазинов.</p></div>
     <div class="card"><span class="pill o">Рынок СНГ</span><h3>Выход в Россию и ЕАЭС</h3><p>Продажи узбекских продавцов в Россию за полгода выросли втрое. Wildberries и Ozon дают эту аудиторию сразу.</p></div>
     <div class="card"><span class="pill o">Экспорт</span><h3>Валютная выручка</h3><p>Экспорт Coca-Cola в РФ и продажи на российских площадках приносят выручку из-за рубежа.</p></div>
-    <div class="card"><span class="pill">Данные</span><h3>Знание спроса для новой сети</h3><p>Маркетплейсы каждый день показывают, что покупают и по какой цене. Эти данные пойдут в закупки новой сети.</p></div>
-    <div class="card"><span class="pill">Актив</span><h3>Своя инфраструктура</h3><p>Склад-хаб, команда и дарксторы остаются у группы и работают на все её проекты.</p></div>
-    <div class="card"><span class="pill">Контроль</span><h3>Отдельный P&amp;L</h3><p>Отдельное юрлицо с прозрачными цифрами по каждому направлению. Решения о росте принимаем по фактам.</p></div>
+    <div class="card"><span class="pill">Данные</span><h3>Синергия с новой сетью</h3><p>Маркетплейсы каждый день показывают, что покупают и по какой цене. Эти данные усиливают закупки новой сети, а общие поставщики дают лучшие условия.</p></div>
+    <div class="card"><span class="pill o">Прибыль</span><h3>Маржа на своём ассортименте</h3><p>Импорт, свой бренд и прямые поставки с заводов дают наценку выше, чем в классической рознице, без аренды торговых залов.</p></div>
+    <div class="card"><span class="pill">Контроль</span><h3>Отдельный P&amp;L</h3><p>Отдельное юрлицо ОГМ с прозрачными цифрами по каждому направлению. Склад, команда и данные остаются активом группы.</p></div>
   </div>
   <div class="ai">
     <div style="display:grid;gap:10px"><span class="eyebrow">ИИ в каждом процессе</span><h3 style="font-size:1.25rem">Маленькая команда работает как большая</h3><p class="muted">ИИ-агент уже настроен и работает в связке с нами. Он берёт на себя рутину, люди занимаются товаром и партнёрами.</p></div>
@@ -433,23 +462,24 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <div class="card"><span class="big">$4 тыс → $100 тыс</span><h3>Продавец на Uzum Market</h3><p>Ташкентский селлер за два года вырос с 4 до 100 тысяч долларов оборота в месяц, используя инструменты маркетплейса.</p><a href="https://www.spot.uz/ru/2026/07/27/uzum-market/" target="_blank" rel="noopener">Spot.uz, июль 2026</a></div>
     <div class="card"><span class="big">&gt;$1 млрд</span><h3>Узбекские продавцы на Wildberries</h3><p>За два года продажи узбекских продавцов на Wildberries превысили миллиард долларов. Площадка арендует склады в Узбекистане под экспорт.</p><a href="https://www.alta.ru/external_news/119803/" target="_blank" rel="noopener">Alta.ru</a></div>
     <div class="card"><span class="big">≈×4</span><h3>Рост Ozon в Узбекистане</h3><p>В 2025 году оборот Ozon в Узбекистане вырос почти в четыре раза, а число активных покупателей примерно в 3,5 раза.</p><a href="https://www.spot.uz/ru/2026/07/15/ozon-uzbekistan/" target="_blank" rel="noopener">Spot.uz, июль 2026</a></div>
+    <div class="card"><span class="big">10–15 человек</span><h3>Оборот как у крупной сети</h3><p>На рынке уже есть e-com компании из 10–15 человек и одного склада, чей оборот сопоставим с розничной сетью на 1000+ сотрудников. Без торговых залов, списаний по магазинам и большого штата.</p><span class="muted" style="font-size:.85rem">По наблюдениям рынка, детали на встрече</span></div>
   </div>
 </section>
 
 <section id="entities">
   <div class="sec-head">
     <span class="eyebrow">Структура</span>
-    <h2>Два юрлица, разные задачи</h2>
-    <p>Новая компания юридически отделена от Дарвоза Савдо, Дамир Савдо и ОГМ. Компании группы работают с ней как поставщики.</p>
+    <h2>Новое юрлицо группы</h2>
+    <p>OGM E-com — отдельное юрлицо, учредитель ОГМ 100%. Компании группы работают с ним как поставщики.</p>
   </div>
   <div class="ent">
     <div class="card">
-      <span class="pill">Поставщик группы</span>
+      <span class="pill">Дистрибьютор группы</span>
       <h3>Дамир Савдо</h3>
       <ul>
-        <li>Даёт товар по дилерским контрактам</li>
-        <li>Канал Wildberries по договорённости об эксклюзивном партнёрстве</li>
-        <li>Остаётся в своей текущей структуре</li>
+        <li>Поставляет товар по дилерским контрактам</li>
+        <li>Самые ходовые позиции от всех своих поставщиков</li>
+        <li>Условия поставки фиксируем договором с OGM E-com</li>
       </ul>
     </div>
     <div class="card hl">
@@ -461,6 +491,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
         <li>Направление 4: экспорт Coca-Cola в Россию</li>
         <li>Направление 5: дарксторы и быстрая доставка</li>
         <li>Импорт из Европы и Китая под спрос площадок</li>
+        <li>Подчиняется напрямую учредителям ОГМ</li>
+        <li>Бухгалтерия и юрист — от группы ОГМ</li>
         <li>Своя команда, склад-хаб и отчётность</li>
       </ul>
     </div>
@@ -485,6 +517,26 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <li><span class="n">9</span><div><h3>Аналитика и отчёт</h3><p>Единый отчёт по всем каналам: выручка, маржа, остатки, оборачиваемость, реклама.</p></div><div class="who"><b>Руководитель направления</b>ежедневно и еженедельно</div></li>
     <li><span class="n">10</span><div><h3>Выплаты и решение по SKU</h3><p>Сверка выплат площадок. Товар докупаем, масштабируем или выводим.</p></div><div class="who"><b>Руководитель + бухгалтерия</b>раз в 2 недели</div></li>
   </ol>
+</section>
+
+<section id="assort">
+  <div class="sec-head">
+    <span class="eyebrow">Ассортимент и цены</span>
+    <h2>500 SKU: 100 приводят покупателя, 400 приносят прибыль</h2>
+    <p>Логика как в сильной рознице. Ключевые товары по лучшей цене приводят покупателя в наш магазин на площадке, а зарабатываем на остальном ассортименте.</p>
+  </div>
+  <div class="kvi">
+    <div class="card hl"><span class="pill o">100 SKU · KVI</span><h3>Товары-магниты</h3>
+      <ul><li>Отбор: хиты розницы, частые запросы на площадках и лучшая закупочная цена</li><li>Цена на 1–3% ниже конкурентов</li><li>Маржа после комиссий и логистики не ниже 3%</li><li>Дают рейтинг магазина, отзывы и подписчиков</li></ul></div>
+    <div class="card"><span class="pill">400 SKU</span><h3>Основной ассортимент</h3>
+      <ul><li>Конкурентная цена</li><li>Целевая маржа после комиссий 15–20%</li><li>Готовые бренды и свой бренд группы</li><li>Покупатель видит их в том же магазине</li></ul></div>
+  </div>
+  <div class="src4">
+    <div><b>Группа</b><span>Дамир Савдо и поставщики группы: самые ходовые позиции</span></div>
+    <div><b>Узбекистан</b><span>Заводы и оптовые рынки напрямую</span></div>
+    <div><b>Европа</b><span>Выставки и дистрибьюторы</span></div>
+    <div><b>Китай</b><span>Тест через 1688 и Alibaba, затем напрямую с фабрик. Свой бренд на производстве под заказ</span></div>
+  </div>
 </section>
 
 <section id="fbo">
@@ -513,9 +565,9 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <p>Часть продукции пойдёт в Россию. После встречи с Wildberries уточняем их условия и выбираем основной путь. Остальные остаются запасными.</p>
   </div>
   <div class="opts">
-    <div class="card"><span class="pill" style="background:#3a1235;color:#ff6fd8">Путь 1</span><h3>Через Wildberries</h3><p class="muted">Сдаём товар на склад WB в Узбекистане. Площадка сама везёт его в Россию и продаёт там покупателям.</p></div>
+    <div class="card"><span class="pill" style="background:#fbe3f6;color:#a3157f">Путь 1</span><h3>Через Wildberries</h3><p class="muted">Сдаём товар на склад WB в Узбекистане. Площадка сама везёт его в Россию и продаёт там покупателям.</p></div>
     <div class="card"><span class="pill">Путь 2</span><h3>Через Ozon</h3><p class="muted">Так же, но через Ozon. Его покупатели в России, Беларуси и Казахстане видят наш товар.</p></div>
-    <div class="card"><span class="pill" style="background:#123a38;color:#34d1c6">Путь 3</span><h3>Через Ориент Логистик</h3><p class="muted">Своя доставка партиями. Подходит для экспорта Coca-Cola и крупных поставок, где нужны свои сроки и цена логистики.</p></div>
+    <div class="card"><span class="pill" style="background:#dcf5f3;color:#127a72">Путь 3</span><h3>Через Orient Logistic</h3><p class="muted">Компания группы ОГМ. Своя доставка партиями. Подходит для экспорта Coca-Cola и крупных поставок, где нужны свои сроки и цена логистики.</p></div>
   </div>
 </section>
 
@@ -555,6 +607,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
         </div>
     </div>
     <div class="shared"><span>Бухгалтерия группы</span><span>Юрист группы</span><span>ИИ-агент: аналитика и отчёты</span></div>
+    <div class="pay"><b>Оплата.</b> Менеджеры: оклад 12 млн сум и KPI от маржи своей площадки, всего до 20 млн. Руководители: оклад и процент от прибыли, условия обсуждаем на встрече. Руководители переходят в штат OGM E-com официально, после одобрения проекта.</div>
     <div class="heads">
       <div><b>7</b><span>человек на старте, включая двух руководителей</span></div>
       <div><b>10</b><span>после запуска B2B и экспорта</span></div>
@@ -567,15 +620,16 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="sec-head">
     <span class="eyebrow">Дорожная карта</span>
     <h2>Пять направлений по очереди</h2>
-    <p>Каждое следующее направление запускаем, когда предыдущее работает стабильно. Сроки ориентировочные.</p>
+    <p>Каждое следующее направление запускаем, когда предыдущее работает стабильно.</p>
   </div>
   <div class="road">
-    <div><span class="when">1 · 0–1 месяц</span><h3>Wildberries</h3><ul><li>Регистрация юрлица</li><li>Склад-хаб и команда</li><li>Первая партия SKU</li></ul></div>
-    <div><span class="when">2 · 1–3 месяца</span><h3>Ozon, Uzum, Яндекс Маркет</h3><ul><li>Те же SKU на новые площадки</li><li>Единый отчёт</li><li>Пробная партия импорта</li></ul></div>
-    <div><span class="when">3 · 3–6 месяцев</span><h3>B2B: HoReCa и офисы</h3><ul><li>B2B-прайс и условия</li><li>Первые договоры поставки</li></ul></div>
-    <div><span class="when">4 · после проверки схемы</span><h3>Экспорт Coca-Cola в РФ</h3><ul><li>Юридическая проверка</li><li>Логистика и таможня</li><li>Первая поставка</li></ul></div>
-    <div><span class="when">5 · 6–12 месяцев</span><h3>Дарксторы</h3><ul><li>3–4 точки при складах новой сети</li><li>Uzum Tezkor, Яндекс Еда и Лавка</li></ul></div>
+    <div><span class="when">1 · после договора с WB</span><h3>Wildberries</h3><ul><li>Регистрация юрлица, свой магазин-продавец</li><li>Склад-хаб и команда</li><li>Первая партия SKU</li></ul></div>
+    <div><span class="when">2 · когда WB стабилен</span><h3>Ozon, Uzum, Яндекс Маркет</h3><ul><li>Те же SKU на новые площадки, Uzum с нуля</li><li>Единый отчёт</li><li>Пробная партия импорта</li></ul></div>
+    <div><span class="when">3 · следующий шаг</span><h3>B2B: HoReCa и офисы</h3><ul><li>Клиентскую базу строим с нуля</li><li>B2B-прайс и первые договоры</li></ul></div>
+    <div><span class="when">4 · идея учредителей</span><h3>Экспорт Coca-Cola в РФ</h3><ul><li>Прорабатываем схему и юр. проверку</li><li>Логистика и таможня</li><li>Первая поставка</li></ul></div>
+    <div><span class="when">5 · когда остальное стабильно</span><h3>Дарксторы</h3><ul><li>3–4 точки при складах новой сети</li><li>Uzum Tezkor, Яндекс Еда и Лавка</li></ul></div>
   </div>
+  <p class="muted" style="margin-top:14px">Команда и процессы будут готовы и к новым площадкам, например Amazon, когда они придут в регион.</p>
 </section>
 
 <section id="place">
@@ -585,12 +639,12 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <p>Три варианта на выбор учредителей.</p>
   </div>
   <div class="opts">
-    <div class="card"><span class="pill">Вариант А</span><h3>Отдельный офис со складом</h3>
-      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Всё под контролем в одном месте</li><li>Быстрые отгрузки FBS</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Отдельная аренда</li><li>Дальше от руководства</li></ul></div></div></div>
-    <div class="card"><span class="pill">Вариант Б</span><h3>Главный офис + отдельный склад-хаб</h3>
-      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Команда рядом с руководством</li><li>Склад выбираем у логистики</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Нужен старший на складе</li><li>Две точки управления</li></ul></div></div></div>
-    <div class="card"><span class="pill">Вариант В</span><h3>Хаб при складе новой сети</h3>
-      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Общая логистика с сетью</li><li>Готовая база для дарксторов</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Зависит от сроков открытия сети</li></ul></div></div></div>
+    <div class="card hl"><span class="pill o">Вариант А · рекомендуем</span><h3>Часть склада группы + офис при нём</h3>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Быстрый и дешёвый старт</li><li>Команда рядом с товаром</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Дальше от руководства</li></ul></div></div></div>
+    <div class="card"><span class="pill">Вариант Б</span><h3>Главный офис Infinity + склад группы</h3>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Команда рядом с руководством</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Две точки управления</li><li>Нужен старший на складе</li></ul></div></div></div>
+    <div class="card"><span class="pill">Вариант В</span><h3>Отдельный комфортный офис + склад группы</h3>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Привлекает сильных специалистов</li><li>Свой ритм команды</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Аренда офиса</li></ul></div></div></div>
   </div>
 </section>
 
@@ -614,10 +668,25 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   </div>
   <div class="risk">
     <div><b>Эксклюзив с Wildberries</b><span>Подтвердить юридически, что новое юрлицо может продавать те же товары на Ozon и других площадках.</span></div>
-    <div><b>Экспорт Coca-Cola в Россию</b><span>Схему ввоза и права на бренд проверяют юристы до первой поставки.</span></div>
+    <div><b>Экспорт Coca-Cola в Россию</b><span>Пока идея учредителей. Схему ввоза и права на бренд проверяют юристы до первой поставки.</span></div>
+    <div><b>Растаможка импорта</b><span>Схему выбираем вместе с группой до первой поставки из Китая и Европы.</span></div>
     <div><b>Документы на товар</b><span>Работаем только с товаром, на который есть документы. Без них площадки блокируют карточки.</span></div>
     <div><b>Комиссии площадок меняются</b><span>Цену пересчитываем при каждом изменении тарифов. Ozon, например, вдвое снизил тарифы для продавцов из Узбекистана в июле 2026.</span></div>
     <div><b>Деньги в остатках</b><span>Контроль оборачиваемости каждую неделю, неходовые SKU выводим.</span></div>
+  </div>
+</section>
+
+<section id="discuss">
+  <div class="sec-head">
+    <span class="eyebrow">Для встречи</span>
+    <h2>Что решаем вместе с учредителями</h2>
+  </div>
+  <div class="open">
+    <div><b>Доставка на склады площадок</b><span>Транспорт группы, Orient Logistic или наёмный перевозчик</span></div>
+    <div><b>Растаможка импорта</b><span>Брокер группы, сами от нового юрлица или бондовый склад</span></div>
+    <div><b>Путь в Россию</b><span>Через Wildberries, через Ozon или через Orient Logistic. Решаем после встречи с Wildberries</span></div>
+    <div><b>Экспорт Coca-Cola</b><span>Схема поставок и юридическая проверка</span></div>
+    <div><b>Условия руководителей</b><span>Оклад и процент от прибыли для руководителей проекта</span></div>
   </div>
 </section>
 
@@ -626,12 +695,12 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <span class="eyebrow">Что нужно для запуска</span>
     <h2>Люди, полномочия, деньги</h2>
     <div class="asks">
-      <div><h3>Люди</h3><ul><li>Штат на старт: 5 сотрудников под двумя руководителями</li><li>Остальных нанимаем под запуск каждого направления</li></ul></div>
+      <div><h3>Люди</h3><ul><li>Штат на старт: 5 сотрудников под двумя руководителями</li><li>Официальный переход руководителей в штат OGM E-com</li><li>Остальных нанимаем под запуск каждого направления</li></ul></div>
       <div><h3>Полномочия</h3><ul><li>Подписание договоров с площадками и поставщиками</li><li>Найм в рамках утверждённого штата</li><li>Цены и рекламный бюджет в утверждённых лимитах</li></ul></div>
       <div><h3>Деньги</h3><ul><li>Бюджет запуска по статьям из раздела «Финансы»</li><li>Оборотные средства на первую закупку</li><li>Помещение под склад-хаб</li></ul></div>
     </div>
     <div class="pilot">
-      <p><b>Пилот 90 дней на Wildberries.</b> Через 90 дней показываем учредителям оборот, маржу после комиссий, оборачиваемость и рейтинг магазина. По этим цифрам решаем, запускать ли следующие направления.</p>
+      <p><b>Пилот 90 дней на Wildberries</b> стартует после подписания договора с WB. Через 90 дней показываем учредителям оборот, маржу после комиссий, оборачиваемость и рейтинг магазина. По этим цифрам решаем, запускать ли следующие направления.</p>
     </div>
     <ol>
       <li>Одобрить создание OGM E-com как отдельного юрлица</li>
@@ -640,6 +709,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <li>Утвердить основной путь поставок в Россию после встречи с Wildberries</li>
       <li>Согласовать договор поставки с Дамир Савдо</li>
       <li>Утвердить пилот, штат на старт и расчёт бюджета</li>
+      <li>Согласовать условия и официальный переход руководителей</li>
     </ol>
   </div>
 </section>
@@ -675,15 +745,15 @@ try{R=new THREE.WebGLRenderer({canvas:cv,antialias:true});}catch(e){fallback();r
 if(!R.getContext()){fallback();return;}
 R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
 R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
-R.setClearColor(0x0a121b);R.outputEncoding=THREE.sRGBEncoding;
-var S=new THREE.Scene();S.fog=new THREE.Fog(0x0a121b,80,150);
+R.setClearColor(0xdfe8f0);R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=0.92;
+var S=new THREE.Scene();S.fog=new THREE.Fog(0xdfe8f0,80,150);
 var C=new THREE.PerspectiveCamera(38,1,0.1,400);
-S.add(new THREE.HemisphereLight(0xa9c2e0,0x0b1520,0.8));
-var sun=new THREE.DirectionalLight(0xffe2c4,1.05);sun.position.set(-18,34,24);sun.castShadow=true;
+S.add(new THREE.HemisphereLight(0xf2f7ff,0x7d8a96,0.75));
+var sun=new THREE.DirectionalLight(0xfff0dc,1.7);sun.position.set(-22,42,26);sun.shadow.bias=-0.0004;sun.castShadow=true;
 sun.shadow.mapSize.set(2048,2048);var sc=sun.shadow.camera;sc.left=-42;sc.right=42;sc.top=32;sc.bottom=-32;sc.near=1;sc.far=110;S.add(sun);
-var ground=new THREE.Mesh(new THREE.PlaneGeometry(160,120),new THREE.MeshStandardMaterial({color:0x0f1d2b,roughness:1}));
+var ground=new THREE.Mesh(new THREE.PlaneGeometry(160,120),new THREE.MeshStandardMaterial({color:0xc3ccd4,roughness:1}));
 ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;S.add(ground);
-var grid=new THREE.GridHelper(130,65,0x1b3046,0x132436);grid.position.y=0.01;S.add(grid);
+var grid=new THREE.GridHelper(130,65,0xbac6d0,0xc4ced7);grid.position.y=0.01;S.add(grid);
 function M(c,e){return new THREE.MeshStandardMaterial({color:c,roughness:.62,metalness:.12,emissive:e||0});}
 function B(w,h,d,c,x,y,z){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),M(c));m.position.set(x,y+h/2,z);m.castShadow=true;m.receiveShadow=true;S.add(m);return m;}
 function G(w,h,d,c,x,y,z){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshBasicMaterial({color:c}));m.position.set(x,y,z);S.add(m);return m;}
@@ -693,7 +763,7 @@ function cyl(r1,r2,h,c,x,y,z){var m=new THREE.Mesh(new THREE.CylinderGeometry(r1
 
 /* sources x=-24 */
 var SX=-24,SZ=[-13.5,-4.5,4.5,13.5];
-SZ.forEach(function(z){P(SX,z,8,6.5,0x142739);});
+SZ.forEach(function(z){P(SX,z,8,6.5,0xb3bfca);});
 B(5,2.2,3.6,0x47637f,SX,0,-13.5);B(5.3,0.28,3.9,0x2c4256,SX,2.2,-13.5);G(1.8,1.2,0.06,0x7fb0e6,SX,0.6,-11.68);G(1.8,1.2,0.06,0x7fb0e6,SX-1.6,0.6,-11.68);
 B(4.4,2,3.2,0x5b6d7d,SX-0.6,0,-4.5);for(var k=0;k<3;k++){var r=new THREE.Mesh(new THREE.CylinderGeometry(0.01,1.05,0.9,3),M(0x3e4f5e));r.rotation.z=Math.PI/2;r.rotation.y=Math.PI/2;r.position.set(SX-2+k*1.4,2.45,-4.5);r.scale.set(1,3.2,1);S.add(r);}
 var ch=cyl(0.38,0.5,5.2,0x6b7d8d,SX+1.9,0,-5.4);G(0.8,0.2,0.8,0xff5a3c,SX+1.9,5.15,-5.4);
@@ -702,7 +772,7 @@ cont(SX,0,3.8,0x2f6fb3);cont(SX,0,5.2,0xf2b705);cont(SX,1.15,4.5,0x2f6fb3);
 cont(SX,0,12.8,0xc0392b);cont(SX,0,14.2,0x2e8b57);cont(SX,1.15,13.5,0xc0392b);
 
 /* hub */
-P(0,0,18,13,0x1a2c3e);
+P(0,0,18,13,0xa9b6c2);
 B(10,3.2,6.6,0xd3dbe3,-1,0,0.6);G(10.1,0.2,6.7,0xf08a3a,-1,3.25,0.6);
 [-1.6,0.4,2.4].forEach(function(z){G(0.06,1.5,1.1,0xffc58a,4.03,0.75,z);});
 [-1.6,0.4,2.4].forEach(function(z){G(0.06,1.5,1.1,0x9fc7f0,-6.03,0.75,z);});
@@ -711,7 +781,7 @@ var beacon=G(0.35,0.35,0.35,0xff9a4a,5.6,8.7,-3.8);
 
 /* directions x=24 */
 var DX=24,DZ=[-16,-8,0,8,16];
-DZ.forEach(function(z){P(DX+0.5,z,8,6,0x142739);});
+DZ.forEach(function(z){P(DX+0.5,z,8,6,0xb3bfca);});
 B(4.6,3,3.4,0x4a1859,DX,0,-16);G(4.7,0.75,3.5,0xcb11ab,DX,2.75,-16);G(1.6,1.4,0.06,0xffd0f3,DX,0.7,-14.27);
 B(1.7,2.4,1.7,0x0d3b8a,DX-1.9,0,-8);G(1.75,0.4,1.75,0x2f7bff,DX-1.9,2.3,-8);
 B(1.7,3.1,1.7,0x35186e,DX,0,-8);G(1.75,0.4,1.75,0x8a3dff,DX,3.0,-8);
@@ -724,18 +794,29 @@ for(var s=0;s<6;s++)G(0.32,0.32,0.8,s%2?0xffffff:0xe41e2b,DX+3,3.4,6+s*0.8);
 [14.3,16,17.7].forEach(function(z){B(1.6,1.4,1.4,0x1d5a43,DX,0,z);G(1.64,0.22,1.44,0x3ddc97,DX,1.25,z);});
 
 /* Russia zone + Orient Logistic */
-P(46,-1,13,22,0x1d1b30);
+P(46,-1,13,22,0xd9d3e6);
 for(var q=0;q<12;q++)G(0.25,0.06,1.1,0xe41e2b,39.6,0.05,-11+q*1.9);
 B(6.4,3.6,5.2,0xe3e8ee,47,0,-1);G(6.5,0.32,5.3,0x2f6fb3,47,3.6,-1);G(6.5,0.2,5.3,0xe41e2b,47,3.95,-1);
 [-2.6,-0.2].forEach(function(z){G(0.06,1.6,1.4,0xffd59a,43.77,0.8,z);});
 B(0.4,3.4,0.4,0x8b98a5,40.4,0,-10);B(0.4,3.4,0.4,0x8b98a5,40.4,0,8);
-P(33,10,8,6,0x142739);B(4.2,2.4,3.2,0x1f6f73,33,0,10.4);G(4.3,0.3,3.3,0x34d1c6,33,2.4,10.4);G(1.6,1.2,0.06,0xbff7f2,33,0.6,8.78);
+P(33,10,8,6,0xb3bfca);B(4.2,2.4,3.2,0x1f6f73,33,0,10.4);G(4.3,0.3,3.3,0x34d1c6,33,2.4,10.4);G(1.6,1.2,0.06,0xbff7f2,33,0.6,8.78);
+
+/* details */
+function tree(x,z,h){h=h||1;var t=new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.16,0.9*h,8),M(0x6b4f35));t.position.set(x,0.45*h,z);t.castShadow=true;S.add(t);
+ var c=new THREE.Mesh(new THREE.IcosahedronGeometry(0.75*h,1),new THREE.MeshStandardMaterial({color:0x5f9a52,roughness:.9,flatShading:true}));c.position.set(x,1.25*h,z);c.castShadow=true;S.add(c);}
+[-30,-24,-18,-12,-6,0,6,12,18,24,30,36].forEach(function(x,i){tree(x,-22.5+(i%2)*0.8,1+(i%3)*0.15);tree(x+3,22.5-(i%2)*0.8,1.1-(i%3)*0.1);});
+[[-8,-6],[-8,6],[8,-7],[8,7.5],[-16,-9],[-16,9],[17,-12.5],[17,12],[29,3],[29,-3.5],[37,-14],[37,13]].forEach(function(q,i){tree(q[0],q[1],0.9+(i%3)*0.15);});
+function parapet(w,d,x,y,z,c){[[w,0.25,0.15,0,d/2],[w,0.25,0.15,0,-d/2],[0.15,0.25,d,w/2,0],[0.15,0.25,d,-w/2,0]].forEach(function(e){var m=new THREE.Mesh(new THREE.BoxGeometry(e[0],e[1],e[2]),M(c));m.position.set(x+e[3],y+0.12,z+e[4]);m.castShadow=true;S.add(m);});}
+parapet(10,6.6,-1,3.45,0.6,0xb8c2cc);parapet(5,3.6,SX,2.5,-13.5,0x3b5268);parapet(4.6,3.4,DX,3,-16,0x3b1347);parapet(6.4,5.2,47,3.95,-1,0xc6ced6);
+for(var wi=0;wi<6;wi++){G(1.1,0.5,0.05,0x8fb3d1,-5+wi*1.6,2.3,3.92);}
+function car(x,z,c,r){var g=new THREE.Group();var b=new THREE.Mesh(new THREE.BoxGeometry(0.9,0.35,1.7),M(c));b.position.y=0.3;var t=new THREE.Mesh(new THREE.BoxGeometry(0.8,0.3,0.9),M(0x2a3540));t.position.set(0,0.6,-0.1);b.castShadow=t.castShadow=true;g.add(b,t);g.position.set(x,0,z);g.rotation.y=r||0;S.add(g);}
+[[6.5,4.6,0xf2f2f2],[7.6,4.6,0xc0392b],[8.7,4.6,0x2f6fb3],[9.8,4.6,0x7d8a96],[6.5,-5.6,0x1f1f1f],[7.6,-5.6,0xe7e2d4]].forEach(function(q){car(q[0],q[1],q[2]);});
 
 /* roads */
 var Y=0.07;
 function curve(pts){return new THREE.CatmullRomCurve3(pts.map(function(p){return new THREE.Vector3(p[0],Y,p[1]);}));}
 function road(cu,col,op){
- var base=new THREE.Mesh(new THREE.TubeGeometry(cu,90,0.6,8,false),new THREE.MeshStandardMaterial({color:0x1d2e40,roughness:1}));
+ var base=new THREE.Mesh(new THREE.TubeGeometry(cu,90,0.6,8,false),new THREE.MeshStandardMaterial({color:0x37414b,roughness:.95}));
  base.scale.y=0.08;base.receiveShadow=true;S.add(base);
  var line=new THREE.Mesh(new THREE.TubeGeometry(cu,120,0.08,6,false),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:op}));
  line.position.y=0.06;S.add(line);
@@ -784,7 +865,7 @@ var L=[
  {p:[DX,2.6,16],s:'5',t:'Дарксторы · быстрая доставка',sh:'Дарксторы'},
  {p:[13.5,1.2,-15],s:'FBS',t:'Площадка забирает с хаба',sh:'FBS · забирают',k:'fl'},
  {p:[10.5,1.2,-4.6],s:'FBO',t:'Везём на склады площадок',sh:'FBO · везём мы',k:'fl'},
- {p:[33,3.4,10.4],s:'ПАРТНЁР ПО ДОСТАВКЕ',t:'Ориент Логистик',sh:'Ориент Логистик',k:'ru'},
+ {p:[33,3.4,10.4],s:'КОМПАНИЯ ГРУППЫ',t:'Orient Logistic',sh:'Orient Logistic',k:'ru'},
  {p:[47,5.2,-1],s:'РОССИЯ',t:'Покупатели и склады РФ',sh:'Россия',k:'ru'}
 ];
 var LV=[1,1,1,1,2,3,4,5,6,7,8,8,9,9];L.forEach(function(l,i){var d=document.createElement('button');d.type='button';d.className='lb'+(l.k?' '+l.k:'');l.view=LV[i];d.addEventListener('click',function(){go(l.view);});l.d=d;l.v=new THREE.Vector3(l.p[0],l.p[1],l.p[2]);lbBox.appendChild(d);});
@@ -801,22 +882,22 @@ var V=[
  {n:'1 · WB',x:24,z:-16,k:0.3,t:'1 · Wildberries',b:'Старт проекта. Работаем по FBO и FBS. Пилот 90 дней, затем решение по цифрам: оборот, маржа после комиссий, оборачиваемость, рейтинг.',w:'Менеджер Wildberries · ведут Жафархон и Жасур'},
  {n:'2 · Ozon/Uzum',x:24,z:-8,k:0.3,t:'2 · Ozon, Uzum, Яндекс Маркет',b:'Те же товары выходят на новые площадки. Один отчёт по всем каналам.',w:'Менеджеры Ozon и Uzum/Яндекс · ведут Жафархон и Жасур'},
  {n:'3 · HoReCa',x:24,z:0,k:0.3,t:'3 · B2B: HoReCa и офисы',b:'Регулярные поставки ресторанам, кафе, отелям и офисам по B2B-прайсу.',w:'Менеджер B2B · ведут Жафархон и Жасур'},
- {n:'4 · Coca-Cola',x:24,z:8,k:0.3,t:'4 · Экспорт Coca-Cola в РФ',b:'Через новое юрлицо и Ориент Логистик, после юридической проверки схемы. Валютная выручка.',w:'Менеджер ВЭД · ведут Жафархон и Жасур'},
- {n:'5 · Дарксторы',x:24,z:16,k:0.3,t:'5 · Дарксторы',b:'3–4 точки при складах новой сети. Быстрая доставка через Uzum Tezkor, Яндекс Еду и Лавку.',w:'Менеджер быстрой доставки · ведут Жафархон и Жасур'},
+ {n:'4 · Coca-Cola',x:24,z:8,k:0.3,t:'4 · Экспорт Coca-Cola в РФ',b:'Идея учредителей. Через новое юрлицо и Orient Logistic (компания группы), после юридической проверки схемы. Валютная выручка.',w:'Менеджер ВЭД · ведут Жафархон и Жасур'},
+ {n:'5 · Дарксторы',x:24,z:16,k:0.3,t:'5 · Дарксторы',b:'3–4 точки, запускаем, когда остальные направления работают стабильно. Быстрая доставка через Uzum Tezkor, Яндекс Еду и Лавку.',w:'Менеджер быстрой доставки · ведут Жафархон и Жасур'},
  {n:'FBO / FBS',x:13,z:-10,k:0.42,t:'FBO и FBS',b:'FBO: наши машины везут партии на склады WB и Ozon, площадка хранит и доставляет. FBS: товар хранится у нас на хабе, машины площадки забирают заказы. Часть товара держим у них, часть у себя.',w:'Схему выбирают учредители: FBO, FBS или обе'},
- {n:'Россия',x:39,z:0,k:0.48,t:'Доставка в Россию: три пути',b:'Через Wildberries или Ozon: сдаём товар площадке, она везёт и продаёт в РФ. Через Ориент Логистик: своя доставка партиями, сюда же экспорт Coca-Cola. Основной путь выбираем после встречи с Wildberries.',w:'Ведут Жафархон и Жасур'}
+ {n:'Россия',x:39,z:0,k:0.48,t:'Доставка в Россию: три пути',b:'Через Wildberries или Ozon: сдаём товар площадке, она везёт и продаёт в РФ. Через Orient Logistic: своя доставка партиями, сюда же экспорт Coca-Cola. Основной путь выбираем после встречи с Wildberries.',w:'Ведут Жафархон и Жасур'}
 ];
 var nav=document.getElementById('v3nav'),info=document.getElementById('v3info'),zf=1;
 info.addEventListener('click',function(e){if(e.target.closest('.x'))info.hidden=true;});
 V.forEach(function(v,i){var b=document.createElement('button');b.type='button';b.textContent=v.n;b.addEventListener('click',function(){go(i);});nav.appendChild(b);});
-function go(i){view=i;var v=V[i];goal.x=v.x;goal.z=v.z;goal.d=fitD*v.k*zf;goal.e=i===0?el0:Math.min(el0+0.12,1.05);drag=0;
+function go(i){view=i;var v=V[i];goal.x=(i===0&&C.aspect<0.95)?15:v.x;goal.z=v.z;goal.d=fitD*v.k*zf;goal.e=i===0?el0:Math.min(el0+0.12,1.05);drag=0;
  Array.prototype.forEach.call(nav.children,function(b,j){b.classList.toggle('on',j===i);b.setAttribute('aria-pressed',j===i);});
- info.hidden=false;info.innerHTML='<button type="button" class="x" aria-label="Скрыть описание">×</button><small>'+v.t+'</small><p>'+v.b+'</p><span>'+v.w+'</span>';
+ info.hidden=(i===0&&W<640);info.innerHTML='<button type="button" class="x" aria-label="Скрыть описание">×</button><small>'+v.t+'</small><p>'+v.b+'</p><span>'+v.w+'</span>';
  if(still){cur.x=goal.x;cur.z=goal.z;cur.d=goal.d;cur.e=goal.e;}kick();}
 function fit(){W=box.clientWidth;H=box.clientHeight;R.setSize(W,H,false);C.aspect=W/H;
  var portrait=C.aspect<0.95;base=portrait?Math.PI/2:0;el0=portrait?0.95:0.74;var el=el0;
  var v=THREE.MathUtils.degToRad(C.fov),h=2*Math.atan(Math.tan(v/2)*C.aspect);
- var hw=portrait?19:41,hd=portrait?37:22;
+ var hw=portrait?20:41,hd=portrait?44:22;
  fitD=Math.max(hw/Math.tan(h/2),hd*Math.sin(el)/Math.tan(v/2)+hd*0.35)*1.02;var vv=V[view];goal.d=fitD*vv.k*zf;goal.e=view===0?el0:Math.min(el0+0.12,1.05);if(first){cur.d=still?goal.d:fitD*1.9;cur.e=still?goal.e:1.32;cur.x=goal.x;cur.z=goal.z;first=false;}
  C.updateProjectionMatrix();setText(W<640);}
 function cam(time,dt){var a=still?1:1-Math.exp(-dt*2.2);cur.x+=(goal.x-cur.x)*a;cur.z+=(goal.z-cur.z)*a;cur.d+=(goal.d-cur.d)*a;cur.e+=(goal.e-cur.e)*a;

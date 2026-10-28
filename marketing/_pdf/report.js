@@ -112,6 +112,7 @@ const SECS={
   dash:["Маркетинг в цифрах","Сеть, команда, результаты за 6 месяцев, рекламные продажи и статус проблем.",()=>[fromPage("dash")]],
   income:["Доходность","Факт дохода от поставщиков за 2026 год по данным SAP.",()=>[fromPage("income")]],
   done:["Что сделано","Открытия, ребрендинг, промо, POSM, рекламные продажи и digital за 6 месяцев.",()=>[fromPage("done")]],
+  b2b:["B2B и E-commerce","Помощь коммерческому департаменту: доставка в цифрах, нагрузка, причины, проекты и что нужно утвердить.",()=>[fromPage("b2b")]],
   issues:["Проблемы и решения","С чем столкнулись, как решили, что осталось и какие решения нужны от руководства.",()=>[fromPage("issues")]],
 };
 function people(){
@@ -197,7 +198,7 @@ async function build(job){
     add("Дашборд · деньги",dashboard(D));add("Дашборд · команда и решения",[{brk:true},...dashboard2(D)]);
     let n=3;for(const k of ["team"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
     add("Люди",[{brk:true},secHead(String(n++).padStart(2,"0"),"Люди: зоны и резюме","Каждый сотрудник: направления, задачи, сколько ролей совмещает, и резюме."),...people().slice(1)]);
-    for(const k of ["dash","income","done","issues"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
+    for(const k of ["dash","income","done","b2b","issues"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
   }else if(job.kind==="dashboard"){add("Дашборд · деньги",dashboard(D));add("Дашборд · команда и решения",[{brk:true},...dashboard2(D)])}
   else if(job.kind==="sec"){const s=SECS[job.id];add(s[0],[secHead("Makro · 2026",s[0],s[1]),...s[2]()]);
     if(job.id==="team"){const ppl=people().filter(x=>!(x.classList&&x.classList.contains("cvwrap"))).filter((x,i,a)=>!(x.brk&&a[i+1]&&a[i+1].brk));

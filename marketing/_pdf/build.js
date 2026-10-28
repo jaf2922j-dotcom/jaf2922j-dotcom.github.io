@@ -13,7 +13,7 @@ const JOBS=[
   ['makro-marketing-2026',{kind:'all',theme:'screen'}],
   ['makro-marketing-2026-print',{kind:'all',theme:'print'}],
   ['team',{kind:'sec',id:'team'}],['dash',{kind:'sec',id:'dash'}],['income',{kind:'sec',id:'income'}],
-  ['done',{kind:'sec',id:'done'}],['issues',{kind:'sec',id:'issues'}],
+  ['done',{kind:'sec',id:'done'}],['b2b',{kind:'sec',id:'b2b'}],['issues',{kind:'sec',id:'issues'}],
 ];
 (async()=>{
   const b=await chromium.launch();

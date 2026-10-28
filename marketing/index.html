@@ -916,6 +916,34 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 .issue p{margin:0;font-size:14px;color:#dbe3f7}
 .issue .r{display:block;margin-top:8px;font-size:12.5px;color:var(--gold2)}
 .qa{display:grid;gap:8px}
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.why .gcard{padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.why .wl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.why .wv{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-family:var(--brand)}
+.why .wv s{font-size:26px;color:var(--mute);text-decoration-thickness:2px}
+.why .wv i{font-style:normal;color:var(--mute)}
+.why .wv b{font-size:38px;line-height:1;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.why p{margin:0;font-size:13px;color:#cfd7ee;line-height:1.5}
+.whych{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px}
+.whych span{border:1px solid #26336a;border-radius:12px;padding:8px 12px;font-size:13px;background:#070c19}
+.whych span.bad{border-color:rgba(255,120,140,.45);color:#ffc4cf}
+.whych i{font-style:normal;color:var(--gold)}
+.qgrp{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:18px 0 2px}
+.btab{width:100%;border-collapse:collapse;font-size:13.5px}
+.btab th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:500;padding:8px 10px;border-bottom:1px solid #26336a}
+.btab td{padding:11px 10px;border-bottom:1px solid #1a2448;vertical-align:top;color:#dbe3f7}
+.btab td:first-child{color:#f0f6ff;font-weight:600}
+.bscroll{overflow-x:auto}
+.bsl{display:grid;gap:8px;margin-top:10px}
+.bsl div{display:grid;grid-template-columns:90px 1fr 52px;gap:10px;align-items:center;font-size:13px}
+.bsl em{display:block;height:10px;border-radius:6px;background:#1a2448;position:relative;overflow:hidden}
+.bsl em i{position:absolute;inset:0 auto 0 0;background:var(--gg);border-radius:6px}
+.tl3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tl3 .gcard{border-top:2px solid var(--gold)}
+.tl3 h6{margin:0 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.tl3 p{margin:0;font-size:13.5px;color:#dbe3f7;line-height:1.5}
+@media (max-width:900px){.why{grid-template-columns:repeat(2,minmax(0,1fr))}.tl3{grid-template-columns:1fr}}
+@media (max-width:520px){.why{grid-template-columns:1fr}}
 .qa details{border:1px solid #1a2448;border-radius:16px;background:#070c19;overflow:hidden}
 .qa summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;justify-content:space-between;gap:16px;align-items:center;font-family:var(--brand);font-size:20px;color:#f0f6ff}
 .qa summary::-webkit-details-marker{display:none}
@@ -1244,13 +1272,14 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
      <div class="hlf" style="--d:.8s"><button class="hleaf" data-go="dash" type="button"><span class="n">03</span><h3>Дашборд</h3><span class="f hgold">55<small>магазинов</small></span><p>Маркетинг сети в цифрах</p><em>Открыть →</em></button></div>
      <div class="hlf" style="--d:.9s"><button class="hleaf" data-go="income" type="button"><span class="n">04</span><h3>Доходность</h3><span class="f hgold">3,95<small>млрд сум</small></span><p>Доход от партнёров по факту SAP</p><em>Открыть →</em></button></div>
      <div class="hlf" style="--d:1s"><button class="hleaf" data-go="done" type="button"><span class="n">05</span><h3>Что сделано</h3><span class="f hgold">100+</span><p>Акции, открытия, обновление бренда</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:1.1s"><button class="hleaf" data-go="b2b" type="button"><span class="n">06</span><h3>B2B и E-com</h3><span class="f hgold">18,27<small>млрд сум</small></span><p>Помощь коммерческому департаменту</p><em>Открыть →</em></button></div>
     </div>
    </div>
    <div class="hbr">
     <div class="hbn" style="--d:.7s"><i>III</i><span><b>Развитие</b><small>следующий шаг</small></span></div>
     <div class="hlv">
-     <div class="hlf" style="--d:.9s"><button class="hleaf" data-go="issues" type="button"><span class="n">06</span><h3>Задачи и решения</h3><span class="f hgold" data-k="issues">13</span><p>Что усилит команду и доход</p><em>Открыть →</em></button></div>
-     <div class="hlf" style="--d:1s"><button class="hleaf" data-go="kit" type="button"><span class="n">07</span><h3>Медиакит</h3><span class="f hgold"><span data-k="kit">27</span><small>слайдов</small></span><p>Рекламные форматы для партнёров</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:.9s"><button class="hleaf" data-go="issues" type="button"><span class="n">07</span><h3>Задачи и решения</h3><span class="f hgold" data-k="issues">13</span><p>Что усилит команду и доход</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:1s"><button class="hleaf" data-go="kit" type="button"><span class="n">08</span><h3>Медиакит</h3><span class="f hgold"><span data-k="kit">27</span><small>слайдов</small></span><p>Рекламные форматы для партнёров</p><em>Открыть →</em></button></div>
     </div>
    </div>
   </div>
@@ -1288,6 +1317,11 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 <section class="page" id="p-done" aria-label="Что сделано за 6 месяцев"><div class="pin">
   <div class="phead reveal r1"><div><div class="eyebrow">Отчёт · 6 месяцев</div><h2>Что сделано</h2><p>Новая команда маркетинга: 6–8 человек, один департамент, сотни задач. Нажмите на фото, чтобы увеличить.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="done"></div>
+</div></section>
+
+<section class="page" id="p-b2b" aria-label="B2B и E-commerce"><div class="pin">
+  <div class="phead reveal r1"><div><div class="eyebrow">Помощь другому департаменту</div><h2>B2B и E-commerce</h2><p>Отдел работает в коммерческом департаменте. Маркетинг помогал ему: в мае в экстренном порядке, потом проектами, презентациями и переговорами. Вместе сделали презентацию отдела для руководства.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
+  <div class="reveal r2" id="b2b"></div>
 </div></section>
 
 <section class="page" id="p-issues" aria-label="Проблемы и решения"><div class="pin">
@@ -1843,12 +1877,94 @@ function buildDone(){
   <button class="cta" data-goto="kit">Открыть медиакит 2026 · 27 слайдов →</button></section>`;
 }
 
+/* ---------- b2b & e-com ---------- */
+function buildB2B(){
+ const UZ=[1035,1280,1485,1895,2319,1564,1530,1142,713],YA=[596,480,753,435,560,573,761,575,571],M=["Я","Ф","М","А","М","И","И","А","С"];
+ const bars=(a,hi)=>{const mx=Math.max(...a);return `<div class="mbars" style="height:170px">${a.map((v,i)=>`<div${i===hi?"":' class="part"'}><b>${v.toLocaleString("ru-RU")}</b><i style="height:${Math.round(v/mx*120)}px"></i><small>${M[i]}</small></div>`).join("")}</div>`};
+ const tab=(h,rows)=>`<div class="bscroll"><table class="btab"><thead><tr>${h.map(x=>`<th>${x}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+ document.getElementById("b2b").innerHTML=gdefs+`
+ <div class="dkpi">
+  <div class="gcard"><div class="gnum">18,27<small style="font-size:.45em"> млрд</small></div><span>сум оборот доставки</span><em>январь — сентябрь 2026</em></div>
+  <div class="gcard"><div class="gnum">161 181</div><span>заказ выполнен</span><em>Uzum Tezkor и Яндекс Еда</em></div>
+  <div class="gcard"><div class="gnum">35</div><span>маркетов на площадках</span><em>ежедневный контроль заказов</em></div>
+  <div class="gcard"><div class="gnum">3,5%</div><span>доля отмен</span><em>мин. 2,3% в марте · макс. 4,9% в сентябре</em></div>
+ </div>
+ <div class="glab" style="margin-top:34px">Место в компании</div>
+ <div class="tl3">
+  <div class="gcard"><h6>Было</h6><p><b>3–4 человека</b> в направлении B2B. E-commerce (Uzum) планировали сделать отдельным направлением.</p></div>
+  <div class="gcard"><h6>Сейчас · после сокращения</h6><p><b>2 человека в офисе</b> на оба направления: руководитель ведёт B2B и E-commerce, менеджер B2B Малика — документооборот, приём и сопровождение заказов. 2 экспедитора в маркетах.</p></div>
+  <div class="gcard"><h6>Как должно быть</h6><p><b>2 отдельных отдела</b> внутри коммерческого департамента: продажи B2B и развитие E-commerce, каждый со своим руководителем.</p></div>
+ </div>
+ <div class="dgrid" style="margin-top:12px">
+  <div class="gcard"><div class="glab">Нагрузка · оценка отдела</div>
+   <div class="tri3"><div><div class="gnum">6–7</div><span>человек нужно по объёму работы</span></div><div><div class="gnum">2–3</div><span>ведут её сейчас</span></div><div><div class="gnum">×5</div><span>ролей у руководителя отдела</span></div></div>
+   <p style="color:var(--mute);font-size:12.5px;margin:14px 0 8px">Один человек держит B2B, Uzum Tezkor, Яндекс Еду, Ozon, Alif Nasiya, Noor (план) и проекты руководства. 2 личных кабинета площадок, много Telegram-групп и каналов, акции. Работа после 18:00 — регулярно. Экспедиторов в расчёт не берём; в офисе нужно минимум 3 человека.</p>
+   <div class="chips">${["B2B","Uzum Tezkor","Яндекс Еда","Ozon","Alif Nasiya","Noor · план","Bigmart","LuxSoft","Проекты руководства"].map(x=>`<span>${x}</span>`).join("")}</div></div>
+  <div class="gcard"><div class="glab">Чем помогал маркетинг</div>
+   <ul class="blist"><li><b>Май 2026:</b> в экстренном порядке вёл E-commerce (тогда — заместитель коммерческого директора); B2B вела Малика</li><li><b>С июня:</b> новый руководитель работает полноценно</li><li><b>С августа:</b> помощь ≈20% — ТЗ и презентации, совместные проекты, новые поставщики</li><li>Переговоры и выставки: Alif Nasiya, PayMe, Ozon, новые партнёры</li><li>Изучение рынка и задачи от руководства главного офиса</li><li>Презентация отдела для руководства — сделали вместе</li></ul>
+   <p style="color:var(--mute);font-size:12px;margin:12px 0 0">Операционную и техническую работу отдела ведёт руководитель отдела. Доли — оценка участников.</p></div>
+ </div>
+ <div class="glab" style="margin-top:34px">Доставка по месяцам · млн сум</div>
+ <div class="dgrid">
+  <div class="gcard"><div class="glab">Uzum Tezkor · 12,96 млрд · 112 462 заказа</div>${bars(UZ,4)}<p style="color:var(--mute);font-size:12.5px;margin:10px 0 0">Пик в мае: крупные акции площадки и двухнедельное промо ≈900 SKU. Отмены 2,6%, штрафы 357 млн (2,8% оборота).</p></div>
+  <div class="gcard"><div class="glab">Яндекс Еда · 5,30 млрд · 48 719 заказов</div>${bars(YA,6)}<p style="color:var(--mute);font-size:12.5px;margin:10px 0 0">Стабильно 0,44–0,76 млрд в месяц, 16–22 маркета. Отмены 5,4%, штрафы 37 млн (0,7%).</p></div>
+ </div>
+ <div class="dgrid" style="margin-top:12px">
+  <div class="gcard"><div class="glab">Почему Uzum снизился · данные и оценка отдела</div>
+   <div class="bsl"><div><span>до июня</span><em><i style="width:65%"></i></em><b>60–70%</b></div><div><span>июнь</span><em><i style="width:50%"></i></em><b>≈50%</b></div><div><span>июль–август</span><em><i style="width:35%"></i></em><b>≈35%</b></div></div>
+   <p style="color:var(--mute);font-size:12px;margin:8px 0 12px">Сервис-уровень поставок Makro: при 35% две трети заказанного не приходит в маркеты.</p>
+   <ul class="blist"><li><b>Товары категории A в блоке</b> → нет товара, отмены</li><li><b>Промо ≈900 → ≈200 SKU</b> после августа: поставщики сократили участие из-за оплат и долгов</li><li><b>Цены подняли</b> ради фронт-маржи; потом скорректировали, но спрос уже упал</li></ul></div>
+  <div class="gcard"><div class="glab">Целевая структура · предложение</div>
+   <div class="tri3"><div><div class="gnum">3</div><span>работают</span></div><div><div class="gnum">6</div><span>свободных мест</span></div><div><div class="gnum">33%</div><span>укомплектованность</span></div></div>
+   <p style="color:var(--mute);font-size:12.5px;margin:14px 0 8px">Отдел продаж B2B — 3 из 5 мест, отдел развития E-commerce — 0 из 4.</p>
+   <div class="chips">${["Руководитель B2B","Менеджер по привлечению","Руководитель E-commerce","Менеджер площадок и маркетов","Аналитик / контент","Координатор маркетов"].map(x=>`<span>${x}</span>`).join("")}</div></div>
+ </div>
+ <div class="glab" style="margin-top:34px">Что мешает и как решить</div>
+ <div class="gcard">${tab(["Проблема","Последствие","Решение","Статус"],[
+  ["B2B-клиентам даётся полочная цена","Нет конкурентного предложения, мало клиентов","Отдельный B2B-прайс","Одобрено, не внедрено"],
+  ["Один руководитель на два направления","Перегрузка, нет времени на развитие","Два отдела и вакансии","На решение"],
+  ["Товары категории A в блоке, сервис-уровень 60–70% → ≈35%","Нет товара, отмены, штрафы, падение Uzum","Контроль сборки в маркетах, приоритет поставок для доставки","На решение"],
+  ["Промо сократилось ≈900 → ≈200 SKU","Меньше акций, ниже спрос","Расчёты с поставщиками, план промо с коммерцией","На решение"],
+  ["Цены поднимали ради фронт-маржи","Покупатель ушёл, спрос не вернулся","Цены для площадок — с коммерцией","Скорректировано"],
+  ["Старые телефоны сборщиков","Сбои приёма и сборки заказов","Плановая замена телефонов","В работе"],
+  ["Проекты стоят на стыке департаментов","Партнёры найдены, запуск не доходит до конца","Владелец и сроки по каждому проекту","На решение"]])}</div>
+ <div class="glab" style="margin-top:34px">Проекты ведём вместе · результат зависит и от руководства, и от других департаментов</div>
+ <div class="gcard">${tab(["Проект","Что это и что сделано","Статус"],[
+  ["Alif Nasiya","Рассрочка для покупателей. Запуск начался и остановился на период смены топ-менеджмента","Приостановлен"],
+  ["PayMe","Встреча проведена совместно, сотрудничество обсуждается","Переговоры"],
+  ["Ozon","Встреча проведена совместно, проект передан в коммерцию, в направление B2B","Передан"],
+  ["Noor","Ещё один сервис доставки. Подключение планировали, пока не запущено","Планировался"],
+  ["Bigmart","B2B-маркетплейс: коммерческая модель, интеграция, пилот","В процессе"],
+  ["LuxSoft","Проверка интеграций Uzum и Яндекс Еды через Artix. Оценка $1 590, оплата — после тестирования","Не решён"],
+  ["Выставки, новые партнёры","Совместные выезды, встречи и переговоры по поручению руководства","По поручению"]])}</div>
+ <div class="glab" style="margin-top:34px">Что просим утвердить</div>
+ <div class="plan">
+  <div class="gcard"><h6>Структура и люди</h6><ul class="blist"><li>Два отдела в коммерческом департаменте</li><li>Ответственный до прихода нового руководителя — по уставу, внутри коммерции</li><li>Открыть свободные места</li></ul></div>
+  <div class="gcard"><h6>Цены и маркеты</h6><ul class="blist"><li>Утвердить B2B-прайс</li><li>Пересмотреть цены на площадках доставки</li><li>Замена телефонов сборщиков, контроль сборки</li></ul></div>
+  <div class="gcard"><h6>Проекты и полномочия</h6><ul class="blist"><li>Владелец и сроки: Alif Nasiya, PayMe, Ozon, Noor, Bigmart</li><li>Право согласовывать акции с площадками</li><li>Решать вопросы с маркетами напрямую</li></ul></div>
+ </div>
+ <p style="color:var(--mute);font-size:12px;margin:14px 0 0">Источники: отчёты KPI Uzum и Яндекс по маркетам (SAP), январь — сентябрь 2026; база знаний по передаче дел отдела. Целевая структура — предложение для обсуждения с руководством. <a href="pdf/b2b-ecom-presentation.pdf" download="Makro-B2B-E-commerce.pdf" style="color:var(--gold)">Презентация отдела (PDF, 20 слайдов) →</a></p>`;
+}
+
 /* ---------- issues ---------- */
 const STL={ok:["st-ok","Решено"],wip:["st-wip","В работе"],need:["st-need","Нужно решение"]};
 function buildIssues(){
  const staff=TEAM.filter(p=>!p.team).length;
  document.getElementById("issues").innerHTML=`
- <div class="glab">Проблемы → решения · ${ISSUES.length}</div>
+ <div class="glab">Почему так · было и сейчас</div>
+ <div class="why">
+  <div class="gcard"><div class="wl">Люди</div><div class="wv"><s>~20</s><i>→</i><b>${staff}</b></div><p>человек в маркетинге на те же 55 магазинов. За 6 месяцев: 8 открытий и 100+ акций.</p></div>
+  <div class="gcard"><div class="wl">Дизайнеры</div><div class="wv"><s>4</s><i>→</i><b>2</b></div><p>Двухнедельные акции и срочные задачи, работают на своей технике и в выходные.</p></div>
+  <div class="gcard"><div class="wl">Бюджет на промо</div><div class="wv"><b>0 сум</b></div><p>Бюджет компании на акции не выделен. Все промо и розыгрыши — за счёт поставщиков.</p></div>
+  <div class="gcard"><div class="wl">Двухнедельное промо</div><div class="wv"><s>≈900</s><i>→</i><b>≈200</b></div><p>SKU в акции после августа: поставщики сократили участие из-за оплат и долгов.</p></div>
+  <div class="gcard"><div class="wl">Поставки в магазины</div><div class="wv"><s>60–70%</s><i>→</i><b>≈35%</b></div><p>Сервис-уровень поставщиков, июль–август: товара на полке меньше, акции слабее.</p></div>
+  <div class="gcard"><div class="wl">Подрядчики</div><div class="wv"><s>3–4</s><i>→</i><b>1</b></div><p>На ремонт и оформление магазинов, оплата идёт не всегда вовремя.</p></div>
+  <div class="gcard"><div class="wl">Магазины ждут</div><div class="wv"><b>${SHOPTASKS.length}</b></div><p>магазинов: задачи поставлены, подрядчики есть, документы у закупщиков — нет оплаты.</p></div>
+  <div class="gcard"><div class="wl">Директор департамента</div><div class="wv"><b>вакансия</b></div><p>Департамент ведёт заместитель директора вместе с командой.</p></div>
+ </div>
+ <div class="whych"><span class="bad">Долги перед поставщиками</span><i>→</i><span>поставщики меньше дают в промо и рекламу</span><i>→</i><span>акций меньше, доход от рекламы ниже</span><i>→</i><span>своего бюджета нет — закрыть разрыв нечем</span><i>→</i><span class="bad">команда бегает за каждым партнёром вручную</span></div>
+ <p style="color:var(--mute);font-size:12px;margin:10px 0 0">Промо ≈900 → ≈200 SKU и сервис-уровень — данные и оценка отдела B2B и E-commerce (еженедельная отчётность). Цепочка — логика причин, не расчёт.</p>
+ <div class="glab" style="margin-top:40px">Проблемы → решения · ${ISSUES.length}</div>
  <div class="iss">${ISSUES.map((x,i)=>`<div class="issue"><div class="n">${String(i+1).padStart(2,"0")}</div><div class="p"><h5>Проблема</h5><p>${x.p}</p></div><div class="s"><h5>Решение</h5><p>${x.s}</p><span class="r">→ ${x.r}</span></div><div class="stc"><span class="gpill ${STL[x.st][0]}">${STL[x.st][1]}</span></div></div>`).join("")}</div>
  <div class="glab" style="margin-top:40px">Задачи по магазинам · ждут финансирования</div>
  <div class="stk-head"><div><div class="gnum">${SHOPTASKS.length}</div><span>магазинов</span></div><div><div class="gnum">${SHOPTASKS.reduce((a,x)=>a+x[2].length,0)}</div><span>задач</span></div>
@@ -1856,12 +1972,31 @@ function buildIssues(){
  <div class="stk">${SHOPTASKS.map(([c,n,t,k])=>`<div class="stc2"><div class="sh"><b>${c}</b><span>${n}</span><em class="tg-${k}">${STT[k]}</em></div><ul>${t.map(x=>`<li>${x}</li>`).join("")}</ul><div class="sst">Ожидает оплаты</div></div>`).join("")}</div>
  <div class="glab" style="margin-top:40px">Вопросы нового руководства · готовые ответы</div>
  <div class="qa">
+ <div class="qgrp" style="margin-top:0">Главное</div>
   <details open><summary>Что сделал маркетинг за последние 6 месяцев?</summary><div class="ans">Открыли <b>8 новых магазинов</b> в концепции Makro yangi zamon, провели ребрендинг, <b>100+ промоакций</b> и <b>4 крупные кампании</b> с розыгрышами. Обновили <b>14+ магазинов</b>, поставили <b>45 указателей и 42 флажка</b>, запустили свою печать POSM. Сделали медиакит. Доход от поставщиков за маркетинг и рекламу в 2026 году — <b>3,95 млрд сум</b> без НДС (факт SAP по 20 октября).</div></details>
   <details><summary>Сколько человек в департаменте и кто за что отвечает?</summary><div class="ans"><b>${staff} человек.</b> Департамент ведёт заместитель директора Дехканов Ж. вместе с начальником отдела рекламы Нуруллиным И. Отдел рекламы и бренд-менеджмента: начальник Нуруллин И., моушн-дизайнер, графический дизайнер, маркетолог. Отдел маркетинга и конъюнктуры: 2 маркетолога, начальника нет — отдел курирует Нуруллин И. Директор департамента — вакансия. Раньше в маркетинге работало около 20 человек на те же 55 магазинов; по структуре нужно ${staff+VAC.length+1}: не хватает арт-менеджера, копирайтера, SMM, фото/видео, аналитика маркетинга, CRM-менеджера, trade-маркетолога и начальника отдела конъюнктуры.</div></details>
   <details><summary>Сколько маркетинг заработал для компании?</summary><div class="ans">По факту SAP за 1 января — 20 октября 2026: <b>3,95 млрд сум</b> без НДС от 33 партнёров. Крупнейшие продажи вместе с коммерцией: <b>Rozmetov ~1 млрд</b>, <b>Pepsi 800 млн</b>, <b>Bahroma 10 млн в месяц</b> за LED (стандарт был 2,5 млн). Новый прайс дал <b>+10–20%</b> к доходу от рекламы. Промо и розыгрыши — за счёт поставщиков.</div></details>
   <details><summary>Какие главные проблемы сейчас?</summary><div class="ans"><b>Падает доход от рекламы:</b> из-за долгов компании поставщики перестали покупать рекламу, коммерческие менеджеры продают меньше. <b>Нет бюджета</b> на промо и розыгрыши. <b>В старых магазинах нет имиджа</b> — нужен ребрендинг ~40 магазинов. Плюс <b>нет директора департамента</b> и <b>не хватает людей</b>.</div></details>
   <details><summary>Почему не исправлены проблемы в магазинах?</summary><div class="ans">По <b>13 магазинам</b> задачи поставлены, <b>подрядчики есть</b>, <b>документы переданы закупщикам</b>. Работы стоят только потому, что <b>не выделены деньги</b>. Как только оплату согласуют, монтаж можно запускать сразу.</div></details>
   <details><summary>Почему упала доходность от рекламы?</summary><div class="ans">Цепочка такая: <b>долги перед поставщиками → поставщики не покупают рекламу → коммерция продаёт меньше → доход падает</b>. Медиакит и прайс готовы, проблема не в продукте. Нужны: график погашения долгов, маркетинговый бюджет в договорах поставщиков, KPI по рекламе для коммерческих менеджеров и выход на внешних рекламодателей.</div></details>
+ <div class="qgrp">Нагрузка и люди</div>
+  <details><summary>Почему команда всё время «бегает» и работает в выходные?</summary><div class="ans">Работы стало больше, а людей меньше: <b>~20 человек раньше → ${staff} сейчас</b> на те же 55 магазинов. За 6 месяцев добавились <b>8 открытий</b>, <b>100+ акций</b>, ребрендинг и медиакит. Отдельных сотрудников нет на 8 функций: промо, trade, CRM, аналитика и др. — их закрывают те же люди поверх своей должности.</div></details>
+  <details><summary>Сколько ролей держит один человек?</summary><div class="ans">У каждого сотрудника своя должность плюс роли, которые раньше были у отдельных людей. Индикатор <b>×N</b> на странице «Структура и нагрузка» показывает это по каждому человеку. Пример: промо-менеджера нет — промо ведут сотрудники отдела рекламы вместе с коммерцией.</div></details>
+  <details><summary>Почему дизайнеров только двое?</summary><div class="ans">Было <b>4 дизайнера, сейчас 2</b>. Они делают двухнедельные акции, срочные макеты, соцсети, POSM и оформление открытий. Работают на своей технике и в выходные — фактически за четверых.</div></details>
+  <details><summary>Можно ли сократить команду ещё?</summary><div class="ans">Нет без потери функций. Сейчас каждая позиция закрывает несколько ролей, отдел конъюнктуры уже без начальника, директора департамента нет. Любое сокращение остановит одно из направлений: промо, открытия, POSM, рекламные продажи или digital.</div></details>
+  <details><summary>Кого нужно взять в первую очередь?</summary><div class="ans">Директор департамента, начальник отдела конъюнктуры, затем SMM, копирайтер, фото/видео и аналитик маркетинга. Полный список вакансий — на странице «Структура и нагрузка».</div></details>
+ <div class="qgrp">Бюджет и промо</div>
+  <details><summary>Почему у маркетинга нет бюджета?</summary><div class="ans">Отдельный бюджет компании на промо и розыгрыши маркетингу <b>не выделен</b>. Поэтому все акции строим на деньгах поставщиков: они оплачивают призы, POSM и рекламу, а маркетинг готовит механику, дизайн и запуск.</div></details>
+  <details><summary>Как тогда прошли розыгрыши?</summary><div class="ans">Полностью за счёт партнёров: <b>Египет, Вьетнам (Sweet Premium и GelatoMadre), Sardor Snack, скретч-карты</b> с Yandex Music и 10 брендами. Призы покупателям — от поставщиков, <b>0 сум</b> бюджета компании.</div></details>
+  <details><summary>Почему акций стало меньше?</summary><div class="ans">Двухнедельное промо сократилось примерно с <b>900 до 200 SKU</b> после августа: поставщики уменьшили участие из-за оплат и долгов. Маркетинг не может заменить их своими деньгами — бюджета нет.</div></details>
+  <details><summary>Что изменит даже небольшой бюджет?</summary><div class="ans">Сеть сможет проводить свои акции и не зависеть полностью от поставщиков: сезонные кампании, открытия, программа лояльности. Сумму предлагаем обсудить отдельно — квартальный минимум на промо.</div></details>
+  <details><summary>Почему один подрядчик вместо нескольких?</summary><div class="ans">Раньше задачи магазинов закрывали <b>3–4 подрядчика</b>, сейчас работаем с одним, и оплата ему идёт не всегда вовремя. Подбор и тендеры — в отделе закупок; маркетинг ставит задачи и передаёт документы.</div></details>
+ <div class="qgrp">B2B и E-commerce</div>
+  <details><summary>Почему маркетинг помогает B2B и E-commerce?</summary><div class="ans">В начале мая 2026 года руководитель отдела ушёл из жизни. В экстренном порядке E-commerce весь май вёл заместитель коммерческого директора — сейчас заместитель директора маркетинга. С июня отдел полноценно ведёт новый руководитель. С августа маркетинг помогает примерно на <b>20%</b>: ТЗ, презентации, совместные проекты, переговоры, выставки, задачи руководства.</div></details>
+  <details><summary>Сколько приносит доставка?</summary><div class="ans">Январь — сентябрь 2026: <b>18,27 млрд сум</b>, <b>161 181 заказ</b> через Uzum Tezkor и Яндекс Еду, 35 маркетов. Uzum — 71% оборота, Яндекс — 29%.</div></details>
+  <details><summary>Почему продажи на Uzum снизились после мая?</summary><div class="ans">Три причины (данные и оценка отдела): <b>1)</b> товары категории A в блоке, сервис-уровень поставок упал с 60–70% до ≈35% — нет товара, растут отмены; <b>2)</b> промо ≈900 → ≈200 SKU; <b>3)</b> цены поднимали ради фронт-маржи, потом скорректировали, но спрос уже упал.</div></details>
+  <details><summary>Что нужно отделу B2B и E-commerce?</summary><div class="ans">Работу 6–7 человек ведут двое-трое. Предложение: два отдела внутри коммерческого департамента (B2B и развитие E-commerce), <b>6 свободных мест</b>, отдельный B2B-прайс, замена телефонов сборщиков, владелец и сроки по каждому проекту. Подробно — в разделе «B2B и E-com».</div></details>
+ <div class="qgrp">Решения и план</div>
   <details><summary>Что нужно от руководства?</summary><div class="ans">1. Решение по директору департамента. 2. Согласовать вакансии: начальник отдела конъюнктуры, SMM, копирайтер, фото/видео, аналитик. 3. Бюджет и график ребрендинга оставшихся магазинов. 4. Целевые KPI маркетинга на 2027 год: доход от рекламы, промо, узнаваемость.</div></details>
   <details><summary>Какой план на ближайшие 3 месяца?</summary><div class="ans">Продажа рекламы по медиакиту 2026, включая новые ДМП. Обновление следующих магазинов по графику. Новогодняя кампания с партнёрами. Закрытие ключевых вакансий. Ежемесячный отчёт по KPI для руководства.</div></details>
  </div>
@@ -1985,7 +2120,7 @@ function buildIncome(){
 }
 buildIncome();
 
-buildDash();buildDone();buildIssues();buildCV();
+buildDash();buildDone();buildIssues();buildB2B();buildCV();
 CVS.ib=(function(){
  const jobs=[["DesX print","Полиграфия и наружная реклама","Графический дизайнер",2019+8/12,2021+1/12,"Сен 2019 — фев 2021"],
   ["Ali print","Полиграфия и наружная реклама","Графический дизайнер",2021+1/12,2024+1/12,"Фев 2021 — фев 2024"],
@@ -2311,7 +2446,7 @@ h2.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)retu
 </style>
 <script>
 /* ---- скачать PDF: отчёты и резюме ---- */
-const PDFNAMES={all:"Makro — Маркетинг 2026, отчёт для руководства",print:"Makro — Маркетинг 2026, версия для печати",team:"Makro — Команда маркетинга",dash:"Makro — Дашборд октябрь 2026",income:"Makro — Доходность 6 месяцев",done:"Makro — Что сделано",issues:"Makro — Проблемы и решения"};
+const PDFNAMES={all:"Makro — Маркетинг 2026, отчёт для руководства",print:"Makro — Маркетинг 2026, версия для печати",team:"Makro — Команда маркетинга",dash:"Makro — Дашборд октябрь 2026",income:"Makro — Доходность 6 месяцев",done:"Makro — Что сделано",b2b:"Makro — B2B и E-commerce",issues:"Makro — Проблемы и решения"};
 const loadJS=src=>new Promise((ok,no)=>{const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=()=>no(new Error("load "+src));document.head.appendChild(s)});
 let libs=null;
 function pdfLibs(){return libs||(libs=Promise.all([
@@ -2351,7 +2486,7 @@ async function savePDF(btn,id){
  catch(e){console.error(e);btn.textContent="Не получилось, печать…";setTimeout(()=>window.print(),300)}
  finally{setTimeout(()=>{btn.disabled=false;btn.textContent=t},1200)}}
 // public site: open the prebuilt file right inside the tap (no async work first), so phones and in-app browsers (Telegram) open it too
-const PDFKEYS=new Set(["all","print","team","dash","income","done","issues",...Object.keys(CVNAMES).map(k=>"cv-"+k)]);
+const PDFKEYS=new Set(["all","print","team","dash","income","done","b2b","issues",...Object.keys(CVNAMES).map(k=>"cv-"+k)]);
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pdf]");if(!b)return;const id=b.dataset.pdf||b.closest(".page").id.slice(2),k=id==="cv"?"cv-"+cvCur:id;
  if(!(window.claude&&window.claude.use)&&PDFKEYS.has(k)){const a=document.createElement("a");a.href=pdfUrl(k);a.download="Makro-Marketing-"+({all:"2026",print:"2026-print"}[k]||k)+".pdf";document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),4000);return}
  savePDF(b,id)});

@@ -3,665 +3,1177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="E-com проект Жафархона Дехканова и Жасура Хакимова: маркетплейсы, B2B, экспорт и дарксторы.">
+<meta property="og:title" content="OGM E-com · проект Жафархона и Жасура">
+<meta property="og:description" content="Пять направлений: Wildberries, Ozon, Uzum и Яндекс Маркет, B2B для HoReCa, экспорт Coca-Cola, дарксторы.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f4f6f8">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>OGM E-com</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
+/* Single light business look. Layout: dispatch-board — один широкий поток-схема в центре, вокруг неё плотные «накладные» блоки */
 :root{
-  --bg:#f3f5f8;--surface:#fff;--fg:#121c26;--muted:#5b6876;--line:#dde3ea;
-  --accent:#e0661b;--accent-soft:#fdeee2;--blue:#1d4e89;--blue-soft:#e6eef8;--ok:#2f7a4f;
-  --wb:#8b2cf5;--ozon:#005bff;--uzum:#7000ff;--ya:#fc3f1d;--orient:#0f6e5a;--coke:#e41c26;
-  --night:#0d1724;
-  --display:"Unbounded","Arial Black",system-ui,sans-serif;--body:"Golos Text","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
-  color-scheme:light;
+  --bg:#f4f6f8; --surface:#ffffff; --fg:#14202b; --muted:#5a6875; --line:#dde3e9;
+  --accent:#d8661a; --accent-soft:#fdeee2; --blue:#1d4e89; --blue-soft:#e4ecf6; --ok:#2f7a4f; color-scheme:light;
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --body:"Golos Text", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
 }
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
-h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
-h2{font-size:clamp(1.35rem,3vw,2rem);line-height:1.15}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:56px;border-top:1px solid var(--line)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.02}
+h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.15}
 h3{font-size:1rem;line-height:1.3}
-p{margin:0;max-width:68ch}
-.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
-.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+p{margin:0;max-width:65ch}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.sec-head{display:grid;gap:10px;margin-bottom:28px}
+.sec-head p{color:var(--muted)}
 .muted{color:var(--muted)}
+.mono{font-family:var(--mono)}
+
+/* hero */
+.hero{padding-block:48px 40px;display:grid;gap:22px}
+.hero .lead{font-size:1.15rem;max-width:58ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:8px}
+.fact{background:var(--surface);padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.fact b{font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.fact span{font-size:.88rem;color:var(--muted)}
+@media(max-width:820px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:440px){.facts{grid-template-columns:1fr}}
+
+/* flow */
+.flow-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow-x:auto}
+.flow-box svg{display:block;min-width:820px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font-size:.85rem;color:var(--muted)}
+.legend i{display:inline-block;width:22px;height:0;border-top:3px solid var(--accent);vertical-align:middle;margin-right:6px}
+.legend i.l2{border-top:3px dashed var(--blue)}
+.legend i.l3{border-top:2px dotted var(--muted)}
+svg .node{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+svg .node.src{fill:var(--blue-soft);stroke:var(--blue)}
+svg .node.hub{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+svg .node.s1{stroke:var(--accent);stroke-width:2}
+svg .t{fill:var(--fg);font-family:var(--body);font-size:14px;font-weight:600}
+svg .ts{fill:var(--muted);font-family:var(--body);font-size:11.5px}
+svg .tag{font-family:var(--mono);font-size:10px;fill:var(--accent)}
+svg .tag.b{fill:var(--blue)}
+svg .tag.m{fill:var(--muted)}
+svg .p1{fill:none;stroke:var(--accent);stroke-width:2.5}
+svg .p2{fill:none;stroke:var(--blue);stroke-width:2;stroke-dasharray:7 6}
+svg .p3{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-dasharray:2 5}
+svg .pin{fill:none;stroke:var(--blue);stroke-width:2}
+svg .truck-body{fill:var(--accent)}
+svg .truck-body.b{fill:var(--blue)}
+svg .truck-cab{fill:var(--fg)}
+svg .wheel{fill:var(--fg)}
+
+/* entities */
+.ent{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.ent{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:12px;align-content:start;min-width:0}
+.card.hl{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.card ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.pill{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:var(--blue-soft);color:var(--blue);width:max-content}
+.pill.o{background:var(--accent-soft);color:var(--accent)}
+.pill.g{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+
+/* process */
+.proc{list-style:none;margin:0;padding:0;display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.proc li{display:grid;grid-template-columns:56px 1fr 200px;gap:16px;padding:16px 18px;border-top:1px solid var(--line);align-items:start}
+.proc li:first-child{border-top:0}
+.proc .n{font-family:var(--display);font-size:1.3rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.proc .who{font-size:.85rem;color:var(--muted);display:grid;gap:2px}
+.proc .who b{color:var(--fg);font-weight:600}
+.proc p{font-size:.95rem;color:var(--muted);margin-top:4px}
+@media(max-width:700px){.proc li{grid-template-columns:40px 1fr}.proc .who{grid-column:2}}
+
+/* team & roadmap */
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.stages{grid-template-columns:1fr}}
+.stage h3{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.stage .cnt{font-family:var(--display);font-size:1.6rem;color:var(--accent)}
+.role{display:grid;gap:2px;padding-block:8px;border-top:1px dashed var(--line)}
+.role:first-of-type{border-top:0}
+.role b{font-weight:600}
+.role span{font-size:.88rem;color:var(--muted)}
+
+.road{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.road>div{padding:20px;border-left:1px solid var(--line);display:grid;gap:8px;align-content:start;min-width:0}
+.road>div:first-child{border-left:0}
+.road .when{font-family:var(--mono);font-size:.78rem;color:var(--accent)}
+.road ul{margin:0;padding-left:18px;font-size:.92rem;display:grid;gap:4px}
+@media(max-width:960px){.road{grid-template-columns:1fr}.road>div{border-left:0;border-top:1px solid var(--line)}.road>div:first-child{border-top:0}}
+@media(max-width:480px){.road{grid-template-columns:1fr}.road>div{border-left:0;border-top:1px solid var(--line)}.road>div:first-child{border-top:0}}
+
+/* options */
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.opts{grid-template-columns:1fr}}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:.9rem}
+.pc b{display:block;font-size:.75rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.pc .plus b{color:var(--ok)}
+.pc .minus b{color:var(--accent)}
+.pc ul{padding-left:16px}
+
+/* finance */
+.fin{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:860px){.fin{grid-template-columns:1fr}}
+
+/* risks */
+.risk{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.risk>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;padding:16px 18px;border-top:1px solid var(--line)}
+.risk>div:first-child{border-top:0}
+.risk b{font-weight:600}
+.risk span{color:var(--muted);font-size:.93rem}
+@media(max-width:640px){.risk>div{grid-template-columns:1fr;gap:4px}}
+
+.ask{background:linear-gradient(160deg,#1a2a3b,#101a25);color:#e9eef3;border:1px solid #f08a3a55;border-radius:14px;padding:28px;display:grid;gap:16px}
+.ask h2{color:#fff}
+.ask ol{margin:0;padding-left:22px;display:grid;gap:8px;max-width:70ch}
+.ask .eyebrow{color:var(--accent)}
+
+/* 3D scene */
+.scene3d{position:relative;height:clamp(460px,56vw,640px);border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#dfe8f0;box-shadow:0 30px 70px -40px rgba(20,32,43,.35)}
+@media(max-width:640px){.scene3d{height:620px}}
+.scene3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
+.lbls{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lb:hover{border-color:#f08a3a}
+.lb{position:absolute;left:0;top:0;white-space:nowrap;text-align:left;cursor:pointer;pointer-events:auto;font:600 12.5px/1.25 var(--body);color:#fff;background:rgba(9,16,24,.84);border:1px solid rgba(255,255,255,.16);border-radius:7px;padding:5px 9px;will-change:transform;transition:opacity .2s}
+.lb small{display:block;font:600 9.5px var(--mono);letter-spacing:.08em;color:#f08a3a;margin-bottom:1px}
+.lb.src small{color:#7fb0e6}
+.lb.fl small{color:#ff6fd8}
+.lb.ru small{color:#34d1c6}
+.lb.ol small{color:#34d1c6}
+.lb.uz small{color:#7be0a8}
+.lb.fl{font-size:11.5px;padding:3px 8px}
+.lb.hub{border-color:#f08a3a;font-size:13.5px}
+.lb::after{content:"";position:absolute;left:50%;top:100%;width:1.5px;height:var(--lh,6px);background:rgba(20,32,43,.55)}
+@media(max-width:640px){.lb{font-size:11px;padding:4px 7px}.lb small{font-size:8.5px}.lb.hub{font-size:12px}}
+.hint3d{position:absolute;left:14px;text-shadow:0 1px 0 rgba(255,255,255,.6);right:max(12px,env(safe-area-inset-right,0px));text-align:right;bottom:10px;font:500 11px var(--mono);color:rgba(20,32,43,.7);pointer-events:none}
+/* benefits */
+.ben{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.ben{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ben{grid-template-columns:1fr}}
+.ben .card h3{font-size:1.02rem}
+.ben .card p{color:var(--muted);font-size:.93rem}
+.ai{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px;align-items:start;background:linear-gradient(135deg,var(--accent-soft),var(--blue-soft));border:1px solid var(--line);border-radius:14px;padding:24px}
+@media(max-width:760px){.ai{grid-template-columns:1fr}}
+.ai ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+@media(max-width:520px){.ai ul{grid-template-columns:1fr}}
+.ai li{display:grid;gap:2px;font-size:.92rem}
+.ai li b{font-weight:600}
+.ai li span{color:var(--muted)}
+/* org tree */
+.tree{display:grid;gap:0;justify-items:center}
+.nd{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;display:grid;gap:3px;text-align:center;min-width:0}
+.nd b{font-weight:600}
+.nd span{font-size:.85rem;color:var(--muted)}
+.nd.top{border-color:var(--blue)}
+.nd.lead{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.nd.lead img{width:56px;height:56px;border-radius:50%;object-fit:cover;justify-self:center;border:2px solid var(--accent)}
+.vl{width:2px;height:22px;background:var(--line)}
+.leads{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;position:relative;padding-top:22px}
+.leads::before{content:"";position:absolute;top:0;left:25%;right:25%;height:2px;background:var(--line)}
+.branch{display:grid;gap:0;justify-items:stretch;position:relative}
+.branch::before{content:"";position:absolute;top:-22px;left:50%;width:2px;height:22px;background:var(--line)}
+.grp{display:grid;gap:8px;margin-top:22px;position:relative;padding:14px;border:1px dashed var(--line);border-radius:12px}
+.grp::before{content:"";position:absolute;top:-23px;left:50%;width:2px;height:22px;background:var(--line)}
+.grp h4{margin:0;font:600 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.rl{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:8px 10px;border-radius:8px;background:var(--surface);border:1px solid var(--line);font-size:.92rem}
+.rl em{font:500 .7rem var(--mono);font-style:normal;color:var(--blue);white-space:nowrap}
+.rl em.o{color:var(--accent)}
+.shared{margin-top:22px;width:100%;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;font-size:.88rem;color:var(--muted)}
+.shared span{border:1px dashed var(--line);border-radius:99px;padding:5px 12px}
+.heads{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:24px;width:100%}
+.heads div{background:var(--surface);padding:14px;display:grid;gap:2px;text-align:center}
+.heads b{font-family:var(--display);font-size:1.5rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.heads span{font-size:.85rem;color:var(--muted)}
+@media(max-width:700px){.leads{grid-template-columns:1fr;padding-top:0}.leads::before{display:none}.branch::before{top:0;height:0}.branch{margin-top:22px}.heads{grid-template-columns:1fr}}
+.joint{max-width:600px;width:100%;gap:8px;padding:18px}
+.joint .pics{display:flex;justify-content:center}
+.joint .pics img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+.joint .pics img+img{margin-left:-12px}
+.groups{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+.groups .grp{margin-top:0}
+.groups .grp::before{display:none}
+@media(max-width:1000px){.groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.groups{grid-template-columns:1fr}}
+
+.kvi{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.kvi{grid-template-columns:1fr}}
+.src4{margin-top:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.src4 div{background:var(--surface);padding:14px 16px;display:grid;gap:4px;align-content:start}
+.src4 b{font-family:var(--display);font-size:.9rem}
+.src4 span{color:var(--muted);font-size:.9rem}
+@media(max-width:860px){.src4{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.src4{grid-template-columns:1fr}}
+.open{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.open>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px;padding:16px 18px;border-top:1px solid var(--line)}
+.open>div:first-child{border-top:0}
+.open b{font-weight:600}
+.open span{color:var(--muted);font-size:.93rem}
+@media(max-width:640px){.open>div{grid-template-columns:1fr;gap:4px}}
+
+.pay{margin-top:20px;width:100%;padding:14px 16px;border-radius:12px;background:var(--accent-soft);font-size:.93rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:var(--fg);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn.ghost{background:var(--surface);color:var(--fg);border:1.5px solid var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mk{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.mk{grid-template-columns:1fr}}
+.mkc{border-radius:18px;padding:26px;display:grid;gap:14px;align-content:start;color:#fff;position:relative;overflow:hidden}
+.mkc.uz{background:linear-gradient(150deg,#0f6e5c,#0b4f63)}
+.mkc.cis{background:linear-gradient(150deg,#1d4e89,#5b2a86)}
+.mkc::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
+.mkc h3{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.3rem);color:#fff}
+.mkc ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:.96rem}
+.mkc .mkn{font-size:.88rem;color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.2);padding-top:12px}
+.tagx{font:600 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.navpdf{flex:none;margin-left:auto;font-size:.82rem;font-weight:600;color:#fff;background:var(--accent);text-decoration:none;padding:7px 12px;border-radius:99px;white-space:nowrap}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;inset:0 -40px auto -40px;height:100%;z-index:-1;background:radial-gradient(600px 260px at 85% 10%,rgba(216,102,26,.14),transparent 70%),radial-gradient(500px 240px at 10% 90%,rgba(29,78,137,.12),transparent 70%)}
+
+.chain{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1.6fr);align-items:stretch}
+.st{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;align-content:start;position:relative;min-width:0}
+.st h3{font-size:1rem}.st p{font-size:.9rem;color:var(--muted)}
+.st.of{border-color:var(--blue);background:var(--blue-soft)}
+.st.wh{border-color:var(--accent);background:var(--accent-soft)}
+.sn{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:700 .85rem var(--display);background:var(--fg);color:#fff}
+.ar{position:relative;align-self:center;height:4px;margin:0 4px;border-radius:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 8px,transparent 8px 14px);background-size:28px 4px;animation:flow 1s linear infinite}
+.ar::after{content:"";position:absolute;right:-6px;top:-5px;border-left:9px solid var(--accent);border-top:7px solid transparent;border-bottom:7px solid transparent}
+@keyframes flow{to{background-position:28px 0}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.split>div{border-radius:10px;padding:10px 12px;display:grid;gap:6px;font-size:.86rem;color:#fff;align-content:start}
+.split .uzb{background:linear-gradient(150deg,#0f6e5c,#0b4f63)}
+.split .cisb{background:linear-gradient(150deg,#1d4e89,#5b2a86)}
+.split span{color:rgba(255,255,255,.88)}
+.coke{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid #f3c3ca;border-radius:14px;padding:16px;align-items:center}
+.ck-h{display:grid;gap:8px}.ck-h p{font-size:.9rem}
+.ck-p{display:grid;gap:8px}
+.ck-p b{font-family:var(--display);font-size:.85rem;color:#b0102a}
+.mini{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.84rem}
+.mini span{padding:6px 10px;border-radius:8px;background:#fff4f5;border:1px solid #f3c3ca}
+.mini i{width:18px;height:2px;background:#e41e2b;position:relative;display:inline-block}
+.mini i::after{content:"";position:absolute;right:-3px;top:-4px;border-left:6px solid #e41e2b;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.logi{margin-top:12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.logi>div{display:grid;gap:4px;padding:12px 14px;border-radius:12px;border:1px dashed var(--line);font-size:.9rem}
+.logi span{color:var(--muted)}
+@media(max-width:980px){.chain{grid-template-columns:1fr}.ar{justify-self:center;width:4px;height:28px;margin:4px 0;background:repeating-linear-gradient(180deg,var(--accent) 0 8px,transparent 8px 14px);background-size:4px 28px;animation:flowv 1s linear infinite}.ar::after{right:-5px;top:auto;bottom:-7px;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--accent);border-bottom:0}.coke{grid-template-columns:1fr}}
+@keyframes flowv{to{background-position:0 28px}}
+@media(max-width:520px){.split{grid-template-columns:1fr}.logi{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.ar{animation:none}}
+
+.lanes{display:grid;gap:14px}
+.lane{background:var(--surface);border:1px solid #f3c3ca;border-radius:16px;padding:18px;display:grid;gap:14px}
+.ln-h{display:flex;gap:10px;align-items:baseline}
+.ln-h b{font-family:var(--display);font-size:1.05rem;color:#b0102a}
+.ln-h span{color:var(--muted);font-size:.9rem}
+.ln{display:flex;align-items:center}
+.n2{flex:1 1 0;min-width:0;padding:12px 10px;border-radius:12px;background:#fff6f7;border:1px solid #f3c3ca;display:grid;gap:3px;text-align:center}
+.n2 b{font-size:.92rem}.n2 span{font-size:.8rem;color:var(--muted)}
+.n2.red{background:linear-gradient(150deg,#d4142f,#8f0b21);border:0;color:#fff}.n2.red span{color:rgba(255,255,255,.8)}
+.n2.ru{background:linear-gradient(150deg,#1d4e89,#5b2a86);border:0;color:#fff}.n2.ru span{color:rgba(255,255,255,.8)}
+.cr{flex:0 0 38px;height:4px;margin:0 4px;position:relative;border-radius:2px;background:repeating-linear-gradient(90deg,#e41e2b 0 8px,transparent 8px 14px);background-size:28px 4px;animation:flow 1s linear infinite}
+.cr::after{content:"";position:absolute;right:-6px;top:-5px;border-left:9px solid #e41e2b;border-top:7px solid transparent;border-bottom:7px solid transparent}
+@media(max-width:700px){.ln{flex-direction:column;align-items:stretch}.cr{flex:0 0 24px;width:4px;height:24px;align-self:center;margin:4px 0;background:repeating-linear-gradient(180deg,#e41e2b 0 8px,transparent 8px 14px);background-size:4px 28px;animation:flowv 1s linear infinite}.cr::after{right:-5px;top:auto;bottom:-7px;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid #e41e2b;border-bottom:0}}
+@media(prefers-reduced-motion:reduce){.cr{animation:none}}
+
+.n2.ol{background:linear-gradient(150deg,#14857c,#0d5e58);border:0;color:#fff}.n2.ol span{color:rgba(255,255,255,.8)}
+
+/* ask */
+.asks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%}
+@media(max-width:820px){.asks{grid-template-columns:1fr}}
+.asks div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:16px;display:grid;gap:8px;align-content:start}
+.asks h3{color:#fff;font-size:1rem}
+.asks ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:.92rem;color:#d7e0e8}
+.pilot{border-top:1px solid rgba(255,255,255,.14);padding-top:16px;display:grid;gap:8px;color:#d7e0e8}
+.pilot b{color:#fff}
+
+/* 3D overlay */
+.v3info{display:none!important;position:absolute;bottom:84px;left:max(14px,env(safe-area-inset-left,0px));max-width:min(380px,calc(100% - 28px));padding-right:40px!important;background:rgba(9,16,24,.86);border:1px solid rgba(240,138,58,.45);border-radius:12px;padding:12px 14px;display:grid;gap:6px;color:#e9eef3;font-size:.88rem;line-height:1.45;pointer-events:auto}
+.v3info .x{position:absolute;top:6px;right:6px;width:30px;height:30px;border-radius:8px;border:0;background:rgba(255,255,255,.08);color:#fff;font-size:18px;line-height:1;cursor:pointer}
+.v3info small{font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#f08a3a}
+.v3info p{margin:0}
+.v3info span{color:#93a4b3;font-size:.8rem}
+.v3nav{position:absolute;left:0;right:0;bottom:34px;display:flex;gap:6px;overflow-x:auto;padding:4px max(14px,env(safe-area-inset-left,0px));scrollbar-width:none;justify-content:safe center}
+.v3nav::-webkit-scrollbar{display:none}
+.v3nav button{flex:none;font:600 12px var(--body);color:#e9eef3;background:rgba(9,16,24,.82);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:8px 13px;cursor:pointer}
+.v3nav button:hover{border-color:#f08a3a}
+.v3nav button.on{background:#f08a3a;border-color:#f08a3a;color:#1a0e04}
+.v3nav button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(max-width:640px){.v3info{font-size:.8rem;padding:10px 12px}.v3info span{font-size:.74rem}.v3nav{justify-content:flex-start}}
+.v3ctl{position:absolute;top:14px;right:max(14px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;align-items:flex-end;gap:8px;z-index:2}
+.v3ctl button{display:flex;align-items:center;gap:8px;height:42px;min-width:42px;justify-content:center;padding:0 12px;border-radius:12px;background:rgba(9,16,24,.86);border:1px solid rgba(255,255,255,.2);color:#fff;font:600 12.5px var(--body);cursor:pointer}
+.v3ctl button:hover{border-color:#f08a3a}
+.v3ctl button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+#v3full{background:#f08a3a;border-color:#f08a3a;color:#1a0e04}
+
+@media(max-width:640px){#v3full span{display:none}}
+.scene3d.full{position:fixed;inset:0;z-index:50;height:auto;border-radius:0;border:0;box-shadow:none}
+.scene3d.full .v3info{bottom:calc(94px + env(safe-area-inset-bottom,0px));font-size:.92rem}
+.scene3d.full canvas{touch-action:none}
+.scene3d.full .v3ctl{top:calc(14px + env(safe-area-inset-top,0px))}
+.scene3d.full .v3nav{bottom:calc(36px + env(safe-area-inset-bottom,0px))}
+.scene3d.full .v3nav button{font-size:14px;padding:10px 16px}
+.scene3d.full .hint3d{bottom:calc(10px + env(safe-area-inset-bottom,0px))}
+body.noscroll{overflow:hidden}
+
+.v3leg{position:absolute;top:14px;left:max(14px,env(safe-area-inset-left,0px));z-index:2;background:rgba(9,16,24,.86);border:1px solid rgba(255,255,255,.18);border-radius:12px;color:#e9eef3;font-size:12px;max-width:calc(100% - 96px)}
+.v3leg .lg-t{display:block;width:100%;text-align:left;background:none;border:0;color:#fff;font:700 12px var(--body);padding:9px 12px;cursor:pointer}
+.v3leg .lg-t::after{content:" ▾";opacity:.7}
+.v3leg.closed .lg-t::after{content:" ▸"}
+.v3leg ul{list-style:none;margin:0;padding:0 12px 10px;display:grid;gap:5px}
+.v3leg.closed ul{display:none}
+.v3leg li{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.v3leg i{width:22px;height:5px;border-radius:3px;flex:none}
+.v3leg i.hw{height:8px;background:repeating-linear-gradient(90deg,#4a5561 0 6px,#8b98a5 6px 8px)}
+.scene3d.full .v3leg{top:calc(14px + env(safe-area-inset-top,0px))}
+@media print{.v3leg{display:block!important}}
 
 /* top nav */
-.top{position:sticky;top:0;z-index:50;background:rgba(13,23,36,.92);backdrop-filter:blur(10px);color:#fff}
-.top .in{display:flex;align-items:center;gap:14px;height:60px}
-.brand{font-family:var(--display);font-weight:900;font-size:1.05rem;white-space:nowrap;color:#fff;text-decoration:none}
-.brand b{color:var(--accent)}
-.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
-.tabs::-webkit-scrollbar{display:none}
-.tabs a{flex:0 0 auto;color:#c9d4e0;text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 13px;border-radius:999px;display:flex;align-items:center;gap:8px;white-space:nowrap}
-.tabs a i{width:8px;height:8px;border-radius:50%;display:inline-block}
-.tabs a:hover{background:rgba(255,255,255,.08);color:#fff}
-.tabs a[aria-current="page"]{background:#fff;color:var(--night)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:rgba(244,246,248,.96)}
+.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(244,246,248,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topnav .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.topnav .in::-webkit-scrollbar{display:none}
+.topnav .brand{font:700 .85rem var(--display);margin-right:10px;white-space:nowrap;color:var(--fg);text-decoration:none}
+.topnav .brand b{color:var(--accent)}
+.topnav a.l{flex:none;font-size:.85rem;color:var(--muted);text-decoration:none;padding:6px 11px;border-radius:99px;border:1px solid transparent}
+.topnav a.l:hover{color:var(--fg)}
+.topnav a.l.on{color:var(--fg);border-color:var(--accent);background:var(--accent-soft)}
+section{scroll-margin-top:64px}
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.cases{grid-template-columns:1fr}}
+.cases .big{font-family:var(--display);font-size:1.7rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.cases p{color:var(--muted);font-size:.93rem}
+.cases a{color:var(--blue);font-size:.85rem}
 
-/* views */
-.view{display:none}
-.view.on{display:block;animation:fade .45s ease}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* authors */
+.tm{display:flex;flex-wrap:wrap;gap:40px 56px;justify-content:center}
+.tm figure{margin:0;display:grid;justify-items:center;gap:14px;text-align:center}
+.tm .av{width:min(190px,40vw);aspect-ratio:1;max-width:100%;border-radius:50%;padding:5px;background:conic-gradient(from 210deg,#a8501a,#ffc58a,#f08a3a,#a8501a,#ffd9b0,#a8501a);box-shadow:0 24px 50px -18px rgba(0,0,0,.9),0 0 40px -10px rgba(240,138,58,.4)}
+.tm .av span{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;border:3px solid var(--bg)}
+.tm .av img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);display:block}
+.tm b{font-family:var(--display);font-size:1.05rem}
+.tm small{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
 
-/* hero with 3d */
-.hero3d{position:relative;height:min(78vh,760px);min-height:520px;background:radial-gradient(1200px 600px at 70% 10%,#24476e 0%,rgba(36,71,110,0) 60%),linear-gradient(180deg,#0f1c2c,#152a40 55%,#1b3550);color:#fff;overflow:hidden}
-.hero3d .stage{position:absolute;inset:0}
-.hero3d .stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,20,32,.88) 0%,rgba(11,20,32,.5) 32%,rgba(11,20,32,0) 58%),linear-gradient(0deg,rgba(11,20,32,.75) 0%,rgba(11,20,32,0) 30%)}
-.hero3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
-.hero3d canvas:active{cursor:grabbing}
-.lbls{position:absolute;inset:0;pointer-events:none;z-index:2}
-.overlay,.kpis,.hint3d{z-index:3}
-.lbl{position:absolute;transform:translate(-50%,-100%);background:rgba(10,18,28,.82);border:1px solid rgba(255,255,255,.18);padding:5px 10px;border-radius:10px;font-size:.78rem;font-weight:600;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:opacity .2s}
-.lbl i{width:8px;height:8px;border-radius:50%}
-.lbl small{display:block;font-weight:500;opacity:.7;font-size:.7rem}
-.overlay{position:absolute;left:0;right:0;top:0;padding-top:28px;pointer-events:none}
-.overlay .wrap>*{pointer-events:auto}
-.ov-kick{display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:999px}
-.ov-kick i{width:9px;height:9px;border-radius:50%}
-.ov-title{font-size:clamp(1.8rem,4.6vw,3.4rem);line-height:1.04;margin-top:14px;max-width:16ch;text-shadow:0 4px 30px rgba(0,0,0,.4)}
-.ov-sub{margin-top:12px;max-width:52ch;color:#d5e0ec;font-size:1.02rem;text-shadow:0 2px 12px rgba(0,0,0,.5)}
-.kpis{position:absolute;left:0;right:0;bottom:22px;pointer-events:none}
-.kpis .row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.kpi{pointer-events:auto;background:rgba(10,18,28,.72);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px);border-radius:14px;padding:14px 16px}
-.kpi b{display:block;font-family:var(--display);font-size:clamp(1.05rem,2.2vw,1.6rem);font-variant-numeric:tabular-nums}
-.kpi span{font-size:.8rem;color:#c3cfdb;line-height:1.35;display:block;margin-top:4px}
-@media(max-width:820px){.kpis .row{grid-template-columns:repeat(2,1fr)}.ov-sub{display:none}.hero3d{height:auto;min-height:0}.hero3d .stage{position:relative;height:64vh;min-height:430px}.kpis{position:relative;bottom:auto;padding:12px 0 18px}.hint3d{display:none}}
-.hint3d{position:absolute;right:16px;top:16px;font-size:.72rem;font-family:var(--mono);color:#c9d4e0;background:rgba(0,0,0,.3);padding:5px 9px;border-radius:8px}
+@media print{
+ @page{size:A4;margin:12mm 10mm}
+ body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:13px}
+ .topnav,.v3info,.v3nav,.v3ctl,.hint3d,body::before{display:none!important}
+ .scene3d{height:auto!important;box-shadow:none;border-radius:12px}
+ .scene3d canvas,.scene3d .lbls{display:none!important}
+ #sceneShot{display:block!important;width:100%;height:auto}
+ section{padding-block:26px}
+ .card,.proc li,.road>div,.open>div,.risk>div,.src4 div,.asks div,.tm figure,.fact,.heads div,.nd,.grp{break-inside:avoid}
+ h2,h3{break-after:avoid}
+ .sec-head{break-after:avoid}
+}
 
-/* sections */
-.sec{padding-block:56px;border-top:1px solid var(--line)}
-.sec:first-of-type{border-top:none}
-.sh{display:grid;gap:10px;margin-bottom:26px}
-.sh p{color:var(--muted)}
-.grid{display:grid;gap:14px}
-.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px;align-content:start}
-.card .big{font-family:var(--display);font-size:1.5rem}
-.card.dark{background:var(--night);color:#fff;border-color:var(--night)}
-.card.dark .muted{color:#aebccb}
-.card.acc{border:2px solid var(--accent)}
-.tag{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--blue-soft);color:var(--blue);justify-self:start}
-.tag.or{background:var(--accent-soft);color:var(--accent)}
-.tag.fill{background:#fff3c4;color:#7a5a00}
-ul.ck{list-style:none;padding:0;margin:0;display:grid;gap:7px}
-ul.ck li{padding-left:22px;position:relative;font-size:.95rem}
-ul.ck li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:3px;background:var(--accent)}
-ul.ck.pl li::before{background:var(--ok)}ul.ck.mi li::before{background:#c0392b}
-
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;counter-reset:s}
-@media(max-width:980px){.steps{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.steps{grid-template-columns:1fr}}
-.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:6px;align-content:start;position:relative}
-.step::before{counter-increment:s;content:counter(s);font-family:var(--display);font-size:.9rem;width:30px;height:30px;border-radius:9px;background:var(--night);color:#fff;display:grid;place-items:center}
-.step p{font-size:.88rem;color:var(--muted)}
-
-/* table */
-.tbl{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.93rem}
-.tbl th{text-align:left;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line);background:#f8fafc}
-.tbl td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-.tbl tr:last-child td{border-bottom:none}
-.tbl td.r,.tbl th.r{text-align:right}
-.tbl tr.tot td{font-weight:700;background:#f8fafc}
-.tblw{overflow-x:auto}
-
-/* home */
-.dir{position:relative;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
-.dir:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(13,23,36,.5)}
-.dir .bar{position:absolute;left:0;top:0;bottom:0;width:6px}
-.dir .go{font-weight:700;color:var(--accent);font-size:.9rem}
-
-/* tree */
-.tree{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;overflow-x:auto}
-.tree .lvl{display:flex;justify-content:center;gap:16px;min-width:760px}
-.node{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;text-align:center;min-width:200px;max-width:280px;display:grid;gap:4px;justify-items:center}
-.node.top{background:var(--night);color:#fff;border-color:var(--night)}
-.node.lead{border:2px solid var(--accent);display:grid;grid-template-columns:auto 1fr;text-align:left;justify-items:start;align-items:center;gap:12px}
-.node.lead img{width:64px;height:64px;border-radius:50%;object-fit:cover;grid-row:span 3}
-.node.free{border:2px dashed #b9c4cf;background:#fbfcfd}
-.node .role{font-weight:700}
-.node .who{font-size:.82rem;color:var(--muted)}
-.node.top .who{color:#b7c5d4}
-.vline{width:2px;height:26px;background:#c5cfd9;margin:0 auto}
-.hline{height:2px;background:#c5cfd9;margin:0 auto}
-.free-b{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:999px}
-.cycle{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-@media(max-width:980px){.cycle{grid-template-columns:repeat(2,1fr)}}
-.cy{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:.88rem;position:relative}
-.cy b{display:block;font-family:var(--display);font-size:.8rem;color:var(--accent);margin-bottom:4px}
-
-.foot{padding:30px 0 50px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
-.callout{background:var(--night);color:#fff;border-radius:16px;padding:22px 24px;display:grid;gap:6px}
-.callout p{color:#c9d4e0}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:12px}
-.btn.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25)}
-.authors{display:flex;gap:18px;flex-wrap:wrap}
-.author{display:flex;gap:12px;align-items:center}
-.author img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);display:grid;gap:10px}
+footer ol{margin:0;padding-left:18px;display:grid;gap:3px}
+footer a{color:var(--blue)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
 
-<header class="top"><div class="wrap in">
-  <a class="brand" href="#home">OGM <b>E-com</b></a>
-  <nav class="tabs" aria-label="Разделы">
-    <a href="#home">Главная</a>
-    <a href="#wb"><i style="background:var(--wb)"></i>1 · Wildberries</a>
-    <a href="#uzum"><i style="background:var(--uzum)"></i>2 · Uzum и Ozon</a>
-    <a href="#yandex"><i style="background:var(--ya)"></i>2 · Яндекс</a>
-    <a href="#b2b"><i style="background:var(--ok)"></i>3 · B2B HoReCa</a>
-    <a href="#coke"><i style="background:var(--coke)"></i>4 · Coca-Cola</a>
-    <a href="#team">Команда</a>
-    <a href="#plan">Деньги и решения</a>
-  </nav>
-</div></header>
 
-<main>
+<nav class="topnav" aria-label="Разделы"><div class="in">
+  <a class="brand" href="#top">OGM <b>E-com</b></a>
+  <a class="l" href="#schema">Схема</a><a class="l" href="#chain">Цепочка</a><a class="l" href="#coke">Coca-Cola</a><a class="l" href="#markets">Рынки</a><a class="l" href="#value">Польза</a><a class="l" href="#cases">Кейсы</a><a class="l" href="#process">Процесс</a><a class="l" href="#assort">Ассортимент</a><a class="l" href="#fbo">FBO/FBS</a><a class="l" href="#team">Структура</a><a class="l" href="#roadmap">Этапы</a><a class="l" href="#finance">Финансы</a><a class="l" href="#discuss">Обсудить</a><a class="l" href="#ask">Решения</a><a class="l" href="#authors">Авторы</a><a class="navpdf" href="https://jaf2922j-dotcom.github.io/ecom/OGM-Ecom.pdf" target="_blank" rel="noopener">PDF</a>
+</div></nav>
+<div class="wrap" id="top">
 
-<!-- ============ HOME ============ -->
-<section class="view" id="v-home" data-scene="home">
-  <div class="hero3d">
-    <div class="stage"></div>
-    <div class="overlay"><div class="wrap">
-      <span class="ov-kick"><i style="background:var(--accent)"></i>Проект для учредителей ОГМ</span>
-      <h1 class="ov-title">Узбекский товар — на рынок всего СНГ</h1>
-      <p class="ov-sub">OGM E-com — новая компания группы. Один склад и одна команда продают на маркетплейсах Узбекистана и экспортируют в Россию и страны СНГ.</p>
-      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap"><a class="btn" href="#wb">Начать с Wildberries →</a><a class="btn ghost" href="#team">Команда</a></div>
-    </div></div>
-    <div class="kpis"><div class="wrap row">
-      <div class="kpi"><b>22,6 трлн сум</b><span>рынок e-com Узбекистана в 2025 году, рост в 22 раза за 5 лет</span></div>
-      <div class="kpi"><b>4,6%</b><span>доля онлайна в рознице. В среднем по миру — 22%</span></div>
-      <div class="kpi"><b>×3</b><span>рост продаж узбекских продавцов в Россию за I полугодие 2026</span></div>
-      <div class="kpi"><b>&gt;$2 млрд</b><span>прогноз оборота узбекских товаров на Wildberries в 2026</span></div>
-    </div></div>
-    <span class="hint3d">Тяните, чтобы повернуть</span>
+<header class="hero">
+  <span class="eyebrow">Проект для учредителей ОГМ · 31 октября 2026</span>
+  <h1>OGM E-com</h1>
+  <p class="lead">Компания группы, которая продаёт на двух рынках сразу. <b>В Узбекистане</b>: Wildberries, Ozon, Uzum, Яндекс Маркет, быстрая доставка и B2B для HoReCa и офисов. <b>В СНГ</b>: экспорт через Wildberries и Ozon, основной объём в Россию, а также Казахстан, Таджикистан, Кыргызстан и другие страны СНГ. Импортируем из Европы и Китая и продаём на обоих рынках.</p>
+  <div class="cta"><a class="btn" href="#schema">Смотреть 3D-схему</a><a class="btn ghost" href="https://jaf2922j-dotcom.github.io/ecom/OGM-Ecom.pdf" target="_blank" rel="noopener">Скачать презентацию PDF</a></div>
+  <div class="meta"><span>Новое юрлицо, учредитель ОГМ 100%</span><span>Подготовили: Ж. Дехканов, Ж. Хакимов</span></div>
+  <div class="facts">
+    <div class="fact"><b>22,6 трлн сум</b><span>рынок e-com Узбекистана в 2025 году, рост в 22 раза за 5 лет</span></div>
+    <div class="fact"><b>4,6%</b><span>доля онлайна в рознице. В среднем по миру 22%</span></div>
+    <div class="fact"><b>×3</b><span>рост продаж узбекских продавцов в Россию за I полугодие 2026. Россия — главный рынок экспорта</span></div>
+    <div class="fact"><b>&gt;$2 млрд</b><span>прогноз оборота узбекских товаров на Wildberries в 2026 году</span></div>
   </div>
+</header>
 
-  <div class="wrap">
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Пять направлений по очереди</span><h2>Каждое направление — отдельный запуск</h2><p>Следующее направление запускаем, только когда предыдущее работает стабильно. Нажмите на направление, чтобы открыть его страницу: схема, процесс и бизнес-план.</p></div>
-      <div class="grid g3">
-        <a class="card dir" href="#wb"><span class="bar" style="background:var(--wb)"></span><span class="tag or">Этап 1 · старт</span><h3>Wildberries</h3><p class="muted">Узбекистан и экспорт в Россию и СНГ. Первый магазин, первая партия SKU, своя команда.</p><span class="go">Открыть →</span></a>
-        <a class="card dir" href="#uzum"><span class="bar" style="background:var(--uzum)"></span><span class="tag">Этап 2</span><h3>Uzum Market и Ozon</h3><p class="muted">Те же товары на новых площадках. Uzum — Узбекистан, Ozon — Узбекистан и СНГ.</p><span class="go">Открыть →</span></a>
-        <a class="card dir" href="#yandex"><span class="bar" style="background:var(--ya)"></span><span class="tag">Этап 2</span><h3>Яндекс Маркет и Лавка</h3><p class="muted">Маркетплейс по Узбекистану и быстрая доставка из дарксторов.</p><span class="go">Открыть →</span></a>
-        <a class="card dir" href="#b2b"><span class="bar" style="background:var(--ok)"></span><span class="tag">Этап 3</span><h3>B2B: HoReCa и офисы</h3><p class="muted">Рестораны, кафе и офисы. Наша доставка с большого склада.</p><span class="go">Открыть →</span></a>
-        <a class="card dir" href="#coke"><span class="bar" style="background:var(--coke)"></span><span class="tag">Этап 4 · идея учредителей</span><h3>Экспорт Coca-Cola</h3><p class="muted">В Россию фурами Orient Logistic — два пути на выбор.</p><span class="go">Открыть →</span></a>
-        <a class="card dir" href="#team"><span class="bar" style="background:var(--night)"></span><span class="tag">Люди</span><h3>Команда и структура</h3><p class="muted">Кто сидит в офисе, кто нужен на старте и какие службы решаем с ОГМ.</p><span class="go">Открыть →</span></a>
+<section id="schema">
+  <div class="sec-head">
+    <span class="eyebrow">Как движется товар</span>
+    <h2>3D-карта проекта</h2>
+    <p>Главный офис создаёт заказы, товар от поставщиков едет на наш большой склад, оттуда на два рынка: Узбекистан и экспорт в СНГ.</p>
+  </div>
+  <div class="scene3d" id="scene3d">
+    <canvas id="cv3d" aria-label="3D-схема: четыре источника товара, большой склад с офисом и пять направлений продаж"></canvas>
+    <div class="lbls" id="lbls"></div>
+    <div class="v3info" id="v3info" aria-live="polite"></div>
+    <div class="v3ctl">
+      <button type="button" id="v3full" aria-label="Во весь экран"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Во весь экран</span></button>
+      <button type="button" id="v3in" aria-label="Приблизить"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+      <button type="button" id="v3rl" aria-label="Повернуть влево"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5"/></svg></button>
+      <button type="button" id="v3rr" aria-label="Повернуть вправо"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-3-6.2M20 4v5h-5"/></svg></button>
+      <button type="button" id="v3out" aria-label="Отдалить"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+    </div>
+    <div class="v3leg" id="v3leg"><button type="button" class="lg-t" aria-expanded="false">Чья это линия</button><ul>
+      <li><i style="background:#cb11ab"></i>Wildberries</li><li><i style="background:#005bff"></i>Ozon</li><li><i style="background:#7000ff"></i>Uzum Market</li><li><i style="background:#ffcc00"></i>Яндекс Маркет</li><li><i style="background:#1f8f62"></i>Дарксторы</li><li><i style="background:#f08a3a"></i>Наша доставка</li><li><i style="background:#34d1c6"></i>Orient Logistic: свои фуры в Россию</li><li><i style="background:#e41e2b"></i>Coca-Cola</li><li><i class="hw"></i>Эстакада: экспорт в СНГ</li><li><i style="background:#7fb0e6"></i>Поставщики → РЦ</li></ul></div>
+    <div class="v3nav" id="v3nav" role="group" aria-label="Показать на схеме"></div>
+    <span class="hint3d">Потяните, чтобы повернуть</span>
+  </div>
+  <div class="flow-box" id="flow2d" hidden>
+  <svg viewBox="0 0 1000 450" role="img" aria-label="Схема: четыре источника товара, большой склад с офисом, пять направлений продаж">
+    <!-- paths sources -> hub -->
+    <path id="s1" class="pin" d="M220 74 C310 74 320 230 410 250"/>
+    <path id="s2" class="pin" d="M220 184 C310 184 330 255 410 265"/>
+    <path id="s3" class="pin" d="M220 294 C310 294 330 290 410 285"/>
+    <path id="s4" class="pin" d="M220 404 C310 404 320 320 410 300"/>
+    <!-- hub -> channels -->
+    <path id="c1" class="p1" d="M630 250 C700 250 690 56 760 56"/>
+    <path id="c2" class="p2" d="M630 262 C700 262 690 136 760 136"/>
+    <path id="c3" class="p2" d="M630 274 C700 274 690 216 760 216"/>
+    <path id="c4" class="p2" d="M630 286 C700 286 690 296 760 296"/>
+    <path id="c5" class="p3" d="M630 298 C700 298 690 376 760 376"/>
+
+    <!-- sources -->
+    <g>
+      <rect class="node src" x="20" y="46" width="200" height="56" rx="8"/>
+      <text class="t" x="36" y="70">Дамир Савдо</text><text class="ts" x="36" y="88">дилерские контракты группы</text>
+      <rect class="node src" x="20" y="156" width="200" height="56" rx="8"/>
+      <text class="t" x="36" y="180">Заводы Узбекистана</text><text class="ts" x="36" y="198">и дистрибьюторы</text>
+      <rect class="node src" x="20" y="266" width="200" height="56" rx="8"/>
+      <text class="t" x="36" y="290">Импорт из Европы</text><text class="ts" x="36" y="308">трендовые товары, СТМ</text>
+      <rect class="node src" x="20" y="376" width="200" height="56" rx="8"/>
+      <text class="t" x="36" y="400">Импорт из Китая</text><text class="ts" x="36" y="418">товары под заказ</text>
+      <text class="tag b" x="20" y="34">ИСТОЧНИКИ</text>
+    </g>
+
+    <!-- hub -->
+    <g>
+      <rect class="node hub" x="410" y="196" width="220" height="150" rx="12"/>
+      <text class="tag" x="426" y="220">ЦЕНТР</text>
+      <text class="t" x="426" y="246" style="font-size:17px">Большой склад</text>
+      <text class="t" x="426" y="268" style="font-size:17px">+ офис OGM E-com</text>
+      <text class="ts" x="426" y="294">приёмка · маркировка · фото</text>
+      <text class="ts" x="426" y="312">упаковка · отгрузка FBO/FBS</text>
+      <text class="ts" x="426" y="330">аналитика и отчётность</text>
+      <!-- small building icon -->
+      <path d="M592 214 l14 -8 l14 8 v18 h-28 z" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+      <rect x="601" y="222" width="10" height="10" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+    </g>
+
+    <!-- channels: five directions -->
+    <g>
+      <text class="tag b" x="760" y="14">НАПРАВЛЕНИЯ</text>
+      <rect class="node s1" x="760" y="24" width="230" height="64" rx="8"/>
+      <text class="t" x="776" y="46">Wildberries</text><text class="ts" x="776" y="63">эксклюзивное партнёрство</text><text class="tag" x="776" y="79">НАПРАВЛЕНИЕ 1 · СТАРТ</text>
+      <rect class="node" x="760" y="104" width="230" height="64" rx="8"/>
+      <text class="t" x="776" y="126">Мультимаркетплейсы</text><text class="ts" x="776" y="143">Ozon · Uzum Market · Яндекс Маркет</text><text class="tag b" x="776" y="159">НАПРАВЛЕНИЕ 2</text>
+      <rect class="node" x="760" y="184" width="230" height="64" rx="8"/>
+      <text class="t" x="776" y="206">B2B: HoReCa и офисы</text><text class="ts" x="776" y="223">рестораны, кафе, отели, офисы</text><text class="tag b" x="776" y="239">НАПРАВЛЕНИЕ 3</text>
+      <rect class="node" x="760" y="264" width="230" height="64" rx="8"/>
+      <text class="t" x="776" y="286">Экспорт Coca-Cola в РФ</text><text class="ts" x="776" y="303">через новое юрлицо</text><text class="tag b" x="776" y="319">НАПРАВЛЕНИЕ 4</text>
+      <rect class="node" x="760" y="344" width="230" height="64" rx="8"/>
+      <text class="t" x="776" y="366">Дарксторы, 3–4 точки</text><text class="ts" x="776" y="383">Uzum Tezkor · Яндекс Еда и Лавка</text><text class="tag m" x="776" y="399">НАПРАВЛЕНИЕ 5 · БЫСТРАЯ ДОСТАВКА</text>
+    </g>
+
+    <!-- trucks -->
+    <defs>
+      <g id="truck"><rect class="truck-body" x="-11" y="-6" width="15" height="11" rx="1.5"/><rect class="truck-cab" x="4" y="-3" width="7" height="8" rx="1.5"/><circle class="wheel" cx="-6" cy="6" r="2.4"/><circle class="wheel" cx="7" cy="6" r="2.4"/></g>
+      <g id="truckb"><rect class="truck-body b" x="-11" y="-6" width="15" height="11" rx="1.5"/><rect class="truck-cab" x="4" y="-3" width="7" height="8" rx="1.5"/><circle class="wheel" cx="-6" cy="6" r="2.4"/><circle class="wheel" cx="7" cy="6" r="2.4"/></g>
+    </defs>
+    <g class="trucks">
+      <use href="#truckb"><animateMotion dur="4s" repeatCount="indefinite" rotate="auto"><mpath href="#s1"/></animateMotion></use>
+      <use href="#truckb"><animateMotion dur="4.6s" begin="-1s" repeatCount="indefinite" rotate="auto"><mpath href="#s2"/></animateMotion></use>
+      <use href="#truckb"><animateMotion dur="5.2s" begin="-0.4s" repeatCount="indefinite" rotate="auto"><mpath href="#s3"/></animateMotion></use>
+      <use href="#truckb"><animateMotion dur="4.4s" begin="-2s" repeatCount="indefinite" rotate="auto"><mpath href="#s4"/></animateMotion></use>
+      <use href="#truck"><animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto"><mpath href="#c1"/></animateMotion></use>
+      <use href="#truck"><animateMotion dur="3.2s" begin="-1.6s" repeatCount="indefinite" rotate="auto"><mpath href="#c1"/></animateMotion></use>
+      <use href="#truck"><animateMotion dur="3.6s" begin="-0.8s" repeatCount="indefinite" rotate="auto"><mpath href="#c2"/></animateMotion></use>
+      <use href="#truck"><animateMotion dur="3.6s" begin="-2.6s" repeatCount="indefinite" rotate="auto"><mpath href="#c2"/></animateMotion></use>
+      <use href="#truck"><animateMotion dur="4.2s" begin="-2.2s" repeatCount="indefinite" rotate="auto"><mpath href="#c3"/></animateMotion></use>
+      <use href="#truck"><animateMotion dur="4.4s" begin="-1.2s" repeatCount="indefinite" rotate="auto"><mpath href="#c4"/></animateMotion></use>
+      <use href="#truck"><animateMotion dur="2.6s" begin="-0.3s" repeatCount="indefinite" rotate="auto"><mpath href="#c5"/></animateMotion></use>
+    </g>
+  </svg>
+  </div>
+  <div class="legend"><span><i></i>Направление 1, запуск сразу</span><span><i class="l2"></i>Направления 2–4, запускаем по очереди</span><span><i class="l3"></i>Направление 5, после открытия новой сети</span></div>
+</section>
+
+<section id="chain">
+  <div class="sec-head">
+    <span class="eyebrow">Цепочка поставок</span>
+    <h2>Как товар доходит до покупателя</h2>
+    <p>Все заказы создаёт главный офис. Весь товар сначала приходит на наш большой склад, оттуда распределяется по каналам.</p>
+  </div>
+  <div class="chain">
+    <div class="st"><span class="sn">1</span><h3>Закупка</h3><p>Берём там, где дешевле: Дамир Савдо, заводы, оптовые рынки, Европа, Китай</p></div>
+    <div class="ar" aria-hidden="true"></div>
+    <div class="st of"><span class="sn">2</span><h3>Главный офис</h3><p>Создаёт заказы поставщикам, планирует остатки, распределяет товар по каналам</p></div>
+    <div class="ar" aria-hidden="true"></div>
+    <div class="st wh"><span class="sn">3</span><h3>РЦ · большой склад</h3><p>Приёмка, маркировка, фото для карточек, хранение, сборка и отправка</p></div>
+    <div class="ar" aria-hidden="true"></div>
+    <div class="st out"><span class="sn">4</span><h3>Распределение</h3>
+      <div class="split">
+        <div class="uzb"><b>Узбекистан</b><span>Маркетплейсы: везём на склады WB, Ozon, Uzum, Яндекс Маркет, они доставляют покупателям</span><span>Дарксторы: товар забирают Яндекс Лавка, Яндекс Еда, Uzum Tezkor</span><span>HoReCa и офисы: наша доставка из РЦ</span></div>
+        <div class="cisb"><b>Экспорт в СНГ</b><span>Продаём через Wildberries и Ozon</span><span>Везут фуры Orient Logistic или сами площадки</span><span>Россия, Казахстан, Таджикистан, Кыргызстан</span></div>
       </div>
     </div>
+  </div>
+  <div class="logi">
+    <div><b>Своя логистика</b><span>Поставщики → РЦ → склады площадок, дарксторы, HoReCa и офисы</span></div>
+    <div><b>Orient Logistic</b><span>Компания группы со своей базой фур: заказы Wildberries и Coca-Cola в Россию</span></div>
+    <div><b>Площадки</b><span>Доставляют покупателям сами: WB, Ozon, Uzum, Яндекс Маркет, а из дарксторов — Яндекс Лавка, Яндекс Еда, Uzum Tezkor</span></div>
+  </div>
+</section>
 
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Зачем это группе</span><h2>Что получит ОГМ</h2><p>Рынок уже растёт без нас. Вопрос в том, кто из узбекских групп первым займёт место на маркетплейсах СНГ со своей командой.</p></div>
-      <div class="grid g3">
-        <div class="card"><span class="tag">Продажи</span><h3>Новый канал для товаров группы</h3><p class="muted">Ассортимент Дамир Савдо и поставщиков группы продаётся по Узбекистану и СНГ без новых магазинов.</p></div>
-        <div class="card"><span class="tag">Экспорт</span><h3>Валютная выручка</h3><p class="muted">Продажи в Россию и СНГ через Wildberries и Ozon, в перспективе — экспорт Coca-Cola.</p></div>
-        <div class="card"><span class="tag">Данные</span><h3>Синергия с новой сетью</h3><p class="muted">Маркетплейсы каждый день показывают, что покупают и почём. Это усиливает закупки сети.</p></div>
-        <div class="card"><span class="tag">Прибыль</span><h3>Маржа без торговых залов</h3><p class="muted">Импорт, свой бренд и прямые поставки с заводов дают наценку выше классической розницы.</p></div>
-        <div class="card"><span class="tag">Контроль</span><h3>Отдельный P&amp;L</h3><p class="muted">Отдельное юрлицо ОГМ с прозрачными цифрами по каждому направлению.</p></div>
-        <div class="card"><span class="tag">Команда</span><h3>Честные специалисты + платформы</h3><p class="muted">Платформы и ИИ ускоряют работу и снижают ошибки, но решения принимают люди.</p></div>
-      </div>
+<section id="coke">
+  <div class="sec-head">
+    <span class="eyebrow">Отдельный проект</span>
+    <h2>Coca-Cola: экспорт в Россию</h2>
+    <p>Идея учредителей. Заказ создаёт главный офис, в Россию везут фуры Orient Logistic — компании группы со своей базой и парком фур. Два пути, выбираем вместе с учредителями.</p>
+  </div>
+  <div class="lanes">
+    <div class="lane">
+      <div class="ln-h"><b>Путь А</b><span>через наш склад</span></div>
+      <div class="ln"><div class="n2 red"><b>Завод Coca-Cola</b><span>Узбекистан</span></div><i class="cr"></i><div class="n2"><b>Наш РЦ</b><span>приёмка и проверка</span></div><i class="cr"></i><div class="n2 ol"><b>Фуры Orient Logistic</b><span>компания группы</span></div><i class="cr"></i><div class="n2 ru"><b>Россия</b><span>покупатели</span></div></div>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Товар и остатки под нашим контролем</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Лишняя перевалка, дольше и дороже</li></ul></div></div>
     </div>
-
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Кто уже зарабатывает</span><h2>Модель работает на этом рынке</h2></div>
-      <div class="grid g4">
-        <div class="card"><div class="big">$4 тыс → $100 тыс</div><p class="muted">Ташкентский продавец на Uzum за два года вырос до $100 тыс. оборота в месяц.</p></div>
-        <div class="card"><div class="big">&gt;$1 млрд</div><p class="muted">Продажи узбекских продавцов на Wildberries за два года.</p></div>
-        <div class="card"><div class="big">≈×4</div><p class="muted">Рост оборота Ozon в Узбекистане в 2025 году.</p></div>
-        <div class="card"><div class="big">10–15 человек</div><p class="muted">Столько людей в e-com компаниях с оборотом крупной розничной сети.</p></div>
-      </div>
+    <div class="lane">
+      <div class="ln-h"><b>Путь Б</b><span>напрямую</span></div>
+      <div class="ln"><div class="n2 red"><b>Завод Coca-Cola</b><span>Узбекистан</span></div><i class="cr"></i><div class="n2 ol"><b>База Orient Logistic</b><span>хранение и отправка фурами</span></div><i class="cr"></i><div class="n2 ru"><b>Россия</b><span>покупатели</span></div></div>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Быстрее и дешевле</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Меньше контроля над товаром</li></ul></div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ WILDBERRIES ============ -->
-<section class="view" id="v-wb" data-scene="wb">
-  <div class="hero3d">
-    <div class="stage"></div>
-    <div class="overlay"><div class="wrap">
-      <span class="ov-kick"><i style="background:var(--wb)"></i>Направление 1 · старт</span>
-      <h1 class="ov-title">Wildberries</h1>
-      <p class="ov-sub">Наш склад → склад WB в Узбекистане → покупатели Узбекистана, России и СНГ. В Россию везут фуры Wildberries или Orient Logistic.</p>
-    </div></div>
-    <div class="kpis"><div class="wrap row">
-      <div class="kpi"><b>&gt;$1 млрд</b><span>продажи узбекских продавцов на WB за два года</span></div>
-      <div class="kpi"><b>2 рынка</b><span>Узбекистан и экспорт в Россию и СНГ из одного магазина</span></div>
-      <div class="kpi"><b>500 SKU</b><span>100 товаров-магнитов и 400 товаров, которые дают прибыль</span></div>
-      <div class="kpi"><b>FBO + FBS</b><span>ходовой товар на складе WB, остальное — со своего склада</span></div>
-    </div></div>
-    <span class="hint3d">Тяните, чтобы повернуть</span>
+<section id="markets">
+  <div class="sec-head">
+    <span class="eyebrow">Цель проекта</span>
+    <h2>Два рынка одновременно</h2>
+    <p>Один большой склад и одна команда работают и на внутренний рынок, и на экспорт. Каждый товар продаём там, где он даёт лучшую цену.</p>
   </div>
-  <div class="wrap">
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Процесс</span><h2>Как работает направление</h2><p>Цикл повторяется для каждой партии. Решение о докупке принимаем по цифрам.</p></div>
-      <div class="steps">
-        <div class="step"><h3>Анализ</h3><p>Спрос, цены и конкуренты на WB. Берём товар с маржой после комиссии и логистики.</p></div>
-        <div class="step"><h3>Заказ</h3><p>Менеджер формирует потребность, руководители сводят и заказывают у Дамир Савдо, в Европе или Китае.</p></div>
-        <div class="step"><h3>Склад</h3><p>Приёмка, маркировка, фото один раз для всех площадок.</p></div>
-        <div class="step"><h3>Отгрузка</h3><p>Ходовое — на склад WB (FBO), остальное — со своего склада (FBS).</p></div>
-        <div class="step"><h3>Продажи</h3><p>Реклама внутри WB, акции, отзывы, рейтинг магазина.</p></div>
-        <div class="step"><h3>Отчёт</h3><p>Выручка, маржа, остатки, выплаты. Докупаем, масштабируем или выводим.</p></div>
-      </div>
-    </div>
+  <div class="mk">
+    <div class="mkc uz"><span class="tagx">Внутренний рынок</span><h3>Узбекистан</h3>
+      <ul><li><b>Маркетплейсы:</b> Wildberries, Ozon, Uzum Market, Яндекс Маркет</li><li><b>Быстрая доставка:</b> Uzum Tezkor, Яндекс Еда и Лавка через наши дарксторы</li><li><b>B2B:</b> HoReCa и офисы</li><li><b>Импорт</b> из Европы и Китая продаём здесь же</li></ul></div>
+    <div class="mkc cis"><span class="tagx">Экспорт</span><h3>СНГ</h3>
+      <ul><li><b>Россия</b> — основной объём</li><li><b>Казахстан, Таджикистан, Кыргызстан</b> и другие страны, где работают Wildberries и Ozon</li><li><b>Каналы:</b> Wildberries и Ozon. В Россию везут фуры Orient Logistic (компания группы) или сами площадки. Uzum и Яндекс Маркет — только Узбекистан</li></ul></div>
+  </div>
+</section>
 
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Почему так</span><h2>Ассортимент: 500 SKU</h2><p>Как в сильной рознице: магниты приводят покупателя в наш магазин, зарабатываем на остальном.</p></div>
-      <div class="grid g2">
-        <div class="card dark"><span class="tag or">100 SKU · KVI</span><h3>Товары-магниты</h3><ul class="ck"><li>Хиты розницы и частые запросы на WB</li><li>Цена на 1–3% ниже конкурентов</li><li>Маржа после комиссий не ниже 3%</li><li>Дают рейтинг, отзывы и подписчиков</li></ul></div>
-        <div class="card"><span class="tag">400 SKU</span><h3>Основной ассортимент</h3><ul class="ck"><li>Конкурентная цена</li><li>Целевая маржа после комиссий 15–20%</li><li>Готовые бренды и свой бренд группы</li><li>Дамир Савдо, заводы Узбекистана, Европа, Китай</li></ul></div>
-      </div>
-    </div>
+<section id="value">
+  <div class="sec-head">
+    <span class="eyebrow">Зачем это группе</span>
+    <h2>Что получит ОГМ</h2>
+    <p>Рынок уже растёт без нас. Вопрос в том, кто из узбекских групп первым займёт место на маркетплейсах СНГ с собственной командой.</p>
+  </div>
+  <div class="ben">
+    <div class="card"><span class="pill o">Продажи</span><h3>Новый канал для товаров группы</h3><p>Ассортимент Дамир Савдо и поставщиков группы продаётся в Узбекистане и по СНГ без открытия новых магазинов.</p></div>
+    <div class="card"><span class="pill o">Два рынка</span><h3>Узбекистан и СНГ</h3><p>Внутренний рынок растёт быстрее розницы. Через Wildberries и Ozon тот же товар сразу выходит в Россию и страны СНГ.</p></div>
+    <div class="card"><span class="pill o">Экспорт</span><h3>Валютная выручка</h3><p>Продажи в Россию и страны СНГ через Wildberries и Ozon, а в перспективе экспорт Coca-Cola, приносят выручку из-за рубежа.</p></div>
+    <div class="card"><span class="pill">Данные</span><h3>Синергия с новой сетью</h3><p>Маркетплейсы каждый день показывают, что покупают и по какой цене. Эти данные усиливают закупки новой сети, а общие поставщики дают лучшие условия.</p></div>
+    <div class="card"><span class="pill o">Прибыль</span><h3>Маржа на своём ассортименте</h3><p>Импорт, свой бренд и прямые поставки с заводов дают наценку выше, чем в классической рознице, без аренды торговых залов.</p></div>
+    <div class="card"><span class="pill">Контроль</span><h3>Отдельный P&amp;L</h3><p>Отдельное юрлицо ОГМ с прозрачными цифрами по каждому направлению. Склад, команда и данные остаются активом группы.</p></div>
+  </div>
+  <div class="ai">
+    <div style="display:grid;gap:10px"><span class="eyebrow">Команда и инструменты</span><h3 style="font-size:1.25rem">Хорошие честные специалисты и современные платформы</h3><p class="muted">Покупаем ИИ-сервисы и другие платформы для работы с маркетплейсами. Они ускоряют работу, позволяют обходиться меньшим числом сотрудников и снижают риск ошибок. Но основа проекта — хорошие, честные специалисты.</p></div>
+    <ul>
+      <li><b>Скорость</b><span>специалисты быстрее делают аналитику, карточки и отчёты</span></li>
+      <li><b>Меньше ошибок</b><span>расчёты цен, остатков и комиссий проверяются автоматически</span></li>
+      <li><b>Люди решают</b><span>закупки, поставщики, переговоры и продажи — за специалистами</span></li>
+    </ul>
+  </div>
+</section>
 
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Экспорт</span><h2>Как товар уходит в Россию и СНГ</h2><p>Основной путь выбираем после встречи с Wildberries.</p></div>
-      <div class="grid g2">
-        <div class="card"><span class="tag" style="background:#ede4ff;color:var(--wb)">Путь 1</span><h3>Фуры Wildberries</h3><p class="muted">Сдаём товар на склад WB в Узбекистане, дальше WB своей логистикой везёт в Россию и страны СНГ.</p></div>
-        <div class="card"><span class="tag" style="background:#dff3ee;color:var(--orient)">Путь 2</span><h3>Фуры Orient Logistic</h3><p class="muted">Заказ собираем на нашем складе, фуры Orient Logistic — компании группы — везут на склады WB в России.</p></div>
-      </div>
-    </div>
+<section id="cases">
+  <div class="sec-head">
+    <span class="eyebrow">Кто уже зарабатывает</span>
+    <h2>Модель работает на этом рынке</h2>
+    <p>Это не теория. Продавцы из Узбекистана уже строят на маркетплейсах большой бизнес, часто без своей логистики и без команды аналитиков.</p>
+  </div>
+  <div class="cases">
+    <div class="card"><span class="big">$4 тыс → $100 тыс</span><h3>Продавец на Uzum Market</h3><p>Ташкентский селлер за два года вырос с 4 до 100 тысяч долларов оборота в месяц, используя инструменты маркетплейса.</p></div>
+    <div class="card"><span class="big">&gt;$1 млрд</span><h3>Узбекские продавцы на Wildberries</h3><p>За два года продажи узбекских продавцов на Wildberries превысили миллиард долларов. Площадка арендует склады в Узбекистане под экспорт.</p></div>
+    <div class="card"><span class="big">≈×4</span><h3>Рост Ozon в Узбекистане</h3><p>В 2025 году оборот Ozon в Узбекистане вырос почти в четыре раза, а число активных покупателей примерно в 3,5 раза.</p></div>
+    <div class="card"><span class="big">10–15 человек</span><h3>Оборот как у крупной сети</h3><p>На рынке уже есть e-com компании из 10–15 человек и одного склада, чей оборот сопоставим с розничной сетью на 1000+ сотрудников. Без торговых залов, списаний по магазинам и большого штата.</p></div>
+  </div>
+</section>
 
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Бизнес-план</span><h2>Экономика направления</h2><p>Структура расчёта готова. Жёлтые поля заполняем вместе с учредителями по фактическим ценам поставщиков и тарифам WB на дату запуска.</p></div>
-      <div class="grid g2">
-        <div class="tblw"><table class="tbl">
-          <tr><th>Юнит-экономика одного товара</th><th class="r">Значение</th></tr>
-          <tr><td>Цена продажи на WB</td><td class="r"><span class="tag fill">заполнить</span></td></tr>
-          <tr><td>− Комиссия WB</td><td class="r"><span class="tag fill">по тарифу</span></td></tr>
-          <tr><td>− Логистика и хранение</td><td class="r"><span class="tag fill">по тарифу</span></td></tr>
-          <tr><td>− Закупочная цена</td><td class="r"><span class="tag fill">заполнить</span></td></tr>
-          <tr><td>− Реклама внутри WB</td><td class="r"><span class="tag fill">заполнить</span></td></tr>
-          <tr class="tot"><td>= Маржа с одного товара</td><td class="r">KVI ≥ 3% · основные 15–20%</td></tr>
-        </table></div>
-        <div class="tblw"><table class="tbl">
-          <tr><th>Вложения на старт</th><th class="r">Сумма</th></tr>
-          <tr><td>Первая закупка товара (500 SKU)</td><td class="r"><span class="tag fill">заполнить</span></td></tr>
-          <tr><td>Оборудование склада и фото-зона</td><td class="r"><span class="tag fill">заполнить</span></td></tr>
-          <tr><td>Программа для всех маркетплейсов</td><td class="r"><span class="tag fill">подписка</span></td></tr>
-          <tr><td>Команда офиса на 3 месяца</td><td class="r"><span class="tag fill">заполнить</span></td></tr>
-          <tr><td>Регистрация, сертификаты, маркировка</td><td class="r"><span class="tag fill">заполнить</span></td></tr>
-          <tr class="tot"><td>Итого старт · окупаемость</td><td class="r">считаем после заполнения</td></tr>
-        </table></div>
-      </div>
+<section id="entities">
+  <div class="sec-head">
+    <span class="eyebrow">Структура</span>
+    <h2>Новое юрлицо группы</h2>
+    <p>OGM E-com — отдельное юрлицо, учредитель ОГМ 100%. Компании группы работают с ним как поставщики.</p>
+  </div>
+  <div class="ent">
+    <div class="card">
+      <span class="pill">Дистрибьютор группы</span>
+      <h3>Дамир Савдо</h3>
+      <ul>
+        <li>Поставляет товар по дилерским контрактам</li>
+        <li>Самые ходовые позиции от всех своих поставщиков</li>
+        <li>Условия поставки фиксируем договором с OGM E-com</li>
+      </ul>
     </div>
-
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Риски</span><h2>Что проверяем до запуска</h2></div>
-      <div class="grid g3">
-        <div class="card"><h3>Эксклюзив WB</h3><p class="muted">Подтвердить, что новое юрлицо может продавать те же товары на других площадках.</p></div>
-        <div class="card"><h3>Документы на товар</h3><p class="muted">Без сертификатов WB блокирует карточки. Берём только товар с документами.</p></div>
-        <div class="card"><h3>Деньги в остатках</h3><p class="muted">Оборачиваемость каждую неделю, неходовые SKU выводим.</p></div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="callout"><span class="eyebrow">Что просим для запуска Wildberries</span><h3 style="font-size:1.3rem">Люди · полномочия · деньги</h3><p>Команда офиса на старте: менеджер WB, контент-менеджер, оператор заказов под руководством Ж. Дехканова и Ж. Хакимова. Право подписывать договоры с WB и поставщиками. Бюджет первой закупки и склада — по таблице выше.</p></div>
+    <div class="card hl">
+      <span class="pill o">Новое юрлицо</span>
+      <h3>OGM E-com</h3>
+      <ul>
+        <li>Направления 1–2: Wildberries, затем Ozon, Uzum, Яндекс Маркет — в Узбекистане и на экспорт в СНГ</li>
+        <li>Направление 3: B2B для HoReCa и офисов</li>
+        <li>Направление 4: экспорт Coca-Cola в Россию</li>
+        <li>Направление 5: дарксторы и быстрая доставка</li>
+        <li>Импорт из Европы и Китая под спрос площадок</li>
+        <li>Подчиняется напрямую учредителям ОГМ</li>
+        <li>Бухгалтерия и юрист — от группы ОГМ</li>
+        <li>Своя команда, большой склад и отчётность</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ UZUM + OZON ============ -->
-<section class="view" id="v-uzum" data-scene="uzum">
-  <div class="hero3d">
-    <div class="stage"></div>
-    <div class="overlay"><div class="wrap">
-      <span class="ov-kick"><i style="background:var(--uzum)"></i>Направление 2</span>
-      <h1 class="ov-title">Uzum Market и Ozon</h1>
-      <p class="ov-sub">Те же товары и тот же склад — ещё две площадки. Uzum работает по Узбекистану, Ozon — по Узбекистану и СНГ.</p>
-    </div></div>
-    <div class="kpis"><div class="wrap row">
-      <div class="kpi"><b>$4k → $100k</b><span>оборот в месяц ташкентского продавца на Uzum за два года</span></div>
-      <div class="kpi"><b>≈×4</b><span>рост оборота Ozon в Узбекистане в 2025 году</span></div>
-      <div class="kpi"><b>×0,5</b><span>Ozon с июля 2026 вдвое снизил тарифы для продавцов из Узбекистана (FBS)</span></div>
-      <div class="kpi"><b>+1 человек</b><span>склад, контент и закупка уже есть — нужен один менеджер</span></div>
-    </div></div>
-    <span class="hint3d">Тяните, чтобы повернуть</span>
+<section id="process">
+  <div class="sec-head">
+    <span class="eyebrow">Бизнес-процесс</span>
+    <h2>Цикл одного товара</h2>
+    <p>Так работают зрелые команды селлеров в России и Узбекистане. Цикл повторяется для каждой партии, решение о докупке принимается по цифрам.</p>
   </div>
-  <div class="wrap">
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Почему вторым этапом</span><h2>Масштаб без новых затрат на инфраструктуру</h2></div>
-      <div class="grid g3">
-        <div class="card"><h3>Те же SKU</h3><p class="muted">Карточки и фото уже готовы после WB — адаптируем под площадку.</p></div>
-        <div class="card"><h3>Один остаток</h3><p class="muted">Программа для всех маркетплейсов держит один остаток сразу на всех площадках.</p></div>
-        <div class="card"><h3>Uzum Tezkor</h3><p class="muted">Быстрая доставка за часы — позже через дарксторы (направление 5).</p></div>
-      </div>
+  <ol class="proc">
+    <li><span class="n">1</span><div><h3>Анализ и отбор товаров</h3><p>Спрос, цены и конкуренты на площадках. Берём товары, которые дают маржу после комиссии и логистики.</p></div><div class="who"><b>Руководители проекта</b>еженедельно</div></li>
+    <li><span class="n">2</span><div><h3>Закупка и документы</h3><p>Заказ поставщику из главного офиса, договор, сертификаты и таможенные документы.</p></div><div class="who"><b>Руководители + логист</b>по плану закупок</div></li>
+    <li><span class="n">3</span><div><h3>Склад: приёмка, маркировка, фото</h3><p>Товар приходит на большой склад, его маркируют и снимают один раз для всех площадок.</p></div><div class="who"><b>Логист-кладовщик, дизайнер</b>при каждой поставке</div></li>
+    <li><span class="n">4</span><div><h3>Отгрузка и карточки</h3><p>Ходовой товар везём на склады площадок (FBO), остальное отгружаем со своего склада (FBS). Карточки под каждую площадку.</p></div><div class="who"><b>Менеджеры площадок</b>ежедневно</div></li>
+    <li><span class="n">5</span><div><h3>Продажи и продвижение</h3><p>Реклама внутри площадок, акции, отзывы, возвраты, рейтинг магазина.</p></div><div class="who"><b>Менеджеры площадок</b>ежедневно</div></li>
+    <li><span class="n">6</span><div><h3>Отчёт и решение по товару</h3><p>Выручка, маржа, остатки, сверка выплат. Товар докупаем, масштабируем или выводим.</p></div><div class="who"><b>Руководители + бухгалтерия</b>раз в 2 недели</div></li>
+  </ol>
+</section>
+
+<section id="assort">
+  <div class="sec-head">
+    <span class="eyebrow">Ассортимент и цены</span>
+    <h2>500 SKU: 100 приводят покупателя, 400 приносят прибыль</h2>
+    <p>Логика как в сильной рознице. Ключевые товары по лучшей цене приводят покупателя в наш магазин на площадке, а зарабатываем на остальном ассортименте.</p>
+  </div>
+  <div class="kvi">
+    <div class="card hl"><span class="pill o">100 SKU · KVI</span><h3>Товары-магниты</h3>
+      <ul><li>Отбор: хиты розницы, частые запросы на площадках и лучшая закупочная цена</li><li>Цена на 1–3% ниже конкурентов</li><li>Маржа после комиссий и логистики не ниже 3%</li><li>Дают рейтинг магазина, отзывы и подписчиков</li></ul></div>
+    <div class="card"><span class="pill">400 SKU</span><h3>Основной ассортимент</h3>
+      <ul><li>Конкурентная цена</li><li>Целевая маржа после комиссий 15–20%</li><li>Готовые бренды и свой бренд группы</li><li>Покупатель видит их в том же магазине</li></ul></div>
+  </div>
+  <div class="src4">
+    <div><b>Группа</b><span>Дамир Савдо и поставщики группы: самые ходовые позиции</span></div>
+    <div><b>Узбекистан</b><span>Заводы и оптовые рынки напрямую</span></div>
+    <div><b>Европа</b><span>Выставки и дистрибьюторы</span></div>
+    <div><b>Китай</b><span>Тест через 1688 и Alibaba, затем напрямую с фабрик. Свой бренд на производстве под заказ</span></div>
+  </div>
+</section>
+
+<section id="fbo">
+  <div class="sec-head">
+    <span class="eyebrow">Выбор учредителей</span>
+    <h2>Склады и доставка: FBO, FBS и экспорт в СНГ</h2>
+    <p>У маркетплейсов два способа доставки до покупателя. От выбора зависят склад, штат и скорость оборота денег.</p>
+  </div>
+  <div class="opts">
+    <div class="card"><span class="pill">Вариант 1</span><h3>FBO · склад маркетплейса</h3>
+      <p class="muted">Везём партии на склад площадки. Хранит, собирает и доставляет площадка.</p>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Самая быстрая доставка покупателю</li><li>Выше в поиске площадки</li><li>Меньше своих людей на сборку</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Плата за хранение и логистику</li><li>Деньги заморожены в товаре на чужом складе</li><li>Поставки по слотам, штрафы за упаковку</li></ul></div></div>
+      <span class="muted" style="font-size:.85rem">Штат: логист для поставок</span></div>
+    <div class="card"><span class="pill">Вариант 2</span><h3>FBS · наш склад</h3>
+      <p class="muted">Товар лежит у нас. По каждому заказу собираем и сдаём площадке в срок.</p>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Полный контроль остатков</li><li>Один остаток сразу на все площадки</li><li>Удобно для тестов и широкого ассортимента</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Нужен свой склад и сборщики каждый день</li><li>Доставка дольше, ниже в поиске</li><li>Штрафы за опоздание с отгрузкой</li></ul></div></div>
+      <span class="muted" style="font-size:.85rem">Штат: +1–2 сборщика на складе</span></div>
+    <div class="card hl"><span class="pill o">Вариант 3 · рекомендуем</span><h3>FBO + FBS вместе</h3>
+      <p class="muted">Ходовые товары держим на складах площадок (FBO). Новинки, тестовые и медленные позиции отгружаем со своего склада (FBS).</p>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Скорость там, где есть спрос</li><li>Меньше замороженных денег</li><li>Тестируем товар без больших партий</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Нужно вести два вида отгрузок</li></ul></div></div>
+      <span class="muted" style="font-size:.85rem">Ozon с июля 2026 вдвое снизил тарифы для продавцов из Узбекистана, пока именно по FBS</span></div>
+  </div>
+  <div class="sec-head" style="margin-top:40px">
+    <span class="eyebrow">Экспорт в СНГ</span>
+    <h3 style="font-size:1.25rem">Как товар уходит в Россию и СНГ</h3>
+    <p>Заказы формируются для Wildberries и Ozon. Везём двумя способами: своими фурами через Orient Logistic или фурами самих площадок. Основной способ выбираем после встречи с Wildberries.</p>
+  </div>
+  <div class="opts">
+    <div class="card"><span class="pill" style="background:#dcf5f3;color:#127a72">Путь 1</span><h3>Фуры Orient Logistic</h3><p class="muted">Заказ для Wildberries собираем на нашем РЦ. Готовый заказ везут фуры Orient Logistic — компании группы — на склады WB в России. Так же везём Coca-Cola.</p></div>
+    <div class="card"><span class="pill" style="background:#fbe3f6;color:#a3157f">Путь 2</span><h3>Фуры Wildberries</h3><p class="muted">Сдаём товар на склад WB в Узбекистане, дальше Wildberries своими фурами везёт его в Россию и страны СНГ.</p></div>
+    <div class="card"><span class="pill">Путь 3</span><h3>Через Ozon</h3><p class="muted">Сдаём товар на склад Ozon в Узбекистане, Ozon своей логистикой везёт в Россию, Казахстан и другие страны.</p></div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="sec-head">
+    <span class="eyebrow">Структура команды</span>
+    <h2>Кто за что отвечает</h2>
+    <p>Мы вдвоём руководим проектом как одна команда и сами работаем в нём. Под нами менеджеры по направлениям. Людей нанимаем только под запуск своего направления.</p>
+  </div>
+  <div class="tree">
+    <div class="nd top"><b>Учредители ОГМ</b><span>утверждают бюджет, запуск и масштабирование</span></div>
+    <div class="vl"></div>
+    <div class="nd lead joint">
+      <div class="pics"><img src="img/jafar.webp" alt="Жафархон Дехканов"><img src="img/jasur.webp" alt="Жасур Хакимов"></div>
+      <b>Жафархон Дехканов и Жасур Хакимов</b>
+      <span>Руководители проекта. Ведём все направления вместе: стратегия, партнёры и поставщики, ассортимент, аналитика, процессы, отчётность учредителям</span>
     </div>
-    <div class="sec"><div class="callout"><span class="eyebrow">Условие запуска</span><h3 style="font-size:1.2rem">WB работает стабильно 2–3 месяца</h3><p>Бизнес-план направления считаем по факту продаж на Wildberries.</p></div></div>
-  </div>
-</section>
-
-<!-- ============ YANDEX ============ -->
-<section class="view" id="v-yandex" data-scene="yandex">
-  <div class="hero3d">
-    <div class="stage"></div>
-    <div class="overlay"><div class="wrap">
-      <span class="ov-kick"><i style="background:var(--ya)"></i>Направление 2 и 5</span>
-      <h1 class="ov-title">Яндекс Маркет, Лавка и Еда</h1>
-      <p class="ov-sub">Маркетплейс по Узбекистану и быстрая доставка: курьеры забирают товар из наших дарксторов.</p>
-    </div></div>
-    <div class="kpis"><div class="wrap row">
-      <div class="kpi"><b>Узбекистан</b><span>Яндекс Маркет работает только по Узбекистану</span></div>
-      <div class="kpi"><b>Минуты</b><span>Лавка и Еда доставляют из дарксторов за минуты</span></div>
-      <div class="kpi"><b>3–4 точки</b><span>дарксторы при складах новой сети на этапе 5</span></div>
-      <div class="kpi"><b>Один склад</b><span>товар для всех площадок приходит с нашего склада</span></div>
-    </div></div>
-    <span class="hint3d">Тяните, чтобы повернуть</span>
-  </div>
-  <div class="wrap">
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Как работает</span><h2>Два канала Яндекса</h2></div>
-      <div class="grid g2">
-        <div class="card"><span class="tag">Маркетплейс</span><h3>Яндекс Маркет</h3><p class="muted">Отгружаем на склад Яндекс Маркета, он доставляет покупателю по Узбекистану.</p></div>
-        <div class="card"><span class="tag or">Быстрая доставка</span><h3>Лавка и Еда</h3><p class="muted">Наш даркстор держит ходовой товар, курьеры Яндекса забирают заказ и везут за минуты.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ B2B ============ -->
-<section class="view" id="v-b2b" data-scene="b2b">
-  <div class="hero3d">
-    <div class="stage"></div>
-    <div class="overlay"><div class="wrap">
-      <span class="ov-kick"><i style="background:var(--ok)"></i>Направление 3</span>
-      <h1 class="ov-title">B2B: HoReCa и офисы</h1>
-      <p class="ov-sub">Рестораны, кафе, отели и офисы. Наша доставка с большого склада по B2B-прайсу.</p>
-    </div></div>
-    <div class="kpis"><div class="wrap row">
-      <div class="kpi"><b>С нуля</b><span>клиентскую базу строим сами</span></div>
-      <div class="kpi"><b>B2B-прайс</b><span>отдельные цены и договоры на поставку</span></div>
-      <div class="kpi"><b>Своя доставка</b><span>машины со склада, по графику клиента</span></div>
-      <div class="kpi"><b>+1 менеджер</b><span>менеджер B2B и водитель-экспедитор</span></div>
-    </div></div>
-    <span class="hint3d">Тяните, чтобы повернуть</span>
-  </div>
-  <div class="wrap"><div class="sec"><div class="callout"><span class="eyebrow">Условие запуска</span><h3 style="font-size:1.2rem">Маркетплейсы работают стабильно</h3><p>Ассортимент и склад уже есть — добавляем продажи юрлицам.</p></div></div></div>
-</section>
-
-<!-- ============ COCA-COLA ============ -->
-<section class="view" id="v-coke" data-scene="coke">
-  <div class="hero3d">
-    <div class="stage"></div>
-    <div class="overlay"><div class="wrap">
-      <span class="ov-kick"><i style="background:var(--coke)"></i>Направление 4 · идея учредителей</span>
-      <h1 class="ov-title">Экспорт Coca-Cola в Россию</h1>
-      <p class="ov-sub">Заказ создаёт главный офис. В Россию везут фуры Orient Logistic — компании группы со своим парком.</p>
-    </div></div>
-    <div class="kpis"><div class="wrap row">
-      <div class="kpi"><b>Путь А</b><span>завод → наш склад → Orient → Россия</span></div>
-      <div class="kpi"><b>Путь Б</b><span>завод → база Orient → Россия</span></div>
-      <div class="kpi"><b>Orient Logistic</b><span>своя база и парк фур группы</span></div>
-      <div class="kpi"><b>Юр. проверка</b><span>схема ввоза и права на бренд — до первой поставки</span></div>
-    </div></div>
-    <span class="hint3d">Тяните, чтобы повернуть</span>
-  </div>
-  <div class="wrap"><div class="sec"><div class="grid g2">
-    <div class="card"><span class="tag">Путь А · через наш склад</span><ul class="ck pl"><li>Товар и остатки под нашим контролем</li></ul><ul class="ck mi"><li>Лишняя перевалка, дольше и дороже</li></ul></div>
-    <div class="card"><span class="tag or">Путь Б · напрямую</span><ul class="ck pl"><li>Быстрее и дешевле</li></ul><ul class="ck mi"><li>Меньше контроля над товаром</li></ul></div>
-  </div></div></div>
-</section>
-
-<!-- ============ TEAM ============ -->
-<section class="view" id="v-team" data-scene="">
-  <div class="wrap">
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Путь 1 · решаем сейчас</span><h2>Наш офис</h2><p>Те, кто сидит с нами в кабинете и ведёт заказы. Руководители не только управляют, но и работают сами: сводят заказы, закупают, ищут рынок и отчитываются перед руководством.</p></div>
-      <div class="tree">
-        <div class="lvl"><div class="node top"><span class="role">Руководство ОГМ</span><span class="who">получает отчёты, утверждает бюджет и запуск</span></div></div>
-        <div class="vline"></div>
-        <div class="hline" style="width:min(560px,70%)"></div>
-        <div class="lvl" style="margin-top:-2px">
-          <div style="display:grid;justify-items:center"><div class="vline"></div><div class="node lead"><img src="img/jasur.webp" alt="Жасур Хакимов"><span class="role">Жасур Хакимов</span><span class="who">Управление: стратегия, отчётность руководству, переговоры</span></div></div>
-          <div style="display:grid;justify-items:center"><div class="vline"></div><div class="node lead"><img src="img/jafar.webp" alt="Жафархон Дехканов"><span class="role">Жафархон Дехканов</span><span class="who">Операционное управление: процессы, маркетплейсы, аналитика</span></div></div>
+    <div class="vl"></div>
+    <div class="groups">
+        <div class="grp"><h4>Направления 1–2 · маркетплейсы</h4>
+          <div class="rl">Менеджер Wildberries<em class="o">старт</em></div>
+          <div class="rl">Менеджер Ozon<em>направление 2</em></div>
+          <div class="rl">Менеджер Uzum Market и Яндекс Маркет<em>направление 2</em></div>
         </div>
-        <div style="text-align:center;margin:14px auto 0;max-width:620px;font-size:.88rem" class="muted">Вместе: сводим заказы менеджеров → заказываем у Дамир Савдо, в Европе, Китае → товар на складе → «продавайте». Сами ищем рынок и изучаем товары.</div>
-        <div class="vline"></div>
-        <div class="hline" style="width:min(760px,80%)"></div>
-        <div class="lvl" style="margin-top:-2px">
-          <div style="display:grid;justify-items:center"><div class="vline"></div><div class="node free"><span class="free-b">Свободно · этап 1</span><span class="role">Менеджер Wildberries</span><span class="who">формирует потребность, ведёт карточки, продаёт</span></div></div>
-          <div style="display:grid;justify-items:center"><div class="vline"></div><div class="node free"><span class="free-b">Свободно · этап 1</span><span class="role">Контент-менеджер</span><span class="who">фото и дизайн карточек для всех площадок</span></div></div>
-          <div style="display:grid;justify-items:center"><div class="vline"></div><div class="node free"><span class="free-b">Свободно · этап 1</span><span class="role">Оператор заказов</span><span class="who">отгрузки FBO и FBS, связь со складом</span></div></div>
+        <div class="grp"><h4>Контент, склад, аналитика</h4>
+          <div class="rl">Дизайнер-контентщик<em class="o">старт</em></div>
+          <div class="rl">Логист-кладовщик<em class="o">старт</em></div>
+          <div class="rl">Маркетинг-аналитик<em>направление 3</em></div>
         </div>
-        <div class="lvl" style="margin-top:16px">
-          <div class="node free"><span class="free-b">Этап 2</span><span class="role">Менеджер Uzum · Ozon · Яндекс</span></div>
-          <div class="node free"><span class="free-b">Этап 3</span><span class="role">Менеджер B2B HoReCa</span></div>
+        <div class="grp"><h4>Направления 3–4 · B2B и экспорт</h4>
+          <div class="rl">Менеджер B2B: HoReCa и офисы<em>направление 3</em></div>
+          <div class="rl">Менеджер ВЭД: экспорт Coca-Cola<em>направление 4</em></div>
         </div>
-      </div>
-      <div class="grid g3" style="margin-top:14px">
-        <div class="card dark"><div class="big">2 + 3</div><p class="muted">на старте: два руководителя и три сотрудника офиса</p></div>
-        <div class="card"><h3>Почему так мало</h3><p class="muted">Закупку и аналитику ведут руководители, отчёты собирает программа. Нет лишних зарплат.</p></div>
-        <div class="card acc"><span class="tag or">Обязательная покупка</span><h3>Программа для всех маркетплейсов</h3><p class="muted">WB, Ozon, Uzum, Яндекс в одном окне: остатки, заказы, цены и отчёты. Заменяет отдельного аналитика на старте.</p></div>
-      </div>
+        <div class="grp"><h4>Направление 5 · дарксторы</h4>
+          <div class="rl">Менеджер быстрой доставки<em>направление 5</em></div>
+          <div class="rl">Сборщики и кладовщики<em>по точкам</em></div>
+        </div>
     </div>
-
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Цикл работы офиса</span><h2>От потребности до отчёта</h2></div>
-      <div class="cycle">
-        <div class="cy"><b>1</b>Менеджер видит спрос и формирует потребность</div>
-        <div class="cy"><b>2</b>Руководители сводят заказы всех менеджеров</div>
-        <div class="cy"><b>3</b>Заказ у Дамир Савдо, в Европе, Китае</div>
-        <div class="cy"><b>4</b>Товар приходит на склад</div>
-        <div class="cy"><b>5</b>Менеджер продаёт</div>
-        <div class="cy"><b>6</b>Программа собирает отчёты</div>
-        <div class="cy"><b>7</b>Отчёт руководству ОГМ</div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Путь 2 · решаем вместе с ОГМ</span><h2>Службы поддержки</h2><p>Для работы направления нужны эти службы. Предлагаем решить совместно с руководством ОГМ: какие берём из группы, какие создаём.</p></div>
-      <div class="grid g3">
-        <div class="card"><h3>Логистика</h3><p class="muted">Orient Logistic — фуры в Россию и СНГ, доставка на склады маркетплейсов.</p></div>
-        <div class="card"><h3>Склад</h3><p class="muted">Приёмка, маркировка и упаковка под требования площадок, хранение для FBS.</p></div>
-        <div class="card"><h3>Финансы и бухгалтерия</h3><p class="muted">Выплаты маркетплейсов, НДС, экспортные документы.</p></div>
-        <div class="card"><h3>Юрист и таможня</h3><p class="muted">Договоры с площадками, сертификация, таможня для СНГ и импорта.</p></div>
-        <div class="card"><h3>IT</h3><p class="muted">Подключение к площадкам: остатки, заказы, цены.</p></div>
-        <div class="card"><h3>HR</h3><p class="muted">Подбор людей на свободные места.</p></div>
-      </div>
+    <div class="shared"><span>Бухгалтерия группы</span><span>Юрист группы</span></div>
+    <div class="heads">
+      <div><b>7</b><span>человек на старте, включая двух руководителей</span></div>
+      <div><b>10</b><span>после запуска B2B и экспорта</span></div>
+      <div><b>+</b><span>персонал дарксторов по числу точек</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ PLAN ============ -->
-<section class="view" id="v-plan" data-scene="">
-  <div class="wrap">
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Дорожная карта</span><h2>Пять направлений по очереди</h2></div>
-      <div class="tblw"><table class="tbl">
-        <tr><th>Этап</th><th>Направление</th><th>Что делаем</th><th>Когда</th></tr>
-        <tr><td>1</td><td>Wildberries</td><td>Юрлицо, магазин, склад, команда, первая партия SKU</td><td>после договора с WB</td></tr>
-        <tr><td>2</td><td>Uzum, Ozon, Яндекс Маркет</td><td>Те же SKU на новых площадках, единый отчёт</td><td>когда WB стабилен</td></tr>
-        <tr><td>3</td><td>B2B HoReCa и офисы</td><td>B2B-прайс, первые договоры</td><td>следующий шаг</td></tr>
-        <tr><td>4</td><td>Экспорт Coca-Cola</td><td>Схема, юр. проверка, первая поставка</td><td>идея учредителей</td></tr>
-        <tr><td>5</td><td>Дарксторы</td><td>3–4 точки при складах новой сети</td><td>когда остальное стабильно</td></tr>
-      </table></div>
-    </div>
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Размещение</span><h2>Где сидит команда и склад</h2></div>
-      <div class="grid g3">
-        <div class="card"><span class="tag">Вариант А</span><h3>Часть склада группы + офис при нём</h3><p class="muted">Быстрый и дешёвый старт, но дальше от руководства.</p></div>
-        <div class="card acc"><span class="tag or">Вариант Б · рекомендуем</span><h3>Офис Infinity + склад группы</h3><p class="muted">Команда рядом с руководством, быстрые решения.</p></div>
-        <div class="card"><span class="tag">Вариант В</span><h3>Отдельный офис + склад группы</h3><p class="muted">Привлекает сильных специалистов, но нужна аренда.</p></div>
-      </div>
-    </div>
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Решения учредителей</span><h2>Что выносим на утверждение</h2></div>
-      <div class="grid g2">
-        <div class="card"><ul class="ck">
-          <li>Создать OGM E-com как отдельное юрлицо, учредитель ОГМ 100%</li>
-          <li>Утвердить офис на старте: 2 руководителя + 3 сотрудника</li>
-          <li>Купить программу для всех маркетплейсов</li>
-          <li>Выбрать вариант размещения: А, Б или В</li></ul></div>
-        <div class="card"><ul class="ck">
-          <li>Схема складов: FBO, FBS или обе</li>
-          <li>Путь экспорта в СНГ — после встречи с Wildberries</li>
-          <li>Договор поставки с Дамир Савдо</li>
-          <li>Службы поддержки: что берём из группы</li></ul></div>
-      </div>
-    </div>
-    <div class="sec">
-      <div class="sh"><span class="eyebrow">Авторы</span><h2>Команда проекта</h2></div>
-      <div class="authors">
-        <div class="author"><img src="img/jafar.webp" alt=""><div><b>Жафархон Дехканов</b><div class="muted">Презентация · дизайн · информация</div></div></div>
-        <div class="author"><img src="img/jasur.webp" alt=""><div><b>Жасур Хакимов</b><div class="muted">Информация</div></div></div>
-      </div>
-    </div>
+<section id="roadmap">
+  <div class="sec-head">
+    <span class="eyebrow">Дорожная карта</span>
+    <h2>Пять направлений по очереди</h2>
+    <p>Каждое следующее направление запускаем, когда предыдущее работает стабильно.</p>
+  </div>
+  <div class="road">
+    <div><span class="when">1 · после договора с WB</span><h3>Wildberries</h3><ul><li>Регистрация юрлица, свой магазин-продавец</li><li>Большой склад и команда</li><li>Первая партия SKU</li></ul></div>
+    <div><span class="when">2 · когда WB стабилен</span><h3>Ozon, Uzum, Яндекс Маркет</h3><ul><li>Те же SKU на новые площадки, Uzum с нуля</li><li>Единый отчёт</li><li>Пробная партия импорта</li></ul></div>
+    <div><span class="when">3 · следующий шаг</span><h3>B2B: HoReCa и офисы</h3><ul><li>Клиентскую базу строим с нуля</li><li>B2B-прайс и первые договоры</li></ul></div>
+    <div><span class="when">4 · идея учредителей</span><h3>Экспорт Coca-Cola в РФ</h3><ul><li>Прорабатываем схему и юр. проверку</li><li>Логистика и таможня</li><li>Первая поставка</li></ul></div>
+    <div><span class="when">5 · когда остальное стабильно</span><h3>Дарксторы</h3><ul><li>3–4 точки при складах новой сети</li><li>Uzum Tezkor, Яндекс Еда и Лавка</li></ul></div>
+  </div>
+  <p class="muted" style="margin-top:14px">Команда и процессы будут готовы и к новым площадкам, например Amazon, когда они придут в регион.</p>
+</section>
+
+<section id="place">
+  <div class="sec-head">
+    <span class="eyebrow">Размещение</span>
+    <h2>Где сидит команда и склад</h2>
+    <p>Три варианта на выбор учредителей.</p>
+  </div>
+  <div class="opts">
+    <div class="card"><span class="pill">Вариант А</span><h3>Часть склада группы + офис при нём</h3>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Быстрый и дешёвый старт</li><li>Команда рядом с товаром</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Дальше от руководства</li></ul></div></div></div>
+    <div class="card hl"><span class="pill o">Вариант Б · рекомендуем</span><h3>Главный офис Infinity + склад группы</h3>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Команда рядом с руководством</li><li>Все заказы создаются в главном офисе</li><li>Быстрые решения и согласования</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Две точки управления</li><li>Нужен старший на складе</li></ul></div></div></div>
+    <div class="card"><span class="pill">Вариант В</span><h3>Отдельный комфортный офис + склад группы</h3>
+      <div class="pc"><div class="plus"><b>Плюсы</b><ul><li>Привлекает сильных специалистов</li><li>Свой ритм команды</li></ul></div><div class="minus"><b>Минусы</b><ul><li>Аренда офиса</li></ul></div></div></div>
   </div>
 </section>
-</main>
-<footer class="foot"><div class="wrap">OGM E-com · проект для учредителей ОГМ · 2026</div></footer>
 
+<section id="finance">
+  <div class="sec-head">
+    <span class="eyebrow">Финансы</span>
+    <h2>Статьи бюджета</h2>
+    <p>Суммы посчитаем после одобрения направления, когда будут известны помещение, ассортимент первой волны и условия поставщиков.</p>
+  </div>
+  <div class="fin">
+    <div class="card"><span class="pill o">Запуск</span><ul><li>Регистрация юрлица</li><li>Оборудование склада: стеллажи, сканеры, принтеры этикеток</li><li>Рабочие места офиса, техника</li><li>Фото-зона для карточек</li><li>Первая закупка товара</li><li>Сертификация и маркировка</li><li>Подключение к площадкам и платформам</li></ul></div>
+    <div class="card"><span class="pill">Ежемесячно</span><ul><li>Фонд оплаты труда и KPI</li><li>Аренда офиса и склада</li><li>Комиссии площадок</li><li>Логистика и доставка</li><li>Реклама внутри площадок</li><li>Упаковка и расходники</li><li>Подписки на ИИ и платформы для селлеров</li><li>Поездки на выставки и к поставщикам</li></ul></div>
+    <div class="card"><span class="pill g">Посчитаем после одобрения</span><ul><li>Юнит-экономика по каждому SKU</li><li>Оборотный капитал и сроки оборота</li><li>Бюджет импорта из Европы и Китая</li><li>Точка безубыточности</li><li>Экономика одного даркстора</li></ul></div>
+  </div>
+</section>
+
+<section id="risks">
+  <div class="sec-head">
+    <span class="eyebrow">Риски</span>
+    <h2>Что проверить до запуска</h2>
+  </div>
+  <div class="risk">
+    <div><b>Эксклюзив с Wildberries</b><span>Подтвердить юридически, что новое юрлицо может продавать те же товары на Ozon и других площадках.</span></div>
+    <div><b>Экспорт Coca-Cola в Россию</b><span>Пока идея учредителей. Схему ввоза и права на бренд проверяют юристы до первой поставки.</span></div>
+    <div><b>Растаможка импорта</b><span>Схему выбираем вместе с группой до первой поставки из Китая и Европы.</span></div>
+    <div><b>Документы на товар</b><span>Работаем только с товаром, на который есть документы. Без них площадки блокируют карточки.</span></div>
+    <div><b>Комиссии площадок меняются</b><span>Цену пересчитываем при каждом изменении тарифов. Ozon, например, вдвое снизил тарифы для продавцов из Узбекистана в июле 2026.</span></div>
+    <div><b>Деньги в остатках</b><span>Контроль оборачиваемости каждую неделю, неходовые SKU выводим.</span></div>
+  </div>
+</section>
+
+<section id="discuss">
+  <div class="sec-head">
+    <span class="eyebrow">Для встречи</span>
+    <h2>Что решаем вместе с учредителями</h2>
+  </div>
+  <div class="open">
+    <div><b>Доставка на склады площадок</b><span>Транспорт группы, Orient Logistic или наёмный перевозчик</span></div>
+    <div><b>Растаможка импорта</b><span>Брокер группы, сами от нового юрлица или бондовый склад</span></div>
+    <div><b>Путь экспорта в СНГ</b><span>Фуры Orient Logistic или фуры Wildberries и Ozon. Решаем после встречи с Wildberries</span></div>
+    <div><b>Экспорт Coca-Cola</b><span>Путь А через наш РЦ или путь Б напрямую на базу Orient Logistic. Схема и юридическая проверка</span></div>
+    <div><b>Условия руководителей</b><span>Оклад и процент от прибыли для руководителей проекта</span></div>
+  </div>
+</section>
+
+<section id="ask">
+  <div class="ask">
+    <span class="eyebrow">Что нужно для запуска</span>
+    <h2>Люди, полномочия, деньги</h2>
+    <div class="asks">
+      <div><h3>Люди</h3><ul><li>Штат на старт: 5 сотрудников под двумя руководителями</li><li>Официальный переход руководителей в штат OGM E-com</li><li>Остальных нанимаем под запуск каждого направления</li></ul></div>
+      <div><h3>Полномочия</h3><ul><li>Подписание договоров с площадками и поставщиками</li><li>Найм в рамках утверждённого штата</li><li>Цены и рекламный бюджет в утверждённых лимитах</li></ul></div>
+      <div><h3>Деньги</h3><ul><li>Бюджет запуска по статьям из раздела «Финансы»</li><li>Оборотные средства на первую закупку</li><li>Помещение под большой склад</li></ul></div>
+    </div>
+    <ol>
+      <li>Одобрить создание OGM E-com как отдельного юрлица</li>
+      <li>Выбрать вариант размещения: А, Б или В</li>
+      <li>Выбрать схему работы со складами: FBO, FBS или обе</li>
+      <li>Утвердить основной путь экспорта в СНГ после встречи с Wildberries</li>
+      <li>Согласовать договор поставки с Дамир Савдо</li>
+      <li>Утвердить штат на старт и расчёт бюджета</li>
+      <li>Согласовать условия и официальный переход руководителей</li>
+    </ol>
+  </div>
+</section>
+
+<section id="authors">
+  <div class="sec-head"><span class="eyebrow">Авторы</span><h2>Команда проекта</h2></div>
+  <div class="tm">
+    <figure><div class="av"><span><img alt="Жафархон Дехканов" src="img/jafar.webp"></span></div><figcaption><b>Жафархон Дехканов</b><small>Презентация · дизайн · информация</small></figcaption></figure>
+    <figure><div class="av"><span><img alt="Жасур Хакимов" src="img/jasur.webp"></span></div><figcaption><b>Жасур Хакимов</b><small>Информация</small></figcaption></figure>
+  </div>
+</section>
+
+<footer>
+</footer>
+
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
+
 (function(){
-const C={wb:0x8b2cf5,ozon:0x005bff,uzum:0x7000ff,ya:0xfc3f1d,orient:0x0f6e5a,coke:0xe41c26,our:0xe0661b,ok:0x2f7a4f,gray:0x9aa7b4,blue:0x1d4e89};
-const hex=c=>'#'+c.toString(16).padStart(6,'0');
+var box=document.getElementById('scene3d'),cv=document.getElementById('cv3d'),lbBox=document.getElementById('lbls');
+function fallback(){box.hidden=true;var f=document.getElementById('flow2d');if(f)f.hidden=false;}
+if(!window.THREE){fallback();return;}
+var R;
+try{R=new THREE.WebGLRenderer({canvas:cv,antialias:true});}catch(e){fallback();return;}
+if(!R.getContext()){fallback();return;}
+var small=Math.min(window.innerWidth,window.innerHeight)<700;R.setPixelRatio(Math.min(window.devicePixelRatio||1,small?1.5:2));
+R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
+R.setClearColor(0xdfe8f0);R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=0.92;
+var S=new THREE.Scene();S.fog=new THREE.Fog(0xdfe8f0,80,150);
+var C=new THREE.PerspectiveCamera(38,1,0.1,400);
+S.add(new THREE.HemisphereLight(0xf2f7ff,0x7d8a96,0.75));
+var sun=new THREE.DirectionalLight(0xfff0dc,1.7);sun.position.set(-22,42,26);sun.shadow.bias=-0.0004;sun.castShadow=true;
+sun.shadow.mapSize.set(small?1024:2048,small?1024:2048);var sc=sun.shadow.camera;sc.left=-50;sc.right=50;sc.top=40;sc.bottom=-40;sc.near=1;sc.far=110;S.add(sun);
+var ground=new THREE.Mesh(new THREE.PlaneGeometry(200,150),new THREE.MeshStandardMaterial({color:0xc3ccd4,roughness:1}));
+ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;S.add(ground);
+var grid=new THREE.GridHelper(130,65,0xbac6d0,0xc4ced7);grid.position.y=0.01;S.add(grid);
+function M(c,e){return new THREE.MeshStandardMaterial({color:c,roughness:.62,metalness:.12,emissive:e||0});}
+function B(w,h,d,c,x,y,z){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),M(c));m.position.set(x,y+h/2,z);m.castShadow=true;m.receiveShadow=true;S.add(m);return m;}
+function G(w,h,d,c,x,y,z){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshBasicMaterial({color:c}));m.position.set(x,y,z);S.add(m);return m;}
+function P(x,z,w,d,c){var m=new THREE.Mesh(new THREE.PlaneGeometry(w,d),new THREE.MeshStandardMaterial({color:c,roughness:1}));m.rotation.x=-Math.PI/2;m.position.set(x,0.03,z);m.receiveShadow=true;S.add(m);}
+function bands(x,z,w,d,y0,n,c){for(var i=0;i<n;i++)G(w+0.04,0.14,d+0.04,c,x,y0+i*0.82,z);}
+function cyl(r1,r2,h,c,x,y,z){var m=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,18),M(c));m.position.set(x,y+h/2,z);m.castShadow=true;S.add(m);return m;}
 
-// ---------- scene configs ----------
-// node: id, x, z, t(type), c(color), name, sub, s(sign)
-const SC={
- home:{cam:[0,42,58],nodes:[
-   {id:'src',x:-34,z:-4,t:'factory',c:C.blue,name:'Поставщики',sub:'Дамир Савдо · Европа · Китай'},
-   {id:'wh',x:-12,z:0,t:'warehouse',c:C.our,name:'Наш склад и офис',sub:'OGM E-com',s:'OGM E-com',big:1},
-   {id:'wb',x:10,z:-16,t:'warehouse',c:C.wb,name:'Wildberries',s:'WB'},
-   {id:'uz',x:12,z:2,t:'warehouse',c:C.uzum,name:'Uzum · Ozon',s:'UZUM'},
-   {id:'ya',x:10,z:18,t:'darkstore',c:C.ya,name:'Яндекс',s:'Яндекс'},
-   {id:'b2b',x:-14,z:22,t:'cafe',c:C.ok,name:'HoReCa и офисы'},
-   {id:'ru',x:40,z:-26,t:'city',c:C.wb,name:'Россия и СНГ',sub:'экспорт'},
-   {id:'uzb',x:40,z:10,t:'city',c:C.uzum,name:'Покупатели Узбекистана'}],
-   routes:[['src','wh','truck',C.blue,3],['wh','wb','truck',C.wb,2],['wh','uz','truck',C.uzum,2],['wh','ya','van',C.ya,2],['wh','b2b','van',C.ok,2],['wb','ru','truck',C.wb,2,1],['uz','uzb','van',C.uzum,2],['ya','uzb','moped',C.ya,3]]},
- wb:{cam:[6,40,54],nodes:[
-   {id:'src',x:-36,z:-6,t:'factory',c:C.blue,name:'Поставщики',sub:'Дамир Савдо · заводы · импорт'},
-   {id:'wh',x:-14,z:0,t:'warehouse',c:C.our,name:'Наш склад и офис',sub:'приёмка · фото · FBS',s:'OGM E-com',big:1},
-   {id:'wbu',x:8,z:-4,t:'warehouse',c:C.wb,name:'Склад WB в Узбекистане',sub:'FBO',s:'WILDBERRIES',big:1},
-   {id:'pvz',x:20,z:20,t:'pvz',c:C.wb,name:'Пункты выдачи WB',sub:'покупатели Узбекистана'},
-   {id:'ru',x:44,z:-26,t:'city',c:C.wb,name:'Россия и СНГ',sub:'склады WB'},
-   {id:'or',x:-6,z:-30,t:'base',c:C.orient,name:'Orient Logistic',sub:'парк фур группы'}],
-   routes:[['src','wh','truck',C.blue,3],['wh','wbu','truck',C.wb,3],['wh','pvz','van',C.wb,2],['wbu','pvz','van',C.wb,2],['wbu','ru','truck',C.wb,3,1],['wh','or','truck',C.orient,1],['or','ru','truck',C.orient,2,1]]},
- uzum:{cam:[0,40,54],nodes:[
-   {id:'wh',x:-20,z:0,t:'warehouse',c:C.our,name:'Наш склад',sub:'один остаток на все площадки',s:'OGM E-com',big:1},
-   {id:'uz',x:6,z:-14,t:'warehouse',c:C.uzum,name:'Склад Uzum Market',s:'UZUM'},
-   {id:'oz',x:6,z:14,t:'warehouse',c:C.ozon,name:'Склад Ozon',s:'OZON'},
-   {id:'pz',x:30,z:-8,t:'pvz',c:C.uzum,name:'Пункты Uzum',sub:'Узбекистан'},
-   {id:'tz',x:22,z:-30,t:'darkstore',c:C.uzum,name:'Uzum Tezkor',sub:'быстрая доставка'},
-   {id:'ru',x:44,z:26,t:'city',c:C.ozon,name:'Узбекистан и СНГ',sub:'Ozon'}],
-   routes:[['wh','uz','truck',C.uzum,2],['wh','oz','truck',C.ozon,2],['uz','pz','van',C.uzum,2],['wh','tz','van',C.uzum,1],['tz','pz','moped',C.uzum,3],['oz','ru','truck',C.ozon,2,1]]},
- yandex:{cam:[0,40,54],nodes:[
-   {id:'wh',x:-20,z:0,t:'warehouse',c:C.our,name:'Наш склад',s:'OGM E-com',big:1},
-   {id:'ym',x:6,z:-14,t:'warehouse',c:C.ya,name:'Склад Яндекс Маркета',s:'Яндекс Маркет'},
-   {id:'ds',x:4,z:16,t:'darkstore',c:C.ya,name:'Наш даркстор',sub:'ходовой товар'},
-   {id:'pv',x:32,z:-10,t:'pvz',c:C.ya,name:'Пункты выдачи'},
-   {id:'city',x:34,z:22,t:'city',c:C.ya,name:'Покупатели',sub:'за минуты'}],
-   routes:[['wh','ym','truck',C.ya,2],['wh','ds','van',C.our,2],['ym','pv','van',C.ya,2],['ds','city','moped',C.ya,4]]},
- b2b:{cam:[0,40,52],nodes:[
-   {id:'wh',x:-20,z:0,t:'warehouse',c:C.our,name:'Наш склад',s:'OGM E-com',big:1},
-   {id:'r1',x:12,z:-18,t:'cafe',c:C.ok,name:'Рестораны'},
-   {id:'r2',x:20,z:4,t:'cafe',c:C.ok,name:'Кафе и отели'},
-   {id:'o1',x:8,z:22,t:'office',c:C.blue,name:'Офисы'}],
-   routes:[['wh','r1','van',C.ok,2],['wh','r2','van',C.ok,2],['wh','o1','van',C.blue,2]]},
- coke:{cam:[0,42,56],nodes:[
-   {id:'pl',x:-34,z:0,t:'factory',c:C.coke,name:'Завод Coca-Cola',sub:'Узбекистан'},
-   {id:'wh',x:-6,z:-16,t:'warehouse',c:C.our,name:'Путь А · наш склад',s:'OGM E-com'},
-   {id:'or',x:-6,z:16,t:'base',c:C.orient,name:'Путь Б · база Orient',sub:'хранение и отправка'},
-   {id:'ru',x:40,z:0,t:'city',c:C.coke,name:'Россия',sub:'покупатели'}],
-   routes:[['pl','wh','truck',C.coke,2],['wh','ru','truck',C.orient,2,1],['pl','or','truck',C.coke,2],['or','ru','truck',C.orient,2,1]]}
-};
 
-// ---------- engine ----------
-let R=null,scene,cam,raf=0,cur=null,movers=[],labels=[],stage,lblBox,theta=0,phi=0.85,dist=70,target=new THREE.Vector3(2,0,0),drag=null,idle=0;
-function tex(text,col,w=512,h=128){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.fillStyle=hex(col);g.fillRect(0,0,w,h);g.fillStyle='#fff';g.font='800 '+(h*0.46)+'px "Unbounded",Arial';g.textAlign='center';g.textBaseline='middle';g.fillText(text,w/2,h/2+4,w-24);const t=new THREE.CanvasTexture(c);t.anisotropy=4;return t}
-function winTex(){const c=document.createElement('canvas');c.width=64;c.height=128;const g=c.getContext('2d');g.fillStyle='#cfd8e2';g.fillRect(0,0,64,128);for(let y=8;y<128;y+=16)for(let x=6;x<64;x+=14){g.fillStyle=Math.random()<.65?'#ffd98a':'#5d6e80';g.fillRect(x,y,8,9)}const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;return t}
-const M=c=>new THREE.MeshStandardMaterial({color:c,roughness:.75,metalness:.05});
-function box(w,h,d,c,x,y,z,p){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),M(c));m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;p.add(m);return m}
-function building(n){
-  const g=new THREE.Group();g.position.set(n.x,0,n.z);const s=n.big?1.25:1;
-  if(n.t==='warehouse'){
-    box(11*s,4.2*s,8*s,0xeef1f4,0,2.1*s,0,g);
-    const roof=new THREE.Mesh(new THREE.CylinderGeometry(4.6*s,4.6*s,11.2*s,3,1,false),M(0x9fb0c0));roof.rotation.z=Math.PI/2;roof.rotation.x=Math.PI/6;roof.scale.set(1,1,.42);roof.position.y=4.6*s;roof.castShadow=true;g.add(roof);
-    box(11.05*s,1.1*s,.1,n.c,0,3.2*s,4.06*s,g);
-    for(let i=-1;i<=1;i++)box(2.2*s,2.4*s,.12,0x55626f,i*3.4*s,1.2*s,4.05*s,g);
-    if(n.s){const sg=new THREE.Mesh(new THREE.PlaneGeometry(9*s,1.6*s),new THREE.MeshBasicMaterial({map:tex(n.s,n.c)}));sg.position.set(0,7.2*s,0);g.add(sg);sg.userData.bill=1}
-  }else if(n.t==='factory'){
-    box(10,5,8,0xdfe4ea,0,2.5,0,g);box(4,7,4,0xc9d1da,-3.5,3.5,-1,g);
-    for(const x of[1,3.4]){const ch=new THREE.Mesh(new THREE.CylinderGeometry(.55,.7,8,10),M(0xa8b3be));ch.position.set(x,6,-2);ch.castShadow=true;g.add(ch)}
-    box(10.05,.9,.1,n.c,0,4.3,4.05,g);
-  }else if(n.t==='base'){
-    box(14,.3,10,0xb8c3cd,0,.15,0,g);box(5,3.4,4,0xeef1f4,-4,1.7,-2,g);box(5.05,.8,.1,n.c,-4,2.8,.03,g);
-    for(let i=0;i<3;i++){const t=truck(n.c);t.position.set(1.5+i*.1,0,-3+i*3);t.rotation.y=Math.PI/2;g.add(t)}
-  }else if(n.t==='pvz'||n.t==='darkstore'){
-    box(6,3,5,0xf4f6f8,0,1.5,0,g);box(6.1,.7,1.2,n.c,0,2.6,2.9,g);box(2,2,.1,0x55626f,0,1,2.52,g);
-    if(n.t==='darkstore'){for(let i=0;i<3;i++){const m=moped(n.c);m.position.set(-2+i*2,0,4.6);g.add(m)}}
-  }else if(n.t==='cafe'){
-    box(7,3.2,6,0xf6efe6,0,1.6,0,g);box(7.2,.6,1.6,n.c,0,2.8,3.4,g);
-    for(const x of[-2.2,2.2]){const u=new THREE.Mesh(new THREE.ConeGeometry(1.3,.8,10),M(0xffffff));u.position.set(x,2.1,5.4);g.add(u);const p=new THREE.Mesh(new THREE.CylinderGeometry(.06,.06,1.8),M(0x777777));p.position.set(x,.9,5.4);g.add(p)}
-  }else if(n.t==='office'){
-    const wt=winTex();for(const [x,h] of [[-2,12],[2.6,8]]){const m=new THREE.Mesh(new THREE.BoxGeometry(4,h,4),new THREE.MeshStandardMaterial({map:wt,roughness:.6}));m.material.map.repeat.set(1,h/8);m.position.set(x,h/2,0);m.castShadow=true;g.add(m)}
-  }else if(n.t==='city'){
-    const wt=winTex();const hs=[9,14,7,11,16,8];hs.forEach((h,i)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(2.6,h,2.6),new THREE.MeshStandardMaterial({map:wt,roughness:.6}));m.position.set((i%3-1)*3.4,h/2,(Math.floor(i/3)-.5)*3.6);m.castShadow=true;g.add(m)});
-    const ring=new THREE.Mesh(new THREE.RingGeometry(7,7.6,48),new THREE.MeshBasicMaterial({color:n.c,transparent:true,opacity:.6,side:THREE.DoubleSide}));ring.rotation.x=-Math.PI/2;ring.position.y=.06;g.add(ring);ring.userData.pulse=1;
-  }
-  return g;
-}
-function truck(c){const g=new THREE.Group();box(3.4,1.6,1.5,c,-.5,1.2,0,g);box(1.1,1.2,1.4,0xf1f3f5,1.8,.95,0,g);for(const x of[-1.5,.4,1.8])for(const z of[-.7,.7]){const w=new THREE.Mesh(new THREE.CylinderGeometry(.33,.33,.25,10),M(0x222222));w.rotation.x=Math.PI/2;w.position.set(x,.35,z);g.add(w)}return g}
-function van(c){const g=new THREE.Group();box(2.4,1.3,1.3,0xffffff,-.2,1,0,g);box(2.42,.35,1.32,c,-.2,.9,0,g);box(.8,1,1.25,0xe8ecf0,1.3,.85,0,g);for(const x of[-.9,1.2])for(const z of[-.6,.6]){const w=new THREE.Mesh(new THREE.CylinderGeometry(.28,.28,.2,10),M(0x222222));w.rotation.x=Math.PI/2;w.position.set(x,.3,z);g.add(w)}return g}
-function moped(c){const g=new THREE.Group();box(1.3,.35,.3,0x333333,0,.55,0,g);box(.6,.6,.6,c,-.45,1.1,0,g);const h=new THREE.Mesh(new THREE.SphereGeometry(.22,10,8),M(c));h.position.set(.15,1.5,0);g.add(h);box(.25,.6,.25,0x2b2b2b,.15,1.05,0,g);for(const x of[-.5,.5]){const w=new THREE.Mesh(new THREE.TorusGeometry(.22,.07,6,12),M(0x111111));w.position.set(x,.25,0);g.add(w)}return g}
+function cont(x,y,z,c){return B(2.8,1.15,1.15,c,x,y,z);}
+function tree(x,z,h){h=h||1;var t=new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.16,0.9*h,8),M(0x6b4f35));t.position.set(x,0.45*h,z);t.castShadow=true;S.add(t);
+ var c=new THREE.Mesh(new THREE.IcosahedronGeometry(0.75*h,1),new THREE.MeshStandardMaterial({color:0x5f9a52,roughness:.9,flatShading:true}));c.position.set(x,1.25*h,z);c.castShadow=true;S.add(c);}
+function parapet(w,d,x,y,z,c){[[w,0.25,0.15,0,d/2],[w,0.25,0.15,0,-d/2],[0.15,0.25,d,w/2,0],[0.15,0.25,d,-w/2,0]].forEach(function(e){var m=new THREE.Mesh(new THREE.BoxGeometry(e[0],e[1],e[2]),M(c));m.position.set(x+e[3],y+0.12,z+e[4]);m.castShadow=true;S.add(m);});}
+function sign(x,y,z,w,c){G(w,0.6,0.08,c,x,y,z);}
 
-function makeScene(key){
-  const cfg=SC[key];scene=new THREE.Scene();scene.fog=new THREE.Fog(0x15283c,85,200);
-  scene.add(new THREE.HemisphereLight(0xdfeaff,0x2b3a4a,.85));
-  const sun=new THREE.DirectionalLight(0xfff1dc,1.0);sun.position.set(-30,60,30);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-70,right:70,top:70,bottom:-70,far:200});scene.add(sun);
-  const ground=new THREE.Mesh(new THREE.CircleGeometry(130,64),new THREE.MeshStandardMaterial({color:0x223a52,roughness:1}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
-  const grid=new THREE.GridHelper(220,44,0x34506d,0x2b445e);grid.position.y=.02;scene.add(grid);
-  // trees
-  const rnd=mulberry(key.length*97);for(let i=0;i<70;i++){const x=(rnd()-.5)*150,z=(rnd()-.5)*110;if(cfg.nodes.some(n=>Math.hypot(n.x-x,n.z-z)<11))continue;const t=new THREE.Group();const tr=new THREE.Mesh(new THREE.CylinderGeometry(.18,.25,1.2,6),M(0x7a5a3a));tr.position.y=.6;t.add(tr);const cr=new THREE.Mesh(new THREE.ConeGeometry(1+rnd()*.6,2.6+rnd(),7),M(0x3f8a5c));cr.position.y=2.2;cr.castShadow=true;t.add(cr);t.position.set(x,0,z);scene.add(t)}
-  const byId={};cfg.nodes.forEach(n=>{byId[n.id]=n;scene.add(building(n))});
-  movers=[];
-  cfg.routes.forEach(([a,b,kind,col,cnt,far],ri)=>{
-    const A=byId[a],B=byId[b];const mx=(A.x+B.x)/2,mz=(A.z+B.z)/2;const dx=B.x-A.x,dz=B.z-A.z;const off=((ri%2)?1:-1)*Math.min(8,Math.hypot(dx,dz)*.12);
-    const nx=-dz/Math.hypot(dx,dz),nz=dx/Math.hypot(dx,dz);
-    const pts=[new THREE.Vector3(A.x,0,A.z),new THREE.Vector3(mx+nx*off,0,mz+nz*off),new THREE.Vector3(B.x,0,B.z)];
-    const curve=new THREE.CatmullRomCurve3(pts);
-    const road=new THREE.Mesh(new THREE.TubeGeometry(curve,64,far?1.1:.9,6,false),new THREE.MeshStandardMaterial({color:0x6b7785,roughness:.9}));road.scale.y=.06;road.position.y=.04;road.receiveShadow=true;scene.add(road);
-    const line=new THREE.Mesh(new THREE.TubeGeometry(curve,64,.18,4,false),new THREE.MeshBasicMaterial({color:col}));line.scale.y=.05;line.position.y=.1;scene.add(line);
-    for(let i=0;i<cnt;i++){const v=kind==='truck'?truck(col):kind==='van'?van(col):moped(col);v.traverse(o=>{if(o.isMesh)o.castShadow=true});scene.add(v);movers.push({v,curve,t:i/cnt,sp:(kind==='moped'?.07:kind==='van'?.05:.035)*(far?.8:1),dir:i%2?-1:1})}
-  });
-  // labels
-  lblBox.innerHTML='';labels=cfg.nodes.map(n=>{const d=document.createElement('div');d.className='lbl';d.innerHTML=`<i style="background:${hex(n.c)}"></i><div>${n.name}${n.sub?`<small>${n.sub}</small>`:''}</div>`;lblBox.appendChild(d);return{d,p:new THREE.Vector3(n.x,(n.big?11:8.5),n.z)}});
-  theta=-.3;phi=.92;dist=Math.hypot(...cfg.cam)*1.12;
-}
-function mulberry(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-function resize(){if(!R)return;const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.fov=w<700?58:42;cam.updateProjectionMatrix()}
-function placeCam(){const wide=stage.clientWidth>800;target.set(wide?-26:-2,0,wide?-10:-12);cam.position.set(target.x+dist*Math.sin(theta)*Math.sin(phi),dist*Math.cos(phi),target.z+dist*Math.cos(theta)*Math.sin(phi));cam.lookAt(target)}
-let last=0;
-function loop(ts){raf=requestAnimationFrame(loop);const dt=Math.min(.05,(ts-last)/1000||0);last=ts;
-  if(!drag){idle+=dt;if(idle>2)theta+=dt*.05}
-  movers.forEach(m=>{m.t+=m.sp*dt*m.dir;if(m.t>1){m.t=1;m.dir=-1}if(m.t<0){m.t=0;m.dir=1}const p=m.curve.getPointAt(m.t),tg=m.curve.getTangentAt(m.t);m.v.position.set(p.x,0,p.z);m.v.rotation.y=Math.atan2(-tg.z*m.dir,tg.x*m.dir)});
-  scene.traverse(o=>{if(o.userData.pulse){const s=1+.15*Math.sin(ts/400);o.scale.set(s,s,s)}if(o.userData.bill){o.lookAt(cam.position.x,o.getWorldPosition(new THREE.Vector3()).y,cam.position.z)}});
-  placeCam();R.render(scene,cam);
-  const w=stage.clientWidth,h=stage.clientHeight;labels.forEach(l=>{const v=l.p.clone().project(cam);l.d.style.left=((v.x+1)/2*w)+'px';l.d.style.top=((1-v.y)/2*h)+'px';const X=(v.x+1)/2*w,Y=(1-v.y)/2*h;l.d.style.opacity=(v.z<1&&!(w>800&&X<w*.5&&Y<h*.62)&&Y>h*.08&&Y<h*.8)?1:0});
-}
-function mount(view){
-  cancelAnimationFrame(raf);const key=view.dataset.scene;if(!key||!window.THREE){return}
-  stage=view.querySelector('.stage');if(!R){R=new THREE.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Math.min(2,devicePixelRatio));R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;cam=new THREE.PerspectiveCamera(42,1,.1,400);lblBox=document.createElement('div');lblBox.className='lbls';bind(R.domElement)}
-  stage.appendChild(R.domElement);stage.appendChild(lblBox);makeScene(key);resize();idle=0;last=performance.now();raf=requestAnimationFrame(loop);
-}
-function bind(el){
-  const pts=new Map();let pinch=0;
-  el.addEventListener('pointerdown',e=>{el.setPointerCapture(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});drag={x:e.clientX,y:e.clientY};idle=0});
-  el.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;const p=pts.get(e.pointerId);if(pts.size===2){const [a,b]=[...pts.values()];const d0=Math.hypot(a.x-b.x,a.y-b.y);p.x=e.clientX;p.y=e.clientY;const [a2,b2]=[...pts.values()];const d1=Math.hypot(a2.x-b2.x,a2.y-b2.y);dist=Math.max(35,Math.min(120,dist*d0/d1));return}
-    theta-=(e.clientX-p.x)*.006;phi=Math.max(.35,Math.min(1.25,phi-(e.clientY-p.y)*.004));p.x=e.clientX;p.y=e.clientY;idle=0});
-  const up=e=>{pts.delete(e.pointerId);if(!pts.size)drag=null};el.addEventListener('pointerup',up);el.addEventListener('pointercancel',up);
-  el.addEventListener('wheel',e=>{e.preventDefault();dist=Math.max(35,Math.min(120,dist*(1+e.deltaY*.001)));idle=0},{passive:false});
-}
-// ---------- router ----------
-function route(){const id=(location.hash||'#home').slice(1);const v=document.getElementById('v-'+id)||document.getElementById('v-home');
-  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x===v));
-  document.querySelectorAll('.tabs a').forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+v.id.slice(2)?'page':'false'));
-  const act=document.querySelector('.tabs a[aria-current="page"]');act&&act.scrollIntoView({inline:'center',block:'nearest'});
-  window.scrollTo(0,0);mount(v)}
-addEventListener('hashchange',route);addEventListener('resize',resize);
-document.fonts&&document.fonts.ready.then(()=>{});route();
+/* ---------- SOURCES ---------- */
+var SX=-24,SZ=[-13.5,-4.5,4.5,13.5];
+SZ.forEach(function(z){P(SX,z,8,6.5,0xb3bfca);});
+B(5,2.2,3.6,0x47637f,SX,0,-13.5);parapet(5,3.6,SX,2.2,-13.5,0x3b5268);G(1.8,1.2,0.06,0x7fb0e6,SX,0.6,-11.68);
+B(4.4,2,3.2,0x5b6d7d,SX-0.6,0,-4.5);cyl(0.38,0.5,5.2,0x6b7d8d,SX+1.9,0,-5.4);G(0.8,0.2,0.8,0xff5a3c,SX+1.9,5.15,-5.4);
+cont(SX,0,3.8,0x2f6fb3);cont(SX,0,5.2,0xf2b705);cont(SX,1.15,4.5,0x2f6fb3);
+cont(SX,0,12.8,0xc0392b);cont(SX,0,14.2,0x2e8b57);cont(SX,1.15,13.5,0xc0392b);
+
+/* ---------- MAIN OFFICE ---------- */
+var OX=-2,OZ=-14;P(OX,OZ,10,8,0xc7cdd3);
+B(3.4,9,3.4,0x2b4a66,OX,0,OZ);bands(OX,OZ,3.4,3.4,1.0,10,0xa9cfe9);G(3.5,0.5,3.5,0xf08a3a,OX,9.2,OZ);
+B(5,1.6,2.4,0x3a5874,OX+3.4,0,OZ+0.4);bands(OX+3.4,OZ+0.4,5,2.4,0.8,1,0xa9cfe9);
+var ring=new THREE.Mesh(new THREE.TorusGeometry(1.1,0.09,8,40),new THREE.MeshBasicMaterial({color:0xf08a3a}));ring.rotation.x=Math.PI/2;ring.position.set(OX,10.2,OZ);S.add(ring);
+var beacon=G(0.35,0.35,0.35,0xff9a4a,OX,9.8,OZ);
+
+/* ---------- RC (distribution centre) ---------- */
+P(0,0.6,18,13,0xa9b6c2);
+B(10,3.2,6.6,0xd3dbe3,-1,0,0.6);G(10.1,0.2,6.7,0xf08a3a,-1,3.25,0.6);parapet(10,6.6,-1,3.45,0.6,0xb8c2cc);
+[-1.6,0.4,2.4].forEach(function(z){G(0.06,1.5,1.1,0xffc58a,4.03,0.75,z);G(0.06,1.5,1.1,0x9fc7f0,-6.03,0.75,z);});
+for(var wi=0;wi<6;wi++){G(1.1,0.5,0.05,0x8fb3d1,-5+wi*1.6,2.3,3.92);}
+
+/* ---------- MARKETPLACE WAREHOUSES (x=20) ---------- */
+var LX=20;
+function signTex(t,sub,bg){var c=document.createElement('canvas');c.width=640;c.height=sub?200:150;var x=c.getContext('2d');
+ var r=28;x.fillStyle=bg;x.beginPath();x.moveTo(r,0);x.lineTo(640-r,0);x.quadraticCurveTo(640,0,640,r);x.lineTo(640,c.height-r);x.quadraticCurveTo(640,c.height,640-r,c.height);x.lineTo(r,c.height);x.quadraticCurveTo(0,c.height,0,c.height-r);x.lineTo(0,r);x.quadraticCurveTo(0,0,r,0);x.fill();
+ x.fillStyle=(bg==='#ffcc00')?'#1a1a1a':'#ffffff';x.textAlign='center';x.textBaseline='middle';x.font='800 78px "Golos Text", Arial, sans-serif';x.fillText(t,320,sub?78:76);
+ if(sub){x.font='600 40px "Golos Text", Arial, sans-serif';x.globalAlpha=0.85;x.fillText(sub,320,152);}var tx=new THREE.CanvasTexture(c);tx.encoding=THREE.sRGBEncoding;tx.anisotropy=4;return {tx:tx,a:c.width/c.height};}
+var signs=[];
+function sign3(t,sub,bg,x,y,z,w){var o=signTex(t,sub,bg);var sp=new THREE.Sprite(new THREE.SpriteMaterial({map:o.tx,depthTest:true}));sp.scale.set(w,w/o.a,1);sp.position.set(x,y,z);S.add(sp);signs.push(sp);
+ var post=new THREE.Mesh(new THREE.CylinderGeometry(0.06,0.06,y-0.4,6),M(0x55606b));post.position.set(x,(y-0.4)/2+0.2,z);S.add(post);return sp;}
+P(LX,-14,8.5,6.8,0xb3bfca);B(6,3.6,4.4,0x4a1859,LX,0,-14);G(6.1,0.8,4.5,0xcb11ab,LX,3.25,-14);parapet(6,4.4,LX,3.6,-14,0x3b1347);G(2,1.5,0.06,0xffd0f3,LX+3.01,0.75,-14);
+P(LX,-6,8.5,6.6,0xb3bfca);B(6,3.4,4.2,0x0a3a8c,LX,0,-6);G(6.1,0.7,4.3,0x2f7bff,LX,3.1,-6);parapet(6,4.2,LX,3.4,-6,0x082c69);G(2,1.5,0.06,0xcfe0ff,LX+3.01,0.75,-6);
+P(LX,2.4,7.5,8.2,0xb3bfca);B(4.2,2.8,3,0x3a1480,LX,0,0.6);G(4.3,0.5,3.1,0x7000ff,LX,2.6,0.6);B(4.2,2.8,3,0x6b5604,LX,0,4.2);G(4.3,0.5,3.1,0xffcc00,LX,2.6,4.2);
+P(LX,11.2,7,7,0xb3bfca);[9.4,11.2,13].forEach(function(z){B(2.2,1.8,1.6,0x1d5a43,LX,0,z);G(2.24,0.26,1.64,0x3ddc97,LX,1.62,z);});
+sign3('Wildberries','склад · Узбекистан и СНГ','#cb11ab',LX,7.6,-14,9);
+sign3('Ozon','склад · Узбекистан и СНГ','#005bff',LX,6.8,-6,8);
+sign3('Uzum Market','только Узбекистан','#7000ff',LX-2.2,5.2,0.6,6.6);
+sign3('Яндекс Маркет','только Узбекистан','#ffcc00',LX+2.6,5.2,4.2,6.6);
+sign3('Дарксторы','курьеры забирают заказы','#1f8f62',LX,4.6,11.2,6.6);
+
+/* ---------- UZBEKISTAN CUSTOMERS CITY ---------- */
+var CX=37;P(CX,3,13,38,0xd4dccf);
+var hc=[0xe8dcc8,0xd9c7ad,0xf0e6d6,0xe2d2bd];
+[33,35.6,38.2,40.8].forEach(function(x,i){for(var z=-14;z<=12;z+=2.9){var h=0.9+((i+Math.round(z))%3+3)%3*0.45;B(1.5,h,1.5,hc[(i+Math.round(z/3)+8)%4],x,0,z);G(1.54,0.12,1.54,0xb85c3a,x,h+0.06,z);}});
+/* HoReCa & offices inside the city */
+B(2.6,1.5,2.2,0x7a4a2a,34,0,17.2);var aw=G(2.8,0.12,0.9,0xd9482b,34,1.45,18.6);aw.rotation.x=-0.35;
+B(2.6,1.5,2.2,0x8a5a32,34,0,20.6);var aw2=G(2.8,0.12,0.9,0xe0a030,34,1.45,22);aw2.rotation.x=-0.35;
+B(1.8,5,1.8,0x26394d,38,0,17.4);bands(38,17.4,1.8,1.8,0.9,6,0xffd59a);
+B(1.8,4,1.8,0x34485c,40.6,0,20.4);bands(40.6,20.4,1.8,1.8,0.9,5,0xffd59a);
+B(2.4,2.2,2,0x5a6e82,38.2,0,21);
+
+/* ---------- CIS EXPORT ZONE ---------- */
+P(55,-22,14,12,0xd9d3e6);
+for(var q=0;q<10;q++)G(0.25,0.06,1.1,0xe41e2b,47.4,0.05,-30+q*1.9);
+B(7,3.6,5,0xe3e8ee,55,0,-22);G(7.1,0.32,5.1,0x2f6fb3,55,3.6,-22);G(7.1,0.2,5.1,0xe41e2b,55,3.95,-22);parapet(7,5,55,3.95,-22,0xc6ced6);
+[-23.4,-21].forEach(function(z){G(0.06,1.6,1.4,0xffd59a,51.47,0.8,z);});
+
+/* ---------- ORIENT LOGISTIC BASE (group company, own trucks) ---------- */
+var QX=11,QZ=-25.5;P(QX,QZ,15,8,0xaab7c3);B(5.5,3,3.4,0x1f6f73,QX-3.5,0,QZ-1.6);G(5.6,0.5,3.5,0x34d1c6,QX-3.5,2.8,QZ-1.6);parapet(5.5,3.4,QX-3.5,3,QZ-1.6,0x175a5d);
+for(var f=0;f<6;f++){var ft=new THREE.Group();var tr=new THREE.Mesh(new THREE.BoxGeometry(1,1.2,3.2),M(0xe9eef3));tr.position.set(0,0.9,-0.5);var cb=new THREE.Mesh(new THREE.BoxGeometry(1,1,0.9),M(0x1f6f73));cb.position.set(0,0.75,1.5);var st=new THREE.Mesh(new THREE.BoxGeometry(1.02,0.25,3.22),M(0x34d1c6));st.position.set(0,1.1,-0.5);tr.castShadow=cb.castShadow=true;ft.add(tr,cb,st);ft.position.set(QX+0.6+f*1.4,0,QZ+0.4);S.add(ft);}
+sign3('Orient Logistic','компания группы · своя база фур','#14857c',QX+0.5,6.4,QZ,8.6);
+/* ---------- COCA-COLA PLANT ---------- */
+var KX=-14,KZ=-25;P(KX,KZ,9,7,0xb3bfca);B(4.6,2.6,3.4,0xc8102e,KX,0,KZ);G(4.65,0.28,3.45,0xffffff,KX,1.9,KZ);
+cyl(0.75,0.75,4.2,0xe6e9ec,KX-3.3,0,KZ-0.8);cyl(0.75,0.75,4.2,0xe6e9ec,KX-3.3,0,KZ+0.9);G(1.6,1.1,0.06,0xffe1e1,KX,0.55,KZ+1.73);
+sign3('Coca-Cola','завод · экспорт в Россию','#d4142f',KX,5.4,KZ,6.6);
+
+/* ---------- ROADS ---------- */
+function curve(pts){return new THREE.CatmullRomCurve3(pts.map(function(p){return new THREE.Vector3(p[0],p.length>2?p[2]:0.07,p[1]);}));}
+function road(cu,col,op){
+ var base=new THREE.Mesh(new THREE.TubeGeometry(cu,90,0.6,8,false),new THREE.MeshStandardMaterial({color:0x37414b,roughness:.95}));
+ base.scale.y=0.08;base.receiveShadow=true;S.add(base);
+ var line=new THREE.Mesh(new THREE.TubeGeometry(cu,120,0.08,6,false),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:op}));
+ line.position.y=0.06;S.add(line);}
+function highway(cu,col){
+ S.add(new THREE.Mesh(new THREE.TubeGeometry(cu,160,0.42,10,false),new THREE.MeshStandardMaterial({color:0x4a5561,roughness:.9})));
+ var l=new THREE.Mesh(new THREE.TubeGeometry(cu,160,0.12,6,false),new THREE.MeshBasicMaterial({color:col}));l.position.y=0.36;S.add(l);
+ for(var t=0.05;t<0.96;t+=0.06){var p=cu.getPointAt(t);if(p.y>0.8){var pil=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.2,p.y,8),M(0x8b98a5));pil.position.set(p.x,p.y/2,p.z);pil.castShadow=true;S.add(pil);}}}
+var srcC=SZ.map(function(z,i){var d=[-1.6,0.4,0.4,2.4][i]+(i===2?0.5:(i===1?-0.5:0));return curve([[SX+0.5,z],[-15,z],[-10,z*0.35+d*0.5],[-7.6,d],[-3,d]]);});
+srcC.forEach(function(c){road(c,0x7fb0e6,0.8);});
+/* from RC */
+var wbIn=curve([[4.4,-1.8],[8,-2.5],[12,-9.4],[15,-13.4],[17,-13.4]]);road(wbIn,0xcb11ab,1);
+var wbFbs=curve([[4.4,-2.5],[8.4,-3.4],[12.8,-10.4],[15.4,-14.6],[17,-14.6]]);road(wbFbs,0xcb11ab,0.6);
+var ozIn=curve([[4.4,-1],[9,-1.4],[13,-5.4],[17,-5.6]]);road(ozIn,0x2f7bff,1);
+var ozFbs=curve([[4.4,-0.3],[9.2,-0.6],[13.4,-6.6],[17,-6.8]]);road(ozFbs,0x2f7bff,0.55);
+var uzIn=curve([[4.4,0.6],[12,0.7],[17.9,0.6]]);road(uzIn,0x7000ff,1);
+var yaIn=curve([[4.4,1.4],[11,2.2],[15,4.2],[17.9,4.2]]);road(yaIn,0xe0b000,1);
+var dsIn=curve([[4.4,2.4],[9,3.6],[14,10.4],[18.9,11.2]]);road(dsIn,0x1f8f62,1);
+var hoIn=curve([[4.4,3.2],[7.5,6.5],[11,16.8],[24,17.6],[32.8,17.6]]);road(hoIn,0xf08a3a,1);
+/* to customers in Uzbekistan */
+var wbOut=curve([[23,-13.4],[27.4,-13],[32.2,-11.6]]);road(wbOut,0xcb11ab,0.95);
+var ozOut=curve([[23,-5.6],[27.4,-5],[32.2,-4.3]]);road(ozOut,0x2f7bff,0.9);
+var uzOut=curve([[22.1,0.6],[27,0.5],[32.2,0.3]]);road(uzOut,0x7000ff,0.9);
+var yaOut=curve([[22.1,4.2],[27,4.6],[32.2,5]]);road(yaOut,0xe0b000,0.9);
+var rcOr=curve([[1.6,-2.8],[4.8,-8.6],[7,-15.6],[8.6,-21.4]]);
+var cokeRc=curve([[-13,-23.2],[-11,-16],[-9.2,-8],[-7.6,-0.6],[-3,-0.6]]);
+var cokeOr=curve([[-11.6,-25.6],[-4,-27],[3,-26.6],[5.6,-26]]);
+var orRu=curve([[17.4,-25,0.4],[22,-27.6,2.2],[34,-29,2.6],[46,-28.2,2.4],[50,-26,1.2],[51.4,-24.4,0.4]]);
+var dsOut=curve([[21.1,11.2],[27,10.8],[32.2,9.8]]);road(dsOut,0x1f8f62,0.9);
+/* export to CIS (elevated, WB and Ozon only) */
+road(rcOr,0x34d1c6,1);road(cokeRc,0xe41e2b,0.9);road(cokeOr,0xe41e2b,0.9);highway(orRu,0x34d1c6);
+var wbEx=curve([[20,-16.4,0.4],[21.4,-19,1.3],[27,-23.6,2.2],[42,-24.4,2.2],[48,-23.6,1.2],[51.4,-22.6,0.4]]);highway(wbEx,0xcb11ab);
+var ozEx=curve([[23,-7.4,0.4],[25,-10.6,1.6],[26.6,-16.6,2.6],[33,-21.4,2.6],[44,-21.2,2.2],[49,-21,1.1],[51.4,-21,0.4]]);highway(ozEx,0x2f7bff);
+
+/* ---------- VEHICLES ---------- */
+function truck(col,sc){var t=new THREE.Group();
+ var b=new THREE.Mesh(new THREE.BoxGeometry(0.95,0.9,1.7),M(col));b.position.set(0,0.66,-0.28);
+ var c=new THREE.Mesh(new THREE.BoxGeometry(0.9,0.72,0.62),M(0x1b2733));c.position.set(0,0.55,0.86);
+ var h=new THREE.Mesh(new THREE.BoxGeometry(0.72,0.12,0.04),new THREE.MeshBasicMaterial({color:0xfff2c2}));h.position.set(0,0.46,1.18);
+ b.castShadow=c.castShadow=true;t.add(b,c,h);
+ [[-.45,.75],[.45,.75],[-.45,-.75],[.45,-.75]].forEach(function(w){var m=new THREE.Mesh(new THREE.CylinderGeometry(0.2,0.2,0.12,10),M(0x0b0f14));m.rotation.z=Math.PI/2;m.position.set(w[0],0.2,w[1]);t.add(m);});
+ t.scale.setScalar(sc||1);S.add(t);return t;}
+function moped(col,box){var g=new THREE.Group();
+ var fr=new THREE.Mesh(new THREE.BoxGeometry(0.22,0.28,1.0),M(0x2a3540));fr.position.y=0.42;
+ [[0.42],[-0.42]].forEach(function(w){var wh=new THREE.Mesh(new THREE.TorusGeometry(0.2,0.07,6,14),M(0x111418));wh.rotation.y=Math.PI/2;wh.position.set(0,0.22,w[0]);g.add(wh);});
+ var bx=new THREE.Mesh(new THREE.BoxGeometry(0.62,0.55,0.55),M(box));bx.position.set(0,0.98,-0.32);
+ var body=new THREE.Mesh(new THREE.CylinderGeometry(0.15,0.17,0.5,8),M(col));body.position.set(0,0.92,0.12);
+ var hd=new THREE.Mesh(new THREE.SphereGeometry(0.15,10,8),M(col));hd.position.set(0,1.3,0.14);
+ var hb=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.05,0.05),M(0x2a3540));hb.position.set(0,0.78,0.45);
+ [fr,bx,body,hd].forEach(function(o){o.castShadow=true;});g.add(fr,bx,body,hd,hb);g.scale.setScalar(1.1);S.add(g);return g;}
+function scooter(col){var g=new THREE.Group();var b=new THREE.Mesh(new THREE.BoxGeometry(0.35,0.35,0.9),M(col));b.position.y=0.35;var box=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.45,0.45),M(col));box.position.set(0,0.75,-0.25);var r=new THREE.Mesh(new THREE.SphereGeometry(0.16,8,6),M(0x1b2733));r.position.set(0,0.9,0.15);b.castShadow=box.castShadow=true;g.add(b,box,r);S.add(g);return g;}
+var movers=[];
+function add(cu,col,n,speed,sc){for(var i=0;i<n;i++)movers.push({c:cu,u:i/n+Math.random()*0.05,v:speed,o:truck(col,sc)});}
+function pp(cu,col,n,speed){for(var i=0;i<n;i++)movers.push({c:cu,u:i*2/n,v:speed,o:truck(col),pp:true});}
+function hw(cu,col,n,speed){for(var i=0;i<n;i++)movers.push({c:cu,u:i/n,v:speed,o:truck(col,0.9),y3:true});}
+srcC.forEach(function(c){add(c,0x7fb0e6,1,0.07);});
+add(wbIn,0xf08a3a,2,0.08);pp(wbFbs,0xcb11ab,1,0.07);add(ozIn,0xf08a3a,2,0.08);pp(ozFbs,0x2f7bff,1,0.07);
+add(uzIn,0xf08a3a,1,0.09);add(yaIn,0xf08a3a,1,0.085);add(dsIn,0xf08a3a,1,0.1);add(hoIn,0xf08a3a,2,0.06);
+add(wbOut,0xcb11ab,2,0.12,0.7);add(ozOut,0x2f7bff,2,0.12,0.7);
+function mp(cu,col,box,n,v){for(var i=0;i<n;i++)movers.push({c:cu,u:i/n,v:v,o:moped(col,box)});}
+mp(uzOut,0x7000ff,0x7000ff,3,0.16);mp(yaOut,0xffcc00,0xffcc00,3,0.16);
+[[0xffcc00,0xffcc00],[0x7000ff,0x7000ff],[0x2bb6f0,0x2bb6f0],[0xffcc00,0xff5a36],[0x7000ff,0x7000ff]].forEach(function(c,i){movers.push({c:dsOut,u:i/5,v:0.18,o:moped(c[0],c[1])});});
+hw(wbEx,0xcb11ab,2,0.05);hw(ozEx,0x2f7bff,2,0.05);
+function fura(){var g=new THREE.Group();var tr=new THREE.Mesh(new THREE.BoxGeometry(1,1.2,3.2),M(0xe9eef3));tr.position.set(0,0.9,-0.6);var cb=new THREE.Mesh(new THREE.BoxGeometry(1,1,0.9),M(0x1f6f73));cb.position.set(0,0.75,1.4);var st=new THREE.Mesh(new THREE.BoxGeometry(1.02,0.25,3.22),M(0x34d1c6));st.position.set(0,1.1,-0.6);tr.castShadow=cb.castShadow=true;g.add(tr,cb,st);g.scale.setScalar(0.85);S.add(g);return g;}
+for(var i=0;i<3;i++)movers.push({c:orRu,u:i/3,v:0.04,o:fura(),y3:true});
+for(var i=0;i<2;i++)movers.push({c:rcOr,u:i/2,v:0.09,o:fura()});
+add(cokeRc,0xe41e2b,2,0.08,1.1);add(cokeOr,0xe41e2b,1,0.1,1.1);
+var tmp=new THREE.Vector3();
+function place(m){var u,sg=1;if(m.pp){var w=m.u%2;u=w<1?w:2-w;sg=w<1?1:-1;}else u=m.u%1;var p=m.c.getPointAt(u);var t=m.c.getTangentAt(u).multiplyScalar(sg);
+ m.o.position.copy(p);m.o.position.y=m.y3?p.y+0.32:0.02;tmp.copy(m.o.position).add(t);if(!m.y3)tmp.y=0.02;m.o.lookAt(tmp);}
+
+/* ---------- LIFE ---------- */
+var pulses=[];
+function arc(a,b,h,col){var m=new THREE.Vector3((a.x+b.x)/2,h,(a.z+b.z)/2);var c=new THREE.QuadraticBezierCurve3(a,m,b);
+ S.add(new THREE.Mesh(new THREE.TubeGeometry(c,60,0.05,5,false),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.5})));
+ for(var i=0;i<2;i++){var sp=new THREE.Mesh(new THREE.SphereGeometry(0.24,12,10),new THREE.MeshBasicMaterial({color:col}));S.add(sp);pulses.push({c:c,u:i/2+Math.random()*0.1,v:0.28,o:sp});}}
+var O3=new THREE.Vector3(OX,9.6,OZ);
+SZ.forEach(function(z){arc(O3,new THREE.Vector3(SX,2.8,z),14,0xf08a3a);});arc(O3,new THREE.Vector3(-1,3.6,0.6),12,0x2f7bff);
+function forklift(){var g=new THREE.Group();var b=new THREE.Mesh(new THREE.BoxGeometry(0.6,0.5,0.9),M(0xf2b705));b.position.y=0.4;
+ var m1=new THREE.Mesh(new THREE.BoxGeometry(0.08,1.1,0.08),M(0x333333));m1.position.set(-0.22,0.7,0.5);var m2=m1.clone();m2.position.x=0.22;
+ var bx=new THREE.Mesh(new THREE.BoxGeometry(0.45,0.4,0.45),M(0xc9a26b));bx.position.set(0,0.48,0.75);[b,m1,m2,bx].forEach(function(o){o.castShadow=true;});g.add(b,m1,m2,bx);S.add(g);return g;}
+function person(col){var g=new THREE.Group();var b=new THREE.Mesh(new THREE.CylinderGeometry(0.13,0.15,0.55,8),M(col));b.position.y=0.38;var h=new THREE.Mesh(new THREE.SphereGeometry(0.12,10,8),M(0xe0b896));h.position.y=0.78;b.castShadow=true;g.add(b,h);S.add(g);return g;}
+var walk=[];
+[[[-6.4,-1.6],[-8.6,-2.4]],[[-6.4,2.4],[-8.4,3.2]],[[-4,4.6],[1.6,4.6]]].forEach(function(q,i){walk.push({c:curve(q),u:i*0.6,v:0.22,o:forklift(),pp:true});});
+[[[OX-3,OZ+3],[OX+3,OZ+3.4]],[[OX+4.5,OZ-2],[OX+4.5,OZ+3.2]],[[OX-3.8,OZ-2.6],[OX-3.8,OZ+2.8]],[[35,-15.6],[35,12.6]],[[39.5,-15.6],[39.5,12.6]],[[36,19],[39,19]]].forEach(function(q,i){walk.push({c:curve(q),u:i*0.37,v:i>2?0.03:0.12,o:person([0x1d4e89,0xd8661a,0x2f7a4f,0x5b2a86,0x7d8a96,0xc0392b][i]),pp:true});});
+var puffs=[];for(var i=0;i<8;i++){var pf=new THREE.Mesh(new THREE.SphereGeometry(0.45,10,8),new THREE.MeshStandardMaterial({color:0xf2f4f6,transparent:true,opacity:0.7,roughness:1}));pf.position.set(SX+1.9,5.3,-5.4);S.add(pf);puffs.push({o:pf,t:i/8,x:SX+1.9,z:-5.4,y0:5.3});}
+var clouds=[];
+[-30,-24,-18,-12,-6,0,6,12,18,24,30,44,50,56].forEach(function(x,i){tree(x,-28+(i%2)*0.8,1+(i%3)*0.15);tree(x+3,26-(i%2)*0.8,1.1-(i%3)*0.1);});
+[[-8,-6],[-8,7],[9,-8.5],[9,8],[-16,-9],[-16,9],[15,15.5],[15,-17],[26,-1],[26,7.5],[44,-6],[44,6],[44,14],[28,21]].forEach(function(q,i){tree(q[0],q[1],0.9+(i%3)*0.15);});
+
+/* ---------- LABELS ---------- */
+var L=[
+ {p:[SX,3.4,-13.5],s:'ПОСТАВЩИК',t:'Дамир Савдо',k:'src'},
+ {p:[SX+1.9,6.1,-5.4],s:'ПОСТАВЩИК',t:'Заводы Узбекистана',sh:'Заводы',k:'src'},
+ {p:[SX,3.2,4.5],s:'ИМПОРТ',t:'Европа',k:'src'},
+ {p:[SX,3.2,13.5],s:'ИМПОРТ',t:'Китай',k:'src'},
+ {p:[-1,4.6,0.6],s:'РАСПРЕДЕЛИТЕЛЬНЫЙ ЦЕНТР',t:'РЦ · большой склад',sh:'РЦ',k:'hub'},
+ {p:[OX,11.4,OZ],s:'ГЛАВНЫЙ ОФИС',t:'Здесь создаются все заказы',sh:'Главный офис',k:'hub'},
+ {p:[LX,4.4,-14],s:'',t:'',off:1},
+ {p:[LX,4,-6],s:'',t:'',off:1},
+ {p:[LX,3.3,2.3],s:'',t:'',off:1},
+ {p:[LX,2.6,11.2],s:'',t:'',off:1},
+ {p:[29.6,1.4,10.4],s:'КУРЬЕРЫ НА МОПЕДАХ',t:'Яндекс Лавка · Яндекс Еда · Uzum Tezkor',sh:'Лавка · Еда · Tezkor',k:'fl'},
+ {p:[38,6.4,18.6],s:'3 · B2B',t:'HoReCa и офисы',sh:'HoReCa'},
+ {p:[18,1.2,17.6],s:'НАША ДОСТАВКА',t:'Из РЦ напрямую клиентам',sh:'Наша доставка',k:'fl'},
+ {p:[CX,3.6,-1],s:'ВНУТРЕННИЙ РЫНОК',t:'Покупатели по всему Узбекистану',sh:'Узбекистан',k:'uz'},
+ {p:[55,5.6,-22],s:'ЭКСПОРТ · СНГ',t:'Россия, Казахстан, Таджикистан, Кыргызстан',sh:'СНГ',k:'ru'},
+ {p:[36,4.4,-22.6],s:'ПУТЬ 2 · ФУРЫ WB И OZON',t:'Площадки везут сами',sh:'Фуры WB и Ozon',k:'ru'},
+ {p:[30,4.8,-29],s:'ПУТЬ 1 · ФУРЫ ORIENT LOGISTIC',t:'Заказы WB и Coca-Cola в Россию',sh:'Фуры Orient',k:'ol'},
+ {p:[5.4,1.4,-10],s:'ЗАКАЗЫ WB · COCA-COLA',t:'РЦ → база Orient Logistic',sh:'РЦ → Orient',k:'ol'},
+ {p:[10.4,1.2,-1.1],s:'FBO',t:'Везём на склады площадок',sh:'FBO'},
+ {p:[13,1.2,-11],s:'FBS',t:'Площадка забирает у нас',sh:'FBS',k:'fl'}
+];
+var LV=[2,2,2,2,3,1,4,5,6,7,7,8,8,9,10,10,12,12,11,11];L.forEach(function(l,i){var d=document.createElement('button');d.type='button';d.className='lb'+(l.k?' '+l.k:'');l.view=LV[i];if(l.off)d.hidden=true;d.addEventListener('click',function(){go(l.view);});l.d=d;l.v=new THREE.Vector3(l.p[0],l.p[1],l.p[2]);lbBox.appendChild(d);});
+var narrow=null;
+function setText(n){if(n===narrow)return;narrow=n;L.forEach(function(l){l.d.innerHTML='<small>'+l.s+'</small>'+(n&&l.sh?l.sh:l.t);l.w=0;});}
+
+/* ---------- CAMERA ---------- */
+var W=1,H=1,base=0,el0=0.78,fitD=60,drag=0,view=0,first=true;
+var cur={x:0,z:0,d:120,e:1.3},goal={x:0,z:0,d:60,e:0.78};var target=new THREE.Vector3();
+var V=[
+ {n:'Обзор',x:15,z:-3,k:1},{n:'Главный офис',x:-2,z:-14,k:0.32},{n:'Поставщики',x:-24,z:0,k:0.62},{n:'РЦ',x:0,z:0,k:0.4},
+ {n:'1 · Wildberries',x:22,z:-14,k:0.38},{n:'2 · Ozon',x:22,z:-6,k:0.38},{n:'2 · Uzum и Яндекс',x:22,z:2.3,k:0.36},{n:'5 · Дарксторы',x:24,z:11,k:0.38},
+ {n:'3 · HoReCa',x:30,z:17.5,k:0.4},{n:'Узбекистан',x:CX,z:3,k:0.55},{n:'Экспорт СНГ',x:42,z:-22,k:0.5},{n:'FBO / FBS',x:11,z:-7,k:0.42},{n:'Orient Logistic',x:16,z:-24,k:0.45},{n:'Coca-Cola',x:-8,z:-20,k:0.45}
+];
+var nav=document.getElementById('v3nav'),zf=1;
+var leg=document.getElementById('v3leg');leg.classList.add('closed');leg.querySelector('.lg-t').setAttribute('aria-expanded','false');
+leg.querySelector('.lg-t').addEventListener('click',function(){var c=leg.classList.toggle('closed');this.setAttribute('aria-expanded',c?'false':'true');});
+V.forEach(function(v,i){var b=document.createElement('button');b.type='button';b.textContent=v.n;b.addEventListener('click',function(){go(i);});nav.appendChild(b);});
+function go(i){view=i;var v=V[i];goal.x=(i===0&&C.aspect<0.95)?18:v.x;goal.z=v.z;goal.d=fitD*v.k*zf;goal.e=i===0?el0:Math.min(el0+0.12,1.05);drag=0;
+ Array.prototype.forEach.call(nav.children,function(b,j){b.classList.toggle('on',j===i);b.setAttribute('aria-pressed',j===i);});
+ if(still){cur.x=goal.x;cur.z=goal.z;cur.d=goal.d;cur.e=goal.e;}kick();}
+function fit(){W=box.clientWidth;H=box.clientHeight;R.setSize(W,H,false);C.aspect=W/H;
+ var portrait=C.aspect<0.95;base=portrait?Math.PI/2:0;el0=portrait?0.95:0.74;var el=el0;
+ var v=THREE.MathUtils.degToRad(C.fov),h=2*Math.atan(Math.tan(v/2)*C.aspect);
+ var hw=portrait?31:46,hd=portrait?52:31;
+ fitD=Math.max(hw/Math.tan(h/2),hd*Math.sin(el)/Math.tan(v/2)+hd*0.35)*1.02;goal.d=fitD*V[view].k*zf;goal.e=view===0?el0:Math.min(el0+0.12,1.05);if(first){cur.d=still?goal.d:fitD*1.9;cur.e=still?goal.e:1.32;cur.x=goal.x;cur.z=goal.z;first=false;}
+ C.updateProjectionMatrix();setText(W<640);}
+function cam(time,dt){var a=still?1:1-Math.exp(-dt*2.2);cur.x+=(goal.x-cur.x)*a;cur.z+=(goal.z-cur.z)*a;cur.d+=(goal.d-cur.d)*a;cur.e+=(goal.e-cur.e)*a;
+ var az=base+drag+((still||touched)?0:0.18*Math.sin(time*0.00012));target.set(cur.x,0,cur.z);S.fog.near=cur.d*1.3;S.fog.far=cur.d*3;if(Math.abs(C.far-cur.d*5)>1){C.far=cur.d*5;C.updateProjectionMatrix();}
+ C.position.set(cur.x+cur.d*Math.cos(cur.e)*Math.sin(az),cur.d*Math.sin(cur.e),cur.z+cur.d*Math.cos(cur.e)*Math.cos(az));C.lookAt(target);}
+var PR=[5,4,13,14,10,11,12,15,16,17,18,19,0,1,2,3];
+function labels(){var kept=[];PR.forEach(function(i){var l=L[i];if(l.off)return;tmp.copy(l.v).project(C);var x=(tmp.x*0.5+0.5)*W,y=(-tmp.y*0.5+0.5)*H;
+ if(!l.w){l.w=l.d.offsetWidth;l.h=l.d.offsetHeight;}
+ var ok=tmp.z<1&&x>-l.w&&x<W+l.w&&y>-l.h&&y<H+l.h;var yb=y-6;
+ if(ok){for(var it=0;it<8;it++){var hit=null;for(var k=0;k<kept.length;k++){var q=kept[k];if(x-l.w/2-2<q.b&&x+l.w/2+2>q.a&&yb-l.h<q.d&&yb>q.c){hit=q;break;}}if(!hit)break;yb=hit.c-3;}
+  kept.push({a:x-l.w/2-2,b:x+l.w/2+2,c:yb-l.h,d:yb});}
+ var lift=Math.max(6,y-yb);l.d.style.setProperty('--lh',lift.toFixed(0)+'px');
+ l.d.style.transform='translate('+x.toFixed(1)+'px,'+yb.toFixed(1)+'px) translate(-50%,-100%)';l.d.style.opacity=ok?1:0;l.d.style.pointerEvents=ok?'auto':'none';});}
+
+var still=false,touched=false;try{still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+var last=0,running=true,raf=0;
+function frame(time){raf=0;var dt=last?Math.min((time-last)/1000,0.05):0;last=time;
+ if(!still){movers.forEach(function(m){m.u+=dt*m.v;});walk.forEach(function(m){m.u+=dt*m.v;});pulses.forEach(function(p){p.u+=dt*p.v;});ring.rotation.z+=dt*0.8;puffs.forEach(function(p){p.t=(p.t+dt*0.18)%1;p.o.position.set(p.x+p.t*1.5,p.y0+p.t*4,p.z-p.t*0.6);p.o.scale.setScalar(0.6+p.t*1.6);p.o.material.opacity=0.75*(1-p.t);});clouds.forEach(function(c){c.position.x+=dt*0.6;if(c.position.x>60)c.position.x=-45;});beacon.material.color.setHSL(0.07,1,0.45+0.25*Math.sin(time*0.004));}
+ movers.forEach(place);walk.forEach(place);pulses.forEach(function(p){p.o.position.copy(p.c.getPointAt(p.u%1));});cam(time,dt);R.render(S,C);labels();
+ if(running&&!still)raf=requestAnimationFrame(frame);}
+function kick(){if(!raf)raf=requestAnimationFrame(frame);}
+fit();go(0);frame(0);
+try{new ResizeObserver(function(){fit();kick();}).observe(box);}catch(e){window.addEventListener('resize',function(){fit();kick();});}
+try{new IntersectionObserver(function(es){running=es[0].isIntersecting;if(running){last=0;kick();}}).observe(box);}catch(e){}
+var ptrs={},downAt=null,moved=0,pinch=null,ray=new THREE.Raycaster(),mv=new THREE.Vector2();
+function clampZ(z){return Math.max(0.3,Math.min(1.9,z));}
+function panBy(dx,dy){var az=base+drag,k=2*cur.d*Math.tan(THREE.MathUtils.degToRad(C.fov)/2)/H,se=Math.max(Math.sin(cur.e),0.55);
+ var rx=Math.cos(az),rz=-Math.sin(az),fx=Math.sin(az),fz=Math.cos(az);
+ var nx=cur.x-dx*k*rx-dy*k*fx/se,nz=cur.z-dx*k*rz-dy*k*fz/se;
+ cur.x=goal.x=Math.max(-36,Math.min(62,nx));cur.z=goal.z=Math.max(-36,Math.min(30,nz));}
+var NODES=[[11,-25.5,12],[-14,-25,13],[-2,-14,1],[-24,-13.5,2],[-24,-4.5,2],[-24,4.5,2],[-24,13.5,2],[0,0,3],[20,-14,4],[20,-6,5],[20,2.3,6],[20,11.2,7],[37,19,8],[37,-1,9],[55,-22,10]];
+function pick(e){var r=cv.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,C);
+ var h=ray.intersectObjects(S.children,true);if(!h.length)return;var pt=h[0].point,best=-1,bd=7.5;
+ NODES.forEach(function(n){var d=Math.hypot(pt.x-n[0],pt.z-n[1]);if(d<bd){bd=d;best=n[2];}});if(best>0)go(best);}
+cv.addEventListener('contextmenu',function(e){e.preventDefault();});
+cv.addEventListener('pointerdown',function(e){touched=true;ptrs[e.pointerId]={x:e.clientX,y:e.clientY};moved=0;pinch=null;
+ downAt={b:e.button,sh:e.shiftKey};try{cv.setPointerCapture(e.pointerId);}catch(x){}cv.style.cursor='grabbing';});
+cv.addEventListener('pointermove',function(e){var p=ptrs[e.pointerId];if(!p)return;var dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;moved+=Math.abs(dx)+Math.abs(dy);
+ var ids=Object.keys(ptrs);
+ if(ids.length>=2){var a=ptrs[ids[0]],b=ptrs[ids[1]],dd=Math.hypot(a.x-b.x,a.y-b.y),an=Math.atan2(b.y-a.y,b.x-a.x);
+  if(pinch&&dd>10){zf=clampZ(zf*pinch.d/dd);goal.d=cur.d=fitD*V[view].k*zf;var da=an-pinch.a;if(da>Math.PI)da-=2*Math.PI;if(da<-Math.PI)da+=2*Math.PI;drag-=da;}
+  pinch={d:dd,a:an};moved+=99;kick();return;}
+ if((e.pointerType==='touch'&&!isFull)||(downAt&&(downAt.b===2||downAt.sh))){drag-=dx*0.006;kick();return;}
+ panBy(dx,dy);kick();});
+function endPtr(e){var was=ptrs[e.pointerId];delete ptrs[e.pointerId];var left=Object.keys(ptrs).length;if(left<2)pinch=null;cv.style.cursor='';
+ if(was&&downAt&&moved<8&&left===0)pick(e);if(!left)downAt=null;}
+cv.addEventListener('pointerup',endPtr);
+cv.addEventListener('pointercancel',function(e){delete ptrs[e.pointerId];pinch=null;if(!Object.keys(ptrs).length)downAt=null;cv.style.cursor='';});
+cv.addEventListener('wheel',function(e){if(!isFull&&!e.ctrlKey)return;e.preventDefault();touched=true;zoom(e.deltaY>0?1.12:0.89);},{passive:false});
+var hint=box.querySelector('.hint3d'),coarse=false;try{coarse=window.matchMedia('(pointer: coarse)').matches;}catch(e){}
+function setHint(){hint.textContent=isFull?(coarse?'Палец — двигать · щипок — масштаб · два пальца — поворот · нажмите на здание':'Тяните — двигать · колесо — масштаб · правая кнопка — поворот · клик по зданию'):(coarse?'Нажмите «Во весь экран», чтобы двигать карту':'Тяните — двигать · правая кнопка — поворот · клик по зданию');}
+function zoom(f){touched=true;zf=clampZ(zf*f);goal.d=fitD*V[view].k*zf;if(still)cur.d=goal.d;kick();}
+document.getElementById('v3in').addEventListener('click',function(){zoom(0.8);});
+document.getElementById('v3out').addEventListener('click',function(){zoom(1.25);});
+var fb=document.getElementById('v3full'),isFull=false;
+function setFull(on){isFull=on;box.classList.toggle('full',on);document.body.classList.toggle('noscroll',on);
+ fb.querySelector('span').textContent=on?'Закрыть':'Во весь экран';fb.setAttribute('aria-label',on?'Закрыть полноэкранный режим':'Во весь экран');
+ fb.querySelector('svg').innerHTML=on?'<path d="M6 6l12 12M18 6L6 18"/>':'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>';
+ setHint();setTimeout(function(){fit();kick();},60);}
+fb.addEventListener('click',function(){
+ if(!isFull){setFull(true);try{var r=box.requestFullscreen||box.webkitRequestFullscreen;if(r){var pr=r.call(box);if(pr&&pr.catch)pr.catch(function(){});}}catch(e){}}
+ else{try{var d=document;if(d.fullscreenElement||d.webkitFullscreenElement){(d.exitFullscreen||d.webkitExitFullscreen).call(d);}}catch(e){}setFull(false);}});
+document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&isFull)setFull(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isFull)setFull(false);});
+setHint();
+document.getElementById('v3rl').addEventListener('click',function(){touched=true;drag+=0.4;kick();});
+document.getElementById('v3rr').addEventListener('click',function(){touched=true;drag-=0.4;kick();});
+
 })();
 </script>
+<script>
+(function(){var ls=[].slice.call(document.querySelectorAll('.topnav a.l'));var map={};ls.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+try{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&map[e.target.id]){ls.forEach(function(a){a.classList.remove('on');});var a=map[e.target.id];a.classList.add('on');try{a.scrollIntoView({block:'nearest',inline:'center'});}catch(x){}}});},{rootMargin:'-40% 0px -55% 0px'});
+Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});}catch(e){}})();
+</script>
+
 </body>
 </html>

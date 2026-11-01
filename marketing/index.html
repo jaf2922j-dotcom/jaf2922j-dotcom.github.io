@@ -940,6 +940,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 .risk h6{margin:0 0 8px;color:#ffc4cf;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .risk ul{margin:0}
 .needt td:last-child{white-space:nowrap}
+.cmpt{table-layout:fixed;width:100%}.cmpt td,.cmpt td:last-child{white-space:normal}.cmpt col.c1{width:16%}.cmpt col.c2{width:22%}.cmpt col.c3{width:31%}.cmpt col.c4{width:31%}
 @media (max-width:1000px){.ladder{grid-template-columns:repeat(2,minmax(0,1fr))}.tgal{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.ladder{grid-template-columns:1fr}}
 .qgrp{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:18px 0 2px}
@@ -2035,7 +2036,7 @@ function buildIssues(){
  <div class="whych"><span class="bad">Долги перед поставщиками</span><i>→</i><span>поставщики меньше дают в промо и рекламу</span><i>→</i><span>акций меньше, доход от рекламы ниже</span><i>→</i><span>своего бюджета нет — закрыть разрыв нечем</span><i>→</i><span class="bad">команда бегает за каждым партнёром вручную</span></div>
  <p style="color:var(--mute);font-size:12px;margin:10px 0 0">Промо — данные коммерции и маркетинга по товарам; сервис-уровень — еженедельная отчётность, оценка отдела B2B и E-commerce. Цепочка — логика причин, не расчёт.</p>
  <div class="glab" style="margin-top:40px">Было → стало · коротко</div>
- <div class="gcard"><div class="bscroll"><table class="btab needt"><thead><tr><th>Что</th><th>Было</th><th>Стало</th><th>Что нужно</th></tr></thead><tbody>
+ <div class="gcard"><div class="bscroll"><table class="btab cmpt"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup><thead><tr><th>Что</th><th>Было</th><th>Стало</th><th>Что нужно</th></tr></thead><tbody>
   <tr><td>Команда</td><td>~20 человек</td><td>7 человек, каждый совмещает 2–5 ролей</td><td>Выполнить обещанное: у части команды не установлена даже зарплата, озвученная на период после испытательного срока — «повысим» и забыли. Ключевые вакансии</td></tr>
   <tr><td>Открытие магазина</td><td>~170 млн, блогеры 30–40 млн</td><td>~60 млн вместе с подарками</td><td>Вернуть бюджет подарков 20–30 млн вместо 15</td></tr>
   <tr><td>Экраны</td><td>TV Line ~290 млн/год, флешки; SmartCast в ~5 магазинах</td><td>Единая цена за магазин, экраны переставляем, акции — сразу во всех магазинах. Людей на установку дали, но одобрение второго человека заняло месяц</td><td>Заменить экраны в Ферганской долине; колонки примерно в 50% магазинов</td></tr>
@@ -2261,7 +2262,7 @@ function shortCV(id){const x=SHORT[id];if(!x)return"";
  return `<div class="gcard" style="margin-bottom:18px"><div class="glab">Коротко о специалисте</div>
   <div class="cvg2" style="margin-top:6px"><div><b style="font-size:13px;color:var(--mute)">Основная задача</b><ul class="blist">${x.main.map(t=>`<li>${t}</li>`).join("")}</ul>
    <b style="font-size:13px;color:var(--mute);display:block;margin-top:12px">Совмещает дополнительно</b><ul class="blist">${x.extra.map(t=>`<li>${t}</li>`).join("")}</ul></div>
-  <div><b style="font-size:13px;color:var(--mute)">Нагрузка: ${LOADL[x.load]}</b><div style="display:flex;gap:4px;margin:8px 0 4px">${[1,2,3,4,5].map(i=>`<i style="flex:1;height:8px;border-radius:4px;background:${i<=x.load?"var(--gg)":"#1a2448"}"></i>`).join("")}</div><small style="color:var(--mute)">основная роль + ${x.extra.length} дополнительных</small>
+  <div><b style="font-size:13px;color:var(--mute)">Нагрузка: ${LOADL[x.load]}</b><div style="display:flex;gap:4px;margin:8px 0 4px">${[1,2,3,4,5].map(i=>`<i style="flex:1;height:8px;border-radius:4px;background:${i<=x.load?"#7b68ff":"rgba(127,140,190,.25)"}"></i>`).join("")}</div><small style="color:var(--mute)">основная роль + ${x.extra.length} дополнительных</small>
    <b style="font-size:13px;color:var(--mute);display:block;margin-top:14px">Знания и опыт</b><div class="chips" style="margin-top:6px">${x.skills.map(t=>`<span>${t}</span>`).join("")}</div>
    <b style="font-size:13px;color:var(--mute);display:block;margin-top:14px">Сильные стороны</b><div class="chips" style="margin-top:6px">${x.soft.map(t=>`<span>${t}</span>`).join("")}</div></div></div>
   ${x.pos?`<div class="quote" style="margin-top:16px;font-size:15px">${x.pos}</div>`:""}${x.growth?`<div style="margin-top:16px"><b style="font-size:13px;color:var(--mute)">Точка роста</b><p style="font-size:13.5px;line-height:1.6;margin:6px 0 0">${x.growth}</p></div>`:""}${x.pay?`<div style="margin-top:12px;border-left:3px solid var(--warn,#ff8fb3);padding-left:12px"><b style="font-size:13px;color:var(--mute)">Зарплата</b><p style="font-size:13.5px;line-height:1.6;margin:6px 0 0">${x.pay}</p></div>`:""}
@@ -2611,7 +2612,7 @@ async function savePDF(btn,id){
  catch(e){console.error(e);btn.textContent="Не получилось, печать…";setTimeout(()=>window.print(),300)}
  finally{setTimeout(()=>{btn.disabled=false;btn.textContent=t},1200)}}
 // public site: open the prebuilt file right inside the tap (no async work first), so phones and in-app browsers (Telegram) open it too
-const PDFKEYS=new Set(["all","print","team","dash","income","done","b2b","need","issues",...Object.keys(CVNAMES).filter(k=>k!=="nurullin").map(k=>"cv-"+k)]); // nurullin: no prebuilt PDF yet, falls back to in-browser render
+const PDFKEYS=new Set(["all","print","team","dash","income","done","b2b","need","issues",...Object.keys(CVNAMES).map(k=>"cv-"+k)]);
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pdf]");if(!b)return;const id=b.dataset.pdf||b.closest(".page").id.slice(2),k=id==="cv"?"cv-"+cvCur:id;
  if(!(window.claude&&window.claude.use)&&PDFKEYS.has(k)){const a=document.createElement("a");a.href=pdfUrl(k);a.download="Makro-Marketing-"+({all:"2026",print:"2026-print"}[k]||k)+".pdf";document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),4000);return}
  savePDF(b,id)});

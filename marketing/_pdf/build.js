@@ -10,16 +10,16 @@ const dir=__dirname,out=path.join(dir,'..','pdf');
 const css=fs.readFileSync(path.join(dir,'report.css'),'utf8'),js=fs.readFileSync(path.join(dir,'report.js'),'utf8');
 
 const JOBS=[
-  ['makro-marketing-2026',{kind:'all',theme:'screen'}],
+  ['makro-marketing-2026',{kind:'all',theme:'print'}],
   ['makro-marketing-2026-print',{kind:'all',theme:'print'}],
-  ['team',{kind:'sec',id:'team'}],['dash',{kind:'sec',id:'dash'}],['income',{kind:'sec',id:'income'}],
-  ['done',{kind:'sec',id:'done'}],['b2b',{kind:'sec',id:'b2b'}],['need',{kind:'sec',id:'need'}],['issues',{kind:'sec',id:'issues'}],
+  ['team',{kind:'sec',id:'team',theme:'print'}],['dash',{kind:'sec',id:'dash',theme:'print'}],['income',{kind:'sec',id:'income',theme:'print'}],
+  ['done',{kind:'sec',id:'done',theme:'print'}],['b2b',{kind:'sec',id:'b2b',theme:'print'}],['need',{kind:'sec',id:'need',theme:'print'}],['issues',{kind:'sec',id:'issues',theme:'print'}],
 ];
 (async()=>{
   const b=await chromium.launch();
   const probe=await b.newPage();await probe.goto(base+'/marketing/',{waitUntil:'load'});
   const cvs=await probe.evaluate(()=>Object.keys(CVNAMES));await probe.close();
-  for(const k of cvs)JOBS.push(['cv-'+k,{kind:'cv',key:k}]);
+  for(const k of cvs)JOBS.push(['cv-'+k,{kind:'cv',key:k,theme:'print'}]);
   for(const [name,job] of JOBS){
     if(only.length&&!only.includes(name))continue;
     const p=await b.newPage({viewport:{width:1000,height:1414}});

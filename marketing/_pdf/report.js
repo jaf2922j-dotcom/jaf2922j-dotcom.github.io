@@ -105,7 +105,10 @@ function subHead(t,k){return el(`<div class="sub-h"><b>${t}</b>${k?`<span>${k}</
 function fromPage(id){const src=$("#"+id);const c=src.cloneNode(true);return c}
 function sheetOf(p){person(p,true);const w=el(`<div class="sheet sheetx on"></div>`);$$("#sheetBody>*").forEach(n=>w.appendChild(n.cloneNode(true)));close();
   $$("h4",w).forEach(h=>{if(/^В подчинении/.test(h.textContent.trim())){const n=h.nextElementSibling;if(n&&n.matches(".subs"))n.remove();h.remove()}});return w}
-function cvOf(key){const w=document.createElement("div");w.innerHTML=CVS[key];const c=w.querySelector(".cv")||w.firstElementChild;if(c)c.classList.add("cvwrap");return c}
+function cvOf(key){const w=document.createElement("div");w.innerHTML=CVS[key];const c=w.querySelector(".cv")||w.firstElementChild;if(c)c.classList.add("cvwrap");
+  // the page shows a short profile above each CV; put it into the PDF right after the CV header
+  if(c&&typeof shortCV==="function"){const sh=document.createElement("div");sh.innerHTML=shortCV(key);const h=c.querySelector(".cvh");[...sh.children].reverse().forEach(n=>h?h.after(n):c.prepend(n))}
+  return c}
 const CVKEY=id=>(typeof CVOF!=="undefined"&&CVOF[id])||null;
 const SECS={
   team:["Структура департамента","Кто кому подчиняется, кто за что отвечает и кого не хватает команде.",()=>[fromPage("tree"),fromPage("load"),fromPage("teamx")]],
@@ -183,10 +186,10 @@ function toPrint(){
 function cover(D,toc,theme){
   const pg=el(`<div class="a4 cover"><div class="rc-hero"><img src="img/mk-intro-blue-poster.webp" alt=""><span class="tag">Makro · yangi zamon</span><span class="tag tag2">Отчёт · 2026</span><div class="rc-word">MARKETING</div></div>
    <div class="rc-main"><div class="rc-kick">Департамент маркетинга и рекламы</div><div class="rc-title">Отчёт для руководства</div>
-   <p class="rc-lead">Кто мы, как работаем, что сделали за год и какие решения нужны, чтобы маркетинг сети рос дальше. Всё по шагам: от цифр и решений к команде и результатам.</p>
+   <p class="rc-lead">Кто мы, как работаем, что сделали за год и какие решения нужны, чтобы маркетинг сети рос дальше. Всё по шагам: цифры, команда и люди, результаты, проблемы и решения, и в конце — что нужно команде.</p>
    <div class="rc-kpi"><div><b>${D.team}</b><span>человек в команде</span></div><div><b>55</b><span>магазинов сети</span></div><div><b>${fmt(D.total/1000,2)} млрд</b><span>сум дохода от партнёров</span></div><div><b>100+</b><span>акций за счёт партнёров</span></div></div>
    <div class="toc">${toc.map((t,i)=>`<div><i>${String(i+1).padStart(2,"0")}</i><span>${t[0]}</span><em>${t[1]}</em></div>`).join("")}</div>
-   <div class="rc-foot"><span>${DATE}</span><span>${theme==="print"?"Версия для печати":"Версия для показа"}</span></div></div></div>`);
+   <div class="rc-foot"><span>${DATE}</span><span>${theme==="print"?"Светлая версия":"Версия для показа"}</span></div></div></div>`);
   return pg}
 
 /* ---------- build ---------- */
@@ -199,7 +202,7 @@ async function build(job){
     add("Дашборд · деньги",dashboard(D));add("Дашборд · команда и решения",[{brk:true},...dashboard2(D)]);
     let n=3;for(const k of ["team"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
     add("Люди",[{brk:true},secHead(String(n++).padStart(2,"0"),"Люди: зоны и резюме","Каждый сотрудник: направления, задачи, сколько ролей совмещает, и резюме."),...people().slice(1)]);
-    for(const k of ["dash","income","done","b2b","need","issues"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
+    for(const k of ["dash","income","done","b2b","issues","need"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
   }else if(job.kind==="dashboard"){add("Дашборд · деньги",dashboard(D));add("Дашборд · команда и решения",[{brk:true},...dashboard2(D)])}
   else if(job.kind==="sec"){const s=SECS[job.id];add(s[0],[secHead("Makro · 2026",s[0],s[1]),...s[2]()]);
     if(job.id==="team"){const ppl=people().filter(x=>!(x.classList&&x.classList.contains("cvwrap"))).filter((x,i,a)=>!(x.brk&&a[i+1]&&a[i+1].brk));

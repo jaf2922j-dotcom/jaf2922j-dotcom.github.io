@@ -189,7 +189,7 @@ function cover(D,toc,theme){
    <p class="rc-lead">Кто мы, как работаем, что сделали за год и какие решения нужны, чтобы маркетинг сети рос дальше. Всё по шагам: цифры, команда и люди, результаты, проблемы и решения, и в конце — что нужно команде.</p>
    <div class="rc-kpi"><div><b>${D.team}</b><span>человек в команде</span></div><div><b>55</b><span>магазинов сети</span></div><div><b>${fmt(D.total/1000,2)} млрд</b><span>сум дохода от партнёров</span></div><div><b>100+</b><span>акций за счёт партнёров</span></div></div>
    <div class="toc">${toc.map((t,i)=>`<div><i>${String(i+1).padStart(2,"0")}</i><span>${t[0]}</span><em>${t[1]}</em></div>`).join("")}</div>
-   <div class="rc-foot"><span>${DATE}</span><span>${theme==="print"?"Светлая версия":"Версия для показа"}</span></div></div></div>`);
+   <div class="rc-foot"><span>${DATE}</span><span>${theme==="print"?"Версия для печати":"Версия для показа"}</span></div></div></div>`);
   return pg}
 
 /* ---------- build ---------- */

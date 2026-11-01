@@ -14,7 +14,7 @@ node marketing/_pdf/build.js http://localhost:8766 cv-kadirov # только о�
 |---|---|
 | `makro-marketing-2026.pdf` | Полный отчёт для руководства, тёмная версия для показа |
 | `makro-marketing-2026-print.pdf` | Тот же отчёт для печати: белый фон, мало краски |
-| `team / dash / income / done / issues / need / b2b.pdf` | Отдельные разделы |
+| `team / dash / income / done / issues / need.pdf` | Отдельные разделы |
 | `cv-*.pdf` | Зоны ответственности, краткий профиль и резюме сотрудника |
 
 - `report.css` — листы A4, обе темы, дашборд.

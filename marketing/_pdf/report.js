@@ -202,7 +202,7 @@ async function build(job){
     add("Дашборд · деньги",dashboard(D));add("Дашборд · команда и решения",[{brk:true},...dashboard2(D)]);
     let n=3;for(const k of ["team"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
     add("Люди",[{brk:true},secHead(String(n++).padStart(2,"0"),"Люди: зоны и резюме","Каждый сотрудник: направления, задачи, сколько ролей совмещает, и резюме."),...people().slice(1)]);
-    for(const k of ["dash","income","done","b2b","issues","need"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
+    for(const k of ["dash","income","done","issues","need"]){const s=SECS[k];add(s[0],[{brk:true},secHead(String(n++).padStart(2,"0"),s[0],s[1]),...s[2]()])}
   }else if(job.kind==="dashboard"){add("Дашборд · деньги",dashboard(D));add("Дашборд · команда и решения",[{brk:true},...dashboard2(D)])}
   else if(job.kind==="sec"){const s=SECS[job.id];add(s[0],[secHead("Makro · 2026",s[0],s[1]),...s[2]()]);
     if(job.id==="team"){const ppl=people().filter(x=>!(x.classList&&x.classList.contains("cvwrap"))).filter((x,i,a)=>!(x.brk&&a[i+1]&&a[i+1].brk));

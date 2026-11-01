@@ -1140,8 +1140,8 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 .htrunk{position:relative;width:1px;height:46px;margin:0 auto;background:linear-gradient(#7FD8E0,#5A4BE0);transform-origin:top}
 .htrunk::after{content:"";position:absolute;left:-2px;top:0;width:5px;height:5px;border-radius:50%;background:#C9F4FF;box-shadow:0 0 10px 3px rgba(201,244,255,.7);animation:hspark 3.2s ease-in infinite}
 @keyframes hspark{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(44px);opacity:0}}
-.hbrs{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-top:36px}
-.hbrs::before{content:"";position:absolute;top:0;height:1px;left:var(--x);right:calc((100% - 40px)/3 - var(--x));background:linear-gradient(90deg,#5A4BE0,#7FD8E0,#5A4BE0)}
+.hbrs{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-top:36px}
+.hbrs::before{content:"";position:absolute;top:0;height:1px;left:var(--x);right:calc((100% - 60px)/4 - var(--x));background:linear-gradient(90deg,#5A4BE0,#7FD8E0,#5A4BE0)}
 .hbr{position:relative;min-width:0}
 .hbr::before{content:"";position:absolute;left:var(--x);top:-36px;height:36px;width:1px;background:#7FD8E0;transform-origin:top}
 .hbn{display:flex;align-items:center;gap:12px;min-height:40px}
@@ -1270,31 +1270,33 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
  <section class="hw htree" aria-labelledby="htt">
   <p class="hkick">Древо разделов</p>
   <h2 id="htt" class="hgold">Всё, что растёт из одной команды</h2>
-  <p class="hsub">Три ветви: люди, результат и развитие. Нажмите на лист, чтобы открыть раздел.</p>
+  <p class="hsub">Четыре ветви: дашборд, команда, результаты, задачи и решения. Нажмите на лист, чтобы открыть раздел.</p>
   <div class="hroot" style="--d:.15s"><span class="hseal">M</span><span><b>Департамент маркетинга</b><small>Makro · одна команда, общий результат</small></span></div>
   <div class="htrunk"></div>
   <div class="hbrs">
    <div class="hbr">
-    <div class="hbn" style="--d:.5s"><i>I</i><span><b>Команда</b><small>люди и зоны ответственности</small></span></div>
+    <div class="hbn" style="--d:0.5s"><i>I</i><span><b>Дашборд</b><small>главное на одном экране</small></span></div>
     <div class="hlv">
-     <div class="hlf" style="--d:.7s"><button class="hleaf" data-go="team" type="button"><span class="n">01</span><h3>Структура и нагрузка</h3><span class="f hgold" data-k="team">7</span><p>Кто за что отвечает: у каждого своё дерево направлений</p><em>Открыть →</em></button></div>
-     <div class="hlf" style="--d:.8s"><button class="hleaf" data-go="cv" type="button"><span class="n">02</span><h3>Резюме</h3><span class="f hgold" data-k="cv">6</span><p>Команда в лицах, каждое резюме в PDF</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:0.7s"><button class="hleaf" data-go="dash" type="button"><span class="n">01</span><h3>Дашборд</h3><span class="f hgold">55<small>магазинов</small></span><p>Маркетинг сети в цифрах</p><em>Открыть →</em></button></div>
     </div>
    </div>
    <div class="hbr">
-    <div class="hbn" style="--d:.6s"><i>II</i><span><b>Результат</b><small>цифры 2026 года</small></span></div>
+    <div class="hbn" style="--d:0.6s"><i>II</i><span><b>Команда</b><small>люди, нагрузка и что нужно</small></span></div>
     <div class="hlv">
-     <div class="hlf" style="--d:.8s"><button class="hleaf" data-go="dash" type="button"><span class="n">03</span><h3>Дашборд</h3><span class="f hgold">55<small>магазинов</small></span><p>Маркетинг сети в цифрах</p><em>Открыть →</em></button></div>
-     <div class="hlf" style="--d:.9s"><button class="hleaf" data-go="income" type="button"><span class="n">04</span><h3>Доходность</h3><span class="f hgold">3,95<small>млрд сум</small></span><p>Доход от партнёров по факту SAP</p><em>Открыть →</em></button></div>
-     <div class="hlf" style="--d:1s"><button class="hleaf" data-go="done" type="button"><span class="n">05</span><h3>Что сделано</h3><span class="f hgold">100+</span><p>Акции, открытия, обновление бренда</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:0.8s"><button class="hleaf" data-go="team" type="button"><span class="n">02</span><h3>Команда</h3><span class="f hgold"><span data-k="team">7</span><small>человек</small></span><p>Структура, нагрузка, что нужно команде и резюме</p><em>Открыть →</em></button></div>
     </div>
    </div>
    <div class="hbr">
-    <div class="hbn" style="--d:.7s"><i>III</i><span><b>Развитие</b><small>следующий шаг</small></span></div>
+    <div class="hbn" style="--d:0.7s"><i>III</i><span><b>Результаты</b><small>2026 год</small></span></div>
     <div class="hlv">
-     <div class="hlf" style="--d:.85s"><button class="hleaf" data-go="need" type="button"><span class="n">06</span><h3>Что нужно команде</h3><span class="f hgold">5<small>решений</small></span><p>Зарплаты, техника, ИИ, бюджет, люди</p><em>Открыть →</em></button></div>
-     <div class="hlf" style="--d:.9s"><button class="hleaf" data-go="issues" type="button"><span class="n">07</span><h3>Задачи и решения</h3><span class="f hgold" data-k="issues">13</span><p>Что усилит команду и доход</p><em>Открыть →</em></button></div>
-     <div class="hlf" style="--d:1s"><button class="hleaf" data-go="kit" type="button"><span class="n">08</span><h3>Медиакит</h3><span class="f hgold"><span data-k="kit">27</span><small>слайдов</small></span><p>Рекламные форматы для партнёров</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:0.85s"><button class="hleaf" data-go="income" type="button"><span class="n">03</span><h3>Доходность и что сделано</h3><span class="f hgold">3,95<small>млрд сум</small></span><p>Доход от партнёров, акции, открытия, бренд</p><em>Открыть →</em></button></div>
+     <div class="hlf" style="--d:0.95s"><button class="hleaf" data-go="kit" type="button"><span class="n">04</span><h3>Медиакит</h3><span class="f hgold"><span data-k="kit">27</span><small>слайдов</small></span><p>Рекламные форматы для партнёров</p><em>Открыть →</em></button></div>
+    </div>
+   </div>
+   <div class="hbr">
+    <div class="hbn" style="--d:0.8s"><i>IV</i><span><b>Задачи и решения</b><small>следующий шаг</small></span></div>
+    <div class="hlv">
+     <div class="hlf" style="--d:0.95s"><button class="hleaf" data-go="issues" type="button"><span class="n">05</span><h3>Задачи и решения</h3><span class="f hgold"><span data-k="issues">17</span></span><p>Проблемы, решения и что нужно от руководства</p><em>Открыть →</em></button></div>
     </div>
    </div>
   </div>
@@ -1313,41 +1315,32 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 
 <!-- PAGES -->
 <section class="page" id="p-team" aria-label="Департамент маркетинга"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">01 · Команда</div><h2>Структура департамента</h2><p>Кто кому подчиняется, кто за что отвечает и кого не хватает команде.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← На главную</button></span></div>
+  <div class="phead reveal r1"><div><div class="eyebrow">02 · Команда</div><h2>Команда: структура и нагрузка</h2><p>Кто кому подчиняется, кто за что отвечает и кого не хватает команде.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← На главную</button></span></div>
   <div class="reveal r2"><div class="tree2" id="tree"></div></div>
   <div class="reveal r2" id="load"></div>
   <div class="reveal r2" id="teamx"></div>
+  <div class="phead reveal r1" id="a-need" style="margin-top:56px"><div><div class="eyebrow">Для руководства и учредителей</div><h2>Что нужно команде</h2><p>Команда работает на пределе и всё равно приносит результат. Чтобы её сохранить, нужны пять решений — по порядку.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf="need" type="button">⤓ Скачать PDF</button></span></div>
+  <div class="reveal r2" id="need"></div>
+  <div class="phead reveal r1" id="a-cv" style="margin-top:56px"><div><div class="eyebrow">Команда в лицах</div><h2>Резюме</h2></div><span class="pacts"><button class="back pdfbtn" data-pdf="cv" type="button">⤓ Скачать резюме (PDF)</button></span></div>
+  <div class="reveal r2" id="cv"></div>
   </div></section>
 
 <section class="page" id="p-dash" aria-label="Дашборд"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">Дашборд · октябрь 2026</div><h2>Маркетинг Makro в цифрах</h2><p>Главное о департаменте на одном экране: сеть, команда, результаты за 6 месяцев, рекламные продажи и статус проблем.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
+  <div class="phead reveal r1"><div><div class="eyebrow">01 · Дашборд · октябрь 2026</div><h2>Маркетинг Makro в цифрах</h2><p>Главное о департаменте на одном экране: сеть, команда, результаты за 6 месяцев, рекламные продажи и статус проблем.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="dash"></div>
 </div></section>
 
 <section class="page" id="p-income" aria-label="Доходность"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">Доходность · 2026</div><h2>Что продали и сколько</h2><p>Факт дохода от поставщиков за 2026 год: кто и за что платил, что продали вместе с коммерцией и почему сейчас доход снижается.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
+  <div class="phead reveal r1"><div><div class="eyebrow"> 03 · Результаты 2026</div><h2>Доходность: что продали и сколько</h2><p>Факт дохода от поставщиков за 2026 год: кто и за что платил, что продали вместе с коммерцией и почему сейчас доход снижается.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="income"></div>
-</div></section>
-
-<section class="page" id="p-done" aria-label="Что сделано за 6 месяцев"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">Отчёт · 6 месяцев</div><h2>Что сделано</h2><p>Новая команда маркетинга: 6–8 человек, один департамент, сотни задач. Нажмите на фото, чтобы увеличить.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
+  <div class="phead reveal r1" id="a-done" style="margin-top:56px"><div><div class="eyebrow">Отчёт · 6 месяцев</div><h2>Что сделано</h2><p>Новая команда маркетинга: 6–8 человек, один департамент, сотни задач. Нажмите на фото, чтобы увеличить.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf="done" type="button">⤓ Скачать PDF</button></span></div>
   <div class="reveal r2" id="done"></div>
 </div></section>
 
 
-<section class="page" id="p-need" aria-label="Что нужно команде"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">Для руководства и учредителей</div><h2>Что нужно команде</h2><p>Команда маркетинга работает на пределе и всё равно приносит результат. Чтобы её сохранить, нужны пять решений — по порядку.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
-  <div class="reveal r2" id="need"></div>
-</div></section>
-
 <section class="page" id="p-issues" aria-label="Проблемы и решения"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">Для руководства</div><h2>Проблемы и решения</h2><p>С чем столкнулись, как решили, что осталось и какие решения нужны от руководства. Ниже — готовые ответы на главные вопросы.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
+  <div class="phead reveal r1"><div><div class="eyebrow">05 · Задачи и решения</div><h2>Проблемы и решения</h2><p>С чем столкнулись, как решили, что осталось и какие решения нужны от руководства. Ниже — готовые ответы на главные вопросы.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="issues"></div>
-</div></section>
-
-<section class="page" id="p-cv" aria-label="Резюме"><div class="pin">
-  <div class="phead reveal r1"><div><div class="eyebrow">JD works</div><h2>Резюме</h2></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать резюме (PDF)</button><button class="back" data-home>← Назад</button></span></div>
-  <div class="reveal r2" id="cv"></div>
 </div></section>
 
 <div class="lb" id="lb"><button type="button">✕ Закрыть</button><img alt=""></div>
@@ -1697,8 +1690,10 @@ addEventListener("keydown",e=>{if(!deck.classList.contains("open"))return;if(e.k
 /* ---- pages ---- */
 const pages=[...document.querySelectorAll(".page")];
 let current=null;
+const ALIAS={cv:["team","a-cv"],need:["team","a-need"],done:["income","a-done"]};
 function go(id,x,y){
   if(id==="kit"){openDeck(x,y);return}
+  if(ALIAS[id]){const [pg,anc]=ALIAS[id];go(pg,x,y);setTimeout(()=>{const a=document.getElementById(anc);if(a)a.scrollIntoView({block:"start"})},450);return}
   pages.forEach(p=>{const on=p.id==="p-"+id;if(on){p.style.clipPath="";p.style.setProperty("--ox",(x??innerWidth/2)+"px");p.style.setProperty("--oy",(y??innerHeight/2)+"px")}p.classList.toggle("open",on)});
   current=id;const p=document.getElementById("p-"+id);if(p)p.scrollTop=0;
   try{history.replaceState(null,"","#"+id)}catch(_){}
@@ -2380,7 +2375,7 @@ CVOF.kadirov="kadirov";
 
 
 renderCV("jd");
-document.getElementById("cv").addEventListener("click",e=>{const b=e.target.closest("[data-cvt]");if(b){renderCV(b.dataset.cvt);document.getElementById("p-cv").scrollTo({top:0,behavior:"smooth"})}});
+document.getElementById("cv").addEventListener("click",e=>{const b=e.target.closest("[data-cvt]");if(b){renderCV(b.dataset.cvt);document.getElementById("a-cv").scrollIntoView({block:"start",behavior:"smooth"})}});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-opencv]");if(!b)return;close();renderCV(b.dataset.opencv);go("cv")});
 
 

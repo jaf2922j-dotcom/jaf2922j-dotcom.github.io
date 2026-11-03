@@ -1249,7 +1249,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 <div class="home2 intro lock" id="home2">
  <div class="hstage full" id="hstage">
   <img class="hposter" src="img/mk-intro-blue-poster.webp" alt="">
-  <video id="hvid" src="img/mk-intro-blue.mp4" muted playsinline preload="auto" aria-label="Заставка MARKETING"></video>
+  <video id="hvid" muted playsinline preload="none" aria-label="Заставка MARKETING"></video>
   <div class="hhead hw"><span>Департамент · 2026</span></div>
   <button class="hskip" id="hskip" type="button">Пропустить</button>
  </div>
@@ -1307,7 +1307,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 </div>
 
 
-<div class="deck" id="deck" aria-hidden="true" role="dialog" aria-label="Медиакит 2026">
+<div class="deck idle" id="deck" aria-hidden="true" role="dialog" aria-label="Медиакит 2026">
   <div class="dtop"><img id="dlogo" alt="makro yangi zamon"><span class="dcount" id="dcount">01 / 27</span><button class="dx" id="dclose">✕ Закрыть</button></div>
   <div class="dstage" id="dstage"></div>
   <button class="more" id="dmore" aria-label="Листать вниз">↓ ещё</button>
@@ -1315,7 +1315,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 </div>
 
 <!-- PAGES -->
-<section class="page" id="p-team" aria-label="Департамент маркетинга"><div class="pin">
+<section class="page idle" id="p-team" aria-label="Департамент маркетинга"><div class="pin">
   <div class="phead reveal r1"><div><div class="eyebrow">02 · Команда</div><h2>Команда: структура и нагрузка</h2><p>Кто кому подчиняется, кто за что отвечает и кого не хватает команде.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← На главную</button></span></div>
   <div class="reveal r2"><div class="tree2" id="tree"></div></div>
   <div class="reveal r2" id="load"></div>
@@ -1326,12 +1326,12 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
   <div class="reveal r2" id="cv"></div>
   </div></section>
 
-<section class="page" id="p-dash" aria-label="Дашборд"><div class="pin">
+<section class="page idle" id="p-dash" aria-label="Дашборд"><div class="pin">
   <div class="phead reveal r1"><div><div class="eyebrow">01 · Дашборд · октябрь 2026</div><h2>Маркетинг Makro в цифрах</h2><p>Главное о департаменте на одном экране: сеть, команда, результаты за 6 месяцев, рекламные продажи и статус проблем.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="dash"></div>
 </div></section>
 
-<section class="page" id="p-income" aria-label="Доходность"><div class="pin">
+<section class="page idle" id="p-income" aria-label="Доходность"><div class="pin">
   <div class="phead reveal r1"><div><div class="eyebrow"> 03 · Результаты 2026</div><h2>Доходность: что продали и сколько</h2><p>Факт дохода от поставщиков за 2026 год: кто и за что платил, что продали вместе с коммерцией и почему сейчас доход снижается.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="income"></div>
   <div class="phead reveal r1" id="a-done" style="margin-top:56px"><div><div class="eyebrow">Отчёт · 6 месяцев</div><h2>Что сделано</h2><p>Команда маркетинга: 7 человек, один департамент, сотни задач. Нажмите на фото, чтобы увеличить.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf="done" type="button">⤓ Скачать PDF</button></span></div>
@@ -1339,7 +1339,7 @@ h1,h2,h3{font-weight:700;letter-spacing:.01em}
 </div></section>
 
 
-<section class="page" id="p-issues" aria-label="Проблемы и решения"><div class="pin">
+<section class="page idle" id="p-issues" aria-label="Проблемы и решения"><div class="pin">
   <div class="phead reveal r1"><div><div class="eyebrow">05 · Задачи и решения</div><h2>Проблемы и решения</h2><p>С чем столкнулись, как решили, что осталось и какие решения нужны от руководства. Ниже — готовые ответы на главные вопросы.</p></div><span class="pacts"><button class="back pdfbtn" data-pdf type="button">⤓ Скачать PDF</button><button class="back" data-home>← Назад</button></span></div>
   <div class="reveal r2" id="issues"></div>
 </div></section>
@@ -1678,8 +1678,8 @@ dprog.onclick=e=>{const b=e.target.closest("[data-di]");if(b)show(+b.dataset.di)
 let sw=null;stage.addEventListener("pointerdown",e=>{sw={x:e.clientX,y:e.clientY,t:performance.now()}});
 stage.addEventListener("pointerup",e=>{if(!sw)return;const dx=e.clientX-sw.x,dy=e.clientY-sw.y;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4&&performance.now()-sw.t<700)show(di+(dx<0?1:-1));sw=null});
 deck.addEventListener("pointermove",e=>{deck.style.setProperty("--px",(e.clientX/innerWidth-.5).toFixed(3));deck.style.setProperty("--py",(e.clientY/innerHeight-.5).toFixed(3))},{passive:true});
-function openDeck(x,y){deck.style.setProperty("--ox",(x??innerWidth/2)+"px");deck.style.setProperty("--oy",(y??innerHeight/2)+"px");deck.classList.add("open");deck.setAttribute("aria-hidden","false");current="kit";show(0,1);try{history.replaceState(null,"","#kit")}catch(_){}}
-function closeDeck(){deck.classList.remove("open");homeVid(true);deck.setAttribute("aria-hidden","true");current=null;SL.forEach(s=>s.classList.remove("on"));try{history.replaceState(null,"",location.pathname)}catch(_){}}
+function openDeck(x,y){deck.classList.remove("idle");deck.style.setProperty("--ox",(x??innerWidth/2)+"px");deck.style.setProperty("--oy",(y??innerHeight/2)+"px");deck.classList.add("open");deck.setAttribute("aria-hidden","false");current="kit";show(0,1);try{history.replaceState(null,"","#kit")}catch(_){}}
+function closeDeck(){deck.classList.remove("open");setTimeout(()=>{if(!deck.classList.contains("open"))deck.classList.add("idle")},1100);homeVid(true);deck.setAttribute("aria-hidden","true");current=null;SL.forEach(s=>s.classList.remove("on"));try{history.replaceState(null,"",location.pathname)}catch(_){}}
 document.getElementById("dclose").onclick=closeDeck;
 function checkMore(){const x=SL[di];deck.classList.toggle("hasmore",x.scrollHeight-x.clientHeight-x.scrollTop>40)}
 SL.forEach(x=>x.addEventListener("scroll",()=>{if(x===SL[di])checkMore()},{passive:true}));
@@ -1689,22 +1689,25 @@ addEventListener("keydown",e=>{if(!deck.classList.contains("open"))return;if(e.k
 
 
 /* ---- pages ---- */
-const pages=[...document.querySelectorAll(".page")];
+/* photos load only when their page or card opens (all at once for the PDF robot) */
+function lazyBg(root){root.querySelectorAll("[data-bg]").forEach(e=>{e.style.backgroundImage="url("+e.dataset.bg+")";e.removeAttribute("data-bg")})}
+const pages=[...document.querySelectorAll(".page")];pages.forEach(p=>p.classList.add("idle"));
+const idleLater=()=>setTimeout(()=>pages.forEach(p=>{if(!p.classList.contains("open"))p.classList.add("idle")}),900);
 let current=null;
 const ALIAS={cv:["team","a-cv"],need:["team","a-need"],done:["income","a-done"]};
 function go(id,x,y){
   if(id==="kit"){openDeck(x,y);return}
   if(ALIAS[id]){const [pg,anc]=ALIAS[id];go(pg,x,y);setTimeout(()=>{const a=document.getElementById(anc);if(a)a.scrollIntoView({block:"start"})},450);return}
-  pages.forEach(p=>{const on=p.id==="p-"+id;if(on){p.style.clipPath="";p.style.setProperty("--ox",(x??innerWidth/2)+"px");p.style.setProperty("--oy",(y??innerHeight/2)+"px")}p.classList.toggle("open",on)});
-  current=id;const p=document.getElementById("p-"+id);if(p)p.scrollTop=0;
+  pages.forEach(p=>{const on=p.id==="p-"+id;if(on){p.classList.remove("idle");p.style.clipPath="";p.style.setProperty("--ox",(x??innerWidth/2)+"px");p.style.setProperty("--oy",(y??innerHeight/2)+"px")}p.classList.toggle("open",on)});
+  current=id;idleLater();const p=document.getElementById("p-"+id);if(p){p.scrollTop=0;lazyBg(p)}
   try{history.replaceState(null,"","#"+id)}catch(_){}
 }
-function home(){pages.forEach(p=>p.classList.remove("open"));current=null;homeVid(true);try{history.replaceState(null,"",location.pathname)}catch(_){}}
+function home(){pages.forEach(p=>p.classList.remove("open"));idleLater();current=null;homeVid(true);try{history.replaceState(null,"",location.pathname)}catch(_){}}
 document.querySelectorAll("[data-home]").forEach(b=>{b.textContent="← Назад";b.onclick=home});
 
 /* ---- detail sheet ---- */
 const sheet=document.getElementById("sheet"),scrim=document.getElementById("scrim"),sb=document.getElementById("sheetBody");
-function open(h){sheet.classList.toggle("green",current==="kit");sheet.classList.toggle("wide",h.includes('class="rz"'));sb.innerHTML=h;sheet.scrollTop=0;sheet.classList.add("on");scrim.classList.add("on")}
+function open(h){sheet.classList.toggle("green",current==="kit");sheet.classList.toggle("wide",h.includes('class="rz"'));sb.innerHTML=h;lazyBg(sb);sheet.scrollTop=0;sheet.classList.add("on");scrim.classList.add("on")}
 function close(){sheet.classList.remove("on");scrim.classList.remove("on")}
 document.getElementById("close").onclick=close;scrim.onclick=close;
 addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(sheet.classList.contains("on"))close();else if(current&&current!=="kit")home()});
@@ -1733,7 +1736,7 @@ const DONE={"i101": "img/57c0e5d99a81.webp","i102": "img/f506838788b8.webp","i10
 const im=k=>DONE["i"+k];
 const fmtN=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g," ");
 const gdefs=`<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b68ff"/><stop offset=".5" stop-color="#6fa6cf"/><stop offset="1" stop-color="#8fe8ee"/></linearGradient></defs></svg>`;
-const gallery=(ks,cls="")=>`<div class="gal3 ${cls}">${ks.map(k=>`<button data-lb="${k}" style="background-image:url(${im(k)})" aria-label="Открыть фото"></button>`).join("")}</div>`;
+const gallery=(ks,cls="")=>`<div class="gal3 ${cls}">${ks.map(k=>`<button data-lb="${k}" data-bg="${im(k)}" aria-label="Открыть фото"></button>`).join("")}</div>`;
 
 /* ---------- data from the 6-month report ---------- */
 const STORES=[
@@ -1856,7 +1859,7 @@ function buildDone(){
  document.getElementById("done").innerHTML=`
  <nav class="dnav"><a href="#d-st">Открытия</a><a href="#d-rb">Ребрендинг</a><a href="#d-pr">Промо</a><a href="#d-up">Обновление магазинов</a><a href="#d-po">POSM</a><a href="#d-ad">Рекламные продажи</a><a href="#d-dg">Digital</a><a href="#d-mk">Медиакит</a></nav>
  <section class="dsec" id="d-st"><header><div><div class="dsn">01</div><h3>Открытие 9 новых магазинов</h3><p>Все новые магазины открывались уже в концепции Makro yangi zamon: праздник с ведущим и ди-джеем, розыгрыши, новая навигация и логотипы.</p></div><div class="bignum"><span class="gnum">9</span><span>магазинов за 6 месяцев</span></div></header>
-  <div class="stores">${STORES.map((s,i)=>`<button class="store" data-store="${i}"><span class="im" style="${s.k?`background-image:url(${im(s.k)})`:"background:linear-gradient(135deg,#1b2f6b,#0c1328)"}">${s.k?"":`<b style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8fe8ee;font-family:var(--brand);font-size:18px">Makro ${s.n}</b>`}<em>${String(i+1).padStart(2,"0")}</em></span><span class="tx"><b>Makro ${s.n}</b><small>${s.c?s.c+" · ":""}${s.t}</small></span></button>`).join("")}</div></section>
+  <div class="stores">${STORES.map((s,i)=>`<button class="store" data-store="${i}"><span class="im" ${s.k?`data-bg="${im(s.k)}"`:`style="background:linear-gradient(135deg,#1b2f6b,#0c1328)"`}>${s.k?"":`<b style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8fe8ee;font-family:var(--brand);font-size:18px">Makro ${s.n}</b>`}<em>${String(i+1).padStart(2,"0")}</em></span><span class="tx"><b>Makro ${s.n}</b><small>${s.c?s.c+" · ":""}${s.t}</small></span></button>`).join("")}</div></section>
  <section class="dsec" id="d-rb"><header><div><div class="dsn">02</div><h3>Ребрендинг · Makro yangi zamon</h3><p>Новый визуальный стиль, оформление магазинов, рекламные материалы, единая навигация и digital. Бренд выглядит одинаково во всех точках контакта.</p></div></header>
   <div class="split"><div class="gcard"><div class="glab">Что обновили</div><div class="chain2"><span>Компания</span><i>→</i><span>Соцсети</span><i>→</i><span>Сайт</span><i>→</i><span>Приложение</span><i>→</i><span>Магазины и реклама</span></div>
    <ul class="blist" style="margin-top:16px"><li>Современный визуальный стиль</li><li>Обновлённое оформление магазинов</li><li>Новые рекламные материалы</li><li>Единый подход к навигации</li><li>Новый подход к клиентскому опыту</li></ul></div>
@@ -1866,9 +1869,9 @@ function buildDone(){
   <div class="split" style="margin-top:12px"><div class="gcard"><div class="glab">4 крупные кампании</div><ol class="olist"><li><span>Путёвка в Египет</span><small></small></li><li><span>Путёвка во Вьетнам</span><small></small></li><li><span>Sardor Snack · 3 приза каждую неделю</span><small></small></li><li><span>«Призы за покупки» · скретч-карты</span><small>1 месяц</small></li></ol></div>
    <div><div class="glab">Кампании и победители</div>${gallery([46,55,56,57,58,59,60,61,62])}</div></div>
   <div class="gcard sdw" style="margin-top:12px"><div class="sdw-h"><div><div class="glab">Промо без бюджета компании</div><h4>Все промоакции — за счёт поставщиков</h4><p>Бюджет на промо компании не выделялся. Призы, путёвки и подарки оплачивали поставщики и бренды-партнёры. Маркетинг придумывал механику, договаривался с партнёрами и проводил акции во всех магазинах.</p></div><div class="bignum"><span class="gnum">0 сум</span><span>бюджета компании</span></div></div>
-   <div class="sdw-ks"><div class="sdw-k"><button class="sdw-p" data-lb="112" style="background-image:url(${im(112)})" aria-label="Sweet Premium × Makro"></button><div><div class="glab">Sweet Premium × Makro</div><b>Путёвка во Вьетнам</b><ul><li>01.06–14.06.2026</li><li>Покупка от 250 000 сум</li><li>Мороженое GelatoMadre</li></ul></div></div><div class="sdw-k"><button class="sdw-p" data-lb="113" style="background-image:url(${im(113)})" aria-label="Скретч-карты «100% sovg‘a, 0% xavf»"></button><div><div class="glab">Скретч-карты «100% sovg‘a, 0% xavf»</div><b>Подарок в каждой карте</b><ul><li>23.02–23.03.2026, все магазины Makro</li><li>1 карта за каждые 100 000 сум + карта за товар партнёров</li><li>Партнёр акции Yandex Music и ещё 10 брендов: Rozmetov, SAFI, Chococrem, «Доброе деревенское утро», Bavi, «Бархатные ручки», JUFT, «Зелёный чай», Tillo Domor, PaperMints</li><li>Призы: телевизор, стиральная машина, кондиционер, скидки, Yandex Plus</li></ul></div></div><div class="sdw-k"><button class="sdw-p" data-lb="103" style="background-image:url(${im(103)})" aria-label="Sardor Snack × Makro"></button><div><div class="glab">Sardor Snack × Makro</div><b>Розыгрыш призов</b><ul><li>3 приза каждую неделю</li><li>Покупка продукции Sardor Snack в Makro</li><li>Техника и гаджеты, победители ниже</li></ul></div></div></div>
+   <div class="sdw-ks"><div class="sdw-k"><button class="sdw-p" data-lb="112" data-bg="${im(112)}" aria-label="Sweet Premium × Makro"></button><div><div class="glab">Sweet Premium × Makro</div><b>Путёвка во Вьетнам</b><ul><li>01.06–14.06.2026</li><li>Покупка от 250 000 сум</li><li>Мороженое GelatoMadre</li></ul></div></div><div class="sdw-k"><button class="sdw-p" data-lb="113" data-bg="${im(113)}" aria-label="Скретч-карты «100% sovg‘a, 0% xavf»"></button><div><div class="glab">Скретч-карты «100% sovg‘a, 0% xavf»</div><b>Подарок в каждой карте</b><ul><li>23.02–23.03.2026, все магазины Makro</li><li>1 карта за каждые 100 000 сум + карта за товар партнёров</li><li>Партнёр акции Yandex Music и ещё 10 брендов: Rozmetov, SAFI, Chococrem, «Доброе деревенское утро», Bavi, «Бархатные ручки», JUFT, «Зелёный чай», Tillo Domor, PaperMints</li><li>Призы: телевизор, стиральная машина, кондиционер, скидки, Yandex Plus</li></ul></div></div><div class="sdw-k"><button class="sdw-p" data-lb="103" data-bg="${im(103)}" aria-label="Sardor Snack × Makro"></button><div><div class="glab">Sardor Snack × Makro</div><b>Розыгрыш призов</b><ul><li>3 приза каждую неделю</li><li>Покупка продукции Sardor Snack в Makro</li><li>Техника и гаджеты, победители ниже</li></ul></div></div></div>
    <div class="sdw-h" style="margin-top:26px"><div><div class="glab">Sardor Snack · победители</div><h4>Призы получили покупатели Makro</h4></div><div class="bignum"><span class="gnum">11</span><span>победителей на фото</span></div></div>
-   <div class="sdw-g"><button class="sdw-c" data-lb="101" style="background-image:url(${im(101)})" aria-label="Кофемашина Sonifer"><span><i>1-й победитель</i><b>Кофемашина Sonifer</b></span></button><button class="sdw-c" data-lb="102" style="background-image:url(${im(102)})" aria-label="Холодильник и микроволновка LG"><span><i>2-й победитель</i><b>Холодильник и микроволновка LG</b></span></button><button class="sdw-c" data-lb="103" style="background-image:url(${im(103)})" aria-label="PlayStation 5"><span><i>8-й победитель</i><b>PlayStation 5</b></span></button><button class="sdw-c" data-lb="104" style="background-image:url(${im(104)})" aria-label="Робот-пылесос Dreame F21"><span><i>9-й победитель</i><b>Робот-пылесос Dreame F21</b></span></button><button class="sdw-c" data-lb="105" style="background-image:url(${im(105)})" aria-label="Аэрогриль Hofmann"><span><i>10-й победитель</i><b>Аэрогриль Hofmann</b></span></button><button class="sdw-c" data-lb="106" style="background-image:url(${im(106)})" aria-label="Планшет Blackview"><span><b>Планшет Blackview</b></span></button><button class="sdw-c" data-lb="107" style="background-image:url(${im(107)})" aria-label="Часы Samsung Galaxy Watch"><span><b>Часы Samsung Galaxy Watch</b></span></button><button class="sdw-c" data-lb="108" style="background-image:url(${im(108)})" aria-label="Телевизор Premier QLED 65″"><span><b>Телевизор Premier QLED 65″</b></span></button><button class="sdw-c" data-lb="109" style="background-image:url(${im(109)})" aria-label="Пылесос Dreame R10S Lite"><span><b>Пылесос Dreame R10S Lite</b></span></button><button class="sdw-c" data-lb="110" style="background-image:url(${im(110)})" aria-label="Мультиварка Redmond"><span><b>Мультиварка Redmond</b></span></button><button class="sdw-c" data-lb="111" style="background-image:url(${im(111)})" aria-label="Ноутбук HP OmniBook 3"><span><b>Ноутбук HP OmniBook 3</b></span></button></div></div></section>
+   <div class="sdw-g"><button class="sdw-c" data-lb="101" data-bg="${im(101)}" aria-label="Кофемашина Sonifer"><span><i>1-й победитель</i><b>Кофемашина Sonifer</b></span></button><button class="sdw-c" data-lb="102" data-bg="${im(102)}" aria-label="Холодильник и микроволновка LG"><span><i>2-й победитель</i><b>Холодильник и микроволновка LG</b></span></button><button class="sdw-c" data-lb="103" data-bg="${im(103)}" aria-label="PlayStation 5"><span><i>8-й победитель</i><b>PlayStation 5</b></span></button><button class="sdw-c" data-lb="104" data-bg="${im(104)}" aria-label="Робот-пылесос Dreame F21"><span><i>9-й победитель</i><b>Робот-пылесос Dreame F21</b></span></button><button class="sdw-c" data-lb="105" data-bg="${im(105)}" aria-label="Аэрогриль Hofmann"><span><i>10-й победитель</i><b>Аэрогриль Hofmann</b></span></button><button class="sdw-c" data-lb="106" data-bg="${im(106)}" aria-label="Планшет Blackview"><span><b>Планшет Blackview</b></span></button><button class="sdw-c" data-lb="107" data-bg="${im(107)}" aria-label="Часы Samsung Galaxy Watch"><span><b>Часы Samsung Galaxy Watch</b></span></button><button class="sdw-c" data-lb="108" data-bg="${im(108)}" aria-label="Телевизор Premier QLED 65″"><span><b>Телевизор Premier QLED 65″</b></span></button><button class="sdw-c" data-lb="109" data-bg="${im(109)}" aria-label="Пылесос Dreame R10S Lite"><span><b>Пылесос Dreame R10S Lite</b></span></button><button class="sdw-c" data-lb="110" data-bg="${im(110)}" aria-label="Мультиварка Redmond"><span><b>Мультиварка Redmond</b></span></button><button class="sdw-c" data-lb="111" data-bg="${im(111)}" aria-label="Ноутбук HP OmniBook 3"><span><b>Ноутбук HP OmniBook 3</b></span></button></div></div></section>
  <section class="dsec" id="d-up"><header><div><div class="dsn">04</div><h3>Обновление магазинов и навигация</h3><p>Магазины стали заметнее, оформление единым, бренд сильнее в точке продаж.</p></div></header>
   <div class="tri3" style="margin-bottom:14px"><div><div class="gnum">14+</div><span>маркетов обновлено</span></div><div><div class="gnum">45</div><span>указателей установлено</span></div><div><div class="gnum">42</div><span>фасадных флажка · итого 87 элементов</span></div></div>
   ${gallery([63,64,65,68,69,72,73,75])}</section>
@@ -1876,8 +1879,8 @@ function buildDone(){
   ${gallery([78])}<div class="nph-note">Скидочные указатели и ценники в едином стиле: делали, фото пока нет.</div></section>
  <section class="dsec" id="d-ad"><header><div><div class="dsn">06</div><h3>Makro — рекламная платформа</h3><p>Каждая точка контакта с покупателем стала рекламной площадкой: фасады, LED, кассовые зоны и лотки, торговый зал, тележки, служебный транспорт, POSM. Продажи — вместе с коммерческим департаментом.</p></div><div class="bignum"><span class="gnum">~1,8</span><span>млрд сум договоров</span></div></header>
   <div class="deals">
-   <div class="gcard deal"><div class="im" data-lb="86" style="background-image:url(${im(86)})"></div><div class="glab">Rozmetov × Makro</div><div class="gnum">~1 млрд</div><p>Кассовые зоны, кассовые лотки, фасадная баннерная реклама.</p></div>
-   <div class="gcard deal"><div class="im" data-lb="89" style="background-image:url(${im(89)})"></div><div class="glab">Pepsi × Makro</div><div class="gnum">800 млн</div><p>Реклама на служебном автотранспорте Makro.</p></div>
+   <div class="gcard deal"><div class="im" data-lb="86" data-bg="${im(86)}"></div><div class="glab">Rozmetov × Makro</div><div class="gnum">~1 млрд</div><p>Кассовые зоны, кассовые лотки, фасадная баннерная реклама.</p></div>
+   <div class="gcard deal"><div class="im" data-lb="89" data-bg="${im(89)}"></div><div class="glab">Pepsi × Makro</div><div class="gnum">800 млн</div><p>Реклама на служебном автотранспорте Makro.</p></div>
    <div class="gcard deal"><div class="im nph"><span>Фото пока нет</span></div><div class="glab">Bahroma × Makro</div><div class="gnum">10 млн/мес</div><p>LED-панель при стандарте 2,5 млн. В ролике показан и бренд Makro.</p></div>
   </div>
   <div class="gcard" style="margin-top:12px"><div class="glab">Ещё по рекламе</div><ul class="blist"><li>Новый прайс на рекламные зоны: доход +10–20%</li><li>10+ новых партнёров и рекламодателей</li><li>Аудит 30–60 магазинов: POSM, навигация, протоколы</li></ul></div>
@@ -2112,10 +2115,10 @@ function buildIncome(){
  </div>
  <div class="glab" style="margin-top:34px">Что продано · вместе с коммерческим департаментом</div>
  <div class="sold">
-  <div class="srow"><div class="sim" data-lb="86" style="background-image:url(${im(86)})"></div><div><b>Rozmetov</b><small>Кассовые зоны, кассовые лотки, фасадная баннерная реклама</small></div><div class="sbar"><i style="width:100%"></i></div><div class="gnum">~1 млрд</div></div>
-  <div class="srow"><div class="sim" data-lb="89" style="background-image:url(${im(89)})"></div><div><b>Pepsi</b><small>Реклама на служебном автотранспорте Makro</small></div><div class="sbar"><i style="width:80%"></i></div><div class="gnum">800 млн</div></div>
+  <div class="srow"><div class="sim" data-lb="86" data-bg="${im(86)}"></div><div><b>Rozmetov</b><small>Кассовые зоны, кассовые лотки, фасадная баннерная реклама</small></div><div class="sbar"><i style="width:100%"></i></div><div class="gnum">~1 млрд</div></div>
+  <div class="srow"><div class="sim" data-lb="89" data-bg="${im(89)}"></div><div><b>Pepsi</b><small>Реклама на служебном автотранспорте Makro</small></div><div class="sbar"><i style="width:80%"></i></div><div class="gnum">800 млн</div></div>
   <div class="srow"><div class="sim nph"><span>нет фото</span></div><div><b>Bahroma</b><small>LED-панель · в ролике показан и бренд Makro</small></div><div class="sbar"><i style="width:4%"></i></div><div class="gnum">10 млн<small style="font-size:.45em">/мес</small></div></div>
-  <div class="srow"><div class="sim" data-lb="55" style="background-image:url(${im(55)})"></div><div><b>Промо и розыгрыши</b><small>Египет, Вьетнам, Sardor Snack, скретч-карты — призы и бюджет от партнёров</small></div><div class="sbar"><i style="width:0"></i></div><div class="gnum">экономия</div></div>
+  <div class="srow"><div class="sim" data-lb="55" data-bg="${im(55)}"></div><div><b>Промо и розыгрыши</b><small>Египет, Вьетнам, Sardor Snack, скретч-карты — призы и бюджет от партнёров</small></div><div class="sbar"><i style="width:0"></i></div><div class="gnum">экономия</div></div>
  </div>
  <div class="dgrid">
   <div class="gcard"><div class="glab">Что принёс медиакит</div><ul class="blist"><li>Все рекламные поверхности 55 магазинов замерены и описаны</li><li>Единый прайс: 14 форматов + 6 форматов ДМП</li><li>10+ новых партнёров и рекламодателей</li><li>Коммерция продаёт по готовому документу, а не «на глаз»</li></ul><button class="cta" data-goto="kit">Открыть медиакит →</button></div>
@@ -2146,6 +2149,7 @@ function buildIncome(){
 buildIncome();
 
 buildDash();buildDone();buildIssues();buildNeed();buildCV();
+if(navigator.webdriver){lazyBg(document);document.querySelectorAll(".idle").forEach(e=>e.classList.remove("idle"))}
 CVS.ib=(function(){
  const jobs=[["DesX print","Полиграфия и наружная реклама","Графический дизайнер",2019+8/12,2021+1/12,"Сен 2019 — фев 2021"],
   ["Ali print","Полиграфия и наружная реклама","Графический дизайнер",2021+1/12,2024+1/12,"Фев 2021 — фев 2024"],
@@ -2447,24 +2451,28 @@ buildLoad();
 /* ---- home: video intro → band, tree leaves open pages ---- */
 const h2=document.getElementById("home2"),hst=document.getElementById("hstage"),hv=document.getElementById("hvid"),HLOOP=5.0,HEND=7.88;
 let hDone=false;
+// phones: lighter 720p file, no endless loop after the intro (the poster shows the same final frame)
+const LITE=matchMedia("(max-width:760px),(pointer:coarse)").matches;
+function vSrc(){if(!hv.getAttribute("src")){hv.preload="auto";hv.src=LITE?"img/mk-intro-blue-720.mp4":"img/mk-intro-blue.mp4"}}
 {const K={team:TEAM.filter(p=>!p.team).length,cv:Object.keys(CVS).length,issues:ISSUES.length,kit:SL.length};
  h2.querySelectorAll("[data-k]").forEach(el=>{if(K[el.dataset.k])el.textContent=K[el.dataset.k]})}
 // after the intro only the calm tail (the light sweep over MARKETING) keeps looping in the band
-hv.addEventListener("timeupdate",()=>{if(hDone&&hv.currentTime>HEND)hv.currentTime=HLOOP});
-function homeVid(on){if(!hDone)return;if(on){hv.play().catch(()=>{})}else hv.pause()}
+hv.addEventListener("timeupdate",()=>{if(hDone&&!LITE&&hv.currentTime>HEND)hv.currentTime=HLOOP});
+function homeVid(on){if(!hDone)return;if(LITE){hv.pause();return}if(on){vSrc();hv.play().catch(()=>{})}else hv.pause()}
 function hSettle(){
  if(hDone)return;hDone=true;
  hst.classList.remove("full");h2.classList.remove("lock");
  setTimeout(()=>h2.classList.remove("intro"),350);
  // jump to the calm tail; keep the video hidden (poster = same final frame) until the seek has landed
+ if(LITE){hv.pause();hv.classList.add("wait")}else{vSrc();
  if(hv.currentTime<HLOOP){hv.classList.add("wait");
   const seek=()=>{hv.addEventListener("seeked",vShow,{once:true});hv.currentTime=HLOOP};
   if(hv.readyState<1)hv.addEventListener("loadedmetadata",seek,{once:true});else seek()}
- if(!current)hv.play().catch(()=>{});
+ if(!current)hv.play().catch(()=>{});}
  try{sessionStorage.setItem("mkIntro","1")}catch(_){}
 }
 function hStart(){
- hDone=false;hst.classList.add("full");h2.classList.add("intro","lock");h2.scrollTop=0;
+ vSrc();hDone=false;hst.classList.add("full");h2.classList.add("intro","lock");h2.scrollTop=0;
  // black screen until the first frame really plays: no poster, no half-loaded frame
  hv.classList.add("wait");hv.pause();hv.currentTime=0;
  hv.addEventListener("playing",vShow,{once:true});
@@ -2474,7 +2482,7 @@ function vShow(){
  const on=()=>hv.classList.remove("wait");
  if(hv.requestVideoFrameCallback)hv.requestVideoFrameCallback(on);else requestAnimationFrame(on);
 }
-hv.addEventListener("ended",()=>{hSettle();hv.currentTime=HLOOP;if(!current)hv.play().catch(()=>{})});
+hv.addEventListener("ended",()=>{hSettle();if(LITE)return;hv.currentTime=HLOOP;if(!current)hv.play().catch(()=>{})});
 document.getElementById("hskip").addEventListener("click",e=>{e.stopPropagation();hSettle()});
 hst.addEventListener("click",()=>{if(hst.classList.contains("full"))hSettle()});
 document.getElementById("hagain").addEventListener("click",hStart);
@@ -2501,7 +2509,11 @@ h2.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)retu
  .btns,.dcount,.dx,#dprog,.dnav,.sheet,.scrim,.lb{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
  .btns{background:#03060df2!important}.dnav{background:#03060dfa!important}
  .dcount,.dx,#dprog{background:#032e26f0!important}
+ .page::after,.home2::before{animation:none!important}
+ .phead h2,.htree h2,.cvh h3,.hgold,.page.open .phead h2{animation-iteration-count:1!important}
 }
+.page.idle,.deck.idle{content-visibility:hidden}
+.page:not(.open)::after{animation:none}
 </style>
 <script>
 /* ---- скачать PDF: отчёты и резюме ---- */
